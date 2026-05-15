@@ -1,4 +1,5 @@
 packages:
+  - 'css'
   - 'theme'
 minimumReleaseAge: 1440
 minimumReleaseAgeExclude:

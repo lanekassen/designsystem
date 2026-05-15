@@ -1,0 +1,20 @@
+{
+  "name": "@lanekassen/ds-css",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.css"
+  },
+  "scripts": {
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@digdir/designsystemet-css": "^1.14.0",
+    "@lanekassen/ds-theme": "workspace:*"
+  },
+  "devDependencies": {
+    "@tsdown/css": "^0.22.0",
+    "tsdown": "^0.22.0"
+  }
+}
