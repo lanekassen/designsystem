@@ -1,6 +1,5 @@
 packages:
-  - 'css'
-  - 'theme'
+  - 'packages/*'
 minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
   - '@digdir/*'

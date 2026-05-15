@@ -8,7 +8,7 @@ importers:
 
   .: {}
 
-  css:
+  packages/css:
     dependencies:
       '@digdir/designsystemet-css':
         specifier: ^1.14.0
@@ -24,7 +24,7 @@ importers:
         specifier: ^0.22.0
         version: 0.22.0(@tsdown/css@0.22.0)
 
-  theme:
+  packages/theme:
     devDependencies:
       '@digdir/designsystemet':
         specifier: ^1.14.0
