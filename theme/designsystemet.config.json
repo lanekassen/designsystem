@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/@digdir/designsystemet/dist/config.schema.json",
+  "outDir": "./design-tokens",
+  "clean": true,
+  "themes": {
+    "lanekassen": {
+      "colors": {
+        "main": {
+          "brand": "#410464"
+        },
+        "support": {
+          "radiant": "#7134DA",
+          "sand": "#BEABA2"
+        },
+        "neutral": "#5F697C"
+      },
+      "overrides": {
+        "severity": {
+          "info": "#063374",
+          "success": "#166A3E",
+          "warning": "#996700",
+          "danger": "#B82828"
+        }
+      },
+      "borderRadius": 8
+    }
+  }
+}

@@ -1,0 +1,6 @@
+packages:
+  - 'theme'
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - '@digdir/*'
+  - '@u-elements/*'

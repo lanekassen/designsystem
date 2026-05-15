@@ -1,0 +1,600 @@
+{
+  "color": {
+    "brand": {
+      "1": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{lanekassen.brand.16}"
+      }
+    },
+    "neutral": {
+      "1": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{lanekassen.neutral.16}"
+      }
+    },
+    "radiant": {
+      "1": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{lanekassen.radiant.16}"
+      }
+    },
+    "sand": {
+      "1": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{lanekassen.sand.16}"
+      }
+    },
+    "info": {
+      "1": {
+        "$type": "color",
+        "$value": "{lanekassen.info.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{lanekassen.info.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{lanekassen.info.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{lanekassen.info.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{lanekassen.info.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{lanekassen.info.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{lanekassen.info.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{lanekassen.info.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{lanekassen.info.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{lanekassen.info.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{lanekassen.info.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{lanekassen.info.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{lanekassen.info.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{lanekassen.info.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{lanekassen.info.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{lanekassen.info.16}"
+      }
+    },
+    "success": {
+      "1": {
+        "$type": "color",
+        "$value": "{lanekassen.success.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{lanekassen.success.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{lanekassen.success.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{lanekassen.success.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{lanekassen.success.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{lanekassen.success.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{lanekassen.success.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{lanekassen.success.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{lanekassen.success.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{lanekassen.success.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{lanekassen.success.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{lanekassen.success.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{lanekassen.success.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{lanekassen.success.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{lanekassen.success.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{lanekassen.success.16}"
+      }
+    },
+    "warning": {
+      "1": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{lanekassen.warning.16}"
+      }
+    },
+    "danger": {
+      "1": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{lanekassen.danger.16}"
+      }
+    },
+    "link": {
+      "visited": {
+        "$type": "color",
+        "$value": "{lanekassen.link.visited}"
+      }
+    },
+    "focus": {
+      "inner-color": {
+        "$type": "color",
+        "$value": "{lanekassen.focus.inner}"
+      },
+      "outer-color": {
+        "$type": "color",
+        "$value": "{lanekassen.focus.outer}"
+      }
+    }
+  },
+  "font-family": {
+    "$type": "fontFamilies",
+    "$value": "{lanekassen.font-family}"
+  },
+  "font-weight": {
+    "medium": {
+      "$type": "fontWeights",
+      "$value": "{lanekassen.font-weight.medium}"
+    },
+    "semibold": {
+      "$type": "fontWeights",
+      "$value": "{lanekassen.font-weight.semibold}"
+    },
+    "regular": {
+      "$type": "fontWeights",
+      "$value": "{lanekassen.font-weight.regular}"
+    }
+  },
+  "border-radius": {
+    "1": {
+      "$type": "dimension",
+      "$value": "min({border-radius.base}*0.5,{border-radius.scale})"
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "min({border-radius.base},{border-radius.scale}*2)"
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": "min({border-radius.base}*2,{border-radius.scale}*5)"
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "min({border-radius.base}*3,{border-radius.scale}*7)"
+    },
+    "5": {
+      "$type": "dimension",
+      "$value": "{border-radius.base}"
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": "9999"
+    },
+    "base": {
+      "$type": "dimension",
+      "$value": "8"
+    },
+    "scale": {
+      "$type": "dimension",
+      "$value": "4"
+    }
+  }
+}
