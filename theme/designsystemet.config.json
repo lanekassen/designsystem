@@ -22,7 +22,10 @@
           "danger": "#B82828"
         }
       },
-      "borderRadius": 8
+      "borderRadius": 8,
+      "typography": {
+        "fontFamily": "Roboto"
+      }
     }
   }
 }

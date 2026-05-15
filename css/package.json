@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./dist/index.css"
+    ".": {
+      "types": "./types.d.ts",
+      "default": "./dist/index.css"
+    }
   },
   "scripts": {
     "build": "tsdown"
