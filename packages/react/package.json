@@ -1,0 +1,21 @@
+{
+  "name": "@lanekassen/ds-react",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@digdir/designsystemet-react": "^1.14.0",
+    "@digdir/designsystemet-types": "^1.14.0",
+    "@digdir/designsystemet-web": "^1.14.0",
+    "@lanekassen/ds-css": "workspace:*",
+    "@lanekassen/ds-theme": "workspace:*",
+    "@navikt/aksel-icons": "^8.10.5"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "^10.4.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.6",
+    "storybook": "^10.4.0"
+  }
+}
