@@ -3,6 +3,8 @@ import '@lanekassen/ds-theme';
 import './style.css';
 
 import type { Preview } from '@storybook/react-vite'
+import { useDarkMode } from 'storybook-dark-mode';
+import { useEffect } from "react";
 import { theme } from './theme';
 
 const preview: Preview = {
@@ -23,6 +25,15 @@ const preview: Preview = {
       theme,
     },
   },
+  decorators: [
+    (Story) => {
+      const darkMode = useDarkMode();
+      useEffect(() => {
+        document.documentElement.dataset.colorScheme = darkMode ? "dark" : "light";
+      }, [darkMode]);
+      return <Story />
+    }
+  ]
 };
 
 export default preview;

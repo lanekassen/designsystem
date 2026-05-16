@@ -63,21 +63,23 @@ export const InCardWithColor: StoryFn<typeof Details> = () => (
     <Card data-color='accent'>
       <Details>
         <Details.Summary>
-          Hvordan får jeg tildelt et jegernummer?
+          Har du nedsatt funksjonsevne?
         </Details.Summary>
         <Details.Content>
-          Du vil automatisk få tildelt jegernummer og bli registrert i
-          Jegerregisteret når du har bestått jegerprøven.
+          Hvis du har nedsatt funksjonsevne som gjør at du ikke kan jobbe ved
+          siden av studiene, kan du få et tilleggsstipend på 4 668 kroner i
+          måneden. Hvis du studerer på deltid, får du et mindre beløp.
         </Details.Content>
       </Details>
       <Details>
         <Details.Summary>
-          Jeg har glemt jegernummeret mitt. Hvor finner jeg dette?
+          Har du barn?
         </Details.Summary>
         <Details.Content>
           <Paragraph>
-            Du kan finne dette ved å logge inn på{' '}
-            <Link href='https://minjegerside.brreg.no/'>Min side</Link>
+            Får du barn under studiene, eller innen syv måneder etter du har
+            fullført en grad, kan du få foreldrestipend.
+            <Link href='https://lanekassen/nb-NO/dinesider'>Logg inn på Dine sider</Link>
           </Paragraph>
         </Details.Content>
       </Details>
@@ -86,21 +88,23 @@ export const InCardWithColor: StoryFn<typeof Details> = () => (
     <Card data-color='accent' variant='tinted'>
       <Details>
         <Details.Summary>
-          Hvordan får jeg tildelt et jegernummer?
+          Har du nedsatt funksjonsevne?
         </Details.Summary>
         <Details.Content>
-          Du vil automatisk få tildelt jegernummer og bli registrert i
-          Jegerregisteret når du har bestått jegerprøven.
+          Hvis du har nedsatt funksjonsevne som gjør at du ikke kan jobbe ved
+          siden av studiene, kan du få et tilleggsstipend på 4 668 kroner i
+          måneden. Hvis du studerer på deltid, får du et mindre beløp.
         </Details.Content>
       </Details>
       <Details>
         <Details.Summary>
-          Jeg har glemt jegernummeret mitt. Hvor finner jeg dette?
+          Har du barn?
         </Details.Summary>
         <Details.Content>
           <Paragraph>
-            Du kan finne dette ved å logge inn på{' '}
-            <Link href='https://minjegerside.brreg.no/'>Min side</Link>
+            Får du barn under studiene, eller innen syv måneder etter du har
+            fullført en grad, kan du få foreldrestipend.
+            <Link href='https://lanekassen/nb-NO/dinesider'>Logg inn på Dine sider</Link>
           </Paragraph>
         </Details.Content>
       </Details>

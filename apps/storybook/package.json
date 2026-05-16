@@ -17,6 +17,7 @@
     "@storybook/react-vite": "^10.4.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "storybook": "^10.4.0"
+    "storybook": "^10.4.0",
+    "storybook-dark-mode": "^5.0.0"
   }
 }
