@@ -5,5 +5,8 @@ const config: StorybookConfig = {
   addons: ["storybook-dark-mode"],
   framework: "@storybook/react-vite",
   staticDirs: ["../assets"],
+  features: {
+    sidebarOnboardingChecklist: false,
+  },
 };
 export default config;
