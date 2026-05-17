@@ -1,0 +1,35 @@
+.lkds-progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-1);
+
+  /**
+   * u-progress has it's own way of styling, check out the docs
+   * https://u-elements.github.io/u-elements/elements/u-progress#styling
+   */
+  & u-progress {
+    color: var(--ds-color-brand-base-default);
+    height: var(--ds-size-3);
+    border-radius: var(--ds-border-radius-full);
+    border-color: transparent;
+    /**
+     * By default u-progress uses background, which we want to override completely
+     * This is why this isn't background-color
+     */
+    background: var(--ds-color-neutral-surface-tinted);
+
+    &:not([value]) {
+      &::before {
+        color: var(--ds-color-brand-base-default);
+        width: 100%;
+        transition: width 1s ease;
+        animation: indeterminateAnimation 1.5s infinite cubic-bezier(0.65, 0.815, 0.735, 0.395);
+      }
+    }
+  }
+}
+
+@keyframes indeterminateAnimation {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

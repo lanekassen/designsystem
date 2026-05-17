@@ -9,7 +9,9 @@
     "@digdir/designsystemet-web": "^1.14.0",
     "@lanekassen/ds-css": "workspace:*",
     "@lanekassen/ds-theme": "workspace:*",
-    "@navikt/aksel-icons": "^8.10.5"
+    "@navikt/aksel-icons": "^8.10.5",
+    "@u-elements/u-progress": "^1.0.1",
+    "clsx": "^2.1.1"
   },
   "devDependencies": {
     "@storybook/react-vite": "^10.4.0",

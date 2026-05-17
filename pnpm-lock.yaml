@@ -75,6 +75,12 @@ importers:
       '@navikt/aksel-icons':
         specifier: ^8.10.5
         version: 8.10.5
+      '@u-elements/u-progress':
+        specifier: ^1.0.1
+        version: 1.0.1
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
     devDependencies:
       '@storybook/react-vite':
         specifier: ^10.4.0
@@ -1144,6 +1150,9 @@ packages:
 
   '@u-elements/u-details@1.0.0':
     resolution: {integrity: sha512-CA0w0VTH/vWWouFWEw7XIws3RUCBm2dh7ity+sbDXgpc6yz5NkoMpeDTdB/DHpI+/YInULz0XLOTrw8b7KX3Qg==}
+
+  '@u-elements/u-progress@1.0.1':
+    resolution: {integrity: sha512-19RM4/hPMPQtdZfOBac3i2nuEhT0x0uCevjoOCs34dJdQTo3XoxjanPCX+fdVwImwC30gHT6XM6YCxfQNUtHpA==}
 
   '@u-elements/u-tabs@1.0.3':
     resolution: {integrity: sha512-Jqd3YuwpWHZVrPx8qiLN4njsdQ/KZY6PbHsskC42mrnxkuR4LnnmWBoRPgcKrn7P74rRtm0MnPp0PMDZYbSorg==}
@@ -3182,6 +3191,8 @@ snapshots:
   '@u-elements/u-datalist@2.0.1': {}
 
   '@u-elements/u-details@1.0.0': {}
+
+  '@u-elements/u-progress@1.0.1': {}
 
   '@u-elements/u-tabs@1.0.3': {}
 

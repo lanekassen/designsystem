@@ -10,7 +10,8 @@
     }
   },
   "scripts": {
-    "build": "tsdown"
+    "build": "tsdown",
+    "dev": "watch -n 2 tsdown"
   },
   "dependencies": {
     "@digdir/designsystemet-css": "^1.14.0",
