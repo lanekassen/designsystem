@@ -2,15 +2,13 @@
 // https://github.com/Utdanningsdirektoratet/designsystem/blob/2742ec96ee4b980a1d2373aad2f88a113483be3d/%40udir-design/react/src/components/progressBar/ProgressBar.tsx
 
 import '@u-elements/u-progress';
-import { Card, type Size } from '../';
-import type { Color } from '@digdir/designsystemet-types';
+import type { Color, Size } from '@digdir/designsystemet-types';
 import { UHTMLProgressShadowRoot } from '@u-elements/u-progress';
 import cl from 'clsx/lite';
-import type { AriaRole, HTMLAttributes } from 'react';
-import { forwardRef } from 'react';
+import type { AriaRole } from 'react';
 
 export type ProgressProps = Omit<
-  HTMLAttributes<HTMLDivElement>,
+  React.ComponentPropsWithRef<'div'>,
   'children'
 > & {
   /**
@@ -62,7 +60,7 @@ const nonNameableAriaRoles: AriaRole[] = [
 ];
 
 export function Progress(
-    { className, max, value, progressText, 'aria-label': ariaLabel, ...rest }: HTMLDivElement,
+    { className, max, value, progressText, 'aria-label': ariaLabel, ...rest }: ProgressProps,
   ) {
     let screenreaderText: string | undefined;
     // aria-label is not permitted on div without a role, and only certain roles can use it.

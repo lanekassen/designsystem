@@ -9,9 +9,6 @@ export default {
     max: 100,
   },
   parameters: {
-    layout: 'fullscreen',
-  },
-  parameters: {
     layout: 'padded',
   },
 } satisfies Meta;
