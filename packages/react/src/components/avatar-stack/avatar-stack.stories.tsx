@@ -8,7 +8,7 @@ import {
   Checkbox,
   Label,
   Tooltip,
-} from '@digdir/designsystemet-react';
+} from '../';
 
 type Story = StoryFn<typeof AvatarStack>;
 

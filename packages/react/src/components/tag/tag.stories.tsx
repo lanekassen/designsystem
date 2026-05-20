@@ -1,8 +1,8 @@
 import { ParagraphIcon, RobotIcon } from '@navikt/aksel-icons';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { severityColors, themeColors } from '../../../stories/constants';
-import type { TagProps } from '@digdir/designsystemet-react';
-import { Tag } from '@digdir/designsystemet-react';
+import type { TagProps } from '../';
+import { Tag } from '../';
 
 type Story = StoryObj<typeof Tag>;
 

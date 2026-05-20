@@ -9,8 +9,8 @@ import {
 import type { Meta, StoryFn } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect } from 'storybook/test';
-import { Button, Tooltip } from '@digdir/designsystemet-react';
-import { Tabs } from '@digdir/designsystemet-react';
+import { Button, Tooltip } from '../';
+import { Tabs } from '../';
 
 export default {
   title: 'Komponenter/Tabs',

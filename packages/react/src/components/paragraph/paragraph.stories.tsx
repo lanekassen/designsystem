@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Paragraph } from '@digdir/designsystemet-react';
+import { Paragraph } from '../';
 
 const meta: Meta<typeof Paragraph> = {
   title: 'Komponenter/Typography/Paragraph',

@@ -2,7 +2,7 @@ import { ChevronDownUpIcon, ChevronUpDownIcon } from '@navikt/aksel-icons';
 import type { Meta, StoryFn } from '@storybook/react-vite';
 import { useState } from 'react';
 
-import { Button, Card, Details, Heading, Link, Paragraph } from '@digdir/designsystemet-react';
+import { Button, Card, Details, Heading, Link, Paragraph } from '../';
 
 export default {
   title: 'Komponenter/Details',

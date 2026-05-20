@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react-vite';
 
-import { Field, Label, Select, ValidationMessage } from '@digdir/designsystemet-react';
+import { Field, Label, Select, ValidationMessage } from '../';
 
 export default {
   title: 'Komponenter/Select',

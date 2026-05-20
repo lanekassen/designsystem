@@ -1,7 +1,7 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
 
-import { Heading } from '@digdir/designsystemet-react';
+import { Heading } from '../';
 
 const meta: Meta<typeof Heading> = {
   title: 'Komponenter/Typography/Heading',

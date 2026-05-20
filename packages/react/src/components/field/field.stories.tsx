@@ -9,7 +9,7 @@ import {
   Tag,
   Textarea,
   ValidationMessage,
-} from '@digdir/designsystemet-react';
+} from '../';
 
 type Story = StoryFn<typeof Field>;
 

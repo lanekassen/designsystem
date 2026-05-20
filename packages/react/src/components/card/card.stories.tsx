@@ -6,9 +6,9 @@ import {
   themeColors,
 } from '../../../stories/constants';
 
-import { Card, Heading, Link, Paragraph } from '@digdir/designsystemet-react';
+import { Card, Heading, Link, Paragraph } from '../';
 
-import type { CardProps } from '@digdir/designsystemet-react';
+import type { CardProps } from '../';
 
 type Story = StoryFn<typeof Card>;
 

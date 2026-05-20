@@ -2,7 +2,7 @@
 // https://github.com/Utdanningsdirektoratet/designsystem/blob/2742ec96ee4b980a1d2373aad2f88a113483be3d/%40udir-design/react/src/components/progressBar/ProgressBar.tsx
 
 import '@u-elements/u-progress';
-import { type Size } from '@digdir/designsystemet-react';
+import { Card, type Size } from '../';
 import type { Color } from '@digdir/designsystemet-types';
 import { UHTMLProgressShadowRoot } from '@u-elements/u-progress';
 import cl from 'clsx/lite';

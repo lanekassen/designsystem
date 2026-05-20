@@ -9,8 +9,8 @@ import {
   Label,
   Paragraph,
   ValidationMessage,
-} from '@digdir/designsystemet-react';
-import { Input } from '@digdir/designsystemet-react';
+} from '../';
+import { Input } from '../';
 
 type Story = StoryObj<typeof Input>;
 

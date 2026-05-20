@@ -11,7 +11,7 @@ import {
   Paragraph,
   Table,
   ValidationMessage,
-} from '@digdir/designsystemet-react';
+} from '../';
 import {
   type UseCheckboxGroupProps,
   useCheckboxGroup,

@@ -1,9 +1,9 @@
 import type { Meta, StoryFn } from '@storybook/react-vite';
 import { useState } from 'react';
 
-import type { TableHeaderCellProps } from '@digdir/designsystemet-react';
+import type { TableHeaderCellProps } from '../';
 
-import { Checkbox, Table, Textfield } from '@digdir/designsystemet-react';
+import { Checkbox, Table, Textfield } from '../';
 import { useCheckboxGroup } from '@digdir/designsystemet-react';
 
 type Story = StoryFn<typeof Table>;

@@ -2,7 +2,7 @@ import { PencilWritingIcon } from '@navikt/aksel-icons';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { themeColors } from '../../../stories/constants';
 
-import { Button, type ButtonProps } from '@digdir/designsystemet-react';
+import { Button, type ButtonProps } from '../';
 
 type Story = StoryObj<typeof Button>;
 

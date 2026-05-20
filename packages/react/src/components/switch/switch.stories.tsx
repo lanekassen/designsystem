@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Fieldset } from '@digdir/designsystemet-react';
+import { Fieldset } from '../';
 
-import { Switch } from '@digdir/designsystemet-react';
+import { Switch } from '../';
 
 type Story = StoryObj<typeof Switch>;
 

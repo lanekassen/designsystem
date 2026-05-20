@@ -9,7 +9,7 @@ import {
 } from '@navikt/aksel-icons';
 import type { Meta, StoryFn } from '@storybook/react-vite';
 import type { CSSProperties } from 'react';
-import { Badge, Button, Paragraph, Tabs } from '@digdir/designsystemet-react';
+import { Badge, Button, Paragraph, Tabs } from '../';
 
 type Story = StoryFn<typeof Badge>;
 

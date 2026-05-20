@@ -10,14 +10,14 @@ import {
   Label,
   Paragraph,
   Spinner,
-} from '@digdir/designsystemet-react';
+} from '../';
 import {
   EXPERIMENTAL_Suggestion as Suggestion,
   type SuggestionItem,
   type SuggestionMultipleProps,
   type SuggestionProps,
   type SuggestionSingleProps,
-} from '@digdir/designsystemet-react';
+} from '../';
 
 export default {
   title: 'Komponenter/Suggestion',

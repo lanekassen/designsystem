@@ -7,11 +7,12 @@
     ".": {
       "types": "./types.d.ts",
       "default": "./dist/index.css"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "tsdown",
-    "dev": "watch -n 2 tsdown"
+    "dev": "tsdown --watch",
+    "build": "tsdown"
   },
   "dependencies": {
     "@digdir/designsystemet-css": "^1.14.0",

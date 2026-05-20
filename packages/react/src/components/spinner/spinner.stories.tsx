@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/react-vite';
 import { severityColors, themeColors } from '../../../stories/constants';
 
-import { Spinner } from '@digdir/designsystemet-react';
+import { Spinner } from '../';
 
 type Story = StoryFn<typeof Spinner>;
 

@@ -10,9 +10,9 @@ import {
   Paragraph,
   EXPERIMENTAL_Suggestion as Suggestion,
   Textfield,
-} from '@digdir/designsystemet-react';
+} from '../';
 
-import { Dialog } from '@digdir/designsystemet-react';
+import { Dialog } from '../';
 
 export default {
   title: 'Komponenter/Dialog',

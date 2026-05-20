@@ -2,8 +2,8 @@ import type { DSErrorSummaryElement } from '@digdir/designsystemet-web';
 import type { Meta, StoryFn } from '@storybook/react-vite';
 import { useEffect, useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
-import { Button, Textfield } from '@digdir/designsystemet-react';
-import { ErrorSummary } from '@digdir/designsystemet-react';
+import { Button, Textfield } from '../';
+import { ErrorSummary } from '../';
 
 type Story = StoryFn<typeof ErrorSummary>;
 

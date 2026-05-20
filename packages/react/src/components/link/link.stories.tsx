@@ -5,8 +5,8 @@ import {
   ExternalLinkIcon,
 } from '@navikt/aksel-icons';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
-import { Paragraph } from '@digdir/designsystemet-react';
-import { Link } from '@digdir/designsystemet-react';
+import { Paragraph } from '../';
+import { Link } from '../';
 
 type Story = StoryObj<typeof Link>;
 

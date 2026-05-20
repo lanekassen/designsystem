@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Label } from '@digdir/designsystemet-react';
+import { Label } from '../';
 
 const meta: Meta<typeof Label> = {
   title: 'Komponenter/Typography/Label',

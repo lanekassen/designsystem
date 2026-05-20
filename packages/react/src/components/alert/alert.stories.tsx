@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react-vite';
 import { useState } from 'react';
-import { Alert, Button, Heading, Link, Paragraph } from '@digdir/designsystemet-react';
+import { Alert, Button, Heading, Link, Paragraph } from '../';
 
 type Story = StoryFn<typeof Alert>;
 

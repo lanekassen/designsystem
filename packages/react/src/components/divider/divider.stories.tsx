@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react-vite';
-import { Paragraph } from '@digdir/designsystemet-react';
-import { Divider } from '@digdir/designsystemet-react';
+import { Paragraph } from '../';
+import { Divider } from '../';
 
 type Story = StoryFn<typeof Divider>;
 

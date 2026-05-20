@@ -1,9 +1,9 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
-import { Button, Divider, Paragraph, Tag } from '@digdir/designsystemet-react';
+import { Button, Divider, Paragraph, Tag } from '../';
 
-import { Textfield } from '@digdir/designsystemet-react';
+import { Textfield } from '../';
 
 type Story = StoryObj<typeof Textfield>;
 

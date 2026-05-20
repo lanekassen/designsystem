@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist/out-tsc",
+    "tsBuildInfoFile": "dist/out-tsc/tsconfig.tsbuildinfo",
+
+    "types": [
+      "@digdir/designsystemet-web",
+      "@digdir/designsystemet-types",
+      "@lanekassen/ds-theme"
+    ]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.stories.tsx"]
+}
