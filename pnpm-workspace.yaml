@@ -3,7 +3,4 @@ packages:
   - 'packages/*'
 allowBuilds:
   esbuild: true
-minimumReleaseAge: 1440
-minimumReleaseAgeExclude:
-  - '@digdir/*'
-  - '@u-elements/*'
+minimumReleaseAge: 4320
