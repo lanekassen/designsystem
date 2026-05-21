@@ -168,6 +168,9 @@ export type {
 } from '@digdir/designsystemet-react';
 export { Popover, PopoverTrigger, PopoverTriggerContext } from '@digdir/designsystemet-react';
 
+export type { ProgressProps } from './progress/progress';
+export { Progress } from './progress/progress';
+
 export type { RadioProps } from '@digdir/designsystemet-react';
 export { Radio } from '@digdir/designsystemet-react';
 
