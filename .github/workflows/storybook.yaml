@@ -51,7 +51,7 @@ jobs:
 
   deploy:
     name: "Deploy to GitHub Pages"
-    if: github.repository == 'lanekassen/ds-poc' && github.ref == 'refs/heads/main'
+    if: github.repository == 'lanekassen/designsystem' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:
