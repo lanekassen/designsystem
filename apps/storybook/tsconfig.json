@@ -7,5 +7,5 @@
   "references": [
     { "path": "../../packages/react" }
   ],
-  "include": [".storybook/**/*"]
+  "include": [".storybook/**/*", "stories/**/*"]
 }

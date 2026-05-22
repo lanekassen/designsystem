@@ -2,9 +2,9 @@ import '@lanekassen/ds-css';
 import '@lanekassen/ds-theme';
 import './style.css';
 
-import type { Preview } from '@storybook/react-vite'
-import { useDarkMode } from 'storybook-dark-mode';
-import { useEffect } from "react";
+import { type Preview, ReactRenderer } from '@storybook/react-vite'
+import { DocsContainer, DocsContainerProps, Unstyled } from "@storybook/addon-docs/blocks";
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { theme } from './theme';
 
 const preview: Preview = {
@@ -19,20 +19,28 @@ const preview: Preview = {
     options: {
       storySort: {
         method: 'alphabetical',
+        order: ['Introduksjon', 'Komponenter'],
       },
     },
     docs: {
       theme,
+      codePanel: true,
+      container: (props: DocsContainerProps) => (
+        <Unstyled>
+          <DocsContainer {...props} />
+        </Unstyled>
+      ),
     },
   },
   decorators: [
-    (Story) => {
-      const darkMode = useDarkMode();
-      useEffect(() => {
-        document.documentElement.dataset.colorScheme = darkMode ? "dark" : "light";
-      }, [darkMode]);
-      return <Story />
-    }
+    withThemeByDataAttribute<ReactRenderer>({
+      themes: {
+        light: 'light',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+      attributeName: 'data-color-scheme',
+    }),
   ]
 };
 

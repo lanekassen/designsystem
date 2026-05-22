@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "storybook dev -p 6006 --disable-telemetry",
+    "dev": "storybook dev -p 6006",
     "build": "storybook build"
   },
   "dependencies": {
@@ -13,11 +13,13 @@
   },
   "devDependencies": {
     "@lanekassen/ds-css": "workspace:*",
+    "@lanekassen/ds-react": "workspace:*",
     "@lanekassen/ds-theme": "workspace:*",
+    "@storybook/addon-docs": "^10.4.0",
+    "@storybook/addon-themes": "^10.4.0",
     "@storybook/react-vite": "^10.4.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "storybook": "^10.4.0",
-    "storybook-dark-mode": "^5.0.0"
+    "storybook": "^10.4.0"
   }
 }
