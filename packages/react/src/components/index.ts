@@ -1,75 +1,75 @@
 import '@digdir/designsystemet-web';
 
-export type { AlertProps } from '@digdir/designsystemet-react';
-export { Alert } from '@digdir/designsystemet-react';
+export type { AlertProps } from './alert/alert';
+export { Alert } from './alert/alert';
 
-export type { AvatarProps } from '@digdir/designsystemet-react';
-export { Avatar } from '@digdir/designsystemet-react';
+export type { AvatarProps } from './avatar/avatar';
+export { Avatar } from './avatar/avatar';
 
-export type { AvatarStackProps } from '@digdir/designsystemet-react';
-export { EXPERIMENTAL_AvatarStack } from '@digdir/designsystemet-react';
+export type { AvatarStackProps } from './avatar-stack/avatar-stack';
+export { EXPERIMENTAL_AvatarStack } from './avatar-stack/avatar-stack';
 
-export type { BadgePositionProps, BadgeProps } from '@digdir/designsystemet-react';
-export { Badge, BadgePosition } from '@digdir/designsystemet-react';
+export type { BadgePositionProps, BadgeProps } from './badge/badge';
+export { Badge, BadgePosition } from './badge/badge';
 
 export type {
   BreadcrumbsItemProps,
   BreadcrumbsLinkProps,
   BreadcrumbsListProps,
   BreadcrumbsProps,
-} from '@digdir/designsystemet-react';
+} from './breadcrumbs/breadcrumbs';
 export {
   Breadcrumbs,
   BreadcrumbsItem,
   BreadcrumbsLink,
   BreadcrumbsList,
-} from '@digdir/designsystemet-react';
+} from './breadcrumbs/breadcrumbs';
 
-export type { ButtonProps } from '@digdir/designsystemet-react';
-export { Button } from '@digdir/designsystemet-react';
+export type { ButtonProps } from './button/button';
+export { Button } from './button/button';
 
-export type { CardBlockProps, CardProps } from '@digdir/designsystemet-react';
-export { Card, CardBlock } from '@digdir/designsystemet-react';
+export type { CardBlockProps, CardProps } from './card/card';
+export { Card, CardBlock } from './card/card';
 
-export type { CheckboxProps } from '@digdir/designsystemet-react';
-export { Checkbox } from '@digdir/designsystemet-react';
+export type { CheckboxProps } from './checkbox/checkbox';
+export { Checkbox } from './checkbox/checkbox';
 
 export type {
   ChipButtonProps,
   ChipCheckboxProps,
   ChipRadioProps,
   ChipRemovableProps,
-} from '@digdir/designsystemet-react';
+} from './chip/chip';
 export {
   Chip,
   ChipButton,
   ChipCheckbox,
   ChipRadio,
   ChipRemovable,
-} from '@digdir/designsystemet-react';
+} from './chip/chip';
 
 export type {
   DetailsContentProps,
   DetailsProps,
   DetailsSummaryProps,
-} from '@digdir/designsystemet-react';
-export { Details, DetailsContent, DetailsSummary } from '@digdir/designsystemet-react';
+} from './details/details';
+export { Details, DetailsContent, DetailsSummary } from './details/details';
 
 export type {
   DialogBlockProps,
   DialogProps,
   DialogTriggerContextProps,
   DialogTriggerProps,
-} from '@digdir/designsystemet-react';
+} from './dialog/dialog';
 export {
   Dialog,
   DialogBlock,
   DialogTrigger,
   DialogTriggerContext,
-} from '@digdir/designsystemet-react';
+} from './dialog/dialog';
 
-export type { DividerProps } from '@digdir/designsystemet-react';
-export { Divider } from '@digdir/designsystemet-react';
+export type { DividerProps } from './divider/divider';
+export { Divider } from './divider/divider';
 
 export type {
   DropdownButtonProps,
@@ -78,7 +78,7 @@ export type {
   DropdownListProps,
   DropdownProps,
   DropdownTriggerContextProps,
-} from '@digdir/designsystemet-react';
+} from './dropdown/dropdown';
 export {
   Dropdown,
   DropdownButton,
@@ -87,7 +87,7 @@ export {
   DropdownList,
   DropdownTrigger,
   DropdownTriggerContext,
-} from '@digdir/designsystemet-react';
+} from './dropdown/dropdown';
 
 export type {
   ErrorSummaryHeadingProps,
@@ -95,14 +95,14 @@ export type {
   ErrorSummaryLinkProps,
   ErrorSummaryListProps,
   ErrorSummaryProps,
-} from '@digdir/designsystemet-react';
+} from './error-summary/error-summary';
 export {
   ErrorSummary,
   ErrorSummaryHeading,
   ErrorSummaryItem,
   ErrorSummaryLink,
   ErrorSummaryList,
-} from '@digdir/designsystemet-react';
+} from './error-summary/error-summary';
 
 export type {
   FieldAffixesProps,
@@ -110,93 +110,93 @@ export type {
   FieldCounterProps,
   FieldDescriptionProps,
   FieldProps,
-} from '@digdir/designsystemet-react';
+} from './field/field';
 export {
   Field,
   FieldAffix,
   FieldAffixes,
   FieldCounter,
   FieldDescription,
-} from '@digdir/designsystemet-react';
+} from './field/field';
 
 export type {
   FieldsetDescriptionProps,
   FieldsetLegendProps,
   FieldsetProps,
-} from '@digdir/designsystemet-react';
-export { Fieldset, FieldsetDescription, FieldsetLegend } from '@digdir/designsystemet-react';
+} from './fieldset/fieldset';
+export { Fieldset, FieldsetDescription, FieldsetLegend } from './fieldset/fieldset';
 
-export type { HeadingProps } from '@digdir/designsystemet-react';
-export { Heading } from '@digdir/designsystemet-react';
+export type { HeadingProps } from './heading/heading';
+export { Heading } from './heading/heading';
 
-export type { InputProps } from '@digdir/designsystemet-react';
-export { Input } from '@digdir/designsystemet-react';
+export type { InputProps } from './input/input';
+export { Input } from './input/input';
 
-export type { LabelProps } from '@digdir/designsystemet-react';
-export { Label } from '@digdir/designsystemet-react';
+export type { LabelProps } from './label/label';
+export { Label } from './label/label';
 
-export type { LinkProps } from '@digdir/designsystemet-react';
-export { Link } from '@digdir/designsystemet-react';
+export type { LinkProps } from './link/link';
+export { Link } from './link/link';
 
 export type {
   ListItemProps,
   ListOrderedProps,
   ListUnorderedProps,
-} from '@digdir/designsystemet-react';
-export { List, ListItem, ListOrdered, ListUnordered } from '@digdir/designsystemet-react';
+} from './list/list';
+export { List, ListItem, ListOrdered, ListUnordered } from './list/list';
 
 export type {
   PaginationButtonProps,
   PaginationItemProps,
   PaginationListProps,
   PaginationProps,
-} from '@digdir/designsystemet-react';
+} from './pagination/pagination';
 export {
   Pagination,
   PaginationButton,
   PaginationItem,
   PaginationList,
-} from '@digdir/designsystemet-react';
+} from './pagination/pagination';
 
-export type { ParagraphProps } from '@digdir/designsystemet-react';
-export { Paragraph } from '@digdir/designsystemet-react';
+export type { ParagraphProps } from './paragraph/paragraph';
+export { Paragraph } from './paragraph/paragraph';
 
 export type {
   PopoverProps,
   PopoverTriggerContextProps,
   PopoverTriggerProps,
-} from '@digdir/designsystemet-react';
-export { Popover, PopoverTrigger, PopoverTriggerContext } from '@digdir/designsystemet-react';
+} from './popover/popover';
+export { Popover, PopoverTrigger, PopoverTriggerContext } from './popover/popover';
 
 export type { ProgressProps } from './progress/progress';
 export { Progress } from './progress/progress';
 
-export type { RadioProps } from '@digdir/designsystemet-react';
-export { Radio } from '@digdir/designsystemet-react';
+export type { RadioProps } from './radio/radio';
+export { Radio } from './radio/radio';
 
 export type {
   SearchButtonProps,
   SearchClearProps,
   SearchInputProps,
   SearchProps,
-} from '@digdir/designsystemet-react';
-export { Search, SearchButton, SearchClear, SearchInput } from '@digdir/designsystemet-react';
+} from './search/search';
+export { Search, SearchButton, SearchClear, SearchInput } from './search/search';
 
 export type {
   SelectOptgroupProps,
   SelectOptionProps,
   SelectProps,
-} from '@digdir/designsystemet-react';
-export { Select, SelectOptgroup, SelectOption } from '@digdir/designsystemet-react';
+} from './select/select';
+export { Select, SelectOptgroup, SelectOption } from './select/select';
 
-export type { SkeletonProps } from '@digdir/designsystemet-react';
-export { Skeleton } from '@digdir/designsystemet-react';
+export type { SkeletonProps } from './skeleton/skeleton';
+export { Skeleton } from './skeleton/skeleton';
 
-export type { SkipLinkProps } from '@digdir/designsystemet-react';
-export { SkipLink } from '@digdir/designsystemet-react';
+export type { SkipLinkProps } from './skip-link/skip-link';
+export { SkipLink } from './skip-link/skip-link';
 
-export type { SpinnerProps } from '@digdir/designsystemet-react';
-export { Spinner } from '@digdir/designsystemet-react';
+export type { SpinnerProps } from './spinner/spinner';
+export { Spinner } from './spinner/spinner';
 
 export type {
   SuggestionClearProps,
@@ -208,7 +208,7 @@ export type {
   SuggestionOptionProps,
   SuggestionProps,
   SuggestionSingleProps,
-} from '@digdir/designsystemet-react';
+} from './suggestion/suggestion';
 export {
   EXPERIMENTAL_Suggestion,
   EXPERIMENTAL_SuggestionClear,
@@ -216,10 +216,10 @@ export {
   EXPERIMENTAL_SuggestionInput,
   EXPERIMENTAL_SuggestionList,
   EXPERIMENTAL_SuggestionOption,
-} from '@digdir/designsystemet-react';
+} from './suggestion/suggestion';
 
-export type { SwitchProps } from '@digdir/designsystemet-react';
-export { Switch } from '@digdir/designsystemet-react';
+export type { SwitchProps } from './switch/switch';
+export { Switch } from './switch/switch';
 
 export type {
   TableBodyProps,
@@ -229,7 +229,7 @@ export type {
   TableHeadProps,
   TableProps,
   TableRowProps,
-} from '@digdir/designsystemet-react';
+} from './table/table';
 export {
   Table,
   TableBody,
@@ -238,30 +238,30 @@ export {
   TableHead,
   TableHeaderCell,
   TableRow,
-} from '@digdir/designsystemet-react';
+} from './table/table';
 
 export type {
   TabsListProps,
   TabsPanelProps,
   TabsProps,
   TabsTabProps,
-} from '@digdir/designsystemet-react';
-export { Tabs, TabsList, TabsPanel, TabsTab } from '@digdir/designsystemet-react';
+} from './tabs/tabs';
+export { Tabs, TabsList, TabsPanel, TabsTab } from './tabs/tabs';
 
-export type { TagProps } from '@digdir/designsystemet-react';
-export { Tag } from '@digdir/designsystemet-react';
+export type { TagProps } from './tag/tag';
+export { Tag } from './tag/tag';
 
-export type { TextareaProps } from '@digdir/designsystemet-react';
-export { Textarea } from '@digdir/designsystemet-react';
+export type { TextareaProps } from './textarea/textarea';
+export { Textarea } from './textarea/textarea';
 
-export type { TextfieldProps } from '@digdir/designsystemet-react';
-export { Textfield } from '@digdir/designsystemet-react';
+export type { TextfieldProps } from './textfield/textfield';
+export { Textfield } from './textfield/textfield';
 
-export type { ToggleGroupItemProps, ToggleGroupProps } from '@digdir/designsystemet-react';
-export { ToggleGroup, ToggleGroupItem } from '@digdir/designsystemet-react';
+export type { ToggleGroupItemProps, ToggleGroupProps } from './toggle-group/toggle-group';
+export { ToggleGroup, ToggleGroupItem } from './toggle-group/toggle-group';
 
-export type { TooltipProps } from '@digdir/designsystemet-react';
-export { Tooltip } from '@digdir/designsystemet-react';
+export type { TooltipProps } from './tooltip/tooltip';
+export { Tooltip } from './tooltip/tooltip';
 
-export type { ValidationMessageProps } from '@digdir/designsystemet-react';
-export { ValidationMessage } from '@digdir/designsystemet-react';
+export type { ValidationMessageProps } from './validation-message/validation-message';
+export { ValidationMessage } from './validation-message/validation-message';
