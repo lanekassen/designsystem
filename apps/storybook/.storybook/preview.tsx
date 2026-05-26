@@ -21,7 +21,7 @@ export default definePreview({
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['Introduksjon', 'Komponenter'],
+        order: ['Introduksjon', 'Tokens', 'Komponenter'],
       },
     },
     docs: {
@@ -31,16 +31,16 @@ export default definePreview({
           <MDXProvider
             components={{
               h1: (props) => (
-                <h1 {...props} className="ds-heading" data-size="lg" style={{ marginBottom: "var(--ds-size-4)" }} />
+                <h1 {...props} className="ds-heading" data-size="lg" data-typography="secondary" />
               ),
               h2: (props) => (
-                <h2 {...props} className="ds-heading" data-size="md" style={{ marginBottom: "var(--ds-size-4)" }} />
+                <h2 {...props} className="ds-heading" data-size="md" data-typography="secondary" />
               ),
               h3: (props) => (
-                <h3 {...props} className="ds-heading" data-size="sm" style={{ marginBottom: "var(--ds-size-4)" }} />
+                <h3 {...props} className="ds-heading" data-size="sm" data-typography="secondary" />
               ),
               h4: (props) => (
-                <h4 {...props} className="ds-heading" data-size="xs" style={{ marginBottom: "var(--ds-size-4)" }} />
+                <h4 {...props} className="ds-heading" data-size="xs" data-typography="secondary" />
               ),
               ol: (props) => <ol {...props} className="ds-list" />,
               ul: (props) => <ul {...props} className="ds-list" />,
