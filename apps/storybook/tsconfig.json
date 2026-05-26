@@ -5,7 +5,7 @@
     "tsBuildInfoFile": "dist/out-tsc/tsconfig.tsbuildinfo"
   },
   "references": [
-    { "path": "../../packages/react" }
+    { "path": "../../packages/react/tsconfig.json" }
   ],
   "include": [".storybook/**/*", "stories/**/*"]
 }
