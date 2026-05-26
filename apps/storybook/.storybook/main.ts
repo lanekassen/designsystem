@@ -1,11 +1,11 @@
-import type { StorybookConfig } from "@storybook/react-vite";
+import { defineMain } from "@storybook/react-vite/node";
 
 const isFromDependency = (fileName: string) =>
   fileName.includes('node_modules');
 const isFromAllowedDependency = (fileName: string) =>
   ['@digdir', '@lanekassen'].some((org) => fileName.includes(org));
 
-const config: StorybookConfig = {
+export default defineMain({
   stories: [
     "../stories/**/*.mdx",
     "../../../packages/*/!(node_modules)/**/*.mdx",
@@ -56,5 +56,4 @@ const config: StorybookConfig = {
       setDisplayName: false,
     },
   },
-};
-export default config;
+});

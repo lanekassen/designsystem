@@ -2,18 +2,20 @@ import '@lanekassen/ds-css';
 import '@lanekassen/ds-theme';
 import './style.css';
 
-import { type Preview, ReactRenderer } from '@storybook/react-vite'
-import { DocsContainer, DocsContainerProps, Unstyled } from "@storybook/addon-docs/blocks";
-import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import { theme } from './theme';
+import { MDXProvider } from "@mdx-js/react";
+import { definePreview } from '@storybook/react-vite'
+import addonDocs from '@storybook/addon-docs';
+import addonThemes from '@storybook/addon-themes';
+import { DocsContainer, DocsContainerProps, Unstyled } from '@storybook/addon-docs/blocks';
 
-const preview: Preview = {
+export default definePreview({
+  addons: [addonDocs(), addonThemes()],
   parameters: {
     layout: 'centered',
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/,
       },
     },
     options: {
@@ -23,25 +25,33 @@ const preview: Preview = {
       },
     },
     docs: {
-      theme,
       codePanel: true,
       container: (props: DocsContainerProps) => (
         <Unstyled>
-          <DocsContainer {...props} />
+          <MDXProvider
+            components={{
+              h1: (props) => (
+                <h1 {...props} className="ds-heading" data-size="lg" style={{ marginBottom: "var(--ds-size-4)" }} />
+              ),
+              h2: (props) => (
+                <h2 {...props} className="ds-heading" data-size="md" style={{ marginBottom: "var(--ds-size-4)" }} />
+              ),
+              h3: (props) => (
+                <h3 {...props} className="ds-heading" data-size="sm" style={{ marginBottom: "var(--ds-size-4)" }} />
+              ),
+              h4: (props) => (
+                <h4 {...props} className="ds-heading" data-size="xs" style={{ marginBottom: "var(--ds-size-4)" }} />
+              ),
+              ol: (props) => <ol {...props} className="ds-list" />,
+              ul: (props) => <ul {...props} className="ds-list" />,
+              p: (props) => <p {...props} className="ds-paragraph" />,
+              a: (props) => <a {...props} className="ds-link" />,
+            }}
+          >
+            <DocsContainer {...props} />
+          </MDXProvider>
         </Unstyled>
-      ),
+      )
     },
   },
-  decorators: [
-    withThemeByDataAttribute<ReactRenderer>({
-      themes: {
-        light: 'light',
-        dark: 'dark',
-      },
-      defaultTheme: 'light',
-      attributeName: 'data-color-scheme',
-    }),
-  ]
-};
-
-export default preview;
+});

@@ -15,6 +15,7 @@
     "@lanekassen/ds-css": "workspace:*",
     "@lanekassen/ds-react": "workspace:*",
     "@lanekassen/ds-theme": "workspace:*",
+    "@mdx-js/react": "^3.1.1",
     "@storybook/addon-docs": "^10.4.0",
     "@storybook/addon-themes": "^10.4.0",
     "@storybook/react-vite": "^10.4.0",
