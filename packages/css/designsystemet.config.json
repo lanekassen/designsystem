@@ -16,7 +16,7 @@
       },
       "borderRadius": 8,
       "typography": {
-        "fontFamily": "Roboto"
+        "fontFamily": "Nunito Sans"
       },
       "overrides": {
         "severity": {

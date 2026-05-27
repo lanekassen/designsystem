@@ -2,7 +2,7 @@
   "lanekassen": {
     "font-family": {
       "$type": "fontFamilies",
-      "$value": "Roboto"
+      "$value": "Nunito Sans"
     },
     "font-weight": {
       "medium": {
