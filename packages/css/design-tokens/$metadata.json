@@ -14,7 +14,7 @@
     "primitives/modes/color-scheme/light/lanekassen",
     "themes/lanekassen",
     "semantic/color",
-    "semantic/modes/main-color/brand",
+    "semantic/modes/main-color/accent",
     "semantic/modes/support-color/radiant",
     "semantic/modes/support-color/sand",
     "semantic/style"

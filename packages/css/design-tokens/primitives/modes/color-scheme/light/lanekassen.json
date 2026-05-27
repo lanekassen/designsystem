@@ -1,6 +1,6 @@
 {
   "lanekassen": {
-    "brand": {
+    "accent": {
       "1": {
         "$type": "color",
         "$value": "#ffffff"

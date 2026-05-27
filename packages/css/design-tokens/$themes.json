@@ -101,10 +101,10 @@
     "group": "Semantic"
   },
   {
-    "id": "c19061e003fe1c9be1207fed3a65fabde527af39",
-    "name": "brand",
+    "id": "77029e975ec86efe4b92eb0be546d61959085bd1",
+    "name": "accent",
     "selectedTokenSets": {
-      "semantic/modes/main-color/brand": "enabled"
+      "semantic/modes/main-color/accent": "enabled"
     },
     "group": "Main color"
   },

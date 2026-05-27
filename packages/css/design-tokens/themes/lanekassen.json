@@ -1,69 +1,69 @@
 {
   "color": {
-    "brand": {
+    "accent": {
       "1": {
         "$type": "color",
-        "$value": "{lanekassen.brand.1}"
+        "$value": "{lanekassen.accent.1}"
       },
       "2": {
         "$type": "color",
-        "$value": "{lanekassen.brand.2}"
+        "$value": "{lanekassen.accent.2}"
       },
       "3": {
         "$type": "color",
-        "$value": "{lanekassen.brand.3}"
+        "$value": "{lanekassen.accent.3}"
       },
       "4": {
         "$type": "color",
-        "$value": "{lanekassen.brand.4}"
+        "$value": "{lanekassen.accent.4}"
       },
       "5": {
         "$type": "color",
-        "$value": "{lanekassen.brand.5}"
+        "$value": "{lanekassen.accent.5}"
       },
       "6": {
         "$type": "color",
-        "$value": "{lanekassen.brand.6}"
+        "$value": "{lanekassen.accent.6}"
       },
       "7": {
         "$type": "color",
-        "$value": "{lanekassen.brand.7}"
+        "$value": "{lanekassen.accent.7}"
       },
       "8": {
         "$type": "color",
-        "$value": "{lanekassen.brand.8}"
+        "$value": "{lanekassen.accent.8}"
       },
       "9": {
         "$type": "color",
-        "$value": "{lanekassen.brand.9}"
+        "$value": "{lanekassen.accent.9}"
       },
       "10": {
         "$type": "color",
-        "$value": "{lanekassen.brand.10}"
+        "$value": "{lanekassen.accent.10}"
       },
       "11": {
         "$type": "color",
-        "$value": "{lanekassen.brand.11}"
+        "$value": "{lanekassen.accent.11}"
       },
       "12": {
         "$type": "color",
-        "$value": "{lanekassen.brand.12}"
+        "$value": "{lanekassen.accent.12}"
       },
       "13": {
         "$type": "color",
-        "$value": "{lanekassen.brand.13}"
+        "$value": "{lanekassen.accent.13}"
       },
       "14": {
         "$type": "color",
-        "$value": "{lanekassen.brand.14}"
+        "$value": "{lanekassen.accent.14}"
       },
       "15": {
         "$type": "color",
-        "$value": "{lanekassen.brand.15}"
+        "$value": "{lanekassen.accent.15}"
       },
       "16": {
         "$type": "color",
-        "$value": "{lanekassen.brand.16}"
+        "$value": "{lanekassen.accent.16}"
       }
     },
     "neutral": {
