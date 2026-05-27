@@ -1,12 +1,15 @@
 import '@lanekassen/ds-css';
 import '@lanekassen/ds-theme';
-import './style.css';
+import './preview.css';
 
 import { MDXProvider } from "@mdx-js/react";
 import { definePreview } from '@storybook/react-vite'
 import addonDocs from '@storybook/addon-docs';
 import addonThemes from '@storybook/addon-themes';
 import { DocsContainer, DocsContainerProps, Unstyled } from '@storybook/addon-docs/blocks';
+import { Link, List, Paragraph } from '@lanekassen/ds-react';
+import componentStyles from './docs/components.module.css';
+import { HeadingSelfLink } from './docs/components';
 
 export default definePreview({
   addons: [addonDocs(), addonThemes()],
@@ -31,27 +34,27 @@ export default definePreview({
           <MDXProvider
             components={{
               h1: (props) => (
-                <h1 {...props} className="ds-heading" data-size="lg" data-typography="secondary" />
+                <HeadingSelfLink {...props} className={componentStyles.heading} data-size="lg" data-typography="secondary" />
               ),
               h2: (props) => (
-                <h2 {...props} className="ds-heading" data-size="md" data-typography="secondary" />
+                <HeadingSelfLink {...props} className={componentStyles.heading} data-size="md" data-typography="secondary" />
               ),
               h3: (props) => (
-                <h3 {...props} className="ds-heading" data-size="sm" data-typography="secondary" />
+                <HeadingSelfLink {...props} className={componentStyles.heading} data-size="sm" data-typography="secondary" />
               ),
               h4: (props) => (
-                <h4 {...props} className="ds-heading" data-size="xs" data-typography="secondary" />
+                <HeadingSelfLink {...props} className={componentStyles.heading} data-size="xs" data-typography="secondary" />
               ),
-              ol: (props) => <ol {...props} className="ds-list" />,
-              ul: (props) => <ul {...props} className="ds-list" />,
-              p: (props) => <p {...props} className="ds-paragraph" />,
-              a: (props) => <a {...props} className="ds-link" />,
+              ol: (props) => <List.Ordered {...props} className={componentStyles.list} />,
+              ul: (props) => <List.Unordered {...props} className={componentStyles.list} />,
+              p: (props) => <Paragraph {...props} className={componentStyles.paragraph} />,
+              a: (props) => <Link {...props} className={componentStyles.link}>{props.children}</Link>,
             }}
           >
             <DocsContainer {...props} />
           </MDXProvider>
         </Unstyled>
-      )
+      ),
     },
   },
 });

@@ -1,8 +1,4 @@
-html {
-  font-family: 'Roboto', sans-serif;
-}
-
-.ds-heading {
+.heading {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -18,12 +14,23 @@ html {
   &:first-child {
     margin-top: 0;
   }
+
+  &:hover {
+    .headingLink {
+      visibility: visible;
+    }
+  }
 }
-:global(.sb-anchor):first-child + .ds-heading {
+:global(.sb-anchor):first-child + .heading {
   margin-top: 0;
 }
 
-.ds-paragraph {
+.headingLink {
+  font-size: 0.8em;
+  visibility: hidden;
+}
+
+.paragraph {
   margin-bottom: var(--ds-size-6);
   background-color: transparent;
 
@@ -33,7 +40,7 @@ html {
   }
 }
 
-.ds-list {
+.list {
   max-width: 70ch;
   margin-bottom: var(--ds-size-6);
 
@@ -42,7 +49,7 @@ html {
   }
 }
 
-.ds-paragraph:last-child,
-.ds-list:last-child {
+.paragraph:last-child,
+.list:last-child {
   margin-bottom: 0;
 }
