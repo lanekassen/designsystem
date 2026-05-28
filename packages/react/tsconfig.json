@@ -2,13 +2,14 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist/out-tsc",
-    "tsBuildInfoFile": "dist/out-tsc/tsconfig.tsbuildinfo",
+    "outDir": ".typescript-cache",
+    "tsBuildInfoFile": ".typescript-cache/tsconfig.tsbuildinfo",
+    "noEmit": false,
 
     "types": [
       "@digdir/designsystemet-web",
       "@digdir/designsystemet-types",
-      "@lanekassen/ds-theme"
+      "@lanekassen/ds-css/theme"
     ]
   },
   "include": ["src/**/*"],

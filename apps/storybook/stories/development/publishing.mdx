@@ -1,0 +1,72 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Utvikling/Release" />
+
+# Release Process
+
+Lånekassen Designsystem follows semantic versioning. In short, this means we use patch versions for bugfixes, minor
+versions for new features, and major versions for breaking changes.
+
+## Changesets
+
+Lånekassen Designsystem uses [Changesets](https://github.com/changesets/changesets) for versioning. As a contributor,
+you can add a changeset for your changes by running:
+
+```sh
+pnpm changeset
+```
+
+Remember to commit the changeset file that is added to .changeset/
+
+Once all changesets are in .changeset/ a new release can be prepared by running
+
+```sh
+pnpm changeset version
+```
+
+Commit all the new files, and add a new tag
+
+```sh
+git tag -a v1.2.3 -m "v1.2.3"
+```
+
+### How to write a changeset
+
+After you have ran the commands you can open each changeset file generated and edit the text.
+
+- WHAT the change is
+- WHY the change was made
+- HOW a consumer should update their code
+
+Example
+
+- Button - added `text` to `data-variant` prop, based on the new variant in Figma.
+- Table.Cell - adjusted the padding based on changes in Figma
+- TextField - changed prop name of `isSelected` -> `selected` to adhere to the code standards. You will need to change
+  the prop.
+
+## Release branches
+
+We have a couple of branches that are used for stable releases and prereleases.
+
+- **main** - The code in the main branch is stable and production-tested.
+- **next** — This branch is used to develop the next major version in parallel. It is the only branch that can contain
+  breaking changes.
+
+To install the most recent version from a release channel in your project, run:
+
+```sh
+pnpm add @lanekassen/ds-react@<release-channel>
+```
+
+## Prereleases
+
+Prereleases can be done for the next release channel.
+
+To publish a prerelease version, check out on the branch for your release channel and run the changesets `pre enter`
+command:
+
+```sh
+git checkout next
+pnpm changeset pre enter next
+```

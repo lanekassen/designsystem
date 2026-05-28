@@ -1,24 +1,52 @@
 {
   "name": "@lanekassen/ds-css",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
+  "author": "Lånekassen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanekassen/designsystem.git"
+  },
+  "homepage": "https://github.com/lanekassen/designsystem/blob/main/packages/css",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "designsystem",
+    "lanekassen"
+  ],
   "exports": {
     ".": {
       "types": "./types.d.ts",
       "default": "./dist/index.css"
     },
+    "./theme": {
+      "types": "./theme/types.d.ts",
+      "default": "./theme/lanekassen.css"
+    },
+    "./components/*": "./dist/components/*",
     "./package.json": "./package.json"
   },
   "scripts": {
     "dev": "tsdown --watch",
-    "build": "tsdown"
+    "build": "pnpm theme:build && tsdown",
+    "theme:build": "pnpm theme:tokens:create && pnpm theme:tokens:build && pnpm theme:build:tidy",
+    "theme:build:tidy": "rm theme/colors.d.ts",
+    "theme:tokens:create": "designsystemet tokens create",
+    "theme:tokens:build": "designsystemet tokens build --clean --out-dir theme/"
   },
+  "files": [
+    "dist/",
+    "theme/",
+    "types.d.ts",
+    "package.json",
+    "README.md"
+  ],
   "dependencies": {
-    "@digdir/designsystemet-css": "^1.14.0",
-    "@lanekassen/ds-theme": "workspace:*"
+    "@digdir/designsystemet-css": "^1.14.0"
   },
   "devDependencies": {
+    "@digdir/designsystemet": "^1.15.0",
+    "@digdir/designsystemet-types": "^1.15.0",
     "@tsdown/css": "^0.22.0",
     "tsdown": "^0.22.0"
   }

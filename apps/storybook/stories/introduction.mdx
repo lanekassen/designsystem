@@ -1,10 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Markdown } from '@storybook/addon-docs/blocks';
 
-import { Card, Heading } from '@lanekassen/ds-react';
+import README from "../../../README.md?raw"
 
 <Meta title='Introduksjon' />
 
-# Lånekassen designsystem
-
-Velkommen til Lånekassens designsystem.
-
+<Markdown>{README}</Markdown>

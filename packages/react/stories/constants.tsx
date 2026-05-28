@@ -1,4 +1,4 @@
-import themeConfig from '../../../packages/theme/designsystemet.config.json';
+import themeConfig from '../../../packages/css/designsystemet.config.json';
 
 export const themeColors = [
   ...Object.keys(themeConfig.themes.lanekassen.colors.main),

@@ -14,7 +14,6 @@
   "devDependencies": {
     "@lanekassen/ds-css": "workspace:*",
     "@lanekassen/ds-react": "workspace:*",
-    "@lanekassen/ds-theme": "workspace:*",
     "@mdx-js/react": "^3.1.1",
     "@navikt/aksel-icons": "^8.10.5",
     "@storybook/addon-docs": "^10.4.0",

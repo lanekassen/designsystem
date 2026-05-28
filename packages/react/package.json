@@ -1,8 +1,19 @@
 {
   "name": "@lanekassen/ds-react",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
+  "author": "Lånekassen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanekassen/designsystem.git"
+  },
+  "homepage": "https://github.com/lanekassen/designsystem/blob/main/packages/react",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "designsystem",
+    "lanekassen"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.mts",
@@ -10,6 +21,11 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md"
+  ],
   "scripts": {
     "dev": "tsdown --watch",
     "build": "tsc --build && tsdown"
@@ -19,7 +35,6 @@
     "@digdir/designsystemet-types": "^1.14.0",
     "@digdir/designsystemet-web": "^1.14.0",
     "@lanekassen/ds-css": "workspace:*",
-    "@lanekassen/ds-theme": "workspace:*",
     "@navikt/aksel-icons": "^8.10.5",
     "@u-elements/u-progress": "^1.0.1",
     "clsx": "^2.1.1"

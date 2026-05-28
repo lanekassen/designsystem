@@ -13,7 +13,7 @@ export default defineMain({
   ],
   addons: [
     "@storybook/addon-docs",
-    "@storybook/addon-themes"
+    "@storybook/addon-themes",
   ],
   framework: "@storybook/react-vite",
   staticDirs: ["../assets"],

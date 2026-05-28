@@ -1,5 +1,5 @@
 import { Card, Table } from "@lanekassen/ds-react";
-import css from "@lanekassen/ds-theme?raw";
+import css from "@lanekassen/ds-css/theme?raw";
 
 const toUpper = (str: string) => str.replace(/\b./g, (m) => m.toUpperCase());
 const toUnique = <T,>(arr: T[]): T[] => [...new Set(arr)];
