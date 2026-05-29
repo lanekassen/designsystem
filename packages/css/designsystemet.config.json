@@ -19,6 +19,20 @@
         "fontFamily": "Nunito Sans"
       },
       "overrides": {
+        "focus": {
+          "inner": {
+            "light": "#ffffff",
+            "dark": "#1E0B2D"
+          },
+          "outer": {
+            "light": "#410464",
+            "dark": "#E0C9ED"
+          }
+        },
+        "linkVisited": {
+          "light": "#410464",
+          "dark": "#E0C9ED"
+        },
         "severity": {
           "info": "#083b7d",
           "success": "#0c4a4a",

@@ -531,17 +531,17 @@
     "link": {
       "visited": {
         "$type": "color",
-        "$value": "#b49acd"
+        "$value": "#E0C9ED"
       }
     },
     "focus": {
       "inner": {
         "$type": "color",
-        "$value": "#171819"
+        "$value": "#1E0B2D"
       },
       "outer": {
         "$type": "color",
-        "$value": "#ececed"
+        "$value": "#E0C9ED"
       }
     }
   }

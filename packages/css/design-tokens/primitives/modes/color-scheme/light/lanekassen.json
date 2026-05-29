@@ -531,7 +531,7 @@
     "link": {
       "visited": {
         "$type": "color",
-        "$value": "#663299"
+        "$value": "#410464"
       }
     },
     "focus": {
@@ -541,7 +541,7 @@
       },
       "outer": {
         "$type": "color",
-        "$value": "#282c2f"
+        "$value": "#410464"
       }
     }
   }
