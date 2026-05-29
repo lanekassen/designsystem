@@ -51,7 +51,7 @@
             },
             "surface-default": {
               "light": "#ffffff",
-              "dark": "#24162D"
+              "dark": "#250C36"
             },
             "surface-tinted": {
               "light": "#f1ebf4",
