@@ -54,15 +54,15 @@
               "dark": "#250C36"
             },
             "surface-tinted": {
-              "light": "#f1ebf4",
+              "light": "#F4EEF6",
               "dark": "#290A3D"
             },
             "surface-hover": {
-              "light": "#ede3f3",
+              "light": "#EFE6F4",
               "dark": "#3B0C5A"
             },
             "surface-active": {
-              "light": "#e9dcef",
+              "light": "#E7D8EE",
               "dark": "#490E6C"
             },
             "border-subtle": {
