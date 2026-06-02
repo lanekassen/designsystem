@@ -8,7 +8,7 @@
    * https://u-elements.github.io/u-elements/elements/u-progress#styling
    */
   & u-progress {
-    color: var(--ds-color-brand-base-default);
+    color: var(--ds-color-accent-base-default);
     height: var(--ds-size-3);
     border-radius: var(--ds-border-radius-full);
     border-color: transparent;
@@ -20,7 +20,7 @@
 
     &:not([value]) {
       &::before {
-        color: var(--ds-color-brand-base-default);
+        color: var(--ds-color-accent-base-default);
         width: 100%;
         transition: width 1s ease;
         animation: indeterminateAnimation 1.5s infinite cubic-bezier(0.65, 0.815, 0.735, 0.395);

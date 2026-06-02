@@ -93,7 +93,7 @@ Or HTML
 <style>
 .my-button {
     padding: var(--ds-size-2);
-    background-color: var(--ds-color-brand-base-default);
+    background-color: var(--ds-color-accent-base-default);
 }
 </style>
 <button class="my-button">Button</button>
