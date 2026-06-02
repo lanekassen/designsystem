@@ -84,7 +84,6 @@ export default definePreview({
                       {...props}
                       className={componentStyles.heading}
                       data-size="lg"
-                      data-typography="secondary"
                     />
                   ),
                   h2: (props) => (
@@ -92,7 +91,6 @@ export default definePreview({
                       {...props}
                       className={componentStyles.heading}
                       data-size="md"
-                      data-typography="secondary"
                     />
                   ),
                   h3: (props) => (
@@ -100,7 +98,6 @@ export default definePreview({
                       {...props}
                       className={componentStyles.heading}
                       data-size="sm"
-                      data-typography="secondary"
                     />
                   ),
                   h4: (props) => (
@@ -108,7 +105,6 @@ export default definePreview({
                       {...props}
                       className={componentStyles.heading}
                       data-size="xs"
-                      data-typography="secondary"
                     />
                   ),
                   ol: (props) => (

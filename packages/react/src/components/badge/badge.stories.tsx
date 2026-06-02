@@ -56,7 +56,7 @@ export const Floating: Story = () => (
           width: '2rem',
           height: '2rem',
           borderRadius: '50%',
-          backgroundColor: 'var(--ds-color-brand2-base-default)',
+          backgroundColor: 'var(--ds-color-neutral-base-default)',
         }}
       />
     </Badge.Position>
@@ -67,7 +67,7 @@ export const Floating: Story = () => (
           width: '2rem',
           height: '2rem',
           borderRadius: '50%',
-          backgroundColor: 'var(--ds-color-brand2-base-default)',
+          backgroundColor: 'var(--ds-color-neutral-base-default)',
         }}
       />
     </Badge.Position>
@@ -78,7 +78,7 @@ export const Floating: Story = () => (
           width: '2rem',
           height: '2rem',
           borderRadius: '50%',
-          backgroundColor: 'var(--ds-color-brand2-base-default)',
+          backgroundColor: 'var(--ds-color-neutral-base-default)',
         }}
       />
     </Badge.Position>
@@ -89,7 +89,7 @@ export const Floating: Story = () => (
           width: '2rem',
           height: '2rem',
           borderRadius: '50%',
-          backgroundColor: 'var(--ds-color-brand2-base-default)',
+          backgroundColor: 'var(--ds-color-neutral-base-default)',
         }}
       />
     </Badge.Position>
