@@ -1,6 +1,6 @@
 {
   "name": "@lanekassen/ds-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "author": "Lånekassen",
   "repository": {
@@ -26,6 +26,9 @@
     "package.json",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "tsdown --watch",
     "build": "tsc --build && tsdown"

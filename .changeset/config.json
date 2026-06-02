@@ -6,7 +6,7 @@
     ["@lanekassen/ds-css", "@lanekassen/ds-react"]
   ],
   "linked": [],
-  "access": "restricted",
+  "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": ["@apps/storybook"]

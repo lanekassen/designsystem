@@ -11,7 +11,7 @@ jobs:
   publish:
     name: "Publish to npmjs.com"
     runs-on: ubuntu-latest
-    if: github.repository == 'lanekassen/designsystem' && github.ref == 'refs/heads/main'
+    if: github.repository == 'lanekassen/designsystem'
     permissions:
       id-token: write # Required for OIDC
     concurrency:
@@ -39,12 +39,14 @@ jobs:
         run: pnpm install --frozen-lockfile
         shell: bash
 
-      - name: Build
-        run: pnpm build
-        shell: bash
-
       - name: Publish
-        run: pnpm changeset publish
-        shell: bash
+        uses: changesets/action@63a615b9cd06ba9a3e6d13796c7fbcb080a60a0b # v1.8.0
+        with:
+          publish: pnpm publish-packages
+          # Trenger å eksplisitt sette denne for å unngå at den prøver å lage og pushe tags av seg selv
+          # https://github.com/changesets/action/issues/247#issuecomment-4456317151
+          createGithubReleases: false
         env:
-          NPM_TOKEN: "" # https://github.com/changesets/changesets/issues/1152#issuecomment-3190884868
+          # Trenger å eksplisitt sette denne til en tom streng for å bruke Trusted Publishing
+          # https://github.com/changesets/changesets/issues/1152#issuecomment-3190884868
+          NPM_TOKEN: ""
