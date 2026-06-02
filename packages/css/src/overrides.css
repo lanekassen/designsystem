@@ -1,7 +1,3 @@
 @layer lkds, ds;
 
-@layer lkds {
-  [data-typography="secondary"] {
-    font-family: Rubik;
-  }
-}
+@layer lkds {}

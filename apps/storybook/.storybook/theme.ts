@@ -3,7 +3,7 @@ import { create } from 'storybook/theming';
 export const theme = create({
   brandTitle: 'Lånekassen Designsystem',
   brandImage: 'logo.svg',
-  fontBase: '"Roboto", sans-serif',
+  fontBase: '"Nunito Sans", sans-serif',
   // Colors
   base: 'light',
   colorSecondary: '#410464',
