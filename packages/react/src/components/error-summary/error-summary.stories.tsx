@@ -18,17 +18,19 @@ export const Preview: Story = (args) => (
     </ErrorSummary.Heading>
     <ErrorSummary.List>
       <ErrorSummary.Item>
-        <ErrorSummary.Link href="#">
+        <ErrorSummary.Link href="#link">
           Fødselsdato kan ikke være etter år 2005
         </ErrorSummary.Link>
       </ErrorSummary.Item>
       <ErrorSummary.Item>
-        <ErrorSummary.Link href="#">
+        <ErrorSummary.Link href="#link">
           Telefonnummer kan kun inneholde siffer
         </ErrorSummary.Link>
       </ErrorSummary.Item>
       <ErrorSummary.Item>
-        <ErrorSummary.Link href="#">E-post må være gyldig</ErrorSummary.Link>
+        <ErrorSummary.Link href="#link">
+          E-post må være gyldig
+        </ErrorSummary.Link>
       </ErrorSummary.Item>
     </ErrorSummary.List>
   </ErrorSummary>

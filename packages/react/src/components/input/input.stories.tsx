@@ -1,4 +1,3 @@
-import type { Size } from "@digdir/designsystemet-types";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import {
@@ -99,7 +98,7 @@ export const Controlled: StoryFn<typeof Input> = (args) => {
   );
 };
 
-const sizes: Size[] = ["sm", "md", "lg"];
+const sizes = ["sm", "md", "lg"] as const;
 const sizenames = {
   sm: "Small",
   md: "Medium",

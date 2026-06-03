@@ -10,7 +10,7 @@ import { Link, Paragraph } from "../";
 type Story = StoryObj<typeof Link>;
 
 const randomNum = Math.floor(Math.random() * 1000);
-const designsystemetLink = "https://designsystemet.no/?=" + randomNum;
+const designsystemetLink = `https://designsystemet.no/?=${randomNum}`;
 
 export default {
   title: "Komponenter/Link",

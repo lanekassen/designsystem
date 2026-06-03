@@ -345,7 +345,7 @@ export const InTableWithPagination: StoryFn<UseCheckboxGroupProps> = (args) => {
             <Table.Row key={user.id}>
               <Table.Cell>
                 <Checkbox
-                  aria-label={"Check " + user.id}
+                  aria-label={`Check ${user.id}`}
                   {...getCheckboxProps({
                     value: user.id.toString(),
                   })}

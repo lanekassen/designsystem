@@ -260,16 +260,16 @@ export const WithTooltipAndLink: Story = (args) => (
       <legend>Link expandable</legend>
       <AvatarStack {...args} expandable="fixed">
         <Avatar aria-label="profile picture a" asChild>
-          <a href="#">{cat1Img}</a>
+          <a href="#link">{cat1Img}</a>
         </Avatar>
         <Avatar aria-label="profile picture b" asChild>
-          <a href="#">{cat1Img}</a>
+          <a href="#link">{cat1Img}</a>
         </Avatar>
         <Avatar aria-label="profile picture c" asChild>
-          <a href="#">{cat3Img}</a>
+          <a href="#link">{cat3Img}</a>
         </Avatar>
         <Avatar aria-label="profile picture d" asChild>
-          <a href="#">{cat4Img}</a>
+          <a href="#link">{cat4Img}</a>
         </Avatar>
       </AvatarStack>
     </fieldset>
@@ -280,22 +280,22 @@ export const WithTooltipAndLink: Story = (args) => (
       <AvatarStack {...args} overlap={20}>
         <Tooltip content="Ola Nordmann">
           <Avatar aria-label="profile picture a" asChild>
-            <a href="#">{cat1Img}</a>
+            <a href="#link">{cat1Img}</a>
           </Avatar>
         </Tooltip>
         <Tooltip content="Kari Nordmann">
           <Avatar aria-label="profile picture b" asChild>
-            <a href="#">{cat4Img}</a>
+            <a href="#link">{cat4Img}</a>
           </Avatar>
         </Tooltip>
         <Tooltip content="Person 2">
           <Avatar aria-label="profile picture c" asChild>
-            <a href="#">{cat3Img}</a>
+            <a href="#link">{cat3Img}</a>
           </Avatar>
         </Tooltip>
         <Tooltip content="Person 3">
           <Avatar aria-label="profile picture d" asChild>
-            <a href="#">BR</a>
+            <a href="#link">BR</a>
           </Avatar>
         </Tooltip>
       </AvatarStack>

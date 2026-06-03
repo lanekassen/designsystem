@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "@digdir/designsystemet-react": "^1.14.0",
-    "@digdir/designsystemet-types": "^1.14.0",
     "@digdir/designsystemet-web": "^1.14.0",
     "@lanekassen/ds-css": "workspace:*",
     "@navikt/aksel-icons": "^8.10.5",
