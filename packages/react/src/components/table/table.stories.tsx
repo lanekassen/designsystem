@@ -1,15 +1,13 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { useState } from 'react';
-
-import type { TableHeaderCellProps } from '../';
-
-import { Checkbox, Table, Textfield } from '../';
-import { useCheckboxGroup } from '@digdir/designsystemet-react';
+import { useCheckboxGroup } from "@digdir/designsystemet-react";
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { useState } from "react";
+import type { TableHeaderCellProps } from "../";
+import { Checkbox, Table, Textfield } from "../";
 
 type Story = StoryFn<typeof Table>;
 
 export default {
-  title: 'Komponenter/Table',
+  title: "Komponenter/Table",
   component: Table,
 } as Meta;
 
@@ -57,38 +55,38 @@ Preview.args = {
 export const Numbers: Story = (args) => (
   <Table
     style={{
-      tableLayout: 'fixed',
-      fontVariantNumeric: 'tabular-nums',
+      tableLayout: "fixed",
+      fontVariantNumeric: "tabular-nums",
     }}
     {...args}
   >
     <caption>Antall søknader per måned</caption>
     <Table.Head>
       <Table.Row>
-        <Table.HeaderCell scope='col'>Måned</Table.HeaderCell>
-        <Table.HeaderCell scope='col' style={{ textAlign: 'right' }}>
+        <Table.HeaderCell scope="col">Måned</Table.HeaderCell>
+        <Table.HeaderCell scope="col" style={{ textAlign: "right" }}>
           2023
         </Table.HeaderCell>
-        <Table.HeaderCell scope='col' style={{ textAlign: 'right' }}>
+        <Table.HeaderCell scope="col" style={{ textAlign: "right" }}>
           2024
         </Table.HeaderCell>
       </Table.Row>
     </Table.Head>
     <Table.Body>
       <Table.Row>
-        <Table.HeaderCell scope='row'>Januar</Table.HeaderCell>
-        <Table.Cell style={{ textAlign: 'right' }}>1 230</Table.Cell>
-        <Table.Cell style={{ textAlign: 'right' }}>1 450</Table.Cell>
+        <Table.HeaderCell scope="row">Januar</Table.HeaderCell>
+        <Table.Cell style={{ textAlign: "right" }}>1 230</Table.Cell>
+        <Table.Cell style={{ textAlign: "right" }}>1 450</Table.Cell>
       </Table.Row>
       <Table.Row>
-        <Table.HeaderCell scope='row'>Februar</Table.HeaderCell>
-        <Table.Cell style={{ textAlign: 'right' }}>980</Table.Cell>
-        <Table.Cell style={{ textAlign: 'right' }}>1 120</Table.Cell>
+        <Table.HeaderCell scope="row">Februar</Table.HeaderCell>
+        <Table.Cell style={{ textAlign: "right" }}>980</Table.Cell>
+        <Table.Cell style={{ textAlign: "right" }}>1 120</Table.Cell>
       </Table.Row>
       <Table.Row>
-        <Table.HeaderCell scope='row'>Mars</Table.HeaderCell>
-        <Table.Cell style={{ textAlign: 'right' }}>1 150</Table.Cell>
-        <Table.Cell style={{ textAlign: 'right' }}>1 300</Table.Cell>
+        <Table.HeaderCell scope="row">Mars</Table.HeaderCell>
+        <Table.Cell style={{ textAlign: "right" }}>1 150</Table.Cell>
+        <Table.Cell style={{ textAlign: "right" }}>1 300</Table.Cell>
       </Table.Row>
     </Table.Body>
   </Table>
@@ -102,27 +100,27 @@ Numbers.args = {
 const dummyData = [
   {
     id: 1,
-    navn: 'Lise Nordmann',
-    epost: 'lise@nordmann.no',
-    telefon: '22345678',
+    navn: "Lise Nordmann",
+    epost: "lise@nordmann.no",
+    telefon: "22345678",
   },
   {
     id: 2,
-    navn: 'Kari Nordmann',
-    epost: 'kari@nordmann.no',
-    telefon: '87654321',
+    navn: "Kari Nordmann",
+    epost: "kari@nordmann.no",
+    telefon: "87654321",
   },
   {
     id: 3,
-    navn: 'Ola Nordmann',
-    epost: 'ola@nordmann.no',
-    telefon: '32345678',
+    navn: "Ola Nordmann",
+    epost: "ola@nordmann.no",
+    telefon: "32345678",
   },
   {
     id: 4,
-    navn: 'Per Nordmann',
-    epost: 'per@nordmann.no',
-    telefon: '12345678',
+    navn: "Per Nordmann",
+    epost: "per@nordmann.no",
+    telefon: "12345678",
   },
 ];
 
@@ -131,18 +129,18 @@ export const Sortable: Story = (args) => {
     keyof (typeof dummyData)[0] | null
   >(null);
   const [sortDirection, setSortDirection] =
-    useState<TableHeaderCellProps['sort']>(undefined);
+    useState<TableHeaderCellProps["sort"]>(undefined);
 
   const handleSort = (field: keyof (typeof dummyData)[0]) => {
-    if (sortField === field && sortDirection === 'descending') {
+    if (sortField === field && sortDirection === "descending") {
       setSortField(null);
       setSortDirection(undefined);
     } else {
       setSortField(field);
       setSortDirection(
-        sortField === field && sortDirection === 'ascending'
-          ? 'descending'
-          : 'ascending',
+        sortField === field && sortDirection === "ascending"
+          ? "descending"
+          : "ascending",
       );
     }
   };
@@ -150,9 +148,9 @@ export const Sortable: Story = (args) => {
   const sortedData = [...dummyData].sort((a, b) => {
     if (sortField === null) return 0;
     if (a[sortField] < b[sortField])
-      return sortDirection === 'ascending' ? -1 : 1;
+      return sortDirection === "ascending" ? -1 : 1;
     if (a[sortField] > b[sortField])
-      return sortDirection === 'ascending' ? 1 : -1;
+      return sortDirection === "ascending" ? 1 : -1;
     return 0;
   });
 
@@ -161,15 +159,15 @@ export const Sortable: Story = (args) => {
       <Table.Head>
         <Table.Row>
           <Table.HeaderCell
-            sort={sortField === 'navn' ? sortDirection : 'none'}
-            onClick={() => handleSort('navn')}
+            sort={sortField === "navn" ? sortDirection : "none"}
+            onClick={() => handleSort("navn")}
           >
             Navn
           </Table.HeaderCell>
           <Table.HeaderCell>Epost</Table.HeaderCell>
           <Table.HeaderCell
-            sort={sortField === 'telefon' ? sortDirection : 'none'}
-            onClick={() => handleSort('telefon')}
+            sort={sortField === "telefon" ? sortDirection : "none"}
+            onClick={() => handleSort("telefon")}
           >
             Telefon
           </Table.HeaderCell>
@@ -190,7 +188,7 @@ export const Sortable: Story = (args) => {
 Sortable.parameters = {
   docs: {
     source: {
-      type: 'code',
+      type: "code",
     },
   },
 };
@@ -225,13 +223,13 @@ StickyHeader.args = {
 };
 
 StickyHeader.parameters = {
-  customStyles: { height: '280px', overflow: 'auto', padding: 0 },
+  customStyles: { height: "280px", overflow: "auto", padding: 0 },
 };
 
 export const WithFormElements: Story = (args) => {
   const { getCheckboxProps } = useCheckboxGroup({
-    name: 'my-checkbox',
-    value: ['Kari Nordmann'],
+    name: "my-checkbox",
+    value: ["Kari Nordmann"],
   });
 
   return (
@@ -240,7 +238,7 @@ export const WithFormElements: Story = (args) => {
         <Table.Row>
           <Table.HeaderCell>
             <Checkbox
-              aria-label='Velg alle ansatte'
+              aria-label="Velg alle ansatte"
               {...getCheckboxProps({ allowIndeterminate: true })}
             />
           </Table.HeaderCell>
@@ -250,7 +248,7 @@ export const WithFormElements: Story = (args) => {
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        {['Kari Nordmann', 'Ola Nordmann', 'Jens Nordmann'].map((row) => (
+        {["Kari Nordmann", "Ola Nordmann", "Jens Nordmann"].map((row) => (
           <Table.Row key={row}>
             <Table.Cell>
               <Checkbox
@@ -261,7 +259,7 @@ export const WithFormElements: Story = (args) => {
             <Table.Cell>{row}</Table.Cell>
             <Table.Cell>Rådgiver</Table.Cell>
             <Table.Cell>
-              <Textfield data-size='sm' aria-label={`Textfield ${row}`} />
+              <Textfield data-size="sm" aria-label={`Textfield ${row}`} />
             </Table.Cell>
           </Table.Row>
         ))}
@@ -272,7 +270,7 @@ export const WithFormElements: Story = (args) => {
 WithFormElements.parameters = {
   docs: {
     source: {
-      type: 'code',
+      type: "code",
     },
   },
 };
@@ -283,7 +281,7 @@ export const FixedTable: Story = (args) => {
     <Table
       {...args}
       style={{
-        tableLayout: 'fixed',
+        tableLayout: "fixed",
       }}
     >
       <Table.Head>
@@ -403,5 +401,5 @@ WithBorder.args = {
 };
 
 WithBorder.parameters = {
-  customStyles: { display: 'grid', gap: '1rem' },
+  customStyles: { display: "grid", gap: "1rem" },
 };

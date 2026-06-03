@@ -1,19 +1,19 @@
 import {
   Table,
   TableBody,
+  type TableBodyProps,
   TableCell,
+  type TableCellProps,
   TableFoot,
+  type TableFootProps,
   TableHead,
   TableHeaderCell,
-  TableRow,
-  type TableBodyProps,
-  type TableCellProps,
-  type TableFootProps,
   type TableHeaderCellProps,
   type TableHeadProps,
   type TableProps,
+  TableRow,
   type TableRowProps,
-} from '@digdir/designsystemet-react';
+} from "@digdir/designsystemet-react";
 
 export type {
   TableBodyProps,
@@ -24,4 +24,12 @@ export type {
   TableProps,
   TableRowProps,
 };
-export { Table, TableBody, TableCell, TableFoot, TableHead, TableHeaderCell, TableRow };
+export {
+  Table,
+  TableBody,
+  TableCell,
+  TableFoot,
+  TableHead,
+  TableHeaderCell,
+  TableRow,
+};

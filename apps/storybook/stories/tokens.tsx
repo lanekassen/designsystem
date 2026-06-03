@@ -1,5 +1,5 @@
-import { Card, Table } from "@lanekassen/ds-react";
 import css from "@lanekassen/ds-css/theme?raw";
+import { Card, Table } from "@lanekassen/ds-react";
 
 const toUpper = (str: string) => str.replace(/\b./g, (m) => m.toUpperCase());
 const toUnique = <T,>(arr: T[]): T[] => [...new Set(arr)];
@@ -16,8 +16,8 @@ const GROUPS = [
     "background",
     [
       ["default", ""],
-      ["tinted", ""]
-    ]
+      ["tinted", ""],
+    ],
   ],
   [
     "surface",
@@ -25,8 +25,8 @@ const GROUPS = [
       ["default", ""],
       ["tinted", ""],
       ["hover", ""],
-      ["active", ""]
-    ]
+      ["active", ""],
+    ],
   ],
   [
     "border",

@@ -1,20 +1,17 @@
 import { defineMain } from "@storybook/react-vite/node";
 
 const isFromDependency = (fileName: string) =>
-  fileName.includes('node_modules');
+  fileName.includes("node_modules");
 const isFromAllowedDependency = (fileName: string) =>
-  ['@digdir', '@lanekassen'].some((org) => fileName.includes(org));
+  ["@digdir", "@lanekassen"].some((org) => fileName.includes(org));
 
 export default defineMain({
   stories: [
     "../stories/**/*.mdx",
     "../../../packages/*/!(node_modules)/**/*.mdx",
-    "../../../packages/*/!(node_modules)/**/*.stories.@(ts|tsx)"
+    "../../../packages/*/!(node_modules)/**/*.stories.@(ts|tsx)",
   ],
-  addons: [
-    "@storybook/addon-docs",
-    "@storybook/addon-themes",
-  ],
+  addons: ["@storybook/addon-docs", "@storybook/addon-themes"],
   framework: "@storybook/react-vite",
   staticDirs: ["../assets"],
   features: {
@@ -24,13 +21,13 @@ export default defineMain({
     disableTelemetry: true,
   },
   typescript: {
-    reactDocgen: 'react-docgen-typescript',
+    reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
-      include: ['../../packages/react/src/**/*.tsx'],
-      tsconfigPath: '../../packages/react/tsconfig.json',
+      include: ["../../packages/react/src/**/*.tsx"],
+      tsconfigPath: "../../packages/react/tsconfig.json",
       propFilter: (prop) => {
         // Remove popovertarget prop which @digdir/designsystemet-react adds to all elements
-        if (prop.name === 'popovertarget') {
+        if (prop.name === "popovertarget") {
           return false;
         }
 

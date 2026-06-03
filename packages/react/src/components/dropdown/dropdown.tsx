@@ -1,18 +1,18 @@
 import {
   Dropdown,
   DropdownButton,
-  DropdownHeading,
-  DropdownItem,
-  DropdownList,
-  DropdownTrigger,
-  DropdownTriggerContext,
   type DropdownButtonProps,
+  DropdownHeading,
   type DropdownHeadingProps,
+  DropdownItem,
   type DropdownItemProps,
+  DropdownList,
   type DropdownListProps,
   type DropdownProps,
+  DropdownTrigger,
+  DropdownTriggerContext,
   type DropdownTriggerContextProps,
-} from '@digdir/designsystemet-react';
+} from "@digdir/designsystemet-react";
 
 export type {
   DropdownButtonProps,

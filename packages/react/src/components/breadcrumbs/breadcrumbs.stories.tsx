@@ -1,30 +1,30 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
+import type { Meta, StoryFn } from "@storybook/react-vite";
 
-import { Breadcrumbs } from '../';
+import { Breadcrumbs } from "../";
 
 export default {
-  title: 'Komponenter/Breadcrumbs',
+  title: "Komponenter/Breadcrumbs",
   component: Breadcrumbs,
 } as Meta;
 
 export const Preview: StoryFn<typeof Breadcrumbs> = (args) => (
   <>
-    <Breadcrumbs aria-label='Du er her:' {...args}>
-      <Breadcrumbs.Link href='#' aria-label='Tilbake til Nivå 3'>
+    <Breadcrumbs aria-label="Du er her:" {...args}>
+      <Breadcrumbs.Link href="#" aria-label="Tilbake til Nivå 3">
         Nivå 3
       </Breadcrumbs.Link>
       <Breadcrumbs.List>
         <Breadcrumbs.Item>
-          <Breadcrumbs.Link href='#'>Nivå 1</Breadcrumbs.Link>
+          <Breadcrumbs.Link href="#">Nivå 1</Breadcrumbs.Link>
         </Breadcrumbs.Item>
         <Breadcrumbs.Item>
-          <Breadcrumbs.Link href='#'>Nivå 2</Breadcrumbs.Link>
+          <Breadcrumbs.Link href="#">Nivå 2</Breadcrumbs.Link>
         </Breadcrumbs.Item>
         <Breadcrumbs.Item>
-          <Breadcrumbs.Link href='#'>Nivå 3</Breadcrumbs.Link>
+          <Breadcrumbs.Link href="#">Nivå 3</Breadcrumbs.Link>
         </Breadcrumbs.Item>
         <Breadcrumbs.Item>
-          <Breadcrumbs.Link href='#'>Nivå 4</Breadcrumbs.Link>
+          <Breadcrumbs.Link href="#">Nivå 4</Breadcrumbs.Link>
         </Breadcrumbs.Item>
       </Breadcrumbs.List>
     </Breadcrumbs>
@@ -32,19 +32,19 @@ export const Preview: StoryFn<typeof Breadcrumbs> = (args) => (
 );
 
 export const ListOnly: StoryFn<typeof Breadcrumbs> = () => (
-  <Breadcrumbs aria-label='Du er her:'>
+  <Breadcrumbs aria-label="Du er her:">
     <Breadcrumbs.List>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Nivå 1</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Nivå 1</Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Nivå 2</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Nivå 2</Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Nivå 3</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Nivå 3</Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Nivå 4</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Nivå 4</Breadcrumbs.Link>
       </Breadcrumbs.Item>
     </Breadcrumbs.List>
   </Breadcrumbs>
@@ -52,7 +52,7 @@ export const ListOnly: StoryFn<typeof Breadcrumbs> = () => (
 
 export const BackOnly: StoryFn<typeof Breadcrumbs> = () => (
   <Breadcrumbs>
-    <Breadcrumbs.Link href='#' aria-label='Tilbake til Nivå 3'>
+    <Breadcrumbs.Link href="#" aria-label="Tilbake til Nivå 3">
       Nivå 3
     </Breadcrumbs.Link>
   </Breadcrumbs>
@@ -61,38 +61,38 @@ export const BackOnly: StoryFn<typeof Breadcrumbs> = () => (
 export const LongItems: StoryFn<typeof Breadcrumbs> = (args) => (
   <Breadcrumbs {...args}>
     <Breadcrumbs.Link
-      href='#'
-      aria-label='Tilbake til helsesertifikat for sjømat'
+      href="#"
+      aria-label="Tilbake til helsesertifikat for sjømat"
     >
       Slik søker du om helsesertifikat for sjømat
     </Breadcrumbs.Link>
-    <Breadcrumbs.List aria-label='Du er her:'>
+    <Breadcrumbs.List aria-label="Du er her:">
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Hjem</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Hjem</Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>
+        <Breadcrumbs.Link href="#">
           Eksport til land utenfor EU/EØS
         </Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Eksport av mat og drikke</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Eksport av mat og drikke</Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Eksport av fisk og sjømat</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Eksport av fisk og sjømat</Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>
+        <Breadcrumbs.Link href="#">
           Veiledning om helsesertifikat for sjømat
         </Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>
+        <Breadcrumbs.Link href="#">
           Slik søker du om helsesertifikat for sjømat
         </Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>
+        <Breadcrumbs.Link href="#">
           Slik søker du om helsesertifikat i ny eksportløsning
         </Breadcrumbs.Link>
       </Breadcrumbs.Item>
@@ -101,22 +101,22 @@ export const LongItems: StoryFn<typeof Breadcrumbs> = (args) => (
 );
 
 export const MobileViewport: StoryFn<typeof Breadcrumbs> = (args) => (
-  <Breadcrumbs aria-label='Du er her:' {...args}>
-    <Breadcrumbs.Link href='#' aria-label='Tilbake til Nivå 3'>
+  <Breadcrumbs aria-label="Du er her:" {...args}>
+    <Breadcrumbs.Link href="#" aria-label="Tilbake til Nivå 3">
       Nivå 3
     </Breadcrumbs.Link>
     <Breadcrumbs.List>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Nivå 1</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Nivå 1</Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Nivå 2</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Nivå 2</Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Nivå 3</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Nivå 3</Breadcrumbs.Link>
       </Breadcrumbs.Item>
       <Breadcrumbs.Item>
-        <Breadcrumbs.Link href='#'>Nivå 4</Breadcrumbs.Link>
+        <Breadcrumbs.Link href="#">Nivå 4</Breadcrumbs.Link>
       </Breadcrumbs.Item>
     </Breadcrumbs.List>
   </Breadcrumbs>
@@ -124,6 +124,6 @@ export const MobileViewport: StoryFn<typeof Breadcrumbs> = (args) => (
 
 MobileViewport.parameters = {
   viewport: {
-    defaultViewport: '375px', // Large mobile default viewport
+    defaultViewport: "375px", // Large mobile default viewport
   },
 };

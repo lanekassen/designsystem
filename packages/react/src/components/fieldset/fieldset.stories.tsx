@@ -1,11 +1,11 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
+import type { Meta, StoryFn } from "@storybook/react-vite";
 
-import { Checkbox, Fieldset, Radio } from '../';
+import { Checkbox, Fieldset, Radio } from "../";
 
 type Story = StoryFn<typeof Fieldset>;
 
 export default {
-  title: 'Komponenter/Fieldset',
+  title: "Komponenter/Fieldset",
   component: Fieldset,
 } as Meta;
 
@@ -15,16 +15,16 @@ export const Preview: Story = (args) => (
     <Fieldset.Description>
       Valget vil hjelpe oss å forbedre innholdet vi viser deg.
     </Fieldset.Description>
-    <Radio label='Barsnesfjorden' name='radio' value='barsnesfjorden' />
-    <Radio label='Eidsfjorden' name='radio' value='eidsfjorden' />
-    <Radio label='Ingen av de' name='radio' value='ingen-av-de' />
+    <Radio label="Barsnesfjorden" name="radio" value="barsnesfjorden" />
+    <Radio label="Eidsfjorden" name="radio" value="eidsfjorden" />
+    <Radio label="Ingen av de" name="radio" value="ingen-av-de" />
   </Fieldset>
 );
 
 export const WithCheckbox: Story = (args) => (
   <Fieldset {...args}>
     <Fieldset.Legend>Godtar du vilkårene?</Fieldset.Legend>
-    <Checkbox label='Ja, jeg godtar' />
+    <Checkbox label="Ja, jeg godtar" />
   </Fieldset>
 );
 

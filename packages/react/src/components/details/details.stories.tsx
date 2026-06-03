@@ -1,14 +1,14 @@
-import { ChevronDownUpIcon, ChevronUpDownIcon } from '@navikt/aksel-icons';
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { useState } from 'react';
+import { ChevronDownUpIcon, ChevronUpDownIcon } from "@navikt/aksel-icons";
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { useState } from "react";
 
-import { Button, Card, Details, Heading, Link, Paragraph } from '../';
+import { Button, Card, Details, Heading, Link, Paragraph } from "../";
 
 export default {
-  title: 'Komponenter/Details',
+  title: "Komponenter/Details",
   component: Details,
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
 } as Meta;
 
@@ -27,15 +27,15 @@ export const Preview: StoryFn<typeof Details> = (args) => (
 );
 
 export const InCard: StoryFn<typeof Details> = () => (
-  <Card data-color='neutral'>
+  <Card data-color="neutral">
     <Details>
       <Details.Summary>Vedlegg</Details.Summary>
       <Details.Content>
         <Heading>
           <a
-            href='https://designsystemet.no'
-            target='_blank'
-            rel='noopener noreferrer'
+            href="https://designsystemet.no"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Heading with link
           </a>
@@ -47,9 +47,9 @@ export const InCard: StoryFn<typeof Details> = () => (
 );
 
 export const InCardNested: StoryFn<typeof Details> = () => (
-  <Card variant='tinted'>
+  <Card variant="tinted">
     <Heading>Test-kort</Heading>
-    <Card variant='default'>
+    <Card variant="default">
       <Details>
         <Details.Summary>Test</Details.Summary>
         <Details.Content>Test 2</Details.Content>
@@ -60,11 +60,9 @@ export const InCardNested: StoryFn<typeof Details> = () => (
 
 export const InCardWithColor: StoryFn<typeof Details> = () => (
   <>
-    <Card data-color='accent'>
+    <Card data-color="accent">
       <Details>
-        <Details.Summary>
-          Har du nedsatt funksjonsevne?
-        </Details.Summary>
+        <Details.Summary>Har du nedsatt funksjonsevne?</Details.Summary>
         <Details.Content>
           Hvis du har nedsatt funksjonsevne som gjør at du ikke kan jobbe ved
           siden av studiene, kan du få et tilleggsstipend på 4 668 kroner i
@@ -72,24 +70,22 @@ export const InCardWithColor: StoryFn<typeof Details> = () => (
         </Details.Content>
       </Details>
       <Details>
-        <Details.Summary>
-          Har du barn?
-        </Details.Summary>
+        <Details.Summary>Har du barn?</Details.Summary>
         <Details.Content>
           <Paragraph>
             Får du barn under studiene, eller innen syv måneder etter du har
             fullført en grad, kan du få foreldrestipend.
-            <Link href='https://lanekassen/nb-NO/dinesider'>Logg inn på Dine sider</Link>
+            <Link href="https://lanekassen/nb-NO/dinesider">
+              Logg inn på Dine sider
+            </Link>
           </Paragraph>
         </Details.Content>
       </Details>
     </Card>
     <br />
-    <Card data-color='accent' variant='tinted'>
+    <Card data-color="accent" variant="tinted">
       <Details>
-        <Details.Summary>
-          Har du nedsatt funksjonsevne?
-        </Details.Summary>
+        <Details.Summary>Har du nedsatt funksjonsevne?</Details.Summary>
         <Details.Content>
           Hvis du har nedsatt funksjonsevne som gjør at du ikke kan jobbe ved
           siden av studiene, kan du få et tilleggsstipend på 4 668 kroner i
@@ -97,14 +93,14 @@ export const InCardWithColor: StoryFn<typeof Details> = () => (
         </Details.Content>
       </Details>
       <Details>
-        <Details.Summary>
-          Har du barn?
-        </Details.Summary>
+        <Details.Summary>Har du barn?</Details.Summary>
         <Details.Content>
           <Paragraph>
             Får du barn under studiene, eller innen syv måneder etter du har
             fullført en grad, kan du få foreldrestipend.
-            <Link href='https://lanekassen/nb-NO/dinesider'>Logg inn på Dine sider</Link>
+            <Link href="https://lanekassen/nb-NO/dinesider">
+              Logg inn på Dine sider
+            </Link>
           </Paragraph>
         </Details.Content>
       </Details>
@@ -125,7 +121,7 @@ export const Controlled: StoryFn<typeof Details> = () => {
 
   return (
     <>
-      <Button variant='tertiary' onClick={toggleOpen} data-size='sm'>
+      <Button variant="tertiary" onClick={toggleOpen} data-size="sm">
         {isOpen ? (
           <>
             <ChevronDownUpIcon aria-hidden />

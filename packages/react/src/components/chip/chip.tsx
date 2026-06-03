@@ -1,14 +1,14 @@
 import {
   Chip,
   ChipButton,
-  ChipCheckbox,
-  ChipRadio,
-  ChipRemovable,
   type ChipButtonProps,
+  ChipCheckbox,
   type ChipCheckboxProps,
+  ChipRadio,
   type ChipRadioProps,
+  ChipRemovable,
   type ChipRemovableProps,
-} from '@digdir/designsystemet-react';
+} from "@digdir/designsystemet-react";
 
 export type {
   ChipButtonProps,

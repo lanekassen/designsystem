@@ -1,6 +1,11 @@
-import { FloppydiskIcon, PencilIcon } from '@navikt/aksel-icons';
-import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
-import { useMemo, useState } from 'react';
+import {
+  type UseCheckboxGroupProps,
+  useCheckboxGroup,
+  usePagination,
+} from "@digdir/designsystemet-react";
+import { FloppydiskIcon, PencilIcon } from "@navikt/aksel-icons";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
+import { useMemo, useState } from "react";
 import {
   Button,
   Checkbox,
@@ -11,40 +16,35 @@ import {
   Paragraph,
   Table,
   ValidationMessage,
-} from '../';
-import {
-  type UseCheckboxGroupProps,
-  useCheckboxGroup,
-  usePagination,
-} from '@digdir/designsystemet-react';
+} from "../";
 
 type Story = StoryObj<typeof Checkbox>;
 
 export default {
-  title: 'Komponenter/Checkbox',
+  title: "Komponenter/Checkbox",
   component: Checkbox,
 } as Meta;
 
 export const Preview: Story = {
   args: {
-    label: 'Checkbox label',
-    description: 'Description',
+    label: "Checkbox label",
+    description: "Description",
     disabled: false,
     readOnly: false,
-    value: 'value',
+    value: "value",
   },
 };
 
 export const AriaLabel: Story = {
   args: {
-    value: 'value',
-    'aria-label': 'Checkbox',
+    value: "value",
+    "aria-label": "Checkbox",
   },
 };
 
 export const Group: StoryFn<UseCheckboxGroupProps> = (args) => {
   const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
-    value: ['epost'],
+    value: ["epost"],
     ...args,
   });
 
@@ -56,18 +56,18 @@ export const Group: StoryFn<UseCheckboxGroupProps> = (args) => {
       <Fieldset.Description>
         Velg alle alternativene som er relevante for deg.
       </Fieldset.Description>
-      <Checkbox label='E-post' {...getCheckboxProps('epost')} />
-      <Checkbox label='Telefon' {...getCheckboxProps('telefon')} />
-      <Checkbox label='SMS' {...getCheckboxProps('sms')} />
+      <Checkbox label="E-post" {...getCheckboxProps("epost")} />
+      <Checkbox label="Telefon" {...getCheckboxProps("telefon")} />
+      <Checkbox label="SMS" {...getCheckboxProps("sms")} />
       <ValidationMessage {...validationMessageProps} />
     </Fieldset>
   );
 };
 
 Group.args = {
-  name: 'my-group',
+  name: "my-group",
   disabled: false,
-  error: '',
+  error: "",
 };
 
 export const OneOption: StoryFn<typeof Fieldset> = () => (
@@ -77,7 +77,7 @@ export const OneOption: StoryFn<typeof Fieldset> = () => (
       For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at
       du er myndig.
     </Fieldset.Description>
-    <Checkbox label='Jeg bekrefter at jeg er over 18 år' value='samtykke' />
+    <Checkbox label="Jeg bekrefter at jeg er over 18 år" value="samtykke" />
   </Fieldset>
 );
 
@@ -85,8 +85,8 @@ export const WithError = {
   render: Group,
   args: {
     ...Group.args,
-    name: 'my-error',
-    error: 'Du må velge minst to kontaktalternativ', // TODO: useCheckbox when hook is ready
+    name: "my-error",
+    error: "Du må velge minst to kontaktalternativ", // TODO: useCheckbox when hook is ready
   },
 };
 type Choices = {
@@ -96,14 +96,14 @@ type Choices = {
 };
 export const Controlled: StoryFn<UseCheckboxGroupProps> = (args, context) => {
   const choices: Choices = {
-    barnehage: { label: 'Barnehage' },
-    grunnskole: { label: 'Grunnskole' },
-    videregaende: { label: 'Videregående' },
+    barnehage: { label: "Barnehage" },
+    grunnskole: { label: "Grunnskole" },
+    videregaende: { label: "Videregående" },
   };
   const { getCheckboxProps, validationMessageProps, value, setValue } =
     useCheckboxGroup({
-      name: 'my-controlled',
-      value: ['barnehage', 'videregaende'],
+      name: "my-controlled",
+      value: ["barnehage", "videregaende"],
       ...args,
     });
 
@@ -130,9 +130,9 @@ export const Controlled: StoryFn<UseCheckboxGroupProps> = (args, context) => {
       <Divider />
       <Paragraph>(Annet innhold)</Paragraph>
       <Divider />
-      <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
+      <div style={{ display: "flex", gap: "var(--ds-size-2)" }}>
         <Paragraph>
-          {isFiltered ? 'Viser innhold for:' : 'Viser alt innhold'}
+          {isFiltered ? "Viser innhold for:" : "Viser alt innhold"}
         </Paragraph>
         {isFiltered &&
           value.map((v) => (
@@ -147,8 +147,8 @@ export const Controlled: StoryFn<UseCheckboxGroupProps> = (args, context) => {
       </div>
       {isFiltered && (
         <Button
-          style={{ width: 'fit-content' }}
-          variant='secondary'
+          style={{ width: "fit-content" }}
+          variant="secondary"
           onClick={() => setValue([])}
         >
           Tøm filtre
@@ -158,18 +158,18 @@ export const Controlled: StoryFn<UseCheckboxGroupProps> = (args, context) => {
   );
 };
 Controlled.parameters = {
-  layout: 'padded',
+  layout: "padded",
   customStyles: {
-    display: 'flex',
-    gap: 'var(--ds-size-4)',
-    flexDirection: 'column',
+    display: "flex",
+    gap: "var(--ds-size-4)",
+    flexDirection: "column",
   },
 };
 
 export const ReadOnly = {
   args: {
     ...Group.args,
-    name: 'my-readonly',
+    name: "my-readonly",
     readOnly: true,
   },
   render: Group,
@@ -178,7 +178,7 @@ export const ReadOnly = {
 export const Disabled = {
   args: {
     ...Preview.args,
-    name: 'my-disabled',
+    name: "my-disabled",
     disabled: true,
   },
   render: Group,
@@ -187,34 +187,34 @@ export const Disabled = {
 const tableData = [
   {
     id: 1,
-    navn: 'Lise Nordmann',
-    epost: 'lise@nordmann.no',
-    telefon: '68051156',
+    navn: "Lise Nordmann",
+    epost: "lise@nordmann.no",
+    telefon: "68051156",
   },
   {
     id: 2,
-    navn: 'Kari Nordmann',
-    epost: 'kari@nordmann.no',
-    telefon: '68059679',
+    navn: "Kari Nordmann",
+    epost: "kari@nordmann.no",
+    telefon: "68059679",
   },
   {
     id: 3,
-    navn: 'Ola Nordmann',
-    epost: 'ola@nordmann.no',
-    telefon: '68055731',
+    navn: "Ola Nordmann",
+    epost: "ola@nordmann.no",
+    telefon: "68055731",
   },
   {
     id: 4,
-    navn: 'Per Nordmann',
-    epost: 'per@nordmann.no',
-    telefon: '68059631',
+    navn: "Per Nordmann",
+    epost: "per@nordmann.no",
+    telefon: "68059631",
   },
 ];
 
 export const InTable: StoryFn<UseCheckboxGroupProps> = (args, context) => {
   const { getCheckboxProps } = useCheckboxGroup({
     name: context.id,
-    value: ['2', '3'],
+    value: ["2", "3"],
     ...args,
   });
 
@@ -222,7 +222,7 @@ export const InTable: StoryFn<UseCheckboxGroupProps> = (args, context) => {
     <Table>
       <colgroup>
         {/* ensure the first column only takes up the necessary space */}
-        <col style={{ width: '1px' }} />
+        <col style={{ width: "1px" }} />
         <col />
         <col />
       </colgroup>
@@ -230,10 +230,10 @@ export const InTable: StoryFn<UseCheckboxGroupProps> = (args, context) => {
         <Table.Row>
           <Table.HeaderCell>
             <Checkbox
-              aria-label='Velg alle'
+              aria-label="Velg alle"
               {...getCheckboxProps({
                 allowIndeterminate: true,
-                value: 'all',
+                value: "all",
               })}
             />
           </Table.HeaderCell>
@@ -263,14 +263,14 @@ export const InTable: StoryFn<UseCheckboxGroupProps> = (args, context) => {
 
 export const Conditional: StoryFn<UseCheckboxGroupProps> = (args) => {
   const { getCheckboxProps, validationMessageProps, value } = useCheckboxGroup({
-    value: ['epost'],
+    value: ["epost"],
     ...args,
   });
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      Dine kommunikasjonskanaler: {value.join(', ')}
+      Dine kommunikasjonskanaler: {value.join(", ")}
       {open ? (
         <>
           <Button onClick={() => setOpen(false)}>
@@ -283,14 +283,14 @@ export const Conditional: StoryFn<UseCheckboxGroupProps> = (args) => {
             <Fieldset.Description>
               Velg alle alternativene som er relevante for deg.
             </Fieldset.Description>
-            <Checkbox label='E-post' {...getCheckboxProps('epost')} />
-            <Checkbox label='Telefon' {...getCheckboxProps('telefon')} />
-            <Checkbox label='SMS' {...getCheckboxProps('sms')} />
+            <Checkbox label="E-post" {...getCheckboxProps("epost")} />
+            <Checkbox label="Telefon" {...getCheckboxProps("telefon")} />
+            <Checkbox label="SMS" {...getCheckboxProps("sms")} />
             <ValidationMessage {...validationMessageProps} />
           </Fieldset>
         </>
       ) : (
-        <Button onClick={() => setOpen(true)} variant='secondary'>
+        <Button onClick={() => setOpen(true)} variant="secondary">
           <PencilIcon aria-hidden /> Rediger
         </Button>
       )}
@@ -328,10 +328,10 @@ export const InTableWithPagination: StoryFn<UseCheckboxGroupProps> = (args) => {
           <Table.Row>
             <Table.HeaderCell>
               <Checkbox
-                aria-label='Select all'
+                aria-label="Select all"
                 {...getCheckboxProps({
                   allowIndeterminate: true,
-                  value: 'all',
+                  value: "all",
                 })}
               />
             </Table.HeaderCell>
@@ -345,7 +345,7 @@ export const InTableWithPagination: StoryFn<UseCheckboxGroupProps> = (args) => {
             <Table.Row key={user.id}>
               <Table.Cell>
                 <Checkbox
-                  aria-label={'Check ' + user.id}
+                  aria-label={"Check " + user.id}
                   {...getCheckboxProps({
                     value: user.id.toString(),
                   })}
@@ -367,7 +367,7 @@ export const InTableWithPagination: StoryFn<UseCheckboxGroupProps> = (args) => {
           </Pagination.Item>
           {pagination.pages.map(({ itemKey, buttonProps, page }) => (
             <Pagination.Item key={itemKey}>
-              {typeof page === 'number' && (
+              {typeof page === "number" && (
                 <Pagination.Button {...buttonProps} aria-label={`Side ${page}`}>
                   {page}
                 </Pagination.Button>
@@ -390,9 +390,9 @@ export const ContentEx1: StoryFn<typeof Fieldset> = () => (
     <Fieldset.Legend>
       Hvor lenge har du jobbet i det offentlige?
     </Fieldset.Legend>
-    <Checkbox label='I under ett år' value='0-3' />
-    <Checkbox label='Fra 1-3 år' value='1-3' />
-    <Checkbox label='Mer enn 3 år' value='3+' />
+    <Checkbox label="I under ett år" value="0-3" />
+    <Checkbox label="Fra 1-3 år" value="1-3" />
+    <Checkbox label="Mer enn 3 år" value="3+" />
   </Fieldset>
 );
 
@@ -400,30 +400,30 @@ export const ContentEx2: StoryFn<typeof Fieldset> = () => (
   <Fieldset>
     <Fieldset.Legend>Hva liker du best med jobben din?</Fieldset.Legend>
     <Checkbox
-      label='Jeg liker å jobbe med selvstendige oppgaver'
-      value='selvstendige'
+      label="Jeg liker å jobbe med selvstendige oppgaver"
+      value="selvstendige"
     />
-    <Checkbox label='Jeg elsker møter' value='moter' />
-    <Checkbox label='Lunsjen er best' value='lunsj' />
-    <Checkbox label='Jeg liker å møte kolleger' value='kolleger' />
+    <Checkbox label="Jeg elsker møter" value="moter" />
+    <Checkbox label="Lunsjen er best" value="lunsj" />
+    <Checkbox label="Jeg liker å møte kolleger" value="kolleger" />
   </Fieldset>
 );
 
 export const ContentEx3: StoryFn<typeof Fieldset> = () => (
   <Fieldset>
     <Fieldset.Legend>Hva liker du best med jobben din?</Fieldset.Legend>
-    <Checkbox label='Selvstendige oppgaver' value='selvstendige' />
-    <Checkbox label='Møter' value='moter' />
-    <Checkbox label='Lunsj' value='lunsj' />
-    <Checkbox label='Kolleger' value='kolleger' />
+    <Checkbox label="Selvstendige oppgaver" value="selvstendige" />
+    <Checkbox label="Møter" value="moter" />
+    <Checkbox label="Lunsj" value="lunsj" />
+    <Checkbox label="Kolleger" value="kolleger" />
   </Fieldset>
 );
 export const hiddenLegend: StoryFn<typeof Fieldset> = () => (
   <Fieldset>
-    <Fieldset.Legend className='ds-sr-only'>
+    <Fieldset.Legend className="ds-sr-only">
       Tekst for skjermleser
     </Fieldset.Legend>
-    <Checkbox label='Test av skjermleser legend' value='selvstendige' />
+    <Checkbox label="Test av skjermleser legend" value="selvstendige" />
   </Fieldset>
 );
 
@@ -432,42 +432,42 @@ export const Outline: StoryFn<UseCheckboxGroupProps> = () => (
     <Fieldset>
       <Fieldset.Legend>Using variant="outline"</Fieldset.Legend>
       <Checkbox
-        variant='outline'
-        label='with description'
-        description='description text'
-        value='description'
+        variant="outline"
+        label="with description"
+        description="description text"
+        value="description"
       />
-      <Checkbox variant='outline' label='Checked' value='checked' checked />
+      <Checkbox variant="outline" label="Checked" value="checked" checked />
       <Checkbox
-        variant='outline'
-        label='with error state'
-        value='error'
-        error='the error message'
+        variant="outline"
+        label="with error state"
+        value="error"
+        error="the error message"
       />
       <Checkbox
-        variant='outline'
+        variant="outline"
         disabled
-        label='disabled not checked'
-        value='disabled'
+        label="disabled not checked"
+        value="disabled"
       />
       <Checkbox
-        variant='outline'
+        variant="outline"
         disabled
-        label='disabled'
-        value='disabled'
+        label="disabled"
+        value="disabled"
         checked
       />
       <Checkbox
-        variant='outline'
+        variant="outline"
         readOnly
-        label='readonly not checked'
-        value='readonly2'
+        label="readonly not checked"
+        value="readonly2"
       />
       <Checkbox
-        variant='outline'
+        variant="outline"
         readOnly
-        label='readonly checked'
-        value='readonly'
+        label="readonly checked"
+        value="readonly"
         checked
       />
     </Fieldset>

@@ -1,5 +1,5 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { useState } from 'react';
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { useState } from "react";
 import {
   Button,
   Divider,
@@ -9,17 +9,17 @@ import {
   Tag,
   Textarea,
   ValidationMessage,
-} from '../';
+} from "../";
 
 type Story = StoryFn<typeof Field>;
 
 export default {
-  title: 'Komponenter/Field',
+  title: "Komponenter/Field",
   component: Field,
   parameters: {
     customStyles: {
       maxWidth: 600,
-      width: '90vw',
+      width: "90vw",
     },
   },
 } as Meta;
@@ -31,7 +31,7 @@ export const Preview: Story = () => {
       <Field.Description>
         Etternavn kan ikke inneholde mellomrom
       </Field.Description>
-      <Input defaultValue='Nordmann Svenske' />
+      <Input defaultValue="Nordmann Svenske" />
       <ValidationMessage>
         Du kan ikke ha mellomrom i etternavnet ditt
       </ValidationMessage>
@@ -59,7 +59,7 @@ export const Counter: Story = () => (
 );
 
 export const CounterControlled: Story = () => {
-  const [value, setValue] = useState('Nordmann');
+  const [value, setValue] = useState("Nordmann");
 
   return (
     <>
@@ -72,21 +72,21 @@ export const CounterControlled: Story = () => {
         />
         <Field.Counter limit={10} />
       </Field>
-      <Button onClick={() => setValue('Hei')}>Set verdi "hei"</Button>
+      <Button onClick={() => setValue("Hei")}>Set verdi "hei"</Button>
     </>
   );
 };
 
 export const Position: Story = () => (
   <>
-    <Field position='end'>
+    <Field position="end">
       <Label>Flymodus</Label>
-      <Input type='checkbox' role='switch' />
+      <Input type="checkbox" role="switch" />
     </Field>
     <Divider />
-    <Field position='end'>
+    <Field position="end">
       <Label>Lydløs</Label>
-      <Input type='checkbox' role='switch' />
+      <Input type="checkbox" role="switch" />
     </Field>
   </>
 );
@@ -96,7 +96,7 @@ Position.decorators = [
     <div
       style={{
         maxWidth: 200,
-        margin: 'auto',
+        margin: "auto",
       }}
     >
       <Story />
@@ -108,7 +108,7 @@ export const Optional: Story = () => (
   <Field>
     <Label>
       Hvor bor du?
-      <Tag data-color='info' style={{ marginInlineStart: 'var(--ds-size-2)' }}>
+      <Tag data-color="info" style={{ marginInlineStart: "var(--ds-size-2)" }}>
         Valgfritt
       </Tag>
     </Label>

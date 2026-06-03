@@ -1,15 +1,15 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { Progress } from './progress';
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { Progress } from "./progress";
 
 export default {
-  title: 'Komponenter/Progress',
+  title: "Komponenter/Progress",
   component: Progress,
   args: {
     min: 0,
     max: 100,
   },
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
 } satisfies Meta;
 

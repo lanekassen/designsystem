@@ -1,75 +1,75 @@
-import '@digdir/designsystemet-web';
+import "@digdir/designsystemet-web";
 
-export type { AlertProps } from './alert/alert';
-export { Alert } from './alert/alert';
+export type { AlertProps } from "./alert/alert";
+export { Alert } from "./alert/alert";
 
-export type { AvatarProps } from './avatar/avatar';
-export { Avatar } from './avatar/avatar';
+export type { AvatarProps } from "./avatar/avatar";
+export { Avatar } from "./avatar/avatar";
 
-export type { AvatarStackProps } from './avatar-stack/avatar-stack';
-export { EXPERIMENTAL_AvatarStack } from './avatar-stack/avatar-stack';
+export type { AvatarStackProps } from "./avatar-stack/avatar-stack";
+export { EXPERIMENTAL_AvatarStack } from "./avatar-stack/avatar-stack";
 
-export type { BadgePositionProps, BadgeProps } from './badge/badge';
-export { Badge, BadgePosition } from './badge/badge';
+export type { BadgePositionProps, BadgeProps } from "./badge/badge";
+export { Badge, BadgePosition } from "./badge/badge";
 
 export type {
   BreadcrumbsItemProps,
   BreadcrumbsLinkProps,
   BreadcrumbsListProps,
   BreadcrumbsProps,
-} from './breadcrumbs/breadcrumbs';
+} from "./breadcrumbs/breadcrumbs";
 export {
   Breadcrumbs,
   BreadcrumbsItem,
   BreadcrumbsLink,
   BreadcrumbsList,
-} from './breadcrumbs/breadcrumbs';
+} from "./breadcrumbs/breadcrumbs";
 
-export type { ButtonProps } from './button/button';
-export { Button } from './button/button';
+export type { ButtonProps } from "./button/button";
+export { Button } from "./button/button";
 
-export type { CardBlockProps, CardProps } from './card/card';
-export { Card, CardBlock } from './card/card';
+export type { CardBlockProps, CardProps } from "./card/card";
+export { Card, CardBlock } from "./card/card";
 
-export type { CheckboxProps } from './checkbox/checkbox';
-export { Checkbox } from './checkbox/checkbox';
+export type { CheckboxProps } from "./checkbox/checkbox";
+export { Checkbox } from "./checkbox/checkbox";
 
 export type {
   ChipButtonProps,
   ChipCheckboxProps,
   ChipRadioProps,
   ChipRemovableProps,
-} from './chip/chip';
+} from "./chip/chip";
 export {
   Chip,
   ChipButton,
   ChipCheckbox,
   ChipRadio,
   ChipRemovable,
-} from './chip/chip';
+} from "./chip/chip";
 
 export type {
   DetailsContentProps,
   DetailsProps,
   DetailsSummaryProps,
-} from './details/details';
-export { Details, DetailsContent, DetailsSummary } from './details/details';
+} from "./details/details";
+export { Details, DetailsContent, DetailsSummary } from "./details/details";
 
 export type {
   DialogBlockProps,
   DialogProps,
   DialogTriggerContextProps,
   DialogTriggerProps,
-} from './dialog/dialog';
+} from "./dialog/dialog";
 export {
   Dialog,
   DialogBlock,
   DialogTrigger,
   DialogTriggerContext,
-} from './dialog/dialog';
+} from "./dialog/dialog";
 
-export type { DividerProps } from './divider/divider';
-export { Divider } from './divider/divider';
+export type { DividerProps } from "./divider/divider";
+export { Divider } from "./divider/divider";
 
 export type {
   DropdownButtonProps,
@@ -78,7 +78,7 @@ export type {
   DropdownListProps,
   DropdownProps,
   DropdownTriggerContextProps,
-} from './dropdown/dropdown';
+} from "./dropdown/dropdown";
 export {
   Dropdown,
   DropdownButton,
@@ -87,7 +87,7 @@ export {
   DropdownList,
   DropdownTrigger,
   DropdownTriggerContext,
-} from './dropdown/dropdown';
+} from "./dropdown/dropdown";
 
 export type {
   ErrorSummaryHeadingProps,
@@ -95,14 +95,14 @@ export type {
   ErrorSummaryLinkProps,
   ErrorSummaryListProps,
   ErrorSummaryProps,
-} from './error-summary/error-summary';
+} from "./error-summary/error-summary";
 export {
   ErrorSummary,
   ErrorSummaryHeading,
   ErrorSummaryItem,
   ErrorSummaryLink,
   ErrorSummaryList,
-} from './error-summary/error-summary';
+} from "./error-summary/error-summary";
 
 export type {
   FieldAffixesProps,
@@ -110,93 +110,106 @@ export type {
   FieldCounterProps,
   FieldDescriptionProps,
   FieldProps,
-} from './field/field';
+} from "./field/field";
 export {
   Field,
   FieldAffix,
   FieldAffixes,
   FieldCounter,
   FieldDescription,
-} from './field/field';
+} from "./field/field";
 
 export type {
   FieldsetDescriptionProps,
   FieldsetLegendProps,
   FieldsetProps,
-} from './fieldset/fieldset';
-export { Fieldset, FieldsetDescription, FieldsetLegend } from './fieldset/fieldset';
+} from "./fieldset/fieldset";
+export {
+  Fieldset,
+  FieldsetDescription,
+  FieldsetLegend,
+} from "./fieldset/fieldset";
 
-export type { HeadingProps } from './heading/heading';
-export { Heading } from './heading/heading';
+export type { HeadingProps } from "./heading/heading";
+export { Heading } from "./heading/heading";
 
-export type { InputProps } from './input/input';
-export { Input } from './input/input';
+export type { InputProps } from "./input/input";
+export { Input } from "./input/input";
 
-export type { LabelProps } from './label/label';
-export { Label } from './label/label';
+export type { LabelProps } from "./label/label";
+export { Label } from "./label/label";
 
-export type { LinkProps } from './link/link';
-export { Link } from './link/link';
+export type { LinkProps } from "./link/link";
+export { Link } from "./link/link";
 
 export type {
   ListItemProps,
   ListOrderedProps,
   ListUnorderedProps,
-} from './list/list';
-export { List, ListItem, ListOrdered, ListUnordered } from './list/list';
+} from "./list/list";
+export { List, ListItem, ListOrdered, ListUnordered } from "./list/list";
 
 export type {
   PaginationButtonProps,
   PaginationItemProps,
   PaginationListProps,
   PaginationProps,
-} from './pagination/pagination';
+} from "./pagination/pagination";
 export {
   Pagination,
   PaginationButton,
   PaginationItem,
   PaginationList,
-} from './pagination/pagination';
+} from "./pagination/pagination";
 
-export type { ParagraphProps } from './paragraph/paragraph';
-export { Paragraph } from './paragraph/paragraph';
+export type { ParagraphProps } from "./paragraph/paragraph";
+export { Paragraph } from "./paragraph/paragraph";
 
 export type {
   PopoverProps,
   PopoverTriggerContextProps,
   PopoverTriggerProps,
-} from './popover/popover';
-export { Popover, PopoverTrigger, PopoverTriggerContext } from './popover/popover';
+} from "./popover/popover";
+export {
+  Popover,
+  PopoverTrigger,
+  PopoverTriggerContext,
+} from "./popover/popover";
 
-export type { ProgressProps } from './progress/progress';
-export { Progress } from './progress/progress';
+export type { ProgressProps } from "./progress/progress";
+export { Progress } from "./progress/progress";
 
-export type { RadioProps } from './radio/radio';
-export { Radio } from './radio/radio';
+export type { RadioProps } from "./radio/radio";
+export { Radio } from "./radio/radio";
 
 export type {
   SearchButtonProps,
   SearchClearProps,
   SearchInputProps,
   SearchProps,
-} from './search/search';
-export { Search, SearchButton, SearchClear, SearchInput } from './search/search';
+} from "./search/search";
+export {
+  Search,
+  SearchButton,
+  SearchClear,
+  SearchInput,
+} from "./search/search";
 
 export type {
   SelectOptgroupProps,
   SelectOptionProps,
   SelectProps,
-} from './select/select';
-export { Select, SelectOptgroup, SelectOption } from './select/select';
+} from "./select/select";
+export { Select, SelectOptgroup, SelectOption } from "./select/select";
 
-export type { SkeletonProps } from './skeleton/skeleton';
-export { Skeleton } from './skeleton/skeleton';
+export type { SkeletonProps } from "./skeleton/skeleton";
+export { Skeleton } from "./skeleton/skeleton";
 
-export type { SkipLinkProps } from './skip-link/skip-link';
-export { SkipLink } from './skip-link/skip-link';
+export type { SkipLinkProps } from "./skip-link/skip-link";
+export { SkipLink } from "./skip-link/skip-link";
 
-export type { SpinnerProps } from './spinner/spinner';
-export { Spinner } from './spinner/spinner';
+export type { SpinnerProps } from "./spinner/spinner";
+export { Spinner } from "./spinner/spinner";
 
 export type {
   SuggestionClearProps,
@@ -208,7 +221,7 @@ export type {
   SuggestionOptionProps,
   SuggestionProps,
   SuggestionSingleProps,
-} from './suggestion/suggestion';
+} from "./suggestion/suggestion";
 export {
   EXPERIMENTAL_Suggestion,
   EXPERIMENTAL_SuggestionClear,
@@ -216,10 +229,10 @@ export {
   EXPERIMENTAL_SuggestionInput,
   EXPERIMENTAL_SuggestionList,
   EXPERIMENTAL_SuggestionOption,
-} from './suggestion/suggestion';
+} from "./suggestion/suggestion";
 
-export type { SwitchProps } from './switch/switch';
-export { Switch } from './switch/switch';
+export type { SwitchProps } from "./switch/switch";
+export { Switch } from "./switch/switch";
 
 export type {
   TableBodyProps,
@@ -229,7 +242,7 @@ export type {
   TableHeadProps,
   TableProps,
   TableRowProps,
-} from './table/table';
+} from "./table/table";
 export {
   Table,
   TableBody,
@@ -238,30 +251,33 @@ export {
   TableHead,
   TableHeaderCell,
   TableRow,
-} from './table/table';
+} from "./table/table";
 
 export type {
   TabsListProps,
   TabsPanelProps,
   TabsProps,
   TabsTabProps,
-} from './tabs/tabs';
-export { Tabs, TabsList, TabsPanel, TabsTab } from './tabs/tabs';
+} from "./tabs/tabs";
+export { Tabs, TabsList, TabsPanel, TabsTab } from "./tabs/tabs";
 
-export type { TagProps } from './tag/tag';
-export { Tag } from './tag/tag';
+export type { TagProps } from "./tag/tag";
+export { Tag } from "./tag/tag";
 
-export type { TextareaProps } from './textarea/textarea';
-export { Textarea } from './textarea/textarea';
+export type { TextareaProps } from "./textarea/textarea";
+export { Textarea } from "./textarea/textarea";
 
-export type { TextfieldProps } from './textfield/textfield';
-export { Textfield } from './textfield/textfield';
+export type { TextfieldProps } from "./textfield/textfield";
+export { Textfield } from "./textfield/textfield";
 
-export type { ToggleGroupItemProps, ToggleGroupProps } from './toggle-group/toggle-group';
-export { ToggleGroup, ToggleGroupItem } from './toggle-group/toggle-group';
+export type {
+  ToggleGroupItemProps,
+  ToggleGroupProps,
+} from "./toggle-group/toggle-group";
+export { ToggleGroup, ToggleGroupItem } from "./toggle-group/toggle-group";
 
-export type { TooltipProps } from './tooltip/tooltip';
-export { Tooltip } from './tooltip/tooltip';
+export type { TooltipProps } from "./tooltip/tooltip";
+export { Tooltip } from "./tooltip/tooltip";
 
-export type { ValidationMessageProps } from './validation-message/validation-message';
-export { ValidationMessage } from './validation-message/validation-message';
+export type { ValidationMessageProps } from "./validation-message/validation-message";
+export { ValidationMessage } from "./validation-message/validation-message";

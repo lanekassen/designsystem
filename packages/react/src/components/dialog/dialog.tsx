@@ -1,13 +1,13 @@
 import {
   Dialog,
   DialogBlock,
-  DialogTrigger,
-  DialogTriggerContext,
   type DialogBlockProps,
   type DialogProps,
+  DialogTrigger,
+  DialogTriggerContext,
   type DialogTriggerContextProps,
   type DialogTriggerProps,
-} from '@digdir/designsystemet-react';
+} from "@digdir/designsystemet-react";
 
 export type {
   DialogBlockProps,

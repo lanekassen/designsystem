@@ -1,25 +1,24 @@
-import { ChevronDownIcon, ChevronUpIcon, LinkIcon } from '@navikt/aksel-icons';
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { useState } from 'react';
-import { expect, userEvent, waitFor, within } from 'storybook/test';
-import { Button, Dialog } from '../';
-import { Dropdown } from '../';
+import { ChevronDownIcon, ChevronUpIcon, LinkIcon } from "@navikt/aksel-icons";
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { useState } from "react";
+import { expect, userEvent, waitFor, within } from "storybook/test";
+import { Button, Dialog, Dropdown } from "../";
 
 export default {
-  title: 'Komponenter/Dropdown',
+  title: "Komponenter/Dropdown",
   component: Dropdown,
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
     customStyles: {
-      display: 'grid',
-      alignItems: 'start',
-      justifyItems: 'center',
+      display: "grid",
+      alignItems: "start",
+      justifyItems: "center",
       story: {
-        boxSizing: 'border-box',
-        width: '100cqw',
-        height: '100cqh',
-        maxWidth: '800px',
-        maxHeight: '800px',
+        boxSizing: "border-box",
+        width: "100cqw",
+        height: "100cqh",
+        maxWidth: "800px",
+        maxHeight: "800px",
       },
     },
     chromatic: {
@@ -28,12 +27,12 @@ export default {
   },
   play: async (ctx) => {
     // When not in Docs mode, automatically open the dropdown
-    const button = within(ctx.canvasElement).getByRole('button');
+    const button = within(ctx.canvasElement).getByRole("button");
     await new Promise((resolve) => {
-      document.addEventListener('animationend', resolve, true); // <== Merk at vi binder event-listener før vi gjør click
+      document.addEventListener("animationend", resolve, true); // <== Merk at vi binder event-listener før vi gjør click
       userEvent.click(button);
     });
-    const dropdown = ctx.canvasElement.querySelector('.ds-dropdown');
+    const dropdown = ctx.canvasElement.querySelector(".ds-dropdown");
     await expect(dropdown).toBeInTheDocument();
     await waitFor(() => expect(dropdown).toBeVisible());
   },
@@ -42,7 +41,7 @@ export default {
 export const Preview: StoryFn<typeof Dropdown> = (args) => {
   return (
     <Dropdown.TriggerContext>
-      <Dropdown.Trigger data-color={args['data-color']}>
+      <Dropdown.Trigger data-color={args["data-color"]}>
         Dropdown
       </Dropdown.Trigger>
       <Dropdown {...args}>
@@ -70,7 +69,7 @@ export const Preview: StoryFn<typeof Dropdown> = (args) => {
 };
 
 Preview.args = {
-  placement: 'bottom-end',
+  placement: "bottom-end",
 };
 
 export const Icons: StoryFn<typeof Dropdown> = (args) => {
@@ -82,9 +81,9 @@ export const Icons: StoryFn<typeof Dropdown> = (args) => {
           <Dropdown.Item>
             <Dropdown.Button asChild>
               <a
-                href='https://github.com/digdir/designsystemet'
-                target='_blank'
-                rel='noreferrer'
+                href="https://github.com/digdir/designsystemet"
+                target="_blank"
+                rel="noreferrer"
               >
                 <LinkIcon aria-hidden />
                 Github
@@ -94,9 +93,9 @@ export const Icons: StoryFn<typeof Dropdown> = (args) => {
           <Dropdown.Item>
             <Dropdown.Button asChild>
               <a
-                href='https://designsystemet.no'
-                target='_blank'
-                rel='noreferrer'
+                href="https://designsystemet.no"
+                target="_blank"
+                rel="noreferrer"
               >
                 <LinkIcon aria-hidden />
                 Designsystemet.no
@@ -145,9 +144,9 @@ export const ControlledExternalTrigger: StoryFn<typeof Dropdown> = () => {
 
   return (
     <>
-      <Button popovertarget='dropdown'>Dropdown</Button>
+      <Button popovertarget="dropdown">Dropdown</Button>
       <Dropdown
-        id='dropdown'
+        id="dropdown"
         open={open}
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
@@ -165,8 +164,8 @@ export const ControlledExternalTrigger: StoryFn<typeof Dropdown> = () => {
 export const WithoutTrigger: StoryFn<typeof Dropdown> = () => {
   return (
     <>
-      <Button popovertarget='dropdown'>Dropdown</Button>
-      <Dropdown id='dropdown'>
+      <Button popovertarget="dropdown">Dropdown</Button>
+      <Dropdown id="dropdown">
         <Dropdown.List>
           <Dropdown.Item>
             <Dropdown.Button>Item</Dropdown.Button>
@@ -180,7 +179,7 @@ export const WithoutTrigger: StoryFn<typeof Dropdown> = () => {
 export const WithNestedDialog: StoryFn<typeof Dropdown> = (args) => {
   return (
     <Dropdown.TriggerContext>
-      <Dropdown.Trigger data-color={args['data-color']}>
+      <Dropdown.Trigger data-color={args["data-color"]}>
         Dropdown
       </Dropdown.Trigger>
       <Dropdown {...args}>
@@ -201,23 +200,23 @@ export const WithNestedDialog: StoryFn<typeof Dropdown> = (args) => {
 
 WithNestedDialog.play = async (ctx) => {
   // When not in Docs mode, automatically open the dropdown
-  const button = within(ctx.canvasElement).getByRole('button');
+  const button = within(ctx.canvasElement).getByRole("button");
   await new Promise((resolve) => {
-    document.addEventListener('animationend', resolve, true); // <== Merk at vi binder event-listener før vi gjør click
+    document.addEventListener("animationend", resolve, true); // <== Merk at vi binder event-listener før vi gjør click
     userEvent.click(button);
   });
-  const dropdown = ctx.canvasElement.querySelector('.ds-dropdown');
+  const dropdown = ctx.canvasElement.querySelector(".ds-dropdown");
   await expect(dropdown).toBeInTheDocument();
   await waitFor(() => expect(dropdown).toBeVisible());
 
   if (!dropdown) return;
 
   /* open dialog */
-  const dialogButton = within(dropdown as HTMLElement).getByRole('button', {
-    name: 'Dialog',
+  const dialogButton = within(dropdown as HTMLElement).getByRole("button", {
+    name: "Dialog",
   });
   userEvent.click(dialogButton);
-  const dialog = ctx.canvasElement.querySelector('.ds-dialog');
+  const dialog = ctx.canvasElement.querySelector(".ds-dialog");
   await expect(dialog).toBeInTheDocument();
   await waitFor(() => expect(dialog).toBeVisible());
 };

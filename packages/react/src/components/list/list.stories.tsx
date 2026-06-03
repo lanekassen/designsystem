@@ -1,11 +1,10 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { Heading, Link } from '../';
-import { List } from '../';
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { Heading, Link, List } from "../";
 
 type Story = StoryFn<typeof List.Unordered>;
 
 export default {
-  title: 'Komponenter/List',
+  title: "Komponenter/List",
   component: List.Unordered,
 } satisfies Meta;
 
@@ -21,8 +20,8 @@ export const Sortert: StoryFn<typeof List.Ordered> = (args) => (
   <>
     <Heading
       level={2}
-      data-size='xs'
-      style={{ marginBottom: 'var(--ds-size-2)' }}
+      data-size="xs"
+      style={{ marginBottom: "var(--ds-size-2)" }}
     >
       Slik gjør du:
     </Heading>
@@ -48,8 +47,8 @@ export const Usortert: Story = (args) => (
   <>
     <Heading
       level={2}
-      data-size='xs'
-      style={{ marginBottom: 'var(--ds-size-2)' }}
+      data-size="xs"
+      style={{ marginBottom: "var(--ds-size-2)" }}
     >
       Foreningen har plikt til å ha revisor hvis de har
     </Heading>
@@ -68,17 +67,17 @@ export const Usortert: Story = (args) => (
 
 export const Innrykk: Story = (args) => (
   <>
-    <Heading style={{ marginBlockEnd: 'var(--ds-size-3)' }}>
+    <Heading style={{ marginBlockEnd: "var(--ds-size-3)" }}>
       Slik søker du:
     </Heading>
     <List.Unordered {...args}>
       <List.Item>
         <Heading
           level={3}
-          data-size='xs'
-          style={{ marginBlock: 'var(--ds-size-2)' }}
+          data-size="xs"
+          style={{ marginBlock: "var(--ds-size-2)" }}
         >
-          {' '}
+          {" "}
           Forbered dokumentasjon
         </Heading>
         <List.Ordered>
@@ -90,10 +89,10 @@ export const Innrykk: Story = (args) => (
       <List.Item>
         <Heading
           level={3}
-          data-size='xs'
-          style={{ marginBlock: 'var(--ds-size-2)' }}
+          data-size="xs"
+          style={{ marginBlock: "var(--ds-size-2)" }}
         >
-          {' '}
+          {" "}
           Fyll ut søknadsskjema
         </Heading>
         <List.Unordered>
@@ -105,8 +104,8 @@ export const Innrykk: Story = (args) => (
       <List.Item>
         <Heading
           level={3}
-          data-size='xs'
-          style={{ marginBlock: 'var(--ds-size-2)' }}
+          data-size="xs"
+          style={{ marginBlock: "var(--ds-size-2)" }}
         >
           Send inn og følg opp
         </Heading>
@@ -121,25 +120,25 @@ export const Innrykk: Story = (args) => (
 );
 
 export const ListeMedLenker: Story = (args) => (
-  <List.Unordered {...args} style={{ listStyle: 'none', padding: 0 }}>
+  <List.Unordered {...args} style={{ listStyle: "none", padding: 0 }}>
     <List.Item>
       <Link
-        href='https://www.designsystemet.no/no/fundamentals'
-        target='_blank'
+        href="https://www.designsystemet.no/no/fundamentals"
+        target="_blank"
       >
         Grunnleggende
       </Link>
     </List.Item>
     <List.Item>
       <Link
-        href='https://www.designsystemet.no/no/best-practices'
-        target='_blank'
+        href="https://www.designsystemet.no/no/best-practices"
+        target="_blank"
       >
         God praksis
       </Link>
     </List.Item>
     <List.Item>
-      <Link href='https://www.designsystemet.no/no/patterns' target='_blank'>
+      <Link href="https://www.designsystemet.no/no/patterns" target="_blank">
         Mønstre
       </Link>
     </List.Item>
@@ -151,32 +150,32 @@ export const ListeMedOverskrift: Story = () => (
     <div>
       <Heading
         level={2}
-        data-size='2xs'
-        style={{ marginBottom: 'var(--ds-size-2)' }}
+        data-size="2xs"
+        style={{ marginBottom: "var(--ds-size-2)" }}
       >
         List sm og Heading 2xs
       </Heading>
-      <List.Unordered data-size='sm'>
+      <List.Unordered data-size="sm">
         <List.Item>
           <Link
-            href='https://www.designsystemet.no/no/fundamentals'
-            target='_blank'
+            href="https://www.designsystemet.no/no/fundamentals"
+            target="_blank"
           >
             Grunnleggende
           </Link>
         </List.Item>
         <List.Item>
           <Link
-            href='https://www.designsystemet.no/no/best-practices'
-            target='_blank'
+            href="https://www.designsystemet.no/no/best-practices"
+            target="_blank"
           >
             God praksis
           </Link>
         </List.Item>
         <List.Item>
           <Link
-            href='https://www.designsystemet.no/no/patterns'
-            target='_blank'
+            href="https://www.designsystemet.no/no/patterns"
+            target="_blank"
           >
             Mønstre
           </Link>
@@ -186,32 +185,32 @@ export const ListeMedOverskrift: Story = () => (
     <div>
       <Heading
         level={2}
-        data-size='xs'
-        style={{ marginBottom: 'var(--ds-size-2)' }}
+        data-size="xs"
+        style={{ marginBottom: "var(--ds-size-2)" }}
       >
         List md og Heading xs
       </Heading>
-      <List.Unordered data-size='md'>
+      <List.Unordered data-size="md">
         <List.Item>
           <Link
-            href='https://www.designsystemet.no/no/fundamentals'
-            target='_blank'
+            href="https://www.designsystemet.no/no/fundamentals"
+            target="_blank"
           >
             Grunnleggende
           </Link>
         </List.Item>
         <List.Item>
           <Link
-            href='https://www.designsystemet.no/no/best-practices'
-            target='_blank'
+            href="https://www.designsystemet.no/no/best-practices"
+            target="_blank"
           >
             God praksis
           </Link>
         </List.Item>
         <List.Item>
           <Link
-            href='https://www.designsystemet.no/no/patterns'
-            target='_blank'
+            href="https://www.designsystemet.no/no/patterns"
+            target="_blank"
           >
             Mønstre
           </Link>
@@ -221,32 +220,32 @@ export const ListeMedOverskrift: Story = () => (
     <div>
       <Heading
         level={2}
-        data-size='sm'
-        style={{ marginBottom: 'var(--ds-size-2)' }}
+        data-size="sm"
+        style={{ marginBottom: "var(--ds-size-2)" }}
       >
         List lg og Heading sm
       </Heading>
-      <List.Unordered data-size='lg'>
+      <List.Unordered data-size="lg">
         <List.Item>
           <Link
-            href='https://www.designsystemet.no/no/fundamentals'
-            target='_blank'
+            href="https://www.designsystemet.no/no/fundamentals"
+            target="_blank"
           >
             Grunnleggende
           </Link>
         </List.Item>
         <List.Item>
           <Link
-            href='https://www.designsystemet.no/no/best-practices'
-            target='_blank'
+            href="https://www.designsystemet.no/no/best-practices"
+            target="_blank"
           >
             God praksis
           </Link>
         </List.Item>
         <List.Item>
           <Link
-            href='https://www.designsystemet.no/no/patterns'
-            target='_blank'
+            href="https://www.designsystemet.no/no/patterns"
+            target="_blank"
           >
             Mønstre
           </Link>
@@ -257,5 +256,5 @@ export const ListeMedOverskrift: Story = () => (
 );
 
 ListeMedOverskrift.parameters = {
-  customStyles: { display: 'flex', gap: '2rem', flexWrap: 'wrap' },
+  customStyles: { display: "flex", gap: "2rem", flexWrap: "wrap" },
 };
