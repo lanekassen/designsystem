@@ -1,5 +1,11 @@
 # @lanekassen/ds-css
 
+## 0.2.1
+
+### Patch Changes
+
+- Move @digdir/designsystemet-css to devDependencies as all CSS is bundled into our package
+
 ## 0.2.0
 
 ### Minor Changes

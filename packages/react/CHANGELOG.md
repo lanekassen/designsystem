@@ -1,5 +1,12 @@
 # @lanekassen/ds-react
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @lanekassen/ds-css@0.2.1
+
 ## 0.2.0
 
 ### Patch Changes
