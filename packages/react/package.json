@@ -34,20 +34,20 @@
     "build": "tsc --build && tsdown"
   },
   "dependencies": {
-    "@digdir/designsystemet-react": "^1.14.0",
-    "@digdir/designsystemet-web": "^1.14.0",
+    "@digdir/designsystemet-react": "^1.15.0",
+    "@digdir/designsystemet-web": "^1.15.0",
     "@lanekassen/ds-css": "workspace:*",
-    "@navikt/aksel-icons": "^8.10.5",
+    "@navikt/aksel-icons": "^8.11.1",
     "@u-elements/u-progress": "^1.0.1",
     "clsx": "^2.1.1"
   },
   "devDependencies": {
-    "@storybook/react-vite": "^10.4.0",
-    "@types/react": "^19.2.14",
+    "@storybook/react-vite": "^10.4.1",
+    "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.6",
-    "storybook": "^10.4.0",
-    "tsdown": "^0.22.0",
+    "storybook": "^10.4.1",
+    "tsdown": "^0.22.1",
     "typescript": "^6.0.3"
   },
   "peerDependencies": {
