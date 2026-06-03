@@ -1,33 +1,35 @@
 .lkds-progress {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-1);
-
+  color: var(--ds-color-accent-base-default);
+  height: var(--ds-size-3);
+  border-radius: var(--ds-border-radius-full);
+  border: 0;
   /**
-   * u-progress has it's own way of styling, check out the docs
-   * https://u-elements.github.io/u-elements/elements/u-progress#styling
+   * By default u-progress uses background, which we want to override completely
+   * This is why this isn't background-color
    */
-  & u-progress {
-    color: var(--ds-color-accent-base-default);
-    height: var(--ds-size-3);
-    border-radius: var(--ds-border-radius-full);
-    border-color: transparent;
-    /**
-     * By default u-progress uses background, which we want to override completely
-     * This is why this isn't background-color
-     */
-    background: var(--ds-color-neutral-surface-tinted);
+  background: var(--ds-color-neutral-surface-tinted);
 
-    &:not([value]) {
-      &::before {
-        color: var(--ds-color-accent-base-default);
-        width: 100%;
-        transition: width 1s ease;
-        animation: indeterminateAnimation 1.5s infinite
-          cubic-bezier(0.65, 0.815, 0.735, 0.395);
-      }
+  &::before {
+    border-radius: inherit;
+  }
+
+  &:not([hidden]) {
+    display: block;
+  }
+
+  &:not([value]) {
+    &::before {
+      color: var(--ds-color-accent-base-default);
+      width: 100%;
+      transition: width 1s ease;
+      animation: indeterminateAnimation 1.5s infinite
+        cubic-bezier(0.65, 0.815, 0.735, 0.395);
     }
   }
+}
+
+.ds-label > .lkds-progress {
+  margin-top: var(--ds-size-2);
 }
 
 @keyframes indeterminateAnimation {
