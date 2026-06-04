@@ -1,32 +1,30 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { useRef, useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
-
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { useRef, useState } from "react";
+import { expect, userEvent, within } from "storybook/test";
 import {
   Button,
+  Dialog,
   Field,
   Heading,
   Label,
   Paragraph,
   EXPERIMENTAL_Suggestion as Suggestion,
   Textfield,
-} from '../';
-
-import { Dialog } from '../';
+} from "../";
 
 export default {
-  title: 'Komponenter/Dialog',
+  title: "Komponenter/Dialog",
   component: Dialog,
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
     customStyles: {
-      display: 'grid',
-      alignItems: 'start',
-      justifyItems: 'center',
+      display: "grid",
+      alignItems: "start",
+      justifyItems: "center",
       story: {
-        boxSizing: 'border-box',
-        height: '100cqh',
-        width: '100cqw',
+        boxSizing: "border-box",
+        height: "100cqh",
+        width: "100cqw",
       },
     },
     chromatic: {
@@ -44,33 +42,33 @@ export default {
   play: async (ctx) => {
     // When not in Docs mode, automatically open the dialog
     const canvas = within(ctx.canvasElement);
-    const button = canvas.getByRole('button');
+    const button = canvas.getByRole("button");
     await userEvent.click(button);
     // Wait for dialog to fade in before running tests
-    const dialog = await canvas.findByRole('dialog');
+    const dialog = await canvas.findByRole("dialog");
 
     await expect(dialog).toBeInTheDocument();
-    await expect(dialog).toHaveAttribute('open');
+    await expect(dialog).toHaveAttribute("open");
   },
 } satisfies Meta;
 
 export const Preview: StoryFn<typeof Dialog> = (args) => (
   <Dialog.TriggerContext>
     <Dialog.Trigger
-      data-color={args['data-color']}
-      data-size={args['data-size']}
+      data-color={args["data-color"]}
+      data-size={args["data-size"]}
     >
       Open Dialog
     </Dialog.Trigger>
     <Dialog {...args} onClose={console.log}>
-      <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
+      <Heading style={{ marginBottom: "var(--ds-size-2)" }}>
         Dialog header
       </Heading>
-      <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
+      <Paragraph style={{ marginBottom: "var(--ds-size-2)" }}>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
         doloremque obcaecati assumenda odio ducimus sunt et.
       </Paragraph>
-      <Paragraph data-size='sm'>Dialog footer</Paragraph>
+      <Paragraph data-size="sm">Dialog footer</Paragraph>
     </Dialog>
   </Dialog.TriggerContext>
 );
@@ -84,11 +82,11 @@ export const WithoutDialogTriggerContext: StoryFn<typeof Dialog> = (args) => {
         Open Dialog with ref
       </Button>
       <Dialog {...args} ref={dialogRef}>
-        <Paragraph data-size='sm'>Dialog subtittel</Paragraph>
-        <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
+        <Paragraph data-size="sm">Dialog subtittel</Paragraph>
+        <Heading style={{ marginBottom: "var(--ds-size-2)" }}>
           Dialog header
         </Heading>
-        <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
+        <Paragraph style={{ marginBottom: "var(--ds-size-2)" }}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
           doloremque obcaecati assumenda odio ducimus sunt et.
         </Paragraph>
@@ -107,11 +105,11 @@ export const DialogWithOpenProp: StoryFn<typeof Dialog> = (args) => {
         Open Dialog with prop
       </Button>
       <Dialog {...args} open={open} onClose={() => setOpen(false)}>
-        <Paragraph data-size='sm'>Dialog subtittel</Paragraph>
-        <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
+        <Paragraph data-size="sm">Dialog subtittel</Paragraph>
+        <Heading style={{ marginBottom: "var(--ds-size-2)" }}>
           Dialog header
         </Heading>
-        <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
+        <Paragraph style={{ marginBottom: "var(--ds-size-2)" }}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
           doloremque obcaecati assumenda odio ducimus sunt et.
         </Paragraph>
@@ -127,7 +125,7 @@ export const BackdropClosedbyAny: StoryFn<typeof Dialog> = () => {
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
-      <Dialog ref={dialogRef} closedby='any'>
+      <Dialog ref={dialogRef} closedby="any">
         <Heading>
           Dialog med <code>closedby="any"</code> og en veldig lang tittel
         </Heading>
@@ -135,7 +133,7 @@ export const BackdropClosedbyAny: StoryFn<typeof Dialog> = () => {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
           doloremque obcaecati assumenda odio ducimus sunt et.
         </Paragraph>
-        <Paragraph data-size='sm'>Dialog footer</Paragraph>
+        <Paragraph data-size="sm">Dialog footer</Paragraph>
       </Dialog>
     </Dialog.TriggerContext>
   );
@@ -146,11 +144,11 @@ export const WithHeaderAndFooter: StoryFn<typeof Dialog> = () => (
     <Dialog.Trigger>Open Dialog</Dialog.Trigger>
     <Dialog>
       <Dialog.Block>
-        <Paragraph data-size='sm'>Her er det også divider</Paragraph>
+        <Paragraph data-size="sm">Her er det også divider</Paragraph>
         <Heading>Vi kan legge divider under header</Heading>
       </Dialog.Block>
       <Dialog.Block>
-        <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
+        <Paragraph style={{ marginBottom: "var(--ds-size-2)" }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
           sodales eros justo. Aenean non mi ipsum. Cras viverra elit nec
           vulputate mattis. Nunc placerat euismod pulvinar. Sed nec fringilla
@@ -180,32 +178,32 @@ export const WithHeaderAndFooter: StoryFn<typeof Dialog> = () => (
 
 export const DialogWithForm: StoryFn<typeof Dialog> = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
       <Dialog
         ref={dialogRef}
-        onClose={() => setInput('')}
-        closedby='any'
-        id='my-dialog'
+        onClose={() => setInput("")}
+        closedby="any"
+        id="my-dialog"
       >
-        <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
+        <Heading style={{ marginBottom: "var(--ds-size-2)" }}>
           Dialog med skjema
         </Heading>
         <Textfield
           // @ts-expect-error We want the native "autofocus" and Reacts onMount smartness (see https://react.dev/reference/react-dom/components/input#input)
-          autofocus='true'
-          label='Navn'
+          autofocus="true"
+          label="Navn"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
         <div
           style={{
-            display: 'flex',
-            gap: 'var(--ds-size-4)',
-            marginTop: 'var(--ds-size-4)',
+            display: "flex",
+            gap: "var(--ds-size-4)",
+            marginTop: "var(--ds-size-4)",
           }}
         >
           <Button
@@ -216,7 +214,7 @@ export const DialogWithForm: StoryFn<typeof Dialog> = () => {
           >
             Send inn skjema
           </Button>
-          <Button variant='secondary' command='close' commandfor='my-dialog'>
+          <Button variant="secondary" command="close" commandfor="my-dialog">
             Avbryt
           </Button>
         </div>
@@ -229,7 +227,7 @@ export const DialogWithMaxWidth: StoryFn<typeof Dialog> = () => (
   <Dialog.TriggerContext>
     <Dialog.Trigger>Open Dialog</Dialog.Trigger>
     <Dialog style={{ maxWidth: 1200 }}>
-      <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
+      <Heading style={{ marginBottom: "var(--ds-size-2)" }}>
         Dialog med en veldig lang bredde
       </Heading>
       <Paragraph>
@@ -241,13 +239,13 @@ export const DialogWithMaxWidth: StoryFn<typeof Dialog> = () => (
 );
 
 const DATA_PLACES = [
-  'Sogndal',
-  'Oslo',
-  'Brønnøysund',
-  'Stavanger',
-  'Trondheim',
-  'Bergen',
-  'Lillestrøm',
+  "Sogndal",
+  "Oslo",
+  "Brønnøysund",
+  "Stavanger",
+  "Trondheim",
+  "Bergen",
+  "Lillestrøm",
 ];
 
 export const DialogWithSuggestion: StoryFn<typeof Dialog> = () => {
@@ -256,7 +254,7 @@ export const DialogWithSuggestion: StoryFn<typeof Dialog> = () => {
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
-      <Dialog style={{ overflow: 'visible' }} ref={dialogRef} id='my-dialog'>
+      <Dialog style={{ overflow: "visible" }} ref={dialogRef} id="my-dialog">
         <Dialog.Block>
           <Heading>Dialog med suggestion</Heading>
         </Dialog.Block>
@@ -279,7 +277,7 @@ export const DialogWithSuggestion: StoryFn<typeof Dialog> = () => {
           </Field>
         </Dialog.Block>
         <Dialog.Block>
-          <Button variant='secondary' command='close' commandfor='my-dialog'>
+          <Button variant="secondary" command="close" commandfor="my-dialog">
             Avbryt
           </Button>
         </Dialog.Block>
@@ -294,7 +292,7 @@ DialogWithSuggestion.parameters = {
     config: {
       rules: [
         {
-          id: 'aria-allowed-role',
+          id: "aria-allowed-role",
           enabled: false,
         },
       ],
@@ -305,10 +303,10 @@ DialogWithSuggestion.parameters = {
 export const DialogNonModal: StoryFn<typeof Dialog> = () => {
   return (
     <>
-      <Button command='--show-non-modal' commandfor='my-non-modal'>
+      <Button command="--show-non-modal" commandfor="my-non-modal">
         Open Dialog
       </Button>
-      <Dialog id='my-non-modal'>
+      <Dialog id="my-non-modal">
         <Heading>Non-modal dialog</Heading>
         <Paragraph>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
@@ -322,14 +320,14 @@ export const DialogNonModalTrigger: StoryFn<typeof Dialog> = () => (
   <Dialog.TriggerContext>
     <Dialog.Trigger>Open non-modal dialog</Dialog.Trigger>
     <Dialog modal={false}>
-      <Heading style={{ marginBottom: 'var(--ds-size-4)' }}>
+      <Heading style={{ marginBottom: "var(--ds-size-4)" }}>
         Let us know
       </Heading>
-      <Paragraph style={{ marginBottom: 'var(--ds-size-4)' }}>
+      <Paragraph style={{ marginBottom: "var(--ds-size-4)" }}>
         We’d love to hear your feedback on our new design system. Please let us
         know what you think!
       </Paragraph>
-      <Button variant='primary'>Give feedback</Button>
+      <Button variant="primary">Give feedback</Button>
     </Dialog>
   </Dialog.TriggerContext>
 );
@@ -352,13 +350,13 @@ export const DialogNonModalRef: StoryFn<typeof Dialog> = () => {
 };
 
 DialogNonModal.parameters = {
-  customStyles: { padding: 'var(--ds-size-18)' },
+  customStyles: { padding: "var(--ds-size-18)" },
 };
 export const DialogPlacementTop: StoryFn<typeof Dialog> = () => {
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
-      <Dialog placement='top'>
+      <Dialog placement="top">
         <Dialog.Block>
           <Paragraph>This is a Dialog with placement="top"</Paragraph>
         </Dialog.Block>
@@ -370,7 +368,7 @@ export const DialogPlacementBottom: StoryFn<typeof Dialog> = () => {
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
-      <Dialog placement='bottom'>
+      <Dialog placement="bottom">
         <Dialog.Block>
           <Paragraph>This is a Dialog with placement="bottom"</Paragraph>
         </Dialog.Block>
@@ -382,7 +380,7 @@ export const DialogPlacementLeft: StoryFn<typeof Dialog> = () => {
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
-      <Dialog placement='left'>
+      <Dialog placement="left">
         <Dialog.Block>
           <Paragraph>This is a Dialog with placement="left"</Paragraph>
         </Dialog.Block>
@@ -394,7 +392,7 @@ export const DialogPlacementRight: StoryFn<typeof Dialog> = () => {
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
-      <Dialog placement='left'>
+      <Dialog placement="left">
         <Dialog.Block>
           <Paragraph>This is a Dialog with placement="right"</Paragraph>
         </Dialog.Block>

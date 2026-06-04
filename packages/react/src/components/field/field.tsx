@@ -2,14 +2,14 @@ import {
   Field,
   FieldAffix,
   FieldAffixes,
-  FieldCounter,
-  FieldDescription,
   type FieldAffixesProps,
   type FieldAffixProps,
+  FieldCounter,
   type FieldCounterProps,
+  FieldDescription,
   type FieldDescriptionProps,
   type FieldProps,
-} from '@digdir/designsystemet-react';
+} from "@digdir/designsystemet-react";
 
 export type {
   FieldAffixesProps,

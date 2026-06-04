@@ -1,11 +1,10 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { Paragraph } from '../';
-import { Divider } from '../';
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { Divider, Paragraph } from "../";
 
 type Story = StoryFn<typeof Divider>;
 
 export default {
-  title: 'Komponenter/Divider',
+  title: "Komponenter/Divider",
   component: Divider,
 } as Meta;
 

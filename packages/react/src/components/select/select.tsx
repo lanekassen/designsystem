@@ -1,11 +1,11 @@
 import {
   Select,
   SelectOptgroup,
-  SelectOption,
   type SelectOptgroupProps,
+  SelectOption,
   type SelectOptionProps,
   type SelectProps,
-} from '@digdir/designsystemet-react';
+} from "@digdir/designsystemet-react";
 
 export type { SelectOptgroupProps, SelectOptionProps, SelectProps };
 export { Select, SelectOptgroup, SelectOption };

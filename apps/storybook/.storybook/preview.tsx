@@ -2,20 +2,20 @@ import "@lanekassen/ds-css";
 import "@lanekassen/ds-css/theme";
 import "./preview.css";
 
+import { Link, List, Paragraph } from "@lanekassen/ds-react";
 import { MDXProvider } from "@mdx-js/react";
-import { definePreview, type ReactRenderer } from "@storybook/react-vite";
 import addonDocs from "@storybook/addon-docs";
-import addonThemes, { withThemeByDataAttribute } from "@storybook/addon-themes";
 import {
   DocsContainer,
   type DocsContainerProps,
   Unstyled,
 } from "@storybook/addon-docs/blocks";
-import { Link, List, Paragraph } from "@lanekassen/ds-react";
-import componentStyles from "./docs/components.module.css";
-import { HeadingSelfLink } from "./docs/components";
-import { theme } from "./theme";
+import addonThemes, { withThemeByDataAttribute } from "@storybook/addon-themes";
+import { definePreview, type ReactRenderer } from "@storybook/react-vite";
 import { useEffect, useRef } from "react";
+import { HeadingSelfLink } from "./docs/components";
+import componentStyles from "./docs/components.module.css";
+import { theme } from "./theme";
 
 const defaultTheme = "light";
 

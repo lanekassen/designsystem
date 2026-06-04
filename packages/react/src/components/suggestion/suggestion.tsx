@@ -14,7 +14,7 @@ import {
   type SuggestionOptionProps,
   type SuggestionProps,
   type SuggestionSingleProps,
-} from '@digdir/designsystemet-react';
+} from "@digdir/designsystemet-react";
 
 export type {
   SuggestionClearProps,

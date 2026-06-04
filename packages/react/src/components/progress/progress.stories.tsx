@@ -1,18 +1,36 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { Progress } from './progress';
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Label } from "../../";
+import { Progress } from "./progress";
 
-export default {
-  title: 'Komponenter/Progress',
+const meta = {
+  title: "Komponenter/Progress",
   component: Progress,
-  args: {
-    min: 0,
-    max: 100,
-  },
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
 } satisfies Meta;
 
-export const Standard = { args: { value: 50 } };
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Indeterminate = {};
+export const Preview: Story = {
+  args: {
+    value: 33,
+    max: 100,
+  },
+  render: ({ ...args }) => (
+    <Label>
+      Framdrift
+      <Progress {...args} />
+    </Label>
+  ),
+};
+
+export const Indeterminate: Story = {
+  render: ({ ...args }) => (
+    <Label>
+      Ubestemt
+      <Progress {...args} />
+    </Label>
+  ),
+};

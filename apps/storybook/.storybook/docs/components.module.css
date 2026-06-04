@@ -1,3 +1,8 @@
+.headingLink {
+  font-size: 0.8em;
+  visibility: hidden;
+}
+
 .heading {
   display: flex;
   flex-direction: row;
@@ -23,11 +28,6 @@
 }
 :global(.sb-anchor):first-child + .heading {
   margin-top: 0;
-}
-
-.headingLink {
-  font-size: 0.8em;
-  visibility: hidden;
 }
 
 .paragraph {

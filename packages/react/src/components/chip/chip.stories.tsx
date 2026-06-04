@@ -1,21 +1,21 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
+import type { Meta, StoryFn } from "@storybook/react-vite";
 
-import { Chip } from '../';
+import { Chip } from "../";
 
 export default {
-  title: 'Komponenter/Chip',
+  title: "Komponenter/Chip",
   component: Chip.Radio,
   parameters: {
-    customStyles: { display: 'flex', gap: 'var(--ds-size-2)' },
+    customStyles: { display: "flex", gap: "var(--ds-size-2)" },
   },
 } satisfies Meta;
 
 export const Preview: StoryFn<typeof Chip.Radio> = (args) => (
   <>
-    <Chip.Radio {...args} name='my-radio' value='nynorsk' defaultChecked>
+    <Chip.Radio {...args} name="my-radio" value="nynorsk" defaultChecked>
       Nynorsk
     </Chip.Radio>
-    <Chip.Radio {...args} name='my-radio' value='bokmål'>
+    <Chip.Radio {...args} name="my-radio" value="bokmål">
       Bokmål
     </Chip.Radio>
   </>
@@ -30,7 +30,7 @@ export const Removable: StoryFn<typeof Chip.Removable> = (args) => (
 );
 
 Removable.args = {
-  'aria-label': 'Slett Norge',
+  "aria-label": "Slett Norge",
 };
 
 export const Button: StoryFn<typeof Chip.Button> = (args) => (
@@ -41,7 +41,7 @@ export const Button: StoryFn<typeof Chip.Button> = (args) => (
 
 Button.parameters = {
   customStyles: {
-    flexWrap: 'wrap',
-    justifyContent: 'center',
+    flexWrap: "wrap",
+    justifyContent: "center",
   },
 };

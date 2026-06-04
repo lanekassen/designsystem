@@ -1,14 +1,14 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { useState } from 'react';
-import { Alert, Button, Heading, Link, Paragraph } from '../';
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { useState } from "react";
+import { Alert, Button, Heading, Link, Paragraph } from "../";
 
 type Story = StoryFn<typeof Alert>;
 
 const meta: Meta = {
-  title: 'Komponenter/Alert',
+  title: "Komponenter/Alert",
   component: Alert,
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
 };
 
@@ -17,17 +17,17 @@ export default meta;
 export const Preview: Story = (args) => <Alert {...args}></Alert>;
 
 Preview.args = {
-  children: 'En beskjed det er viktig at brukeren ser',
-  'data-color': 'info',
+  children: "En beskjed det er viktig at brukeren ser",
+  "data-color": "info",
 };
 
 export const VariantInfo: Story = (args) => (
-  <Alert {...args} data-color='info'>
+  <Alert {...args} data-color="info">
     <Heading
       level={2}
-      data-size='xs'
+      data-size="xs"
       style={{
-        marginBottom: 'var(--ds-size-2)',
+        marginBottom: "var(--ds-size-2)",
       }}
     >
       Har du husket å bestille passtime?
@@ -40,12 +40,12 @@ export const VariantInfo: Story = (args) => (
 );
 
 export const VariantSuccess: Story = (args) => (
-  <Alert {...args} data-color='success'>
+  <Alert {...args} data-color="success">
     <Heading
       level={2}
-      data-size='xs'
+      data-size="xs"
       style={{
-        marginBottom: 'var(--ds-size-2)',
+        marginBottom: "var(--ds-size-2)",
       }}
     >
       Gratulerer! Du kan nå starte selskapet ditt
@@ -58,12 +58,12 @@ export const VariantSuccess: Story = (args) => (
 );
 
 export const VariantWarning: Story = (args) => (
-  <Alert {...args} data-color='warning'>
+  <Alert {...args} data-color="warning">
     <Heading
       level={2}
-      data-size='xs'
+      data-size="xs"
       style={{
-        marginBottom: 'var(--ds-size-2)',
+        marginBottom: "var(--ds-size-2)",
       }}
     >
       Vi har tekniske problemer
@@ -76,12 +76,12 @@ export const VariantWarning: Story = (args) => (
 );
 
 export const VariantDanger: Story = (args) => (
-  <Alert {...args} data-color='danger'>
+  <Alert {...args} data-color="danger">
     <Heading
       level={2}
-      data-size='xs'
+      data-size="xs"
       style={{
-        marginBottom: 'var(--ds-size-2)',
+        marginBottom: "var(--ds-size-2)",
       }}
     >
       Det har skjedd en feil
@@ -98,9 +98,9 @@ export const MedHeading: Story = (args) => (
   <Alert {...args}>
     <Heading
       level={2}
-      data-size='xs'
+      data-size="xs"
       style={{
-        marginBottom: 'var(--ds-size-2)',
+        marginBottom: "var(--ds-size-2)",
       }}
     >
       Har du husket å bestille passtime?
@@ -113,36 +113,36 @@ export const MedHeading: Story = (args) => (
 );
 
 export const MedKunHeading: Story = (args) => (
-  <Alert {...args} data-color='warning'>
+  <Alert {...args} data-color="warning">
     <Paragraph> Du har 7 dager igjen på å fullføre søknaden.</Paragraph>
   </Alert>
 );
 
 export const MedLenke: Story = (args) => (
-  <Alert {...args} data-color='warning'>
+  <Alert {...args} data-color="warning">
     <Heading
       level={2}
-      data-size='xs'
+      data-size="xs"
       style={{
-        marginBottom: 'var(--ds-size-2)',
+        marginBottom: "var(--ds-size-2)",
       }}
     >
       Søknadsfristen går ut om 3 dager
     </Heading>
     <Paragraph>
-      Fristen for å søke opptak til utdanning er 15. april.{' '}
-      <Link href='https://designsystemet.no/'>Søk nå</Link>
+      Fristen for å søke opptak til utdanning er 15. april.{" "}
+      <Link href="https://designsystemet.no/">Søk nå</Link>
     </Paragraph>
   </Alert>
 );
 
 export const UtenAria: Story = (args) => (
-  <Alert {...args} data-color='warning'>
+  <Alert {...args} data-color="warning">
     <Heading
       level={2}
-      data-size='xs'
+      data-size="xs"
       style={{
-        marginBottom: 'var(--ds-size-2)',
+        marginBottom: "var(--ds-size-2)",
       }}
     >
       Nedetid
@@ -160,15 +160,15 @@ export const WrongLiveRegionReact: StoryFn<typeof Alert> = () => {
     <>
       {showAlert && (
         <Alert
-          data-color='warning'
+          data-color="warning"
           // Feil bruk: role="alert" ligger på selve varselet
-          role='alert'
+          role="alert"
         >
           <Heading
             level={2}
-            data-size='xs'
+            data-size="xs"
             style={{
-              marginBottom: 'var(--ds-size-2)',
+              marginBottom: "var(--ds-size-2)",
             }}
           >
             Vi klarer ikke lagre skjemaet
@@ -180,21 +180,21 @@ export const WrongLiveRegionReact: StoryFn<typeof Alert> = () => {
         </Alert>
       )}
       <Button
-        data-size='sm'
-        variant='secondary'
+        data-size="sm"
+        variant="secondary"
         onClick={() => setShowAlert((value) => !value)}
       >
-        {showAlert ? 'Skjul varsel' : 'Handling som fører til varsel'}
+        {showAlert ? "Skjul varsel" : "Handling som fører til varsel"}
       </Button>
     </>
   );
 };
 WrongLiveRegionReact.parameters = {
   customStyles: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 'var(--ds-size-2)',
-    alignItems: 'start',
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ds-size-2)",
+    alignItems: "start",
   },
 };
 export const CorrectLiveRegionReact: StoryFn<typeof Alert> = () => {
@@ -202,14 +202,14 @@ export const CorrectLiveRegionReact: StoryFn<typeof Alert> = () => {
   return (
     <>
       {/* Korrekt bruk: role="alert" ligger på elementet der varselet dukker opp */}
-      <div role='alert'>
+      <div role="alert">
         {showAlert && (
-          <Alert data-color='warning'>
+          <Alert data-color="warning">
             <Heading
               level={2}
-              data-size='xs'
+              data-size="xs"
               style={{
-                marginBottom: 'var(--ds-size-2)',
+                marginBottom: "var(--ds-size-2)",
               }}
             >
               Vi klarer ikke lagre skjemaet
@@ -222,11 +222,11 @@ export const CorrectLiveRegionReact: StoryFn<typeof Alert> = () => {
         )}
       </div>
       <Button
-        data-size='sm'
-        variant='secondary'
+        data-size="sm"
+        variant="secondary"
         onClick={() => setShowAlert((value) => !value)}
       >
-        {showAlert ? 'Skjul varsel' : 'Handling som fører til varsel'}
+        {showAlert ? "Skjul varsel" : "Handling som fører til varsel"}
       </Button>
     </>
   );
@@ -234,12 +234,12 @@ export const CorrectLiveRegionReact: StoryFn<typeof Alert> = () => {
 CorrectLiveRegionReact.parameters = WrongLiveRegionReact.parameters;
 
 export const MedAria: Story = (args) => (
-  <Alert {...args} data-color='danger' role='alert'>
+  <Alert {...args} data-color="danger" role="alert">
     <Heading
       level={2}
-      data-size='xs'
+      data-size="xs"
       style={{
-        marginBottom: 'var(--ds-size-2)',
+        marginBottom: "var(--ds-size-2)",
       }}
     >
       Vi klarer ikke lagre skjemaet

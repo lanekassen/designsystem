@@ -1,13 +1,13 @@
 import {
   Pagination,
   PaginationButton,
-  PaginationItem,
-  PaginationList,
   type PaginationButtonProps,
+  PaginationItem,
   type PaginationItemProps,
+  PaginationList,
   type PaginationListProps,
   type PaginationProps,
-} from '@digdir/designsystemet-react';
+} from "@digdir/designsystemet-react";
 
 export type {
   PaginationButtonProps,

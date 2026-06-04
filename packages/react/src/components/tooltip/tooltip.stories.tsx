@@ -1,28 +1,27 @@
-import { FilesIcon } from '@navikt/aksel-icons';
-import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
-import { useEffect, useRef, useState } from 'react';
-import { expect, within } from 'storybook/test';
-import { Button } from '../';
-import { Tooltip } from '../';
+import { FilesIcon } from "@navikt/aksel-icons";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
+import { useEffect, useRef, useState } from "react";
+import { expect, within } from "storybook/test";
+import { Button, Tooltip } from "../";
 
 type Story = StoryObj<typeof Tooltip>;
 
 export default {
-  title: 'Komponenter/Tooltip',
+  title: "Komponenter/Tooltip",
   component: Tooltip,
   parameters: {
-    customStyles: { margin: '2rem', padding: '4rem' },
+    customStyles: { margin: "2rem", padding: "4rem" },
     chromatic: {
       disableSnapshot: false,
     },
   },
   play: async (ctx) => {
-    document.querySelector('.ds-tooltip')?.remove(); // Reset to run next test without waiting for tooltip to disappear // <== Må "nullstille"/fjerne tooltip mellom hver test
+    document.querySelector(".ds-tooltip")?.remove(); // Reset to run next test without waiting for tooltip to disappear // <== Må "nullstille"/fjerne tooltip mellom hver test
     const button =
-      ctx.canvasElement.querySelector<HTMLButtonElement>('[data-tooltip]');
+      ctx.canvasElement.querySelector<HTMLButtonElement>("[data-tooltip]");
 
     await new Promise((resolve) => {
-      document.addEventListener('animationend', resolve, true); // <== Merk at vi binder event-listener før vi gjør hover
+      document.addEventListener("animationend", resolve, true); // <== Merk at vi binder event-listener før vi gjør hover
       button?.focus();
     });
 
@@ -40,22 +39,22 @@ export const Preview: StoryFn<typeof Tooltip> = (args) => (
 );
 
 Preview.args = {
-  content: 'Kopier',
-  placement: 'top',
+  content: "Kopier",
+  placement: "top",
 };
 
 export const WithString: Story = {
   args: {
-    content: 'Organisasjonsnummer',
-    children: 'Org.nr.',
+    content: "Organisasjonsnummer",
+    children: "Org.nr.",
     tabIndex: 0,
   },
 };
 
 export const Placement: Story = {
   args: {
-    content: 'Kopier',
-    placement: 'bottom',
+    content: "Kopier",
+    placement: "bottom",
     children: (
       <Button icon>
         <FilesIcon aria-hidden />
@@ -67,10 +66,10 @@ export const Placement: Story = {
 export const Aria: StoryFn<typeof Tooltip> = () => {
   return (
     <>
-      <Tooltip content='Eg er aria-description'>
+      <Tooltip content="Eg er aria-description">
         <Button>Eg er aria-description</Button>
       </Tooltip>
-      <Tooltip content='Eg er aria-label'>
+      <Tooltip content="Eg er aria-label">
         <Button icon>
           <FilesIcon aria-hidden />
         </Button>
@@ -82,7 +81,7 @@ export const Aria: StoryFn<typeof Tooltip> = () => {
 Aria.decorators = [
   (Story) => (
     <div
-      style={{ display: 'flex', gap: 'var(--ds-size-2)', alignItems: 'center' }}
+      style={{ display: "flex", gap: "var(--ds-size-2)", alignItems: "center" }}
     >
       <Story />
     </div>
@@ -93,17 +92,17 @@ Aria.play = async () => {};
 
 export const WithDynamicTooltipText: Story = {
   args: {
-    content: 'Kopier',
+    content: "Kopier",
   },
   render: () => {
-    const [content, setContent] = useState('Kopier');
+    const [content, setContent] = useState("Kopier");
 
     return (
       <Tooltip content={content}>
         <Button
           icon
-          onClick={() => setContent('Kopiert')}
-          onBlur={() => setContent('Kopier')}
+          onClick={() => setContent("Kopiert")}
+          onBlur={() => setContent("Kopier")}
         >
           <FilesIcon aria-hidden />
         </Button>
@@ -114,11 +113,11 @@ export const WithDynamicTooltipText: Story = {
 
 export const WithCSSTooltipText: Story = {
   args: {
-    content: 'Kopier',
+    content: "Kopier",
   },
   render: () => (
-    <Tooltip content=''>
-      <Button style={{ '--ds-tooltip': '"Kopier"' } as React.CSSProperties}>
+    <Tooltip content="">
+      <Button style={{ "--ds-tooltip": '"Kopier"' } as React.CSSProperties}>
         <FilesIcon aria-hidden />
       </Button>
     </Tooltip>
@@ -127,18 +126,18 @@ export const WithCSSTooltipText: Story = {
 
 export const WithDynamicCSSTooltipText: Story = {
   args: {
-    content: 'Kopier',
+    content: "Kopier",
   },
   render: () => {
     const tooltipRef = useRef<HTMLDivElement>(null);
-    const [tooltipContent, setTooltipContent] = useState('');
+    const [tooltipContent, setTooltipContent] = useState("");
 
     // Tooltip text from css variable
     useEffect(() => {
-      if (typeof window === 'undefined' || !tooltipRef.current) return;
+      if (typeof window === "undefined" || !tooltipRef.current) return;
       const content = getComputedStyle(tooltipRef.current)
-        .getPropertyValue('--ds-tooltip-content')
-        .replace(/^["']|["']$/g, '')
+        .getPropertyValue("--ds-tooltip-content")
+        .replace(/^["']|["']$/g, "")
         .trim();
       setTooltipContent(content);
     }, []);
@@ -146,7 +145,7 @@ export const WithDynamicCSSTooltipText: Story = {
     return (
       <Tooltip content={tooltipContent} ref={tooltipRef}>
         <Button
-          style={{ '--ds-tooltip-content': '"Kopier"' } as React.CSSProperties}
+          style={{ "--ds-tooltip-content": '"Kopier"' } as React.CSSProperties}
         >
           <FilesIcon aria-hidden />
         </Button>

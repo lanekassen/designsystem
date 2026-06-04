@@ -1,6 +1,6 @@
 {
   "name": "@lanekassen/ds-css",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "type": "module",
   "author": "Lånekassen",
   "repository": {
@@ -51,8 +51,7 @@
   "devDependencies": {
     "@digdir/designsystemet": "^1.15.0",
     "@digdir/designsystemet-css": "^1.15.0",
-    "@digdir/designsystemet-types": "^1.15.0",
-    "@tsdown/css": "^0.22.0",
-    "tsdown": "^0.22.0"
+    "@tsdown/css": "^0.22.1",
+    "tsdown": "^0.22.1"
   }
 }

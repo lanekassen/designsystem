@@ -1,23 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-
-import { Fieldset } from '../';
-
-import { Switch } from '../';
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Fieldset, Switch } from "../";
 
 type Story = StoryObj<typeof Switch>;
 
 export default {
-  title: 'Komponenter/Switch',
+  title: "Komponenter/Switch",
   component: Switch,
 } as Meta;
 
 export const Preview: Story = {
   args: {
-    label: 'Switch',
-    description: '',
+    label: "Switch",
+    description: "",
     disabled: false,
     readOnly: false,
-    position: 'start',
+    position: "start",
   },
 };
 
@@ -27,15 +24,15 @@ export const Checked: Story = {
 };
 
 export const Group: Story = {
-  render: ({ 'aria-label': a, 'aria-labelledby': b, ...args }) => (
+  render: ({ "aria-label": a, "aria-labelledby": b, ...args }) => (
     <Fieldset>
       <Fieldset.Legend>Skru av/på lys</Fieldset.Legend>
-      <Switch label='Stue' checked {...args} />
-      <Switch label='Kjøkken' {...args} />
-      <Switch label='Bad' {...args} />
+      <Switch label="Stue" checked {...args} />
+      <Switch label="Kjøkken" {...args} />
+      <Switch label="Bad" {...args} />
       <Switch
-        label='Soverom'
-        description='Får ikke kontakt med lyspærene'
+        label="Soverom"
+        description="Får ikke kontakt med lyspærene"
         readOnly
         {...args}
       />
@@ -44,8 +41,8 @@ export const Group: Story = {
 };
 
 export const RigthAligned: Story = {
-  render: ({ 'aria-label': a, 'aria-labelledby': b, ...args }) => (
-    <Switch label='Flymodus' position='end' checked {...args} />
+  render: ({ "aria-label": a, "aria-labelledby": b, ...args }) => (
+    <Switch label="Flymodus" position="end" checked {...args} />
   ),
 };
 
@@ -55,18 +52,18 @@ export const Outline: Story = {
       <Fieldset>
         <Fieldset.Legend>Using variant="outline"</Fieldset.Legend>
         <Switch
-          variant='outline'
-          label='with description'
-          description='description text'
-          value='description'
+          variant="outline"
+          label="with description"
+          description="description text"
+          value="description"
         />
-        <Switch variant='outline' label='Checked' value='checked' checked />
-        <Switch variant='outline' disabled label='disabled' value='disabled' />
+        <Switch variant="outline" label="Checked" value="checked" checked />
+        <Switch variant="outline" disabled label="disabled" value="disabled" />
         <Switch
-          variant='outline'
+          variant="outline"
           readOnly
-          label='readonly checked'
-          value='readonly'
+          label="readonly checked"
+          value="readonly"
           checked
         />
       </Fieldset>

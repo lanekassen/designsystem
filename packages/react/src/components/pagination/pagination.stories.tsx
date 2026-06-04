@@ -1,10 +1,13 @@
-import type { Meta, StoryFn } from '@storybook/react-vite';
-import { useArgs } from 'storybook/preview-api';
-import { type UsePaginationProps, usePagination } from '@digdir/designsystemet-react';
-import { Pagination } from '../';
+import {
+  type UsePaginationProps,
+  usePagination,
+} from "@digdir/designsystemet-react";
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { useArgs } from "storybook/preview-api";
+import { Pagination } from "../";
 
 export default {
-  title: 'Komponenter/Pagination',
+  title: "Komponenter/Pagination",
   component: Pagination,
 } as Meta;
 
@@ -13,17 +16,17 @@ export const Preview: StoryFn<typeof Pagination> = () => {
     <Pagination>
       <Pagination.List>
         <Pagination.Item>
-          <Pagination.Button aria-label='Forrige side'>
+          <Pagination.Button aria-label="Forrige side">
             Forrige
           </Pagination.Button>
         </Pagination.Item>
 
         <Pagination.Item>
-          <Pagination.Button aria-label='Side 1'>1</Pagination.Button>
+          <Pagination.Button aria-label="Side 1">1</Pagination.Button>
         </Pagination.Item>
 
         <Pagination.Item>
-          <Pagination.Button aria-label='Side 2' aria-current='true'>
+          <Pagination.Button aria-label="Side 2" aria-current="true">
             2
           </Pagination.Button>
         </Pagination.Item>
@@ -31,15 +34,15 @@ export const Preview: StoryFn<typeof Pagination> = () => {
         <Pagination.Item />
 
         <Pagination.Item>
-          <Pagination.Button aria-label='Side 9'>9</Pagination.Button>
+          <Pagination.Button aria-label="Side 9">9</Pagination.Button>
         </Pagination.Item>
 
         <Pagination.Item>
-          <Pagination.Button aria-label='Side 10'>10</Pagination.Button>
+          <Pagination.Button aria-label="Side 10">10</Pagination.Button>
         </Pagination.Item>
 
         <Pagination.Item>
-          <Pagination.Button aria-label='Neste side'>Neste</Pagination.Button>
+          <Pagination.Button aria-label="Neste side">Neste</Pagination.Button>
         </Pagination.Item>
       </Pagination.List>
     </Pagination>
@@ -54,20 +57,20 @@ export const WithAnchor: StoryFn<UsePaginationProps> = (args) => {
   });
 
   return (
-    <Pagination aria-label='Sidenavigering'>
+    <Pagination aria-label="Sidenavigering">
       <Pagination.List>
         <Pagination.Item>
           <Pagination.Button
             asChild
-            aria-label='Forrige side'
+            aria-label="Forrige side"
             {...prevButtonProps}
           >
-            <a href='#forrige-side'>Forrige</a>
+            <a href="#forrige-side">Forrige</a>
           </Pagination.Button>
         </Pagination.Item>
         {pages.map(({ page, itemKey, buttonProps }) => (
           <Pagination.Item key={itemKey}>
-            {typeof page === 'number' && (
+            {typeof page === "number" && (
               <Pagination.Button
                 asChild
                 aria-label={`Side ${page}`}
@@ -81,10 +84,10 @@ export const WithAnchor: StoryFn<UsePaginationProps> = (args) => {
         <Pagination.Item>
           <Pagination.Button
             asChild
-            aria-label='Neste side'
+            aria-label="Neste side"
             {...nextButtonProps}
           >
-            <a href='#neste-side'>Neste</a>
+            <a href="#neste-side">Neste</a>
           </Pagination.Button>
         </Pagination.Item>
       </Pagination.List>
@@ -103,25 +106,25 @@ export const Mobile: StoryFn = () => (
   <Pagination>
     <Pagination.List>
       <Pagination.Item>
-        <Pagination.Button aria-label='Forrige side' />
+        <Pagination.Button aria-label="Forrige side" />
       </Pagination.Item>
 
       <Pagination.Item>
-        <Pagination.Button aria-label='Side 2'>2</Pagination.Button>
+        <Pagination.Button aria-label="Side 2">2</Pagination.Button>
       </Pagination.Item>
 
       <Pagination.Item>
-        <Pagination.Button aria-label='Side 3' aria-current='true'>
+        <Pagination.Button aria-label="Side 3" aria-current="true">
           3
         </Pagination.Button>
       </Pagination.Item>
 
       <Pagination.Item>
-        <Pagination.Button aria-label='Side 4'>4</Pagination.Button>
+        <Pagination.Button aria-label="Side 4">4</Pagination.Button>
       </Pagination.Item>
 
       <Pagination.Item>
-        <Pagination.Button aria-label='Neste side' />
+        <Pagination.Button aria-label="Neste side" />
       </Pagination.Item>
     </Pagination.List>
   </Pagination>

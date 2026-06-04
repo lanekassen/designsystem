@@ -1,22 +1,22 @@
-import { PencilWritingIcon } from '@navikt/aksel-icons';
-import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
-import { themeColors } from '../../../stories/constants';
+import { PencilWritingIcon } from "@navikt/aksel-icons";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
+import { themeColors } from "../../../stories/constants";
 
-import { Button, type ButtonProps } from '../';
+import { Button, type ButtonProps } from "../";
 
 type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
-  title: 'Komponenter/Button',
+  title: "Komponenter/Button",
   component: Button,
   parameters: {
     customStyles: {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexWrap: 'wrap',
-      gap: 'var(--ds-size-4)',
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      flexWrap: "wrap",
+      gap: "var(--ds-size-4)",
     },
   },
 };
@@ -28,28 +28,28 @@ export const Preview: Story = {
     return <Button {...args} />;
   },
   args: {
-    children: 'Knapp',
+    children: "Knapp",
     disabled: false,
-    variant: 'primary',
+    variant: "primary",
     icon: false,
   },
 };
 
 export const Variants: StoryFn<typeof Button> = () => (
   <>
-    <Button variant='primary'>Primary</Button>
-    <Button variant='secondary'>Secondary</Button>
-    <Button variant='tertiary'>Teritiary</Button>
+    <Button variant="primary">Primary</Button>
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="tertiary">Teritiary</Button>
   </>
 );
 
 export const Colors: StoryFn<typeof Button> = () => (
   <>
-    {[...themeColors, 'danger'].map((color) => (
+    {[...themeColors, "danger"].map((color) => (
       <Button
         key={color}
-        data-color={color as ButtonProps['data-color']}
-        variant='primary'
+        data-color={color as ButtonProps["data-color"]}
+        variant="primary"
       >
         {color}
       </Button>
@@ -71,7 +71,7 @@ ColorsPressed.parameters = {
 
 export const Icons: StoryFn<typeof Button> = () => (
   <>
-    <Button icon aria-label='Rediger'>
+    <Button icon aria-label="Rediger">
       <PencilWritingIcon aria-hidden />
     </Button>
     <Button>
@@ -83,13 +83,13 @@ export const Icons: StoryFn<typeof Button> = () => (
 
 export const CombinedColors: StoryFn<typeof Button> = () => (
   <>
-    <Button variant='primary' data-color='neutral'>
+    <Button variant="primary" data-color="neutral">
       Publiser
     </Button>
-    <Button variant='secondary' data-color='neutral'>
+    <Button variant="secondary" data-color="neutral">
       Lagre kladd
     </Button>
-    <Button variant='tertiary' data-color='danger'>
+    <Button variant="tertiary" data-color="danger">
       Slett
     </Button>
   </>
@@ -97,7 +97,7 @@ export const CombinedColors: StoryFn<typeof Button> = () => (
 
 export const AsLink: StoryFn<typeof Button> = () => (
   <Button asChild>
-    <a target='_blank' rel='noreferrer' href='https://www.designsystemet.no'>
+    <a target="_blank" rel="noreferrer" href="https://www.designsystemet.no">
       Gå til designsystemet.no
     </a>
   </Button>
@@ -105,16 +105,16 @@ export const AsLink: StoryFn<typeof Button> = () => (
 
 export const Loading: StoryFn<typeof Button> = () => (
   <>
-    <Button variant='primary' loading>
+    <Button variant="primary" loading>
       Laster...
     </Button>
-    <Button variant='secondary' loading>
+    <Button variant="secondary" loading>
       Laster...
     </Button>
-    <Button variant='tertiary' loading>
+    <Button variant="tertiary" loading>
       Laster...
     </Button>
-    <Button icon loading aria-label='Rediger'>
+    <Button icon loading aria-label="Rediger">
       {/* When loading is true and icon is set, loading will take precedence */}
       <PencilWritingIcon aria-hidden />
     </Button>

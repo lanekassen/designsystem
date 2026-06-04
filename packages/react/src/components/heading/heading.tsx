@@ -1,4 +1,4 @@
-import { Heading, type HeadingProps } from '@digdir/designsystemet-react';
+import { Heading, type HeadingProps } from "@digdir/designsystemet-react";
 
 export type { HeadingProps };
 export { Heading };

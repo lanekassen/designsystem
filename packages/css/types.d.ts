@@ -1,1 +1,1 @@
-declare module '@lanekassen/ds-css' {}
+declare module "@lanekassen/ds-css" {}

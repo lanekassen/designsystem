@@ -1,11 +1,11 @@
 import {
   Fieldset,
   FieldsetDescription,
-  FieldsetLegend,
   type FieldsetDescriptionProps,
+  FieldsetLegend,
   type FieldsetLegendProps,
   type FieldsetProps,
-} from '@digdir/designsystemet-react';
+} from "@digdir/designsystemet-react";
 
 export type { FieldsetDescriptionProps, FieldsetLegendProps, FieldsetProps };
 export { Fieldset, FieldsetDescription, FieldsetLegend };

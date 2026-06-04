@@ -1,95 +1,22 @@
-// Strongly inspired by Utdanningsdirektoratet's ProgressBar component
+// Strongly inspired by Utdanningsdirektoratet's and Mattilsynet's ProgressBar components
 // https://github.com/Utdanningsdirektoratet/designsystem/blob/2742ec96ee4b980a1d2373aad2f88a113483be3d/%40udir-design/react/src/components/progressBar/ProgressBar.tsx
+// https://github.com/Mattilsynet/design/blob/2e552aabab15e962e88ff76b5c1420609d429e4b/designsystem/progress/progress.tsx
 
-import '@u-elements/u-progress';
-import type { Color, Size } from '@digdir/designsystemet-types';
-import { UHTMLProgressShadowRoot } from '@u-elements/u-progress';
-import cl from 'clsx/lite';
-import type { AriaRole } from 'react';
+import "@u-elements/u-progress";
+import { UHTMLProgressShadowRoot } from "@u-elements/u-progress";
+import cl from "clsx/lite";
 
-export type ProgressProps = Omit<
-  React.ComponentPropsWithRef<'div'>,
-  'children'
-> & {
-  /**
-   * Changes size for descendant Designsystemet components.
-   * Select from predefined sizes.
-   */
-  'data-size'?: Size;
-  /**
-   * Changes color of the bar and background
-   */
-  'data-color'?: Color;
-  /**
-   * Total number of steps in the process
-   */
-  max: number;
-  /**
-   * Current step in the process
-   */
-  value: number;
-  /**
-   * Format the progress text with `value`, `max` and `percentage` as arguments: `progressText: ({ value, max, percentage }) => \`Steg ${value} av ${max}\``
-   */
-  progressText?: (args: {
-    value: number;
-    max: number;
-    percentage: number;
-  }) => string;
-};
+export type ProgressProps = React.ComponentPropsWithRef<"progress">;
 
-// https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label#associated_roles
-const nonNameableAriaRoles: AriaRole[] = [
-  'caption',
-  'code',
-  'definition',
-  'deletion',
-  'emphasis',
-  'generic',
-  'insertion',
-  'mark',
-  'paragraph',
-  'presentation',
-  'none',
-  'strong',
-  'subscript',
-  'suggestion',
-  'superscript',
-  'term',
-  'time',
-];
-
-export function Progress(
-    { className, max, value, progressText, 'aria-label': ariaLabel, ...rest }: ProgressProps,
-  ) {
-    let screenreaderText: string | undefined;
-    // aria-label is not permitted on div without a role, and only certain roles can use it.
-    if (!rest.role || (nonNameableAriaRoles.includes(rest.role) && ariaLabel)) {
-      screenreaderText = ariaLabel;
-    }
-    const percentage = max > 0 ? Math.round((value / max) * 100) : 0;
-    const text =
-      progressText?.({ value, max, percentage }) ?? (value && max) ? `${value} av ${max}` : '';
-    return (
-      <div
-        className={cl(`lkds-progress`, className)}
-        aria-label={screenreaderText ? undefined : ariaLabel}
-        {...rest}
-      >
-        {screenreaderText && (
-          <span className="ds-sr-only">{screenreaderText}</span>
-        )}
-        {text && <span>{text}</span>}
-        <u-progress
-          value={value}
-          max={max}
-          aria-hidden="true"
-          aria-label="..." // only because ARC Toolkit reports empty label as an error, but this will never be read
-          // Ensure shadow dom is server rendered
-          // see https://u-elements.github.io/u-elements/elements/u-progress#server-side-rendering
-          dangerouslySetInnerHTML={{ __html: UHTMLProgressShadowRoot }}
-        />
-      </div>
-    );
-};
-
+export function Progress({ className, ...rest }: ProgressProps) {
+  return (
+    <u-progress
+      className={cl(`lkds-progress`, className)}
+      // Ensure shadow dom is server rendered
+      // see https://u-elements.github.io/u-elements/elements/u-progress#server-side-rendering
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: read above
+      dangerouslySetInnerHTML={{ __html: UHTMLProgressShadowRoot }}
+      {...rest}
+    />
+  );
+}

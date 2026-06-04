@@ -1,5 +1,15 @@
 # @lanekassen/ds-css
 
+## 0.3.0
+
+### Minor Changes
+
+- Progress: Adjust styling
+
+### Patch Changes
+
+- Update npm non-major dependencies
+
 ## 0.2.1
 
 ### Patch Changes

@@ -6,8 +6,6 @@
 
     "types": ["vite/client"]
   },
-  "references": [
-    { "path": "../../packages/react/tsconfig.json" }
-  ],
+  "references": [{ "path": "../../packages/react/tsconfig.json" }],
   "include": [".storybook/**/*", "stories/**/*"]
 }
