@@ -68,4 +68,4 @@ jobs:
         run: pnpm run typecheck
 
       - name: Biome CI
-        run: pnpm run biome ci
+        run: pnpm exec biome ci
