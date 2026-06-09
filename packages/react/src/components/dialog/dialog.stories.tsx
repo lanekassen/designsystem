@@ -12,7 +12,7 @@ import {
   Textfield,
 } from "../";
 
-export default {
+const meta: Meta<typeof Dialog> = {
   title: "Komponenter/Dialog",
   component: Dialog,
   parameters: {
@@ -50,7 +50,9 @@ export default {
     await expect(dialog).toBeInTheDocument();
     await expect(dialog).toHaveAttribute("open");
   },
-} satisfies Meta;
+};
+
+export default meta;
 
 export const Preview: StoryFn<typeof Dialog> = (args) => (
   <Dialog.TriggerContext>

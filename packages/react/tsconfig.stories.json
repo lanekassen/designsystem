@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "../../",
+    "outDir": ".typescript-cache",
+
+    "types": ["@lanekassen/ds-css/theme"]
+  },
+  "include": [
+    "stories/**/*",
+    "src/**/*.stories.tsx",
+    "../../packages/css/designsystemet.config.json"
+  ],
+  "references": [{ "path": "tsconfig.lib.json" }]
+}

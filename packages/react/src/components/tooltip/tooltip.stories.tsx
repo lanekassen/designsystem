@@ -6,7 +6,7 @@ import { Button, Tooltip } from "../";
 
 type Story = StoryObj<typeof Tooltip>;
 
-export default {
+const meta: Meta<typeof Tooltip> = {
   title: "Komponenter/Tooltip",
   component: Tooltip,
   parameters: {
@@ -28,7 +28,9 @@ export default {
     const tooltip = await within(document.body).findByText(ctx.args.content); // <== trenger ikke sjekke toBeInDocument siden denne testen krever det
     expect(tooltip).toBeVisible();
   },
-} satisfies Meta;
+};
+
+export default meta;
 
 export const Preview: StoryFn<typeof Tooltip> = (args) => (
   <Tooltip {...args}>

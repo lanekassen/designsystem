@@ -6,13 +6,15 @@ import { Tag } from "../";
 
 type Story = StoryObj<typeof Tag>;
 
-export default {
+const meta: Meta<typeof Tag> = {
   title: "Komponenter/Tag",
   component: Tag,
   parameters: {
     customStyles: { justifyContent: "start" },
   },
-} satisfies Meta;
+};
+
+export default meta;
 
 const _dataColors = [...themeColors, ...severityColors];
 

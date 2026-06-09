@@ -2,13 +2,15 @@ import type { Meta, StoryFn } from "@storybook/react-vite";
 
 import { Chip } from "../";
 
-export default {
+const meta: Meta<typeof Chip.Radio> = {
   title: "Komponenter/Chip",
   component: Chip.Radio,
   parameters: {
     customStyles: { display: "flex", gap: "var(--ds-size-2)" },
   },
-} satisfies Meta;
+};
+
+export default meta;
 
 export const Preview: StoryFn<typeof Chip.Radio> = (args) => (
   <>

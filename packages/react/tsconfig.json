@@ -1,16 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "rootDir": "src",
-    "outDir": ".typescript-cache",
-    "tsBuildInfoFile": ".typescript-cache/tsconfig.tsbuildinfo",
-    "noEmit": false,
-
-    "types": [
-      "@digdir/designsystemet-react/react-types",
-      "@lanekassen/ds-css/theme"
-    ]
-  },
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.stories.tsx", "src/**/*.mdx"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.lib.json" },
+    { "path": "./tsconfig.stories.json" }
+  ]
 }

@@ -10,7 +10,6 @@
     "emitDeclarationOnly": true,
     "isolatedModules": true,
     "skipLibCheck": true,
-    "noEmit": true,
     "jsx": "react-jsx"
   }
 }
