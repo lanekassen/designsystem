@@ -49,10 +49,10 @@
     "access": "public"
   },
   "devDependencies": {
-    "@digdir/designsystemet": "^1.15.0",
-    "@digdir/designsystemet-css": "^1.15.0",
-    "@digdir/designsystemet-types": "^1.15.0",
-    "@tsdown/css": "^0.22.1",
-    "tsdown": "^0.22.1"
+    "@digdir/designsystemet": "catalog:",
+    "@digdir/designsystemet-css": "catalog:",
+    "@digdir/designsystemet-types": "catalog:",
+    "@tsdown/css": "catalog:",
+    "tsdown": "catalog:"
   }
 }

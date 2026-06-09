@@ -11,8 +11,8 @@
     "publish-packages": "pnpm --filter './packages/*' build && changeset publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.16",
-    "@changesets/cli": "^2.31.0",
-    "typescript": "^6.0.3"
+    "@biomejs/biome": "catalog:",
+    "@changesets/cli": "catalog:",
+    "typescript": "catalog:"
   }
 }
