@@ -16,6 +16,7 @@ export function Progress({ className, ...rest }: ProgressProps) {
       // see https://u-elements.github.io/u-elements/elements/u-progress#server-side-rendering
       // biome-ignore lint/security/noDangerouslySetInnerHtml: read above
       dangerouslySetInnerHTML={{ __html: UHTMLProgressShadowRoot }}
+      suppressHydrationWarning
       {...rest}
     />
   );

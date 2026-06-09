@@ -1,5 +1,6 @@
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
+import { sizenames, sizes } from "../../../stories/constants";
 import {
   Button,
   Divider,
@@ -96,13 +97,6 @@ export const Controlled: StoryFn<typeof Input> = (args) => {
       </div>
     </>
   );
-};
-
-const sizes = ["sm", "md", "lg"] as const;
-const sizenames = {
-  sm: "Small",
-  md: "Medium",
-  lg: "Large",
 };
 
 export const Text: StoryFn<typeof Input> = (args) => {

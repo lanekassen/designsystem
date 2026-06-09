@@ -1,5 +1,8 @@
 .lkds-progress {
-  color: var(--ds-color-accent-base-default);
+  --lkdsc-progress-background: var(--ds-color-neutral-surface-tinted);
+  --lkdsc-progress-color: var(--ds-color-base-default);
+
+  color: var(--lkdsc-progress-color);
   height: var(--ds-size-3);
   border-radius: var(--ds-border-radius-full);
   border: 0;
@@ -7,7 +10,7 @@
    * By default u-progress uses background, which we want to override completely
    * This is why this isn't background-color
    */
-  background: var(--ds-color-neutral-surface-tinted);
+  background: var(--lkdsc-progress-background);
 
   &::before {
     border-radius: inherit;
@@ -17,14 +20,11 @@
     display: block;
   }
 
-  &:not([value]) {
-    &::before {
-      color: var(--ds-color-accent-base-default);
-      width: 100%;
-      transition: width 1s ease;
-      animation: indeterminateAnimation 1.5s infinite
-        cubic-bezier(0.65, 0.815, 0.735, 0.395);
-    }
+  &:not([value])::before {
+    width: 100%;
+    transition: width 1s ease;
+    animation: indeterminateAnimation 1.5s infinite
+      cubic-bezier(0.65, 0.815, 0.735, 0.395);
   }
 }
 

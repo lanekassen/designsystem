@@ -6,7 +6,14 @@ export const themeColors = [
   "neutral",
 ];
 
-export const severityColors = ["success", "warning", "danger", "info"];
+export const severityColors = ["success", "warning", "danger", "info"] as const;
+
+export const sizes = ["sm", "md", "lg"] as const;
+export const sizenames: Readonly<Record<(typeof sizes)[number], string>> = {
+  sm: "Small",
+  md: "Medium",
+  lg: "Large",
+};
 
 export const cat1Img = (
   <img
