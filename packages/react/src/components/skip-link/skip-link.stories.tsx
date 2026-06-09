@@ -4,10 +4,12 @@ import { Paragraph, SkipLink } from "../";
 
 type Story = StoryFn<typeof SkipLink>;
 
-export default {
+const meta: Meta<typeof SkipLink> = {
   title: "Komponenter/SkipLink",
   component: SkipLink,
-} satisfies Meta;
+};
+
+export default meta;
 
 export const Preview: Story = (args) => (
   <>

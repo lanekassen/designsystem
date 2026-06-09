@@ -4,7 +4,7 @@ import { Button, Divider, Label, Paragraph, Textarea } from "../";
 
 type Story = StoryObj<typeof Textarea>;
 
-export default {
+const meta: Meta<typeof Textarea> = {
   title: "Komponenter/Textarea",
   component: Textarea,
   decorators: [
@@ -24,7 +24,9 @@ export default {
       </div>
     ),
   ],
-} satisfies Meta;
+};
+
+export default meta;
 
 export const Preview: Story = {
   args: {

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Button, Paragraph, Popover } from "../";
 
-export default {
+const meta: Meta<typeof Popover> = {
   title: "Komponenter/Popover",
   component: Popover,
   parameters: {
@@ -30,7 +30,9 @@ export default {
     await expect(dropdown).toBeInTheDocument();
     await waitFor(() => expect(dropdown).toBeVisible());
   },
-} satisfies Meta;
+};
+
+export default meta;
 
 export const Preview: StoryFn<typeof Popover> = (args) => {
   return (

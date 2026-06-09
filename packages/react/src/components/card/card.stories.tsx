@@ -10,7 +10,7 @@ import { Card, Heading, Link, Paragraph } from "../";
 
 type Story = StoryFn<typeof Card>;
 
-export default {
+const meta: Meta<typeof Card> = {
   title: "Komponenter/Card",
   component: Card,
   parameters: {
@@ -24,7 +24,9 @@ export default {
       gridTemplateColumns: "repeat(auto-fit, minmax(280px , 1fr))",
     },
   },
-} satisfies Meta;
+};
+
+export default meta;
 
 export const Preview: Story = (args) => (
   <Card {...args} style={{ maxWidth: "320px" }}>

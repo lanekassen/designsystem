@@ -4,7 +4,7 @@ import { useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Button, Dialog, Dropdown } from "../";
 
-export default {
+const meta: Meta<typeof Dropdown> = {
   title: "Komponenter/Dropdown",
   component: Dropdown,
   parameters: {
@@ -36,7 +36,9 @@ export default {
     await expect(dropdown).toBeInTheDocument();
     await waitFor(() => expect(dropdown).toBeVisible());
   },
-} satisfies Meta;
+};
+
+export default meta;
 
 export const Preview: StoryFn<typeof Dropdown> = (args) => {
   return (

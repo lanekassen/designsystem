@@ -101,14 +101,16 @@ export const Kontrollert: StoryFn<typeof ToggleGroup> = () => {
     </>
   );
 };
-export const Secondary = Preview.bind({});
+export const Secondary: StoryFn<typeof ToggleGroup> = Preview.bind({});
 Secondary.args = {
   "data-toggle-group": "Filtrering", // Set data-toggle-group attribute for accessibility
   defaultValue: "innboks",
   variant: "secondary",
 };
 
-export const SecondaryOnlyIcons = OnlyIcons.bind({});
+export const SecondaryOnlyIcons: StoryFn<typeof ToggleGroup> = OnlyIcons.bind(
+  {},
+);
 SecondaryOnlyIcons.args = {
   "data-toggle-group": "Filtrering", // Set data-toggle-group attribute for accessibility
   variant: "secondary",

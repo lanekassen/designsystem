@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": ".typescript-cache",
+    "tsBuildInfoFile": ".typescript-cache/tsconfig.tsbuildinfo",
+
+    "types": ["@lanekassen/ds-css/theme"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.stories.tsx", "src/**/*.mdx"]
+}

@@ -3,10 +3,12 @@ import { Heading, Link, List } from "../";
 
 type Story = StoryFn<typeof List.Unordered>;
 
-export default {
+const meta: Meta<typeof List.Unordered> = {
   title: "Komponenter/List",
   component: List.Unordered,
-} satisfies Meta;
+};
+
+export default meta;
 
 export const Preview: Story = (args) => (
   <List.Unordered {...args}>

@@ -6,10 +6,12 @@ import { Button, ErrorSummary, Textfield } from "../";
 
 type Story = StoryFn<typeof ErrorSummary>;
 
-export default {
+const meta: Meta<typeof ErrorSummary> = {
   title: "Komponenter/ErrorSummary",
   component: ErrorSummary,
-} satisfies Meta;
+};
+
+export default meta;
 
 export const Preview: Story = (args) => (
   <ErrorSummary {...args}>
