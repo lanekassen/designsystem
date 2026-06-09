@@ -36,12 +36,12 @@
   "dependencies": {
     "@digdir/designsystemet-react": "catalog:",
     "@digdir/designsystemet-web": "catalog:",
-    "@lanekassen/ds-css": "workspace:*",
-    "@navikt/aksel-icons": "catalog:",
     "@u-elements/u-progress": "catalog:",
     "clsx": "catalog:"
   },
   "devDependencies": {
+    "@lanekassen/ds-css": "workspace:*",
+    "@navikt/aksel-icons": "catalog:",
     "@storybook/react-vite": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",

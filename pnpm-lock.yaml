@@ -165,12 +165,6 @@ importers:
       '@digdir/designsystemet-web':
         specifier: 'catalog:'
         version: 1.15.0
-      '@lanekassen/ds-css':
-        specifier: workspace:*
-        version: link:../css
-      '@navikt/aksel-icons':
-        specifier: 'catalog:'
-        version: 8.11.1
       '@u-elements/u-progress':
         specifier: 'catalog:'
         version: 1.0.1
@@ -178,6 +172,12 @@ importers:
         specifier: 'catalog:'
         version: 2.1.1
     devDependencies:
+      '@lanekassen/ds-css':
+        specifier: workspace:*
+        version: link:../css
+      '@navikt/aksel-icons':
+        specifier: 'catalog:'
+        version: 8.11.1
       '@storybook/react-vite':
         specifier: 'catalog:'
         version: 10.4.1(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(esbuild@0.27.7)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(storybook@10.4.1(@testing-library/dom@10.4.1)(@types/react@19.2.15)(prettier@3.8.3)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3)(vite@8.0.14(esbuild@0.27.7))
