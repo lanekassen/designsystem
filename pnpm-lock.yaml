@@ -72,6 +72,9 @@ importers:
       '@digdir/designsystemet-css':
         specifier: ^1.15.0
         version: 1.15.0
+      '@digdir/designsystemet-types':
+        specifier: ^1.15.0
+        version: 1.15.0
       '@tsdown/css':
         specifier: ^0.22.1
         version: 0.22.1(postcss@8.5.15)(tsdown@0.22.1)
