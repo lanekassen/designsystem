@@ -1,6 +1,6 @@
-@layer ds, lkds;
+@layer ds, lkds.base, lkds.components;
 
 @import "@digdir/designsystemet-css";
 
-@import "./base.css" layer(lkds.base);
+@import "./components/label.css" layer(lkds.base);
 @import "./components/progress.css" layer(lkds.components);
