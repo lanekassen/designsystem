@@ -1,2 +1,6 @@
-@import "./base.css";
-@import "./overrides.css";
+@layer ds, lkds;
+
+@import "@digdir/designsystemet-css";
+
+@import "./base.css" layer(lkds.base);
+@import "./components/progress.css" layer(lkds.components);

@@ -1,2 +1,7 @@
-@import "@digdir/designsystemet-css";
-@import "./components/progress.css";
+.ds-label {
+  font-weight: var(--ds-font-weight-semibold);
+
+  &[data-weight="medium"] {
+    font-weight: var(--ds-font-weight-medium);
+  }
+}
