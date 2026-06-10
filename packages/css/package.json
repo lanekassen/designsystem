@@ -27,7 +27,6 @@
       "types": "./theme/types.d.ts",
       "default": "./theme/lanekassen.tailwind.css"
     },
-    "./components/*": "./dist/components/*",
     "./package.json": "./package.json"
   },
   "scripts": {

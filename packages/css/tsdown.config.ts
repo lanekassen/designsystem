@@ -1,8 +1,8 @@
 import { defineConfig } from "tsdown";
 
 export default defineConfig({
-  entry: "src/**/*.css",
+  entry: "src/index.css",
   css: {
-    splitting: true,
+    fileName: "index.css",
   },
 });

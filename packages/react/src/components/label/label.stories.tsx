@@ -14,6 +14,6 @@ type Story = StoryObj<typeof Label>;
 export const Preview: Story = {
   args: {
     children: "Fødselsnummer (11 sifre)",
-    weight: "medium",
+    weight: "semibold",
   },
 };

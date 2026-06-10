@@ -162,6 +162,9 @@ importers:
       '@digdir/designsystemet-react':
         specifier: 'catalog:'
         version: 1.15.0(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@digdir/designsystemet-types':
+        specifier: 'catalog:'
+        version: 1.15.0
       '@digdir/designsystemet-web':
         specifier: 'catalog:'
         version: 1.15.0
