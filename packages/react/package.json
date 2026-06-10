@@ -19,10 +19,14 @@
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
     },
+    "./react-types": {
+      "types": "./react-types.d.ts"
+    },
     "./package.json": "./package.json"
   },
   "files": [
     "dist/",
+    "react-types.d.ts",
     "package.json",
     "README.md"
   ],
@@ -35,6 +39,7 @@
   },
   "dependencies": {
     "@digdir/designsystemet-react": "catalog:",
+    "@digdir/designsystemet-types": "catalog:",
     "@digdir/designsystemet-web": "catalog:",
     "@u-elements/u-progress": "catalog:",
     "clsx": "catalog:"

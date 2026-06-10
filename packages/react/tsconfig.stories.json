@@ -9,6 +9,7 @@
   "include": [
     "stories/**/*",
     "src/**/*.stories.tsx",
+    "react-types.d.ts",
     "../../packages/css/designsystemet.config.json"
   ],
   "references": [{ "path": "tsconfig.lib.json" }]
