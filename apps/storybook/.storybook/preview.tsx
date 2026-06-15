@@ -4,6 +4,7 @@ import "./preview.css";
 
 import { Link, List, Paragraph } from "@lanekassen/ds-react";
 import { MDXProvider } from "@mdx-js/react";
+import addonA11y from "@storybook/addon-a11y";
 import addonDocs from "@storybook/addon-docs";
 import {
   DocsContainer,
@@ -20,7 +21,7 @@ import { theme } from "./theme";
 const defaultTheme = "light";
 
 export default definePreview({
-  addons: [addonDocs(), addonThemes()],
+  addons: [addonA11y(), addonDocs(), addonThemes()],
   decorators: [
     withThemeByDataAttribute<ReactRenderer>({
       themes: {
@@ -33,18 +34,25 @@ export default definePreview({
   ],
   parameters: {
     layout: "centered",
+
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/,
       },
     },
+
     options: {
       storySort: {
         method: "alphabetical",
         order: ["Introduksjon", "Tokens", "Komponenter"],
       },
     },
+
+    a11y: {
+      test: "error",
+    },
+
     docs: {
       theme,
       codePanel: true,

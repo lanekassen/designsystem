@@ -8,7 +8,9 @@
     "build": "pnpm --recursive build",
     "typecheck": "tsc --build",
     "check": "biome check",
-    "publish-packages": "pnpm --filter './packages/*' build && changeset publish"
+    "publish-packages": "pnpm --filter './packages/*' build && changeset publish",
+    "test:storybook": "pnpm --filter './apps/storybook' test",
+    "test:react": "pnpm --filter './packages/react' test"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
