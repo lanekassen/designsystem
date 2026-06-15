@@ -11,7 +11,12 @@ export default defineMain({
     "../../../packages/*/!(node_modules)/**/*.mdx",
     "../../../packages/*/!(node_modules)/**/*.stories.@(ts|tsx)",
   ],
-  addons: ["@storybook/addon-docs", "@storybook/addon-themes"],
+  addons: [
+    "@storybook/addon-a11y",
+    "@storybook/addon-docs",
+    "@storybook/addon-themes",
+    "@storybook/addon-vitest"
+  ],
   framework: "@storybook/react-vite",
   staticDirs: ["../assets"],
   features: {
