@@ -149,6 +149,9 @@ export type {
 } from "./list/list";
 export { List, ListItem, ListOrdered, ListUnordered } from "./list/list";
 
+export type { LogoProps } from "./logo/logo";
+export { Logo, LogoIcon } from "./logo/logo";
+
 export type {
   PaginationButtonProps,
   PaginationItemProps,

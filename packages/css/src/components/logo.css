@@ -1,0 +1,35 @@
+.lkds-logo {
+  --lkdsc-logo-color-primary: #410464;
+  --lkdsc-logo-color-secondary: #b39ac1;
+  --lkdsc-logo-height: var(--ds-size-8);
+
+  display: block;
+  width: auto;
+  height: var(--lkdsc-logo-height);
+
+  /* Allow color scheme override on element */
+  &[data-color-scheme="dark"] {
+    --lkdsc-logo-color-primary: #ffffff;
+    --lkdsc-logo-color-secondary: #ffffff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &[data-color-scheme="auto"] {
+      --lkdsc-logo-color-primary: #ffffff;
+      --lkdsc-logo-color-secondary: #ffffff;
+    }
+  }
+}
+
+/* Inherit color scheme from parent element */
+[data-color-scheme="dark"] .lkds-logo {
+  --lkdsc-logo-color-primary: #ffffff;
+  --lkdsc-logo-color-secondary: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-color-scheme="auto"] .lkds-logo {
+    --lkdsc-logo-color-primary: #ffffff;
+    --lkdsc-logo-color-secondary: #ffffff;
+  }
+}
