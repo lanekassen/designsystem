@@ -3,4 +3,5 @@
 @import "@digdir/designsystemet-css";
 
 @import "./components/label.css" layer(lkds.base);
+@import "./components/logo.css" layer(lkds.components);
 @import "./components/progress.css" layer(lkds.components);
