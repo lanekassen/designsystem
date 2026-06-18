@@ -3,4 +3,4 @@
 "@lanekassen/ds-css": patch
 ---
 
-Logo: add Logo component
+Logo: add Logo and LogoIcon components
