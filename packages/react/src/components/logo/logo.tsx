@@ -1,3 +1,10 @@
+/**
+ * --- Trademark and brand assets ---
+ * Lånekassen name, logos, illustrations, and brand assets are
+ * not included in the MIT license and may not be used without
+ * permission.
+ */
+
 import cl from "clsx/lite";
 
 const LOGO_ALT = "Lånekassen logo";
