@@ -5,4 +5,7 @@ export default defineConfig({
     index: "src/index.ts",
     utils: "src/utils/index.ts",
   },
+  dts: {
+    build: true,
+  },
 });
