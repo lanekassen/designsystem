@@ -1,5 +1,14 @@
 # @lanekassen/ds-css
 
+## 0.3.1
+
+### Patch Changes
+
+- e18ee7b: Update non-major dependencies
+- 71a60db: Logo: add Logo and LogoIcon components
+- 7707b27: Label: change default font-weight to semibold
+- e178ab6: Progress: add support for all colors and add suppressHydrationWarning
+
 ## 0.3.0
 
 ### Minor Changes

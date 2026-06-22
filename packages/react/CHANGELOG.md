@@ -1,5 +1,16 @@
 # @lanekassen/ds-react
 
+## 0.3.1
+
+### Patch Changes
+
+- 7707b27: Add react-types export with custom attributes
+- e18ee7b: Update non-major dependencies
+- 71a60db: Logo: add Logo and LogoIcon components
+- 9f0eb62: Utils: add helpers for date formatting
+- 0ea354d: Utils: add helpers for finance
+- e178ab6: Progress: add support for all colors and add suppressHydrationWarning
+
 ## 0.3.0
 
 ### Minor Changes
@@ -10,7 +21,7 @@
 
 ### Patch Changes
 
-- Update npm non-major dependencies 
+- Update npm non-major dependencies
 - Updated dependencies
   - @lanekassen/ds-css@0.3.0
 
