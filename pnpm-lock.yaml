@@ -13,19 +13,19 @@ catalogs:
       specifier: ^2.31.0
       version: 2.31.0
     '@digdir/designsystemet':
-      specifier: 1.16.1
+      specifier: ^1.16.1
       version: 1.16.1
     '@digdir/designsystemet-css':
-      specifier: 1.16.1
+      specifier: ^1.16.1
       version: 1.16.1
     '@digdir/designsystemet-react':
-      specifier: 1.16.1
+      specifier: ^1.16.1
       version: 1.16.1
     '@digdir/designsystemet-types':
-      specifier: 1.16.1
+      specifier: ^1.16.1
       version: 1.16.1
     '@digdir/designsystemet-web':
-      specifier: 1.16.1
+      specifier: ^1.16.1
       version: 1.16.1
     '@mdx-js/react':
       specifier: ^3.1.1
