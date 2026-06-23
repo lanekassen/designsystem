@@ -34,6 +34,8 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.0-noble@sha256:57b65fdc9ceabe0ef613124c7bbe2babcf9362c4d85e382fe3b03604e84b428a
     name: Test
     concurrency:
       group: test-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -68,4 +70,8 @@ jobs:
         run: pnpm run typecheck
 
       - name: Biome CI
-        run: pnpm exec biome ci
+        run: pnpm exec biome ci --error-on-warnings --reporter=github
+
+      - name: Test
+        run: pnpm test
+        if: always()

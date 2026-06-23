@@ -8,5 +8,5 @@
     "types": ["@lanekassen/ds-css/theme"]
   },
   "include": ["src/**/*", "react-types.d.ts"],
-  "exclude": ["src/**/*.stories.tsx", "src/**/*.mdx"]
+  "exclude": ["src/**/*.stories.tsx", "src/**/*.test.tsx", "src/**/*.mdx"]
 }

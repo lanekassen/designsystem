@@ -9,8 +9,10 @@
     "typecheck": "tsc --build",
     "check": "biome check",
     "publish-packages": "pnpm --filter './packages/*' build && changeset publish",
-    "test:storybook": "pnpm --filter './apps/storybook' test",
-    "test:react": "pnpm --filter './packages/react' test"
+    "test": "pnpm --filter './apps/storybook' test",
+    "test:storybook": "pnpm test --project=storybook",
+    "test:react:unit": "pnpm test --project=unit",
+    "test:react:e2e": "pnpm test --project=e2e"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",

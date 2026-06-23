@@ -56,13 +56,15 @@
     "@storybook/react-vite": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "@vitest/browser-playwright": "catalog:",
     "react": "catalog:",
     "storybook": "catalog:",
     "tsdown": "catalog:",
     "typedoc": "catalog:",
     "typedoc-plugin-markdown": "catalog:",
     "typescript": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "vitest-browser-react": "catalog:"
   },
   "peerDependencies": {
     "react": "^19.0.0"

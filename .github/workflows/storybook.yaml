@@ -15,6 +15,7 @@ jobs:
   build:
     name: "Build Storybook"
     runs-on: ubuntu-latest
+    if: github.repository == 'lanekassen/designsystem' && github.ref == 'refs/heads/main'
     concurrency:
       group: build-storybook-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
       cancel-in-progress: true
@@ -39,7 +40,7 @@ jobs:
         run: pnpm install
 
       - name: Build Storybook
-        run: pnpm run --recursive build
+        run: pnpm build
 
       # Upload pages artifact
       - name: Upload Pages artifact
