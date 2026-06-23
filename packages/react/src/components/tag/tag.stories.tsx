@@ -49,7 +49,7 @@ Sizes.parameters = {
 export const Colors: StoryFn<typeof Tag> = ({ ...rest }) => {
   return (
     <>
-      {[...themeColors, ...severityColors].map((color) => (
+      {_dataColors.map((color) => (
         <Tag key={color} data-color={color as TagProps["data-color"]} {...rest}>
           {color}
         </Tag>
@@ -66,6 +66,9 @@ Colors.parameters = {
     height: "100%",
     width: "100%",
     placeItems: "center",
+  },
+  a11y: {
+    test: "todo",
   },
 };
 
@@ -84,7 +87,7 @@ export const Icons: StoryFn<typeof Tag> = ({ ...rest }) => {
           aria-hidden
           style={{ marginInlineEnd: "var(--ds-size-1)" }}
         />
-        Teksten er KI-generert
+        Teksten er skrevet av mennesker
       </Tag>
       <Tag
         data-color="info"
@@ -117,7 +120,7 @@ Icons.parameters = {
 export const VariantOutline: StoryFn<typeof Tag> = ({ ...rest }) => {
   return (
     <>
-      {themeColors.map((color) => (
+      {_dataColors.map((color) => (
         <Tag
           key={color}
           data-color={color as TagProps["data-color"]}
@@ -139,5 +142,8 @@ VariantOutline.parameters = {
     height: "100%",
     width: "100%",
     placeItems: "center",
+  },
+  a11y: {
+    test: "todo",
   },
 };

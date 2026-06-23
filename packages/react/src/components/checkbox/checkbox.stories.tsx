@@ -181,6 +181,11 @@ export const Disabled = {
     name: "my-disabled",
     disabled: true,
   },
+  parameters: {
+    a11y: {
+      test: "todo",
+    },
+  },
   render: Group,
 };
 

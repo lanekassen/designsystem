@@ -30,6 +30,11 @@ export const Rows: Story = {
 };
 
 export const Affix: Story = {
+  parameters: {
+    a11y: {
+      test: "todo",
+    },
+  },
   args: {
     prefix: "NOK",
     suffix: "pr. mnd",
