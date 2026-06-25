@@ -66,16 +66,12 @@ export const StorybookLink = ({
 >) => {
   // if link starts with /, add current path to link
   const href = getPath(props.href);
-  const isExternal =
-    href.match(/^https?:\/\//) &&
-    !href.match(/^https?:\/\/([^.]+\.)?lanekassen\.no/);
 
   return (
     <Link
       {...props}
       href={href}
-      // Add noreferrer to links outside lanekassen.no domain for security reasons
-      rel={isExternal ? "noreferrer" : undefined}
+      rel="noreferrer"
       onClick={handleLinkClick(props.href ?? "")}
     >
       {children}
