@@ -1,3 +1,16 @@
 html {
   font-family: "Nunito Sans", sans-serif;
 }
+
+.markdown-alert-caution,
+.markdown-alert-note,
+.markdown-alert-tip,
+.markdown-alert-important,
+.markdown-alert-warning {
+  & > p {
+    margin: 0;
+  }
+  & > header {
+    display: none;
+  }
+}
