@@ -1,12 +1,7 @@
 import { Meta, Markdown } from "@storybook/addon-docs/blocks";
 
-<Meta title="Utvikling/Introduksjon" />
+import README from "../../../../README.md?raw"
 
-# Utvikling dokumentasjon
+<Meta title="Utvikling/Introduction" />
 
-For utvikling så tilbyr designsystemet 2 npm pakker:
-
-- @lanekassen/ds-css
-- @lanekassen/ds-react
-
-Sjekk ut [dokumentasjonen til Digdir](https://designsystemet.no/) for mer informasjon.
+<Markdown>{README}</Markdown>

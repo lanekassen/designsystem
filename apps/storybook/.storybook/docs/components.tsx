@@ -1,5 +1,6 @@
 import { Heading, type HeadingProps, Link } from "@lanekassen/ds-react";
 import { LinkIcon } from "@navikt/aksel-icons";
+import type { AnchorHTMLAttributes } from "react";
 import componentStyles from "./components.module.css";
 
 export const Wide = ({
@@ -8,6 +9,22 @@ export const Wide = ({
 }: React.ComponentPropsWithoutRef<"div">) => {
   const css = { ...style, margin: "3rem calc(50% - min(900px, 50vw) + 4em)" };
   return <div style={css} {...rest} />;
+};
+
+export const getPath = (href: string | undefined): string => {
+  if (!href) {
+    return "";
+  }
+
+  // if link starts with /, add current path to link
+  if (href.startsWith("/")) {
+    // Get location from window.parent instead of document, otherwise pathname is iframe.html
+    const { origin = "", pathname } = window.parent.location;
+
+    return `${origin}${pathname}?path=${href}`;
+  }
+
+  return href;
 };
 
 const handleLinkClick =
@@ -37,5 +54,27 @@ export const HeadingSelfLink = ({ children, ...props }: HeadingProps) => {
         <LinkIcon title="Link to this heading" />
       </Link>
     </Heading>
+  );
+};
+
+export const StorybookLink = ({
+  children = "",
+  ...props
+}: Omit<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  "data-size" | "data-color"
+>) => {
+  // if link starts with /, add current path to link
+  const href = getPath(props.href);
+
+  return (
+    <Link
+      {...props}
+      href={href}
+      rel="noreferrer"
+      onClick={handleLinkClick(props.href ?? "")}
+    >
+      {children}
+    </Link>
   );
 };

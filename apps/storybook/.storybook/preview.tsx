@@ -2,7 +2,7 @@ import "@lanekassen/ds-css";
 import "@lanekassen/ds-css/theme";
 import "./preview.css";
 
-import { Link, List, Paragraph } from "@lanekassen/ds-react";
+import { Divider, List, Paragraph } from "@lanekassen/ds-react";
 import { MDXProvider } from "@mdx-js/react";
 import addonA11y from "@storybook/addon-a11y";
 import addonDocs from "@storybook/addon-docs";
@@ -14,7 +14,7 @@ import {
 import addonThemes, { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { definePreview, type ReactRenderer } from "@storybook/react-vite";
 import { useEffect, useRef } from "react";
-import { HeadingSelfLink } from "./docs/components";
+import { HeadingSelfLink, StorybookLink } from "./docs/components";
 import componentStyles from "./docs/components.module.css";
 import { theme } from "./theme";
 
@@ -45,7 +45,13 @@ export default definePreview({
     options: {
       storySort: {
         method: "alphabetical",
-        order: ["Introduksjon", "Tokens", "Komponenter"],
+        order: [
+          "Introduksjon",
+          "Tokens",
+          "Komponenter",
+          "Utvikling",
+          ["Changelog", "Introduction"],
+        ],
       },
     },
 
@@ -130,10 +136,18 @@ export default definePreview({
                       className={componentStyles.paragraph}
                     />
                   ),
-                  a: (props) => (
-                    <Link {...props} className={componentStyles.link}>
-                      {props.children}
-                    </Link>
+                  hr: (props) => (
+                    <Divider {...props} className={componentStyles.hr} />
+                  ),
+                  a: StorybookLink,
+                  blockquote: (props) => (
+                    <blockquote
+                      {...props}
+                      className={componentStyles.blockquote}
+                    />
+                  ),
+                  code: (props) => (
+                    <code {...props} className={componentStyles.code} />
                   ),
                 }}
               >

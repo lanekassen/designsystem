@@ -8,7 +8,7 @@ const isFromAllowedDependency = (fileName: string) =>
 export default defineMain({
   stories: [
     "../stories/**/*.mdx",
-    "../../../packages/*/!(node_modules)/**/*.mdx",
+    "../../../packages/*/!(node_modules|docs)/**/*.mdx",
     "../../../packages/*/!(node_modules)/**/*.stories.@(ts|tsx)",
   ],
   addons: [
