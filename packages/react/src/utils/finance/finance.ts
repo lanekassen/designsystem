@@ -22,8 +22,7 @@ const defaultAmountFormatter = new Intl.NumberFormat(
 /**
  * Formats a value as Norwegian Krone (NOK) with two decimals and the currency symbol (kr), unless specifically overridden using options.
  *
- * Note: For amount formatting without the currency symbol, use `formatAmount` instead.
- * @see {@link formatAmount}
+ * **Note:** For amount formatting without the currency symbol, use {@link formatAmount} instead.
  */
 export function formatCurrency(
   value: number,
@@ -43,8 +42,7 @@ export function formatCurrency(
 /**
  * Formats a value with two decimals, unless specifically overridden using options.
  *
- * Note: For currency formatting, use `formatCurrency` instead, which includes the currency symbol.
- * @see {@link formatCurrency}
+ * **Note:** For currency formatting, use {@link formatCurrency} instead, which includes the currency symbol.
  */
 export function formatAmount(
   value: number,

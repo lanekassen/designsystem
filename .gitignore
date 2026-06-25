@@ -5,3 +5,4 @@ coverage
 .typescript-cache
 tsconfig.tsbuildinfo
 packages/css/theme
+packages/react/docs

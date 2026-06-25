@@ -71,7 +71,7 @@ export const Colors = () => (
       .tokens button::before { display: none }
     `}</style>
     <figure className="tokens">
-      <Table data-fixed>
+      <Table data-fixed data-color="neutral">
         <thead>
           <tr>
             <th aria-label="Farger" />

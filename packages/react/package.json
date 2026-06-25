@@ -39,7 +39,7 @@
   },
   "scripts": {
     "dev": "tsdown --watch",
-    "build": "tsc --build && tsdown",
+    "build": "tsc --build && tsdown && typedoc",
     "test": "vitest"
   },
   "dependencies": {
@@ -52,12 +52,15 @@
   "devDependencies": {
     "@lanekassen/ds-css": "workspace:*",
     "@navikt/aksel-icons": "catalog:",
+    "@storybook/addon-docs": "catalog:",
     "@storybook/react-vite": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "react": "catalog:",
     "storybook": "catalog:",
     "tsdown": "catalog:",
+    "typedoc": "catalog:",
+    "typedoc-plugin-markdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
   },

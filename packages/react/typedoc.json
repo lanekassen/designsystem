@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/typedoc-plugin-markdown/typedoc-plugin-markdown.schema.json",
+  "entryPoints": ["./src/utils/index.ts"],
+  "alwaysCreateEntryPointModule": true,
+  "cleanOutputDir": true,
+  "displayBasePath": "./src",
+  "out": "./docs",
+  "plugin": ["typedoc-plugin-markdown"],
+  "readme": "none",
+  "router": "module",
+  "gitRevision": "main",
+  "hideBreadcrumbs": true,
+  "hidePageHeader": true,
+  "fileExtension": ".mdx",
+  "flattenOutputFiles": true,
+  "excludeScopesInPaths": true
+}
