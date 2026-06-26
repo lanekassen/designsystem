@@ -19,6 +19,10 @@
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
     },
+    "./form": {
+      "types": "./dist/form.d.mts",
+      "default": "./dist/form.mjs"
+    },
     "./utils": {
       "types": "./dist/utils.d.mts",
       "default": "./dist/utils.mjs"
@@ -54,6 +58,7 @@
     "@navikt/aksel-icons": "catalog:",
     "@storybook/addon-docs": "catalog:",
     "@storybook/react-vite": "catalog:",
+    "@tanstack/react-form": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitest/browser-playwright": "catalog:",
@@ -64,9 +69,16 @@
     "typedoc-plugin-markdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vitest-browser-react": "catalog:"
+    "vitest-browser-react": "catalog:",
+    "zod": "catalog:"
   },
   "peerDependencies": {
+    "@tanstack/react-form": "^1.0.0",
     "react": "^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@tanstack/react-form": {
+      "optional": true
+    }
   }
 }

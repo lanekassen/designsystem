@@ -78,7 +78,7 @@ export function formatKontonummer(value: string): string {
 /**
  * Validates a Norwegian bank account number using the Modulus11 algorithm.
  *
- * @see https://no.wikipedia.org/wiki/MOD11
+ * @see {@link https://no.wikipedia.org/wiki/MOD11}
  */
 export function validateKontonummer(value: string): boolean {
   const weights = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
