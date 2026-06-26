@@ -5,7 +5,6 @@
   color: var(--lkdsc-progress-color);
   height: var(--ds-size-6);
   border-radius: var(--ds-border-radius-full);
-  border-width: 999px;
   /**
    * By default u-progress uses background, which we want to override completely
    * This is why this isn't background-color
