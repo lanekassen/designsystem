@@ -1,11 +1,11 @@
 .lkds-progress {
-  --lkdsc-progress-background: var(--ds-color-neutral-surface-tinted);
-  --lkdsc-progress-color: var(--ds-color-base-default);
+  --lkdsc-progress-background: white;
+  --lkdsc-progress-color: black;
 
   color: var(--lkdsc-progress-color);
-  height: var(--ds-size-3);
+  height: var(--ds-size-6);
   border-radius: var(--ds-border-radius-full);
-  border: 0;
+  border-width: 999px;
   /**
    * By default u-progress uses background, which we want to override completely
    * This is why this isn't background-color
