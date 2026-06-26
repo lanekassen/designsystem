@@ -3,7 +3,7 @@
   --lkdsc-progress-color: black;
 
   color: var(--lkdsc-progress-color);
-  height: var(--ds-size-6);
+  height: var(--ds-size-3);
   border-radius: var(--ds-border-radius-full);
   /**
    * By default u-progress uses background, which we want to override completely
