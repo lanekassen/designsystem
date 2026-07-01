@@ -30,7 +30,7 @@ const form = useAppForm({
 
 See full examples below.
 
-This package also exposes `withForm` and `withFieldGroup` that can be used to create reusable forms and field groups.
+This package also exposes `withForm` and `withFieldGroup` which can be used to create reusable forms and field groups.
 See the [docs for more info](https://tanstack.com/form/latest/docs/framework/react/guides/form-composition#breaking-big-forms-into-smaller-pieces).
 
 ## Validation
@@ -38,7 +38,7 @@ See the [docs for more info](https://tanstack.com/form/latest/docs/framework/rea
 For schema validation, check out a [schema validation library that supports Standard Schema](https://standardschema.dev/schema#what-schema-libraries-implement-the-spec), such as [Zod](https://zod.dev/).
 
 Use `revalidateLogic` from `@tanstack/react-form` to trigger validation `onSubmit`, and subsequent validations `onBlur`.
-This matches [Designsystemet's guidelines for user triggered validation messages](https://aksel.nav.no/monster-maler/soknadsdialog/monster-for-skjemavalidering).
+This matches [Designsystemet's guidelines for user triggered validation messages](https://designsystemet.no/en/patterns/errors#when-should-we-display-an-error-message).
 
 ```tsx
 const schema = z.object({
