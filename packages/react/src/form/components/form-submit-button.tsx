@@ -7,12 +7,7 @@ export default function FormSubmitButton({ children, ...rest }: ButtonProps) {
   return (
     <form.Subscribe selector={(state) => state.isSubmitting}>
       {(isSubmitting) => (
-        <Button
-          type="submit"
-          variant="primary"
-          loading={isSubmitting}
-          {...rest}
-        >
+        <Button type="submit" loading={isSubmitting} {...rest}>
           {children}
         </Button>
       )}

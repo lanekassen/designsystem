@@ -1,3 +1,4 @@
+import { Alert } from '@lanekassen/ds-react';
 import { Canvas, Meta } from '@storybook/addon-docs/blocks';
 import * as FormStories from './form.stories';
 
@@ -29,14 +30,15 @@ const form = useAppForm({
 
 See full examples below.
 
-We also expose `withForm` and `withFieldGroup` that can be used to create reusable forms and field groups.
+This package also exposes `withForm` and `withFieldGroup` that can be used to create reusable forms and field groups.
 See the [docs for more info](https://tanstack.com/form/latest/docs/framework/react/guides/form-composition#breaking-big-forms-into-smaller-pieces).
 
 ## Validation
 
-We recommend using a [schema validation library that supports Standard Schema](https://standardschema.dev/schema#what-schema-libraries-implement-the-spec), like [Zod](https://zod.dev/).
+For schema validation, check out a [schema validation library that supports Standard Schema](https://standardschema.dev/schema#what-schema-libraries-implement-the-spec), such as [Zod](https://zod.dev/).
 
-We also recommend using `revalidateLogic` from `@tanstack/react-form` to trigger validation `onSubmit`, and subsequent validations `onBlur`.
+Use `revalidateLogic` from `@tanstack/react-form` to trigger validation `onSubmit`, and subsequent validations `onBlur`.
+This matches [Designsystemet's guidelines for user triggered validation messages](https://aksel.nav.no/monster-maler/soknadsdialog/monster-for-skjemavalidering).
 
 ```tsx
 const schema = z.object({
@@ -67,7 +69,9 @@ const form = useAppForm({
 
 ### Suggestion
 
-**Note:** The `Suggestion` component is experimental.
+<Alert data-color="warning">
+  The `Suggestion` component is experimental.
+</Alert>
 
 <Canvas of={FormStories.FormSuggestion} />
 
@@ -76,7 +80,7 @@ const form = useAppForm({
 Checkbox Group provides a render prop to provide the necessary props for the checkbox components.
 
 If you want to display switches instead of checkboxes, use `Switch` components as children instead of `Checkbox`.
-Note that switch is not recommended for form applications, but they can be suitable for toggling things like settings.
+Note that switch is not recommended for form applications, but they can be suitable for toggling options, such as settings.
 
 <Canvas of={FormStories.FormCheckboxGroup} />
 
