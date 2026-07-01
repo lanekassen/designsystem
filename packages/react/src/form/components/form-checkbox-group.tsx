@@ -14,7 +14,7 @@ type FormCheckboxGroupProps = Pick<
   "data-size" | "className" | "style"
 > &
   UseCheckboxGroupProps & {
-    legend: React.ReactNode;
+    legend?: React.ReactNode;
     description?: React.ReactNode;
     children: (
       getCheckboxProps: ReturnType<typeof useCheckboxGroup>["getCheckboxProps"],
@@ -55,7 +55,7 @@ export default function FormCheckboxGroup({
       className={className}
       style={style}
     >
-      <Fieldset.Legend>{legend}</Fieldset.Legend>
+      {!!legend && <Fieldset.Legend>{legend}</Fieldset.Legend>}
 
       {!!description && (
         <Fieldset.Description>{description}</Fieldset.Description>

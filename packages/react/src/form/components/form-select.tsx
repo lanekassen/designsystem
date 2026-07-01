@@ -14,7 +14,7 @@ type FormFieldProps = Pick<FieldProps, "data-size" | "className" | "style"> &
     SelectProps,
     "data-size" | "className" | "style" | "value" | "onChange" | "onBlur"
   > & {
-    label: React.ReactNode;
+    label?: React.ReactNode;
     description?: React.ReactNode;
   };
 
@@ -31,7 +31,7 @@ export default function FormField({
 
   return (
     <Field data-size={size} className={className} style={style}>
-      <Label>{label}</Label>
+      {!!label && <Label>{label}</Label>}
 
       {!!description && <Field.Description>{description}</Field.Description>}
 

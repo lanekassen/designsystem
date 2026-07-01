@@ -14,7 +14,7 @@ type FormRadioGroupProps = Pick<
   "data-size" | "className" | "style"
 > &
   UseRadioGroupProps & {
-    legend: React.ReactNode;
+    legend?: React.ReactNode;
     description?: React.ReactNode;
     children: (
       getRadioProps: ReturnType<typeof useRadioGroup>["getRadioProps"],
@@ -55,7 +55,7 @@ export default function FormRadioGroup({
       className={className}
       style={style}
     >
-      <Fieldset.Legend>{legend}</Fieldset.Legend>
+      {!!legend && <Fieldset.Legend>{legend}</Fieldset.Legend>}
 
       {!!description && (
         <Fieldset.Description>{description}</Fieldset.Description>

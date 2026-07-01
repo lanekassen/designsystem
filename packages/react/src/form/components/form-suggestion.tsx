@@ -55,7 +55,7 @@ type FormSuggestionProps = Pick<
     | "onBlur"
     | "onSelectedChange"
   > & {
-    label: React.ReactNode;
+    label?: React.ReactNode;
     description?: React.ReactNode;
   };
 
@@ -72,7 +72,7 @@ export default function FormSuggestion({
 
   return (
     <Field data-size={size} className={className} style={style}>
-      <Label>{label}</Label>
+      {!!label && <Label>{label}</Label>}
 
       {!!description && <Field.Description>{description}</Field.Description>}
 
