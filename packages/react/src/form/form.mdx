@@ -1,0 +1,102 @@
+import { Alert } from '@lanekassen/ds-react';
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as FormStories from './form.stories';
+
+<Meta of={FormStories} />
+
+# @lanekassen/ds-react/form
+
+Pre-bound components for building forms with validation and state management,
+built using [TanStack Form's composition API](https://tanstack.com/form/latest/docs/framework/react/guides/form-composition).
+
+## Installation
+
+```bash
+pnpm add @tanstack/react-form
+```
+
+## Usage
+
+The `useAppForm` hook provides a pre-configured `useForm` hook, which provides pre-configured components for easy form composition.
+
+```tsx
+import { useAppForm } from '@lanekassen/ds-react/form';
+
+// In your component
+const form = useAppForm({
+  // Your form configuration here
+});
+```
+
+See full examples below.
+
+This package also exposes `withForm` and `withFieldGroup` which can be used to create reusable forms and field groups.
+See the [docs for more info](https://tanstack.com/form/latest/docs/framework/react/guides/form-composition#breaking-big-forms-into-smaller-pieces).
+
+## Validation
+
+For schema validation, check out a [schema validation library that supports Standard Schema](https://standardschema.dev/schema#what-schema-libraries-implement-the-spec), such as [Zod](https://zod.dev/).
+
+Use `revalidateLogic` from `@tanstack/react-form` to trigger validation `onSubmit`, and subsequent validations `onBlur`.
+This matches [Designsystemet's guidelines for user triggered validation messages](https://designsystemet.no/en/patterns/errors#when-should-we-display-an-error-message).
+
+```tsx
+const schema = z.object({
+  name: z.string().min(1, "Name is required"),
+});
+
+// In your component
+const form = useAppForm({
+  validationLogic: revalidateLogic({
+    mode: "submit",
+    modeAfterSubmission: "blur",
+  }),
+  validators: {
+    onDynamic: schema, // onDynamic must be used in order for validationLogic to apply
+  },
+});
+```
+
+## Components
+
+### Textfield
+
+<Canvas of={FormStories.FormTextfield} />
+
+### Select
+
+<Canvas of={FormStories.FormSelect} />
+
+### Suggestion
+
+<Alert data-color="warning">
+  The `Suggestion` component is experimental.
+</Alert>
+
+<Canvas of={FormStories.FormSuggestion} />
+
+### Checkbox Group
+
+Checkbox Group provides a render prop to provide the necessary props for the checkbox components.
+
+If you want to display switches instead of checkboxes, use `Switch` components as children instead of `Checkbox`.
+Note that switch is not recommended for form applications, but they can be suitable for toggling options, such as settings.
+
+<Canvas of={FormStories.FormCheckboxGroup} />
+
+### Radio Group
+
+Radio Group provides a render prop to provide the necessary props for the radio button components.
+
+<Canvas of={FormStories.FormRadioGroup} />
+
+### Submit Button
+
+The `SubmitButton` component is used to submit the form. It automatically sets the correct aria-attributes and shows a spinner when the form is submitting.
+It must be wrapped in a `AppForm` component which provides the necessary context.
+
+<Canvas of={FormStories.FormSubmitButton} />
+
+## Full example
+
+<Canvas of={FormStories.FormFull} />

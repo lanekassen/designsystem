@@ -13,5 +13,6 @@
   "hidePageHeader": true,
   "fileExtension": ".mdx",
   "flattenOutputFiles": true,
-  "excludeScopesInPaths": true
+  "excludeScopesInPaths": true,
+  "excludeNotDocumented": true
 }

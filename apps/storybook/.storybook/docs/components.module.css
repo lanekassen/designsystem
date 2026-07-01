@@ -53,19 +53,3 @@
 .list:last-child {
   margin-bottom: 0;
 }
-
-.blockquote {
-  margin-inline: 0;
-  border-left: var(--ds-size-1) solid var(--ds-color-border-subtle);
-  padding-inline: var(--ds-size-4);
-}
-
-.code {
-  color: var(--ds-color-neutral-text-default);
-  border: var(--ds-border-width-default) solid var(--ds-color-border-subtle);
-  border-radius: var(--ds-border-radius-sm);
-  background-color: var(--ds-color-neutral-surface-tinted);
-  font-size: var(--ds-font-size-3);
-  white-space: nowrap;
-  padding: 0.2em 0.3em;
-}

@@ -37,7 +37,9 @@ export default defineConfig({
         extends: true,
         test: {
           name: "unit",
-          include: ["../../packages/**/*.{test,spec}.?(c|m)[jt]s"],
+          include: [
+            "../../packages/*/!(node_modules)/**/*.{test,spec}.?(c|m)[jt]s",
+          ],
           browser: {
             enabled: false,
           },
@@ -48,7 +50,9 @@ export default defineConfig({
         test: {
           name: "e2e",
           // React files are "e2e".
-          include: ["../../packages/**/*.{test,spec}.?(c|m)[jt]sx"],
+          include: [
+            "../../packages/*/!(node_modules)/**/*.{test,spec}.?(c|m)[jt]sx",
+          ],
           browser: {
             enabled: true,
             headless: true,

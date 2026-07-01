@@ -140,15 +140,6 @@ export default definePreview({
                     <Divider {...props} className={componentStyles.hr} />
                   ),
                   a: StorybookLink,
-                  blockquote: (props) => (
-                    <blockquote
-                      {...props}
-                      className={componentStyles.blockquote}
-                    />
-                  ),
-                  code: (props) => (
-                    <code {...props} className={componentStyles.code} />
-                  ),
                 }}
               >
                 <DocsContainer {...props} />
