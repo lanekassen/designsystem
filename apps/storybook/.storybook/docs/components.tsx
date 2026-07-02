@@ -1,5 +1,5 @@
 import { Heading, type HeadingProps, Link } from "@lanekassen/ds-react";
-import { LinkIcon } from "@navikt/aksel-icons";
+import { LinkIcon, ThumbDownIcon, ThumbUpIcon } from "@navikt/aksel-icons";
 import type { AnchorHTMLAttributes } from "react";
 import componentStyles from "./components.module.css";
 
@@ -78,3 +78,56 @@ export const StorybookLink = ({
     </Link>
   );
 };
+
+type ExampleItemProps = {
+  text: React.ReactNode;
+  aspectRatio?: string;
+  zoom?: string;
+  children: React.ReactNode;
+};
+
+function ExampleItem({
+  "data-color": color = "success",
+  text,
+  aspectRatio = "16 / 9",
+  zoom = "100%",
+  children,
+}: ExampleItemProps & {
+  "data-color"?: "success" | "danger";
+}) {
+  const scale = parseInt(zoom, 10) / 100;
+  const width = `${100 / scale}%`;
+
+  return (
+    <div className={componentStyles.exampleItem} data-color={color}>
+      <div className={componentStyles.examplePreview}>
+        <div
+          style={{
+            aspectRatio,
+            scale,
+            width,
+          }}
+        >
+          {children}
+        </div>
+      </div>
+
+      <p className={componentStyles.exampleCaption}>
+        {color === "success" ? <ThumbUpIcon /> : <ThumbDownIcon />}
+        {text}
+      </p>
+    </div>
+  );
+}
+
+export function Example({ children }: { children: React.ReactNode }) {
+  return <div className={componentStyles.example}>{children}</div>;
+}
+
+Example.Do = (props: ExampleItemProps) => (
+  <ExampleItem data-color="success" {...props} />
+);
+
+Example.Dont = (props: ExampleItemProps) => (
+  <ExampleItem data-color="danger" {...props} />
+);

@@ -21,7 +21,7 @@ export default defineMain({
   staticDirs: ["../assets"],
   features: {
     sidebarOnboardingChecklist: false,
-    interactions: false, // Disables and completely deletes the Interactions tab engine
+    interactions: false,
   },
   core: {
     disableTelemetry: true,

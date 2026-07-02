@@ -1,6 +1,5 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-<link rel="icon" href="/favicon.ico" media="(prefers-color-scheme: light)" />
-<link rel="icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)" />
+<link rel="icon" href="/favicon.ico" />
 <style>
   /**
    * Rounded content
@@ -29,14 +28,7 @@
   .sidebar-container.sidebar-container button[role="switch"][aria-label*="review" i], /* Hide review stories button */
   .sidebar-container.sidebar-container [data-displayed], /* Hide "Open in edtior" context menu in sidebar */
   .sb-bar.sb-bar button[aria-label="Open in editor"], /* Hide "Open in edtior" (new markup) */
-  .sb-bar.sb-bar button[title="Open in editor"], /* Hide "Open in edtior" (old markup) */
-  
-  /* --- INJECTED TARGET SELECTORS: INSTANTLY COLLAPSE UNWANTED ADDON TABS --- */
-  button[id*="addon-tab-storybook/controls"],      /* Suppresses Controls Tab */
-  button[id*="addon-tab-storybook/actions"],       /* Suppresses Actions Tab */
-  button[id*="addon-tab-storybook/interactions"], /* Suppresses Interactions Tab (Full ID) */
-  button[id*="addon-tab-interactions"],            /* Suppresses Interactions Tab (Variant ID) */
-  button[id*="interactions"]                       /* Suppresses Interactions Tab (Short ID) */
+  .sb-bar.sb-bar button[title="Open in editor"] /* Hide "Open in edtior" (old markup) */
     { display: none !important }
 
   /**

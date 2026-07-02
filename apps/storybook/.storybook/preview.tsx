@@ -23,18 +23,6 @@ const defaultTheme = "light";
 export default definePreview({
   addons: [addonA11y(), addonDocs(), addonThemes()],
   decorators: [
-    // --- 1. DYNAMIC DECORATOR TRACKS IF USER IS LOOKING AT MDX OR STORIES ---
-    (Story, context) => {
-      if (typeof window !== "undefined" && window.top) {
-        const topDoc = window.top.document.documentElement;
-        if (context.viewMode === "docs") {
-          topDoc.classList.add("sb-hide-tools-on-mdx");
-        } else {
-          topDoc.classList.remove("sb-hide-tools-on-mdx");
-        }
-      }
-      return <Story />;
-    },
     withThemeByDataAttribute<ReactRenderer>({
       themes: {
         light: "light",
@@ -60,9 +48,18 @@ export default definePreview({
       },
     },
 
-    controls: { disable: true },
-    actions: { disable: true },
-    backgrounds: { disable: true }, // Keeps backgrounds disabled globally if required
+    controls: {
+      disableSaveFromUI: true,
+      expanded: false,
+    },
+
+    actions: {
+      disable: true,
+    },
+
+    backgrounds: {
+      disable: true,
+    },
 
     a11y: {
       test: "error",
