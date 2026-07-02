@@ -1,0 +1,122 @@
+import { BriefcaseIcon } from "@navikt/aksel-icons";
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { cat3Img, themeColors } from "../../../stories/constants";
+
+import { Avatar, type AvatarProps, Badge, Dropdown } from "../";
+
+type Story = StoryFn<typeof Avatar>;
+
+const meta: Meta<typeof Avatar> = {
+  title: "Designsystem/Avatar",
+  component: Avatar,
+  parameters: {
+    layout: "padded",
+    customStyles: {
+      display: "flex",
+      gap: "var(--ds-size-2)",
+      justifyContent: "center",
+      alignItems: "center",
+      flexWrap: "wrap",
+    },
+  },
+};
+
+export default meta;
+
+export const Preview: Story = (args) => <Avatar {...args} />;
+
+Preview.args = {
+  "aria-label": "Ola Nordmann",
+  variant: "circle",
+  children: "",
+};
+
+export const NoName: Story = () => <Avatar aria-label="Ola" />;
+
+export const Sizes: Story = () => (
+  <>
+    <Avatar data-size="xs" aria-label="extra small" initials="xs" />
+    <Avatar data-size="xs" aria-label="extra small" />
+    <Avatar data-size="sm" aria-label="small" initials="sm" />
+    <Avatar data-size="sm" aria-label="small" />
+    <Avatar data-size="md" aria-label="medium" initials="md" />
+    <Avatar data-size="md" aria-label="medium" />
+    <Avatar data-size="lg" aria-label="large" initials="lg" />
+    <Avatar data-size="lg" aria-label="large" />
+  </>
+);
+
+export const ColorVariants: Story = () => (
+  <>
+    {[...themeColors].map((color) => (
+      <Avatar
+        key={color}
+        data-color={color as AvatarProps["data-color"]}
+        aria-label={`color ${color}`}
+      />
+    ))}
+  </>
+);
+
+export const ShapeVariants: Story = () => (
+  <>
+    <Avatar variant="circle" aria-label="variant circle" />
+    <Avatar variant="square" aria-label="variant square" />
+    <Avatar variant="circle" aria-label="Ola Nordmann">
+      ON
+    </Avatar>
+    <Avatar variant="square" aria-label="Ola Nordmann">
+      ON
+    </Avatar>
+  </>
+);
+
+export const WithImage: Story = () => (
+  <Avatar aria-label="Ola Nordmann">{cat3Img}</Avatar>
+);
+
+export const InDropdown: Story = () => (
+  <Dropdown.TriggerContext>
+    <Dropdown.Trigger variant="tertiary">
+      <Avatar aria-label="Ola Nordmann" data-size="sm">
+        ON
+      </Avatar>
+      Velg Profil
+    </Dropdown.Trigger>
+    <Dropdown placement="bottom-end" autoPlacement={false} data-size="md" open>
+      <Dropdown.List>
+        <Dropdown.Item>
+          <Dropdown.Button>
+            <Badge.Position overlap="circle">
+              <Badge data-color="danger" data-size="sm"></Badge>
+              <Avatar aria-hidden={true} data-size="xs">
+                ON
+              </Avatar>
+            </Badge.Position>
+            Ola Nordmann
+          </Dropdown.Button>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Dropdown.Button>
+            <Avatar aria-hidden data-size="xs">
+              <BriefcaseIcon />
+            </Avatar>
+            Sogndal kommune
+          </Dropdown.Button>
+        </Dropdown.Item>
+      </Dropdown.List>
+    </Dropdown>
+  </Dropdown.TriggerContext>
+);
+InDropdown.parameters = {
+  layout: "fullscreen",
+  customStyles: {
+    height: "320px",
+  },
+};
+
+export const AsLink: Story = () => (
+  <a href="#link">
+    <Avatar aria-label="Ola Nordmann" />
+  </a>
+);

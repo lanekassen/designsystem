@@ -47,6 +47,8 @@ export default definePreview({
         method: "alphabetical",
         order: [
           "Introduksjon",
+          "Stil og tone",
+          "Designsystem",
           "Tokens",
           "Komponenter",
           "Utvikling",
@@ -97,28 +99,28 @@ export default definePreview({
                     <HeadingSelfLink
                       {...props}
                       className={componentStyles.heading}
-                      data-size="lg"
+                      data-size="2xl"
                     />
                   ),
                   h2: (props) => (
                     <HeadingSelfLink
                       {...props}
                       className={componentStyles.heading}
-                      data-size="md"
+                      data-size="lg"
                     />
                   ),
                   h3: (props) => (
                     <HeadingSelfLink
                       {...props}
                       className={componentStyles.heading}
-                      data-size="sm"
+                      data-size="md"
                     />
                   ),
                   h4: (props) => (
                     <HeadingSelfLink
                       {...props}
                       className={componentStyles.heading}
-                      data-size="xs"
+                      data-size="sm"
                     />
                   ),
                   ol: (props) => (
@@ -139,7 +141,13 @@ export default definePreview({
                   hr: (props) => (
                     <Divider {...props} className={componentStyles.hr} />
                   ),
-                  a: StorybookLink,
+                  blockquote: (props) => (
+                    <blockquote {...props} className={componentStyles.blockquoteIngress} />
+                  ),
+                  a: (props) => (
+                    <a {...props} className={componentStyles.blockquoteIngress} />
+                  ),
+      
                 }}
               >
                 <DocsContainer {...props} />

@@ -1,0 +1,145 @@
+import type { DSErrorSummaryElement } from "@digdir/designsystemet-web";
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { useEffect, useRef, useState } from "react";
+import { expect, userEvent, within } from "storybook/test";
+import { Button, ErrorSummary, Textfield } from "../";
+
+type Story = StoryFn<typeof ErrorSummary>;
+
+const meta: Meta<typeof ErrorSummary> = {
+  title: "Designsystem/ErrorSummary",
+  component: ErrorSummary,
+};
+
+export default meta;
+
+export const Preview: Story = (args) => (
+  <ErrorSummary {...args}>
+    <ErrorSummary.Heading>
+      For å gå videre må du rette opp følgende feil:
+    </ErrorSummary.Heading>
+    <ErrorSummary.List>
+      <ErrorSummary.Item>
+        <ErrorSummary.Link href="#link">
+          Fødselsdato kan ikke være etter år 2005
+        </ErrorSummary.Link>
+      </ErrorSummary.Item>
+      <ErrorSummary.Item>
+        <ErrorSummary.Link href="#link">
+          Telefonnummer kan kun inneholde siffer
+        </ErrorSummary.Link>
+      </ErrorSummary.Item>
+      <ErrorSummary.Item>
+        <ErrorSummary.Link href="#link">
+          E-post må være gyldig
+        </ErrorSummary.Link>
+      </ErrorSummary.Item>
+    </ErrorSummary.List>
+  </ErrorSummary>
+);
+
+export const WithForm: Story = () => (
+  <>
+    <Textfield
+      label="Fornavn"
+      id="fornavn"
+      error="Fornavn må være minst 2 tegn"
+    />
+
+    <Textfield
+      label="Telefon"
+      id="telefon"
+      type="tel"
+      error="Telefonnummer kan kun inneholde siffer"
+    />
+
+    <ErrorSummary>
+      <ErrorSummary.Heading>
+        For å gå videre må du rette opp følgende feil:
+      </ErrorSummary.Heading>
+      <ErrorSummary.List>
+        <ErrorSummary.Item>
+          <ErrorSummary.Link href="#fornavn">
+            Fornavn må være minst 2 tegn
+          </ErrorSummary.Link>
+        </ErrorSummary.Item>
+        <ErrorSummary.Item>
+          <ErrorSummary.Link href="#telefon">
+            Telefonnummer kan kun inneholde siffer
+          </ErrorSummary.Link>
+        </ErrorSummary.Item>
+      </ErrorSummary.List>
+    </ErrorSummary>
+  </>
+);
+
+WithForm.decorators = [
+  (Story) => (
+    <div
+      style={{
+        display: "grid",
+        alignItems: "stretch",
+        gap: "var(--ds-size-4)",
+      }}
+    >
+      <Story />
+    </div>
+  ),
+];
+
+export const ShowHideReact: Story = () => {
+  const [show, setShow] = useState(false);
+  const summaryRef = useRef<DSErrorSummaryElement>(null);
+  useEffect(() => {
+    if (show) {
+      summaryRef.current?.focus();
+    }
+  }, [show]);
+
+  return (
+    <>
+      <div
+        style={{
+          display: "grid",
+          placeItems: "center",
+          marginBottom: "var(--ds-size-4)",
+        }}
+      >
+        <Button onClick={() => setShow(!show)}>
+          {show ? "Skjul" : "Send inn skjema"}
+        </Button>
+      </div>
+      {show && (
+        <ErrorSummary data-testid="show-hide" ref={summaryRef}>
+          <ErrorSummary.Heading>
+            For å gå videre må du rette opp følgende feil:
+          </ErrorSummary.Heading>
+          <ErrorSummary.List>
+            <ErrorSummary.Item>
+              <ErrorSummary.Link href="#fornavn">
+                Fornavn må være minst 2 tegn
+              </ErrorSummary.Link>
+            </ErrorSummary.Item>
+            <ErrorSummary.Item>
+              <ErrorSummary.Link href="#telefon">
+                Telefonnummer kan kun inneholde siffer
+              </ErrorSummary.Link>
+            </ErrorSummary.Item>
+          </ErrorSummary.List>
+        </ErrorSummary>
+      )}
+    </>
+  );
+};
+
+ShowHideReact.play = async (ctx) => {
+  const canvas = within(ctx.canvasElement);
+  const button = canvas.getByRole("button");
+  await userEvent.click(button);
+  const errorSummary = canvas.getByTestId("show-hide");
+  await expect(errorSummary).toBeVisible();
+};
+
+ShowHideReact.parameters = {
+  docs: { source: { type: "code" } },
+};

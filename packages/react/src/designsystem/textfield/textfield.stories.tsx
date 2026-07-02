@@ -1,0 +1,102 @@
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
+import { useState } from "react";
+import { Button, Divider, Paragraph, Tag, Textfield } from "../";
+
+type Story = StoryObj<typeof Textfield>;
+
+export default {
+  title: "Designsystem/Textfield",
+  component: Textfield,
+} as Meta;
+
+export const Preview: Story = {
+  args: {
+    label: "Label",
+    disabled: false,
+    readOnly: false,
+    multiline: false,
+    description: "",
+    error: "",
+    counter: 0,
+  },
+};
+
+export const Rows: Story = {
+  args: {
+    label: "Label",
+    multiline: true,
+    rows: 4,
+  },
+};
+
+export const Affix: Story = {
+  parameters: {
+    a11y: {
+      test: "todo",
+    },
+  },
+  args: {
+    prefix: "NOK",
+    suffix: "pr. mnd",
+    label: "Hvor mange kroner koster det per måned?",
+  },
+};
+
+export const Counter: Story = {
+  args: {
+    counter: 10,
+    label: "Hvor mange kroner koster det per måned?",
+  },
+};
+
+export const Controlled: StoryFn<typeof Textfield> = () => {
+  const [value, setValue] = useState<string>("Ost");
+  return (
+    <>
+      <Textfield
+        label="Kontroller meg!"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        counter={5}
+      />
+
+      <Divider style={{ marginTop: "var(--ds-size-4)" }} />
+
+      <Paragraph style={{ margin: "var(--ds-size-2) 0" }}>
+        Du har skrevet inn: {value}
+      </Paragraph>
+      <Button onClick={() => setValue("Kake")}>Jeg vil ha Kake</Button>
+    </>
+  );
+};
+
+export const DateInputs: StoryFn<typeof Textfield> = () => {
+  return (
+    <>
+      <Textfield label="text" type="text" />
+      <Textfield label="tel" type="tel" />
+      <Textfield label="time" type="time" />
+      <Textfield label="date" type="date" />
+      <Textfield label="datetime-local" type="datetime-local" />
+      <Textfield label="month" type="month" />
+      <Textfield label="week" type="week" />
+    </>
+  );
+};
+
+export const Required: Story = {
+  args: {
+    label: (
+      <>
+        Hvor bor du?
+        <Tag
+          data-color="warning"
+          style={{ marginInlineStart: "var(--ds-size-2)" }}
+        >
+          Må fylles ut
+        </Tag>
+      </>
+    ),
+    required: true,
+  },
+};

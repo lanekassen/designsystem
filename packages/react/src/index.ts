@@ -4,5 +4,5 @@
  * @module @lanekassen/ds-react
  */
 
-export * from "./components";
+export * from "./designsystem";
 export * from "./hooks";
