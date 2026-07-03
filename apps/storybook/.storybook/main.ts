@@ -21,6 +21,7 @@ export default defineMain({
   staticDirs: ["../assets"],
   features: {
     sidebarOnboardingChecklist: false,
+    interactions: false,
   },
   core: {
     disableTelemetry: true,

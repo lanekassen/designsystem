@@ -35,13 +35,6 @@ export default definePreview({
   parameters: {
     layout: "centered",
 
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
-      },
-    },
-
     options: {
       storySort: {
         method: "alphabetical",
@@ -53,6 +46,19 @@ export default definePreview({
           ["Changelog", "Introduction"],
         ],
       },
+    },
+
+    controls: {
+      disableSaveFromUI: true,
+      expanded: false,
+    },
+
+    actions: {
+      disable: true,
+    },
+
+    backgrounds: {
+      disable: true,
     },
 
     a11y: {
