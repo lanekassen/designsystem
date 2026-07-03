@@ -73,32 +73,29 @@
     padding: var(--example-spacing);
 
     .examplePreview {
-      background: var(--ds-color-surface-default);
-      border: 1px solid var(--example-border-color);
+      background: var(--ds-color-background-default);
+      border: var(--ds-border-width-default) solid var(--example-border-color);
       border-radius: var(--ds-border-radius-sm);
       box-sizing: border-box;
-      display: grid;
-      place-items: center;
       padding: var(--ds-size-8);
 
       > * {
-        min-width: 0;
-        max-width: 100%;
+        display: grid;
+        place-items: center;
       }
     }
 
     .exampleCaption {
-      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--example-spacing);
       margin: var(--example-spacing) 0 0;
-      padding-left: calc(var(--ds-icon-size) + var(--example-spacing));
       color: var(--ds-color-text-subtle);
       font-size: var(--ds-body-sm-font-size);
-      line-height: 1.4;
+      line-height: var(--ds-line-height-md);
 
       > svg {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: var(--ds-icon-size);
         height: var(--ds-icon-size);
         flex-shrink: 0;
