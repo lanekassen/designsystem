@@ -56,7 +56,7 @@
 
 /* Custom Docs css */
 .docsblockquoteIngress {
- font-size: var(--ds-font-size-6);
+  font-size: var(--ds-font-size-6);
 }
 
 .docsLink {
@@ -69,8 +69,57 @@
   }
 }
 
-
 /* Using :where to allow overwrites */
 :where(b, h1, h2, h3, h4, h5, h6, label, legend, strong) {
-		font-weight: 600;
+  font-weight: 600;
+}
+
+.example {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ds-size-4);
+
+  @media (max-width: 48rem) {
+    grid-template-columns: 1fr;
+  }
+
+  .exampleItem {
+    --example-spacing: var(--ds-size-3);
+    --example-background: var(--ds-color-background-tinted);
+    --example-border-color: var(--ds-color-border-subtle);
+
+    background: var(--example-background);
+    border-radius: var(--ds-border-radius-md);
+    padding: var(--example-spacing);
+
+    .examplePreview {
+      background: var(--ds-color-background-default);
+      border: var(--ds-border-width-default) solid var(--example-border-color);
+      border-radius: var(--ds-border-radius-sm);
+      box-sizing: border-box;
+      padding: var(--ds-size-8);
+
+      > * {
+        display: grid;
+        place-items: center;
+      }
+    }
+
+    .exampleCaption {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--example-spacing);
+      margin: var(--example-spacing) 0 0;
+      color: var(--ds-color-text-subtle);
+      font-size: var(--ds-body-sm-font-size);
+      line-height: var(--ds-line-height-md);
+
+      > svg {
+        width: var(--ds-icon-size);
+        height: var(--ds-icon-size);
+        flex-shrink: 0;
+      }
+    }
+  }
 }

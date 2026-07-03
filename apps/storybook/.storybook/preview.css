@@ -32,10 +32,17 @@ html {
 }
 
 /* Source */
+.docblock-code-toggle.docblock-code-toggle,
+.docblock-source.docblock-source button {
+  background: var(--ds-color-surface-default);
+  color: var(--ds-color-text-default);
+  border-radius: 0;
+}
 .docblock-source.docblock-source {
   background: var(--ds-color-background-default);
   box-shadow: none;
   color: var(--ds-color-text-default);
+  border-color: var(--ds-color-neutral-border-subtle);
 }
 .docblock-source .prismjs * {
   font-size: var(--ds-font-size-2);
