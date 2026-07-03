@@ -1,4 +1,12 @@
-@layer ds, lkds.base, lkds.components;
+/**
+ * This is the main entry point for the library.
+ *
+ * Layer priority, from lowest to highest:
+ * - base: Tailwind base layer
+ * - ds:   Designsystemet
+ * - lkds: Lånekassen
+ */
+@layer base, ds, lkds.base, lkds.components;
 
 @import "@digdir/designsystemet-css";
 
