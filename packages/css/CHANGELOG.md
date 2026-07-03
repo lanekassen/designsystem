@@ -1,5 +1,11 @@
 # @lanekassen/ds-css
 
+## 0.3.2
+
+### Patch Changes
+
+- 09ecb2c: Theme: add Tailwind base layer to ensure it has lower priority than our layers
+
 ## 0.3.1
 
 ### Patch Changes
