@@ -10,9 +10,6 @@ import { Progress } from "./progress";
 const meta = {
   title: "Designsystem/Progress",
   component: Progress,
-  parameters: {
-    layout: "padded",
-  },
 } satisfies Meta;
 
 export default meta;

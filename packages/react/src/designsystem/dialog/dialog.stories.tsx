@@ -16,17 +16,6 @@ const meta: Meta<typeof Dialog> = {
   title: "Designsystem/Dialog",
   component: Dialog,
   parameters: {
-    layout: "fullscreen",
-    customStyles: {
-      display: "grid",
-      alignItems: "start",
-      justifyItems: "center",
-      story: {
-        boxSizing: "border-box",
-        height: "100cqh",
-        width: "100cqw",
-      },
-    },
     chromatic: {
       disableSnapshot: false,
       modes: {

@@ -14,7 +14,7 @@ const meta: Meta<typeof Card> = {
   title: "Designsystem/Card",
   component: Card,
   parameters: {
-    layout: "fullscreen",
+    layout: "padded",
     customStyles: {
       width: "100%",
       maxWidth: 800,

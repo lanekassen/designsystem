@@ -142,10 +142,10 @@ export default definePreview({
                     <Divider {...props} className={componentStyles.hr} />
                   ),
                   blockquote: (props) => (
-                    <blockquote {...props} className={componentStyles.blockquoteIngress} />
+                    <blockquote {...props} className={componentStyles.docsblockquoteIngress} />
                   ),
                   a: (props) => (
-                    <a {...props} className={componentStyles.blockquoteIngress} />
+                    <a {...props} className={componentStyles.docsLink} />
                   ),
       
                 }}

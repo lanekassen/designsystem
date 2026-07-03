@@ -16,7 +16,7 @@ const meta: Meta<typeof AvatarStack> = {
   title: "Designsystem/AvatarStack",
   component: AvatarStack,
   parameters: {
-    layout: "fullscreen",
+    layout: "padded",
   },
   args: {
     "aria-label": "Test av aria label",

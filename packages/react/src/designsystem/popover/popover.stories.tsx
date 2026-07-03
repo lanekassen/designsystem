@@ -8,13 +8,6 @@ const meta: Meta<typeof Popover> = {
   title: "Designsystem/Popover",
   component: Popover,
   parameters: {
-    layout: "fullscreen",
-    customStyles: {
-      display: "flex",
-      placeItems: "end",
-      placeContent: "center",
-      padding: "1rem 2rem",
-    },
     chromatic: {
       disableSnapshot: false,
     },
