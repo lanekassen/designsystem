@@ -1,3 +1,4 @@
+import type { LabelRequired } from "@digdir/designsystemet-react";
 import {
   Field,
   type FieldProps,
@@ -57,7 +58,7 @@ type FormSuggestionProps = Pick<
   > & {
     label?: React.ReactNode;
     description?: React.ReactNode;
-  };
+  } & LabelRequired;
 
 export default function FormSuggestion({
   "data-size": size,
