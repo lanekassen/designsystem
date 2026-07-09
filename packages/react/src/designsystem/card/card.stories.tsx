@@ -1,7 +1,6 @@
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import {
-  cat1Img,
-  cat5Img,
+  person2Img,
   severityColors,
   themeColors,
 } from "../../../stories/constants";
@@ -28,18 +27,17 @@ const meta: Meta<typeof Card> = {
 
 export default meta;
 
-export const Preview: Story = (args) => (
+export const Default: Story = (args) => (
   <Card {...args} style={{ maxWidth: "320px" }}>
-    <Heading>Card</Heading>
+    <Heading>Lykkeland Videregående</Heading>
     <Paragraph>
-      Most provide as with carried business are much better more the perfected
-      designer. Writing slightly explain desk unable at supposedly about this
+      Lykkeland Videregående er en trygg og inkluderende nærskole der lek, læring og nysgjerrighet går hånd i hånd.
     </Paragraph>
-    <Paragraph data-size="sm">Footer text</Paragraph>
+    <Paragraph data-size="sm">Oslo Kommune</Paragraph>
   </Card>
 );
 
-Preview.args = {
+Default.args = {
   "data-color": "neutral",
 };
 
@@ -102,7 +100,7 @@ export const Media: Story = () => (
           about this
         </Paragraph>
       </Card.Block>
-      <Card.Block>{cat1Img}</Card.Block>
+      <Card.Block>{person2Img}</Card.Block>
     </Card>
   </>
 );
@@ -141,7 +139,7 @@ export const Video: Story = () => (
 export const WithLink: Story = (args) => (
   <>
     <Card {...args}>
-      <Card.Block>{cat5Img}</Card.Block>
+      <Card.Block>{person2Img}</Card.Block>
       <Card.Block>
         <Heading>
           <a
@@ -178,13 +176,13 @@ export const WithLink: Story = (args) => (
         </Paragraph>
         <Paragraph data-size="sm">Footer text</Paragraph>
       </Card.Block>
-      <Card.Block>{cat5Img}</Card.Block>
+      <Card.Block>{person2Img}</Card.Block>
     </Card>
   </>
 );
 
 export const AsLink: Story = (args) => (
-  <>
+  <div className="docs-example-flex-col">
     <Card {...args} asChild>
       <a
         href="https://designsystemet.no"
@@ -196,7 +194,7 @@ export const AsLink: Story = (args) => (
         </Card.Block>
       </a>
     </Card>
-    <Card {...args} data-color="neutral" asChild>
+    <Card {...args} data-color="accent" asChild>
       <a
         href="https://designsystemet.no"
         target="_blank"
@@ -209,7 +207,7 @@ export const AsLink: Story = (args) => (
         </Paragraph>
       </a>
     </Card>
-  </>
+  </div>
 );
 
 export const AsButton: Story = (args) => (

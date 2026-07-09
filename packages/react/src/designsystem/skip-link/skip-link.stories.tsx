@@ -11,7 +11,7 @@ const meta: Meta<typeof SkipLink> = {
 
 export default meta;
 
-export const Preview: Story = (args) => (
+export const Default: Story = (args) => (
   <>
     <Paragraph>
       For å vise skiplinken, tab til dette eksempelet, eller klikk inni

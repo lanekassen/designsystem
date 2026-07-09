@@ -11,7 +11,7 @@ export default {
   component: Table,
 } as Meta;
 
-export const Preview: Story = (args) => {
+export const Default: Story = (args) => {
   return (
     <Table {...args}>
       <caption>Table caption</caption>
@@ -45,7 +45,7 @@ export const Preview: Story = (args) => {
   );
 };
 
-Preview.args = {
+Default.args = {
   zebra: false,
   stickyHeader: false,
   border: false,

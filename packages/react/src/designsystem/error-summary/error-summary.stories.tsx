@@ -13,7 +13,7 @@ const meta: Meta<typeof ErrorSummary> = {
 
 export default meta;
 
-export const Preview: Story = (args) => (
+export const Default: Story = (args) => (
   <ErrorSummary {...args}>
     <ErrorSummary.Heading>
       For å gå videre må du rette opp følgende feil:

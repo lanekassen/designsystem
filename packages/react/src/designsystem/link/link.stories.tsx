@@ -1,8 +1,5 @@
 import {
-  BookIcon,
-  ComponentIcon,
-  EnvelopeClosedIcon,
-  ExternalLinkIcon,
+  ArrowRightIcon,
 } from "@navikt/aksel-icons";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { Link, Paragraph } from "../";
@@ -10,7 +7,7 @@ import { Link, Paragraph } from "../";
 type Story = StoryObj<typeof Link>;
 
 const randomNum = Math.floor(Math.random() * 1000);
-const designsystemetLink = `https://designsystemet.no/?=${randomNum}`;
+const designsystemetLink = `https://lanekassen.no/?=${randomNum}`;
 
 export default {
   title: "Designsystem/Link",
@@ -24,9 +21,9 @@ export default {
   },
 } as Meta;
 
-export const Normal: Story = {
+export const Default: Story = {
   args: {
-    children: "Gå til designsystemet",
+    children: "Lånekassen",
     href: designsystemetLink,
   },
 };
@@ -45,50 +42,10 @@ export const InText: StoryFn = (args) => (
 
 export const WithIcon: StoryFn = (args) => (
   <Link href="mailto:designsystem@digdir.no" {...args}>
-    <EnvelopeClosedIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
-    <span>Kontakt oss</span>
+    <ArrowRightIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
+    <span>Vilkår</span>
   </Link>
 );
-export const WithIconRight: StoryFn = (args) => (
-  <Link href="mailto:designsystem@digdir.no" {...args}>
-    <span>Kontakt oss</span>
-    <EnvelopeClosedIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
-  </Link>
-);
-export const WithMultipleIcons: StoryFn = (args) => (
-  <Link href={designsystemetLink} {...args}>
-    <ComponentIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
-    <span>Komponenter og</span>
-    <BookIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
-    <span>dokumentasjon på designsystemet.no</span>
-    <ExternalLinkIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
-  </Link>
-);
-export const WithOnlyIcon: StoryFn = (args) => (
-  <Link href={designsystemetLink} {...args}>
-    <ComponentIcon title="Designsystemet" height={"1.5rem"} width={"1.5rem"} />
-  </Link>
-);
-
-export const LongLink: StoryFn = (args) => (
-  <Paragraph>
-    <Link href={designsystemetLink} {...args}>
-      Dette er en lenke som brekker over flere linjer
-    </Link>
-  </Paragraph>
-);
-
-LongLink.parameters = {
-  customStyles: { width: "200px" },
-};
-
-export const Neutral: Story = {
-  args: {
-    children: "Gå til designsystemet",
-    href: designsystemetLink,
-    "data-color": "neutral",
-  },
-};
 
 export const AsButton: Story = {
   args: {

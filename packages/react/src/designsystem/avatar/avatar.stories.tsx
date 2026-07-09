@@ -1,6 +1,6 @@
 import { BriefcaseIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { cat3Img, themeColors } from "../../../stories/constants";
+import { person2Img } from "../../../stories/constants";
 
 import { Avatar, type AvatarProps, Badge, Dropdown } from "../";
 
@@ -23,9 +23,9 @@ const meta: Meta<typeof Avatar> = {
 
 export default meta;
 
-export const Preview: Story = (args) => <Avatar {...args} />;
+export const Default: Story = (args) => <Avatar {...args} />;
 
-Preview.args = {
+Default.args = {
   "aria-label": "Ola Nordmann",
   variant: "circle",
   children: "",
@@ -46,33 +46,8 @@ export const Sizes: Story = () => (
   </>
 );
 
-export const ColorVariants: Story = () => (
-  <>
-    {[...themeColors].map((color) => (
-      <Avatar
-        key={color}
-        data-color={color as AvatarProps["data-color"]}
-        aria-label={`color ${color}`}
-      />
-    ))}
-  </>
-);
-
-export const ShapeVariants: Story = () => (
-  <>
-    <Avatar variant="circle" aria-label="variant circle" />
-    <Avatar variant="square" aria-label="variant square" />
-    <Avatar variant="circle" aria-label="Ola Nordmann">
-      ON
-    </Avatar>
-    <Avatar variant="square" aria-label="Ola Nordmann">
-      ON
-    </Avatar>
-  </>
-);
-
 export const WithImage: Story = () => (
-  <Avatar aria-label="Ola Nordmann">{cat3Img}</Avatar>
+  <Avatar aria-label="Ola Nordmann">{person2Img}</Avatar>
 );
 
 export const InDropdown: Story = () => (
@@ -101,7 +76,7 @@ export const InDropdown: Story = () => (
             <Avatar aria-hidden data-size="xs">
               <BriefcaseIcon />
             </Avatar>
-            Sogndal kommune
+            Høyskolen Kristiania
           </Dropdown.Button>
         </Dropdown.Item>
       </Dropdown.List>

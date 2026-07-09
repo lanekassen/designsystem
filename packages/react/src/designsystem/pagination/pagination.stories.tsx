@@ -11,7 +11,7 @@ export default {
   component: Pagination,
 } as Meta;
 
-export const Preview: StoryFn<typeof Pagination> = () => {
+export const Default: StoryFn<typeof Pagination> = () => {
   return (
     <Pagination>
       <Pagination.List>

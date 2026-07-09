@@ -14,9 +14,9 @@ const meta: Meta = {
 
 export default meta;
 
-export const Preview: Story = (args) => <Alert {...args}></Alert>;
+export const Default: Story = (args) => <Alert {...args}></Alert>;
 
-Preview.args = {
+Default.args = {
   children: "En beskjed det er viktig at brukeren ser",
   "data-color": "info",
 };

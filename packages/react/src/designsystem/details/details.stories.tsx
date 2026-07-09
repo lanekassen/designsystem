@@ -12,7 +12,7 @@ export default {
   },
 } as Meta;
 
-export const Preview: StoryFn<typeof Details> = (args) => (
+export const Default: StoryFn<typeof Details> = (args) => (
   <Details {...args}>
     <Details.Summary>
       Hvem kan registrere seg i Frivillighetsregisteret?
@@ -27,18 +27,16 @@ export const Preview: StoryFn<typeof Details> = (args) => (
 );
 
 export const InCard: StoryFn<typeof Details> = () => (
-  <Card data-color="neutral">
+  <Card data-color="accent">
     <Details>
       <Details.Summary>Vedlegg</Details.Summary>
       <Details.Content>
         <Heading>
-          <a
-            href="https://designsystemet.no"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+
           >
             Heading with link
-          </a>
+          </Link>
         </Heading>
         <p>Vedlegg 1, vedlegg 2, vedlegg 3</p>
       </Details.Content>

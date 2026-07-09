@@ -27,7 +27,7 @@ const meta: Meta<typeof Popover> = {
 
 export default meta;
 
-export const Preview: StoryFn<typeof Popover> = (args) => {
+export const Default: StoryFn<typeof Popover> = (args) => {
   return (
     <Popover.TriggerContext>
       <Popover.Trigger>Mine varsler</Popover.Trigger>
@@ -36,10 +36,10 @@ export const Preview: StoryFn<typeof Popover> = (args) => {
   );
 };
 
-Preview.args = {
+Default.args = {
   placement: "top",
 };
-Preview.parameters = {
+Default.parameters = {
   customStyles: {
     paddingTop: "5rem",
   },

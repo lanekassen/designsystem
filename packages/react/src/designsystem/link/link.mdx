@@ -1,4 +1,6 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
+import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
+import { Link, Paragraph } from '../';
 
 import * as stories from './link.stories';
 
@@ -10,4 +12,20 @@ import * as stories from './link.stories';
 [Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/link/overview)
 
 ## Kode
-<Primary />
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+<Example>
+  <Example.Do text="Lenker brukes til å navigere eller laste ned innhold.">
+    <Paragraph>
+      <Link href="#" data-color='accent'>Les mer om søknadsprosessen</Link> hvis du vil vite mer om hvordan du søker.
+    </Paragraph>
+
+  </Example.Do>
+
+  <Example.Dont text="Ikke bruk lenker til å utføre handlinger (call to action). Bruk heller Button-komponenten.">
+    <Paragraph>
+      Søknaden din er klar. <Link href="#" data-color="accent">Klikk her for å sende den inn</Link>.
+    </Paragraph>
+  </Example.Dont>
+</Example>

@@ -1,5 +1,5 @@
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { Heading, Link, List } from "../";
+import { Heading, List } from "../";
 
 type Story = StoryFn<typeof List.Unordered>;
 
@@ -10,11 +10,11 @@ const meta: Meta<typeof List.Unordered> = {
 
 export default meta;
 
-export const Preview: Story = (args) => (
+export const Default: Story = (args) => (
   <List.Unordered {...args}>
-    <List.Item>Bøyabreen</List.Item>
-    <List.Item>Briksdalsbreen</List.Item>
-    <List.Item>Nigardsbreen</List.Item>
+    <List.Item>Skattemelding</List.Item>
+    <List.Item>Lønnslipp</List.Item>
+    <List.Item>Opptaksbrev</List.Item>
   </List.Unordered>
 );
 
@@ -25,21 +25,17 @@ export const Sortert: StoryFn<typeof List.Ordered> = (args) => (
       data-size="xs"
       style={{ marginBottom: "var(--ds-size-2)" }}
     >
-      Slik gjør du:
+      For å få pengene utbetalt må du:
     </Heading>
     <List.Ordered {...args}>
       <List.Item>
-        Tørk over kyllingfiletene før du krydrer og steker. Dette vil gi en
-        finere stekeskorpe på kjøttet. Ikke bruk kjøkkenpapir som loer.
-        Papirbiter i maten er ikke noe særlig.
+Søke om stipend og lån.
       </List.Item>
       <List.Item>
-        Ha salt og pepper på filetene og eventuelt annet krydder for ekstra
-        smak. Hvitløkpepper, paprika eller provence kan gi en god smak!
+Signere avtalen.
       </List.Item>
       <List.Item>
-        Stek filetene på sterk varme i to minutter på hver side. Sett deretter
-        på lokk og stek videre på svak varme i syv minutter på hver side.
+Bekrefte utdanningen hvis det er nødvendig.
       </List.Item>
     </List.Ordered>
   </>
@@ -52,17 +48,12 @@ export const Usortert: Story = (args) => (
       data-size="xs"
       style={{ marginBottom: "var(--ds-size-2)" }}
     >
-      Foreningen har plikt til å ha revisor hvis de har
+      Du kan få støtte til
     </Heading>
     <List.Unordered {...args}>
-      <List.Item>
-        et gjennomsnittlig antall ansatte som tilsvarer ti årsverk eller mer
-      </List.Item>
-      <List.Item>balansesum som er 27 millioner kroner eller mer</List.Item>
-      <List.Item>
-        driftsinntekter for sin samlede virksomhet på 7 millioner kroner eller
-        mer
-      </List.Item>
+      <List.Item>studieavgift</List.Item>
+      <List.Item>bøker og undervisningsmateriell</List.Item>
+      <List.Item>boutgifter</List.Item>
     </List.Unordered>
   </>
 );
@@ -70,7 +61,7 @@ export const Usortert: Story = (args) => (
 export const Innrykk: Story = (args) => (
   <>
     <Heading style={{ marginBlockEnd: "var(--ds-size-3)" }}>
-      Slik søker du:
+      Du kan få støtte til flere typer utdanning:
     </Heading>
     <List.Unordered {...args}>
       <List.Item>
@@ -80,13 +71,12 @@ export const Innrykk: Story = (args) => (
           style={{ marginBlock: "var(--ds-size-2)" }}
         >
           {" "}
-          Forbered dokumentasjon
+          Høyere utdanning
         </Heading>
-        <List.Ordered>
-          <List.Item>Pass eller annen gyldig ID</List.Item>
-          <List.Item>Dokumentasjon på adresse</List.Item>
-          <List.Item>Eventuell tilleggsdokumentasjon</List.Item>
-        </List.Ordered>
+        <List.Unordered>
+          <List.Item>universitet</List.Item>
+          <List.Item>høyskole</List.Item>
+        </List.Unordered>
       </List.Item>
       <List.Item>
         <Heading
@@ -95,168 +85,14 @@ export const Innrykk: Story = (args) => (
           style={{ marginBlock: "var(--ds-size-2)" }}
         >
           {" "}
-          Fyll ut søknadsskjema
+          Videregående opplæring
         </Heading>
         <List.Unordered>
-          <List.Item>Oppgi personopplysninger</List.Item>
-          <List.Item>Beskriv formålet med søknaden</List.Item>
-          <List.Item>Last opp dokumentasjon</List.Item>
+          <List.Item>studiespesialisering</List.Item>
+          <List.Item>yrkesfag</List.Item>
         </List.Unordered>
       </List.Item>
-      <List.Item>
-        <Heading
-          level={3}
-          data-size="xs"
-          style={{ marginBlock: "var(--ds-size-2)" }}
-        >
-          Send inn og følg opp
-        </Heading>
-        <List.Unordered>
-          <List.Item>Kontroller opplysningene før innsending</List.Item>
-          <List.Item>Send inn søknaden</List.Item>
-          <List.Item>Følg med på svar i innboksen din</List.Item>
-        </List.Unordered>
-      </List.Item>
+   
     </List.Unordered>
   </>
 );
-
-export const ListeMedLenker: Story = (args) => (
-  <List.Unordered {...args} style={{ listStyle: "none", padding: 0 }}>
-    <List.Item>
-      <Link
-        href="https://www.designsystemet.no/no/fundamentals"
-        target="_blank"
-      >
-        Grunnleggende
-      </Link>
-    </List.Item>
-    <List.Item>
-      <Link
-        href="https://www.designsystemet.no/no/best-practices"
-        target="_blank"
-      >
-        God praksis
-      </Link>
-    </List.Item>
-    <List.Item>
-      <Link href="https://www.designsystemet.no/no/patterns" target="_blank">
-        Mønstre
-      </Link>
-    </List.Item>
-  </List.Unordered>
-);
-
-export const ListeMedOverskrift: Story = () => (
-  <>
-    <div>
-      <Heading
-        level={2}
-        data-size="2xs"
-        style={{ marginBottom: "var(--ds-size-2)" }}
-      >
-        List sm og Heading 2xs
-      </Heading>
-      <List.Unordered data-size="sm">
-        <List.Item>
-          <Link
-            href="https://www.designsystemet.no/no/fundamentals"
-            target="_blank"
-          >
-            Grunnleggende
-          </Link>
-        </List.Item>
-        <List.Item>
-          <Link
-            href="https://www.designsystemet.no/no/best-practices"
-            target="_blank"
-          >
-            God praksis
-          </Link>
-        </List.Item>
-        <List.Item>
-          <Link
-            href="https://www.designsystemet.no/no/patterns"
-            target="_blank"
-          >
-            Mønstre
-          </Link>
-        </List.Item>
-      </List.Unordered>
-    </div>
-    <div>
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{ marginBottom: "var(--ds-size-2)" }}
-      >
-        List md og Heading xs
-      </Heading>
-      <List.Unordered data-size="md">
-        <List.Item>
-          <Link
-            href="https://www.designsystemet.no/no/fundamentals"
-            target="_blank"
-          >
-            Grunnleggende
-          </Link>
-        </List.Item>
-        <List.Item>
-          <Link
-            href="https://www.designsystemet.no/no/best-practices"
-            target="_blank"
-          >
-            God praksis
-          </Link>
-        </List.Item>
-        <List.Item>
-          <Link
-            href="https://www.designsystemet.no/no/patterns"
-            target="_blank"
-          >
-            Mønstre
-          </Link>
-        </List.Item>
-      </List.Unordered>
-    </div>
-    <div>
-      <Heading
-        level={2}
-        data-size="sm"
-        style={{ marginBottom: "var(--ds-size-2)" }}
-      >
-        List lg og Heading sm
-      </Heading>
-      <List.Unordered data-size="lg">
-        <List.Item>
-          <Link
-            href="https://www.designsystemet.no/no/fundamentals"
-            target="_blank"
-          >
-            Grunnleggende
-          </Link>
-        </List.Item>
-        <List.Item>
-          <Link
-            href="https://www.designsystemet.no/no/best-practices"
-            target="_blank"
-          >
-            God praksis
-          </Link>
-        </List.Item>
-        <List.Item>
-          <Link
-            href="https://www.designsystemet.no/no/patterns"
-            target="_blank"
-          >
-            Mønstre
-          </Link>
-        </List.Item>
-      </List.Unordered>
-    </div>
-  </>
-);
-
-ListeMedOverskrift.parameters = {
-  customStyles: { display: "flex", gap: "2rem", flexWrap: "wrap" },
-};

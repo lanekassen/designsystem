@@ -25,7 +25,7 @@ export default {
   component: Checkbox,
 } as Meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     label: "Checkbox label",
     description: "Description",
@@ -177,7 +177,7 @@ export const ReadOnly = {
 
 export const Disabled = {
   args: {
-    ...Preview.args,
+    ...Default.args,
     name: "my-disabled",
     disabled: true,
   },

@@ -9,7 +9,7 @@ export default {
   component: Textfield,
 } as Meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     label: "Label",
     disabled: false,

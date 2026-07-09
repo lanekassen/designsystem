@@ -1,14 +1,10 @@
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
-import { useState } from "react";
 import { sizenames, sizes } from "../../../stories/constants";
 import {
-  Button,
-  Divider,
   Field,
   Heading,
   Input,
   Label,
-  Paragraph,
   ValidationMessage,
 } from "../";
 
@@ -47,7 +43,7 @@ export default {
   },
 } as Meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     "aria-invalid": false,
     disabled: false,
@@ -61,42 +57,6 @@ export const Preview: Story = {
 
     return <Input {...args} aria-label="input" />;
   },
-};
-export const HtmlSize: Story = {
-  args: {
-    size: 10,
-  },
-  render: (args) => (
-    <Field>
-      <Label>Input with size</Label>
-      <Input {...args} />
-    </Field>
-  ),
-};
-
-export const Controlled: StoryFn<typeof Input> = (args) => {
-  const [value, setValue] = useState<string>();
-
-  return (
-    <>
-      <Field>
-        <Label>Kontroller meg!</Label>
-        <Input
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          {...args}
-        />
-      </Field>
-      <div>
-        <Divider />
-
-        <Paragraph style={{ margin: "var(--ds-size-2) 0" }}>
-          Du har skrevet inn: {value}
-        </Paragraph>
-        <Button onClick={() => setValue("Kake")}>Jeg vil ha Kake</Button>
-      </div>
-    </>
-  );
 };
 
 export const Text: StoryFn<typeof Input> = (args) => {

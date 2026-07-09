@@ -43,7 +43,7 @@ const meta: Meta<typeof Dialog> = {
 
 export default meta;
 
-export const Preview: StoryFn<typeof Dialog> = (args) => (
+export const Default: StoryFn<typeof Dialog> = (args) => (
   <Dialog.TriggerContext>
     <Dialog.Trigger
       data-color={args["data-color"]}

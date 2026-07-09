@@ -1,4 +1,5 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
+import { Card, Paragraph} from '../';
 
 import * as stories from './checkbox.stories';
 
@@ -6,8 +7,20 @@ import * as stories from './checkbox.stories';
 
 # Checkbox
 >Checkbox gir brukerne mulighet til å velge ett eller flere alternativer. Den kan også brukes i tilfeller der brukeren skal bekrefte noe.
-
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/checkbox/overview)
+<br />
 
 ## Kode
-<Primary />
+<Canvas of={stories.Default} />
+
+<Card asChild>
+    <a
+        href="https://designsystemet.no/no/components/docs/checkbox/overview"
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>
+
+

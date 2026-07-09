@@ -24,84 +24,11 @@ const meta: Meta<typeof Badge> = {
 };
 
 export default meta;
-export const Preview: Story = (args) => <Badge {...args} />;
+export const Default: Story = (args) => <Badge {...args} />;
 
-Preview.args = {
+Default.args = {
   count: 15,
   maxCount: 9,
-};
-
-export const Floating: Story = () => (
-  <>
-    <Badge.Position placement="top-right">
-      <Badge data-color="accent"></Badge>
-      <EnvelopeClosedFillIcon title="Meldinger" />
-    </Badge.Position>
-    <Badge.Position placement="top-left">
-      <Badge data-color="accent"></Badge>
-      <EnvelopeClosedFillIcon title="Meldinger" />
-    </Badge.Position>
-    <Badge.Position placement="bottom-right">
-      <Badge data-color="accent"></Badge>
-      <EnvelopeClosedFillIcon title="Meldinger" />
-    </Badge.Position>
-    <Badge.Position placement="bottom-left">
-      <Badge data-color="accent"></Badge>
-      <EnvelopeClosedFillIcon title="Meldinger" />
-    </Badge.Position>
-    <Badge.Position placement="top-right" overlap="circle">
-      <Badge data-color="accent"></Badge>
-      <div
-        style={{
-          width: "2rem",
-          height: "2rem",
-          borderRadius: "50%",
-          backgroundColor: "var(--ds-color-neutral-base-default)",
-        }}
-      />
-    </Badge.Position>
-    <Badge.Position placement="top-left" overlap="circle">
-      <Badge data-color="accent"></Badge>
-      <div
-        style={{
-          width: "2rem",
-          height: "2rem",
-          borderRadius: "50%",
-          backgroundColor: "var(--ds-color-neutral-base-default)",
-        }}
-      />
-    </Badge.Position>
-    <Badge.Position placement="bottom-right" overlap="circle">
-      <Badge data-color="accent"></Badge>
-      <div
-        style={{
-          width: "2rem",
-          height: "2rem",
-          borderRadius: "50%",
-          backgroundColor: "var(--ds-color-neutral-base-default)",
-        }}
-      />
-    </Badge.Position>
-    <Badge.Position placement="bottom-left" overlap="circle">
-      <Badge data-color="accent"></Badge>
-      <div
-        style={{
-          width: "2rem",
-          height: "2rem",
-          borderRadius: "50%",
-          backgroundColor: "var(--ds-color-neutral-base-default)",
-        }}
-      />
-    </Badge.Position>
-  </>
-);
-
-Floating.parameters = {
-  customStyles: {
-    display: "flex",
-    gap: "var(--ds-size-4)",
-    flexWrap: "wrap",
-  },
 };
 
 export const CustomPlacement: Story = () => (
@@ -144,18 +71,16 @@ export const InTabs: Story = () => (
       <Tabs.Tab value="value1">
         <HeartFillIcon aria-hidden />
         Favoritter
-        <Badge count={64} maxCount={10} data-color="neutral" />
+        <Badge count={64} maxCount={10} data-color="accent" />
       </Tabs.Tab>
-      <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
+      <Tabs.Tab value="value2">Din side</Tabs.Tab>
       <Tabs.Tab value="value3">
         <PencilIcon aria-hidden />
-        Nylige
-        <Badge count={2} data-color="neutral" />
+        Innboks
+        <Badge count={2} data-color="accent" />
       </Tabs.Tab>
     </Tabs.List>
-    <Tabs.Panel value="value1">content 1</Tabs.Panel>
-    <Tabs.Panel value="value2">content 2</Tabs.Panel>
-    <Tabs.Panel value="value3">content 3</Tabs.Panel>
+    <Tabs.Panel value="value1">Profil</Tabs.Panel>
   </Tabs>
 );
 
@@ -191,13 +116,6 @@ export const InButton: Story = () => (
 const VariantsMap: {
   [key: string]: { [key: string]: string };
 } = {
-  neutralBase: {
-    "data-color": "neutral",
-  },
-  neutralTinted: {
-    "data-color": "neutral",
-    variant: "tinted",
-  },
   dangerBase: {
     "data-color": "danger",
   },
@@ -205,28 +123,22 @@ const VariantsMap: {
     "data-color": "danger",
     variant: "tinted",
   },
-  infoBase: {
-    "data-color": "info",
+  accentBase: {
+    "data-color": "accent",
   },
-  infoTinted: {
-    "data-color": "info",
+  accentTinted: {
+    "data-color": "accent",
     variant: "tinted",
   },
-  warningBase: {
-    "data-color": "warning",
-  },
-  warningTinted: {
-    "data-color": "warning",
-    variant: "tinted",
-  },
+
 };
 
 export const Variants: Story = () => (
-  <>
+  <div style={{ display: "flex", gap: "var(--ds-size-4)", flexWrap: "wrap" }}>
     {Object.entries(VariantsMap).map(([key, value]) => (
       <Badge key={key} {...value} count={15} maxCount={9} />
     ))}
-  </>
+  </div>
 );
 
 Variants.parameters = {

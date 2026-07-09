@@ -18,7 +18,7 @@ export default meta;
 
 const _dataColors = [...themeColors, ...severityColors];
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     children: "New",
     variant: "default",

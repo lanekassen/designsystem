@@ -16,7 +16,7 @@ export default {
   },
 } as Meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     width: 200,
     height: 100,

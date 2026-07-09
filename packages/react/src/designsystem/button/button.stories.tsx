@@ -23,7 +23,7 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   render: ({ ...args }) => {
     return <Button {...args} />;
   },
@@ -131,3 +131,20 @@ export const Loading: StoryFn<typeof Button> = () => (
     </Button>
   </>
 );
+
+export const Sizes: StoryFn<typeof Button> = () => (
+  <div className="docs-example-flex">
+    <Button data-size="sm">
+      Small
+    </Button>
+    <Button data-size="md">
+      Medium
+    </Button>
+    <Button data-size="lg">
+      Lagre
+    </Button>
+  </div>
+);
+
+
+

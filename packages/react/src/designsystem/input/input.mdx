@@ -1,4 +1,6 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
+import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
+import { Input, Fieldset, Label, Switch, Radio } from '../';
 
 import * as stories from './input.stories';
 
@@ -10,4 +12,75 @@ import * as stories from './input.stories';
 [Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/input/overview)
 
 ## Kode
-<Primary />
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+
+### Tekstfelt
+<Example>
+  <Example.Do text="Plasser tekstfelt over hverandre, slik at det er lettere å navigere mellom komponentene og skanne innholdet.">
+
+    <Fieldset>
+        <Label>Label</Label>
+        <Input />
+    </Fieldset>
+
+  </Example.Do>
+
+  <Example.Dont text="Unngå plassering av tekstfelt ved siden av hverandre. Skannbarheten blir dårligere.">
+
+    <Fieldset>
+      <Label>Label</Label>
+      <Input/>
+    </Fieldset>
+
+  </Example.Dont>
+</Example>
+
+### Switch
+<Example>
+  <Example.Do text="Bruk tydelig og beskrivende labeltekst. Status vises i selve komponenten.">
+
+    <Fieldset data-color='accent'>
+        <Switch label="Varsle via e-post" />
+    </Fieldset>
+
+  </Example.Do>
+
+  <Example.Dont text="Unngå beskrivelse av status i labelteksten, da dette kan forvirre brukeren.">
+
+    <Fieldset data-color='accent'> 
+      <Switch label="Slå på e-postvarsling"/>
+    </Fieldset>
+
+  </Example.Dont>
+</Example>
+
+### Radio
+<Example>
+  <Example.Do text="Det er anbefalt å bruke radio hvis du har færre enn 5-7 alternativer.">
+
+    <Fieldset data-color='accent'>
+    <Fieldset.Legend>Skal du studere i utlandet?</Fieldset.Legend>
+        <Radio label="Ja" />
+        <Radio label="Nei" />
+    </Fieldset>
+
+  </Example.Do>
+
+  <Example.Dont text="Bruk av radio med mange alternativer gjør det mer tungvindt for bruker å ta et raskt valg.">
+
+    <Fieldset data-color='accent'> 
+    <Fieldset.Legend>Hvilket land skal du studere i?</Fieldset.Legend>
+      <Radio label="Tyskland" value="1" name="1"/>
+      <Radio label="Norge" value="2" name="2"/>
+      <Radio label="Sverige" value="3" name="3"/>
+      <Radio label="Danmark" value="4" name="4"/>
+      <Radio label="Finland" value="5" name="5"/>
+      <Radio label="Island " value="6" name="6"/>
+      <Radio label="England" value="7" name="7"/>
+    </Fieldset>
+
+  </Example.Dont>
+</Example>
+

@@ -1,13 +1,66 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-
+import { Button } from './button';
+import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
 import * as stories from './button.stories';
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "button";
 
 <Meta of={stories} />
 
 # Button
 >Button lar brukerne utføre handlinger.
-
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/button/overview)
+<br/>
 
 ## Kode
-<Primary />
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+<Example>
+  <Example.Do text="Brukerne skal utføre en konkret handling, for eksempel å lagre eller sende inn et skjema.">
+     <Button variant="primary" data-color="accent">
+      Lagre
+    </Button>
+  </Example.Do>
+
+  <Example.Dont text="Lange tekster og flere handlinger på samme knapp bør unngås.">
+     <Button variant="primary" data-color="accent">
+      Lagre og sende inn skjemaet
+    </Button>
+  </Example.Dont>
+</Example>
+
+<Example>
+  <Example.Do text="Tertiærknapp bør alltid stå sammen med en primærknapp eller sekundærknapp, eller inneholde ikon.">
+  <div className="docs-example-flex">
+     <Button variant="primary" data-color="accent">
+      Lagre
+    </Button>
+    <Button variant="tertiary" data-color="accent">
+      Avbryt
+    </Button>
+    </div>
+  </Example.Do>
+
+  <Example.Dont text="Unngå å bruke tertiærknapp alene. Vurdér å bruke en sekundærknapp istedenfor eller legg til et ikon.">
+    <Button variant="tertiary" data-color="accent">
+      Avbryt
+    </Button>
+  </Example.Dont>
+</Example>
+
+## Størrelser
+<Canvas of={stories.Sizes} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

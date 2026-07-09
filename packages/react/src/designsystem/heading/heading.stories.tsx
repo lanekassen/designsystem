@@ -12,7 +12,7 @@ export default meta;
 
 type Story = StoryObj<typeof Heading>;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     children: "Tittel tekst",
   },

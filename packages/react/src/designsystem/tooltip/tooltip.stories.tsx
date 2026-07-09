@@ -32,7 +32,7 @@ const meta: Meta<typeof Tooltip> = {
 
 export default meta;
 
-export const Preview: StoryFn<typeof Tooltip> = (args) => (
+export const Default: StoryFn<typeof Tooltip> = (args) => (
   <Tooltip {...args}>
     <Button icon>
       <FilesIcon aria-hidden />
@@ -40,7 +40,7 @@ export const Preview: StoryFn<typeof Tooltip> = (args) => (
   </Tooltip>
 );
 
-Preview.args = {
+Default.args = {
   content: "Kopier",
   placement: "top",
 };

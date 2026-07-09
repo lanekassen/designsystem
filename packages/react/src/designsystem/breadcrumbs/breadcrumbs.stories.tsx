@@ -7,7 +7,7 @@ export default {
   component: Breadcrumbs,
 } as Meta;
 
-export const Preview: StoryFn<typeof Breadcrumbs> = (args) => (
+export const Default: StoryFn<typeof Breadcrumbs> = (args) => (
   <>
     <Breadcrumbs aria-label="Du er her:" {...args}>
       <Breadcrumbs.Link href="#link" aria-label="Tilbake til Nivå 3">

@@ -7,7 +7,7 @@ export default {
   component: Search,
 } as Meta;
 
-export const Preview: StoryFn<typeof Search> = (args) => (
+export const Default: StoryFn<typeof Search> = (args) => (
   <Search {...args}>
     <Search.Input aria-label="Søk" />
     <Search.Clear />

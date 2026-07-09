@@ -19,9 +19,9 @@ export default {
   },
 } as Meta;
 
-export const Preview: Story = (args) => <Spinner {...args} />;
+export const Default: Story = (args) => <Spinner {...args} />;
 
-Preview.args = {
+Default.args = {
   "aria-label": "Henter kaffi",
 };
 

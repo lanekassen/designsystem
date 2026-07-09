@@ -28,7 +28,7 @@ const meta: Meta<typeof Textarea> = {
 
 export default meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     disabled: false,
     readOnly: false,

@@ -1,13 +1,44 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-
+import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
+import {
+  FilePdfIcon,
+} from "@navikt/aksel-icons";
+import { Avatar } from './avatar';
 import * as stories from './avatar.stories';
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "avatar";
 
 <Meta of={stories} />
 
 # Avatar
 >Avatar viser et bilde, initialer eller ikon for en person, enhet eller profil.
+<br/>
 
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/avatar/overview)
 
 ## Kode
-<Primary />
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+<Example>
+  <Example.Do text="En person eller enhet skal representeres.">
+    <Avatar data-color='accent'/>
+  </Example.Do>
+
+  <Example.Dont text="Noe annet enn en person eller enhet skal representeres, for eksempel et dokument. Bruk heller ikoner eller andre visuelle symboler.">
+    <Avatar data-color='accent'><FilePdfIcon /></Avatar>
+  </Example.Dont>
+</Example>
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

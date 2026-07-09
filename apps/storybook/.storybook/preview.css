@@ -16,6 +16,11 @@ html {
   }
 }
 
+.sbdocs-content.sbdocs-content {
+	max-width: 50rem; /* 800px */
+	padding-bottom: 200px; /* Space for scroll */
+}
+
 /* Blockquote */
 .sbdocs-content blockquote:not(.ds-alert) {
   margin-inline: 0;
@@ -51,4 +56,19 @@ html {
 [data-color-scheme="dark"] .docblock-source .prismjs * {
   /* biome-ignore lint/complexity/noImportantStyles: syntax highlighting don't work in dark mode, so we override the text color */
   color: inherit !important;
+}
+
+
+/* Custom Story CSS, will be removed */
+.docs-example-flex {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-3);
+}
+
+.docs-example-flex-col {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-3);
 }

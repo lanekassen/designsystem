@@ -8,7 +8,7 @@ export default {
   component: Divider,
 } as Meta;
 
-export const Preview: Story = (args) => (
+export const Default: Story = (args) => (
   <>
     <Paragraph>
       Divider er brukt for å dele opp innhold i mindre deler.

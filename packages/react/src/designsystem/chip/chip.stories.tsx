@@ -12,15 +12,15 @@ const meta: Meta<typeof Chip.Radio> = {
 
 export default meta;
 
-export const Preview: StoryFn<typeof Chip.Radio> = (args) => (
-  <>
+export const Default: StoryFn<typeof Chip.Radio> = (args) => (
+  <div className="docs-example-flex">
     <Chip.Radio {...args} name="my-radio" value="nynorsk" defaultChecked>
       Nynorsk
     </Chip.Radio>
     <Chip.Radio {...args} name="my-radio" value="bokmål">
       Bokmål
     </Chip.Radio>
-  </>
+  </div>
 );
 
 export const Checkbox: StoryFn<typeof Chip.Checkbox> = (args) => (

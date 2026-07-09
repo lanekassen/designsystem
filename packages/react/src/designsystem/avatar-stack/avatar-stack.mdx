@@ -1,13 +1,54 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
+import { EXPERIMENTAL_AvatarStack as AvatarStack } from './avatar-stack';
+import { Avatar } from '../';
+import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
 
 import * as stories from './avatar-stack.stories';
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "avatar-stack";
 
 <Meta of={stories} />
 
-# Avatar
->Avatar stack stabler en samling avatar-elementer
-
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/avatar-stack/overview)
+# Avatar stack
+>Avatar stack stabler en samling avatar-elementer.
+<br/>
 
 ## Kode
-<Primary />
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+<Example>
+  <Example.Do text="Bruk suffix for å vise antall ekstra personer når avatar stacken inneholder mer enn tre avatarer.">
+  <AvatarStack data-color="accent" aria-hidden suffix={'+14'}>
+    <Avatar aria-label="Navn" />
+    <Avatar aria-label="Navn" initials="sm" />
+    <Avatar aria-label="Navn" initials="ry"/>
+  </AvatarStack>
+  </Example.Do>
+
+  <Example.Dont text="Ikke vis en lang rekke avatarer uten suffix når antallet blir høyt.">
+    <AvatarStack data-color="accent" aria-hidden>
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+    </AvatarStack>
+  </Example.Dont>
+</Example>
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

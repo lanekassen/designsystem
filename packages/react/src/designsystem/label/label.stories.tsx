@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<typeof Label>;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     children: "Fødselsnummer (11 sifre)",
     weight: "semibold",

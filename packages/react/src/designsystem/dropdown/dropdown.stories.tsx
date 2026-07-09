@@ -27,7 +27,7 @@ const meta: Meta<typeof Dropdown> = {
 
 export default meta;
 
-export const Preview: StoryFn<typeof Dropdown> = (args) => {
+export const Default: StoryFn<typeof Dropdown> = (args) => {
   return (
     <Dropdown.TriggerContext>
       <Dropdown.Trigger data-color={args["data-color"]}>
@@ -57,7 +57,7 @@ export const Preview: StoryFn<typeof Dropdown> = (args) => {
   );
 };
 
-Preview.args = {
+Default.args = {
   placement: "bottom-end",
 };
 

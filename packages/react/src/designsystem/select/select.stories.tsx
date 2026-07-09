@@ -10,7 +10,7 @@ export default {
   },
 } as Meta;
 
-export const Preview: StoryFn<typeof Select> = (args) => (
+export const Default: StoryFn<typeof Select> = (args) => (
   <Field>
     <Label>Velg et fjell</Label>
     <Select {...args} defaultValue="">
@@ -29,7 +29,7 @@ export const Preview: StoryFn<typeof Select> = (args) => (
   </Field>
 );
 
-Preview.args = {
+Default.args = {
   "aria-invalid": false,
   width: "full",
   disabled: false,

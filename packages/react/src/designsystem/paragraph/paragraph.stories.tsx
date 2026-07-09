@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<typeof Paragraph>;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     children:
       "Personvernerklæringen gir informasjon om hvilke personopplysninger vi behandler, hvordan disse blir behandlet og hvilke rettigheter du har.",

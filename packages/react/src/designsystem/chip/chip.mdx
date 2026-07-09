@@ -1,5 +1,6 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-
+import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
+import { Chip } from './chip';
 import * as stories from './chip.stories';
 
 <Meta of={stories} />
@@ -10,4 +11,24 @@ import * as stories from './chip.stories';
 [Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/checkbox/overview)
 
 ## Kode
-<Primary />
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+<Example>
+  <Example.Do text="Bruk korte konsiste ord i Chips">
+    <Chip.Removable data-color="accent">Studielån</Chip.Removable>
+  </Example.Do>
+
+  <Example.Dont text="Unngå lange tekster i Chips. Prøv å begrense til maks et par ord">
+    <Chip.Removable  data-color="accent">Studiestøtte som inngår i første semester som kan bli omgjort</Chip.Removable>
+  </Example.Dont>
+</Example>
+
+## Checkbox
+<Canvas of={stories.Checkbox} />
+
+## Removable
+<Canvas of={stories.Removable} />
+
+## Button
+<Canvas of={stories.Button} />
