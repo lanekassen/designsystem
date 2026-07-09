@@ -1,6 +1,10 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
 
 import * as stories from './card.stories';
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "card";
 
 <Meta of={stories} />
 
@@ -14,3 +18,15 @@ import * as stories from './card.stories';
 
 ## Interaktiv
 <Canvas of={stories.AsLink} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

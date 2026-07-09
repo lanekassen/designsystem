@@ -31,7 +31,8 @@ export const Default: Story = (args) => (
   <Card {...args} style={{ maxWidth: "320px" }}>
     <Heading>Lykkeland Videregående</Heading>
     <Paragraph>
-      Lykkeland Videregående er en trygg og inkluderende nærskole der lek, læring og nysgjerrighet går hånd i hånd.
+      Lykkeland Videregående er en trygg og inkluderende nærskole der lek,
+      læring og nysgjerrighet går hånd i hånd.
     </Paragraph>
     <Paragraph data-size="sm">Oslo Kommune</Paragraph>
   </Card>

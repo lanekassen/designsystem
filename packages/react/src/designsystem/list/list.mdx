@@ -2,12 +2,17 @@ import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blo
 
 import * as stories from './list.stories';
 
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "list";
+
 <Meta of={stories} />
 
 # List
 >List brukes for å presentere innhold på en oversiktlig og strukturert måte, for eksempel for å oppsummere hovedpunkter eller vise brukeren hvilke trinn som må følges i en bestemt rekkefølge.
 
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/list/overview)
+<br />
 
 ## Kode
 <Canvas of={stories.Default} />
@@ -20,3 +25,15 @@ import * as stories from './list.stories';
 
 ## Liste med innrykk
 <Canvas of={stories.Innrykk} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

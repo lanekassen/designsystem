@@ -2,12 +2,29 @@ import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blo
 
 import * as stories from './popover.stories';
 
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "popover";
+
 <Meta of={stories} />
 
 # Popover
 >Popover vises over andre elementer i grensesnittet og er koblet til et spesifikt element. Den brukes til å vise tilleggsinformasjon, interaktive elementer eller korte forklaringer uten å navigere bort fra siden.
 
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/popover/overview)
+<br />
 
 ## Kode
 <Canvas of={stories.Default} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

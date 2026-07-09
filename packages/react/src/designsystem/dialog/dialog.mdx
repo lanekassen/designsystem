@@ -2,12 +2,28 @@ import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blo
 
 import * as stories from './dialog.stories';
 
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "dialog";
+
 <Meta of={stories} />
 
 # Dialog
 >Det er to typer dialoger, en modal og en ikke-modal. En modal dialog tvinger brukerne til å ta stilling til noe før de kan fortsette å bruke siden. En ikke-modal dialog lar brukerne fortsette å bruke siden, selv om dialogen er åpen.
-
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/dialog/overview)
+<br />
 
 ## Kode
 <Canvas of={stories.Default} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

@@ -1,16 +1,31 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
 
 import * as stories from './fieldset.stories';
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "fieldset";
 
 <Meta of={stories} />
 
 # Fieldset
 >Fieldset brukes til å gruppere og navngi felt som naturlig hører sammen, for eksempel datofelt eller adressefelt. Komponenten hjelper med å organisere informasjon, gjøre skjemaer mer oversiktlige og forbedre tilgjengeligheten for skjermlesere.
-
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/fieldset/overview)
+<br/>
 
 ## Kode
 <Canvas of={stories.Default} />
 
 ## Checkbox
 <Canvas of={stories.WithCheckbox} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

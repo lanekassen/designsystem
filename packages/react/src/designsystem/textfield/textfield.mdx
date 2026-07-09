@@ -2,12 +2,29 @@ import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blo
 
 import * as stories from './textfield.stories';
 
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "textfield";
+
 <Meta of={stories} />
 
 # Textfield
 >Textfield gir brukere muligheten til å skrive fritekst eller tall.
 
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/textfield/overview)
+<br />
 
 ## Kode
 <Canvas of={stories.Default} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

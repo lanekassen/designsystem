@@ -2,12 +2,29 @@ import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blo
 
 import * as stories from './toggle-group.stories';
 
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "toggle-group";
+
 <Meta of={stories} />
 
 # Toggle group
 >Toggle group samler relaterte alternativ. Komponenten består av en gruppe knapper som henger sammen, der bare en knapp er mulig å velge om gangen.
 
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/toggle-group/overview)
+<br />
 
 ## Kode
 <Canvas of={stories.Default} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

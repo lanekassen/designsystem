@@ -134,17 +134,8 @@ export const Loading: StoryFn<typeof Button> = () => (
 
 export const Sizes: StoryFn<typeof Button> = () => (
   <div className="docs-example-flex">
-    <Button data-size="sm">
-      Small
-    </Button>
-    <Button data-size="md">
-      Medium
-    </Button>
-    <Button data-size="lg">
-      Lagre
-    </Button>
+    <Button data-size="sm">Small</Button>
+    <Button data-size="md">Medium</Button>
+    <Button data-size="lg">Lagre</Button>
   </div>
 );
-
-
-

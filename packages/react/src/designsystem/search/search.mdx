@@ -2,12 +2,29 @@ import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blo
 
 import * as stories from './search.stories';
 
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "search";
+
 <Meta of={stories} />
 
 # Search
 >Search lar brukere raskt finne relevant innhold på et nettsted eller i en applikasjon. Komponenten består av et søkefelt, med eller uten en søkeknapp.
 
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/search/overview)
+<br />
 
 ## Kode
 <Canvas of={stories.Default} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

@@ -105,7 +105,7 @@ export default definePreview({
                     <HeadingSelfLink
                       {...props}
                       className={componentStyles.heading}
-                      data-size="2xl"
+                      data-size="xl"
                     />
                   ),
                   h2: (props) => (
@@ -148,12 +148,14 @@ export default definePreview({
                     <Divider {...props} className={componentStyles.hr} />
                   ),
                   blockquote: (props) => (
-                    <blockquote {...props} className={componentStyles.docsblockquoteIngress} />
+                    <blockquote
+                      {...props}
+                      className={componentStyles.docsblockquoteIngress}
+                    />
                   ),
                   a: (props) => (
                     <a {...props} className={componentStyles.docsLink} />
                   ),
-      
                 }}
               >
                 <DocsContainer {...props} />

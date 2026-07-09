@@ -2,24 +2,27 @@ import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blo
 import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
 import { Chip } from './chip';
 import * as stories from './chip.stories';
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "chip";
 
 <Meta of={stories} />
 
 # Chip
 >Chip er små, interaktive komponenter som lar brukerne styre hvordan de vil se innhold. For eksempel kan de brukes til å filtrere kategorier i et søkeresultat og vise hvilke filter som er aktive.
-
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/checkbox/overview)
+<br />
 
 ## Kode
 <Canvas of={stories.Default} />
 
 ## Skikk og bruk
 <Example>
-  <Example.Do text="Bruk korte konsiste ord i Chips">
+  <Example.Do text="Bruk korte konsiste ord i Chips.">
     <Chip.Removable data-color="accent">Studielån</Chip.Removable>
   </Example.Do>
 
-  <Example.Dont text="Unngå lange tekster i Chips. Prøv å begrense til maks et par ord">
+  <Example.Dont text="Unngå lange tekster i Chips. Prøv å begrense til maks et par ord.">
     <Chip.Removable  data-color="accent">Studiestøtte som inngår i første semester som kan bli omgjort</Chip.Removable>
   </Example.Dont>
 </Example>
@@ -32,3 +35,15 @@ import * as stories from './chip.stories';
 
 ## Button
 <Canvas of={stories.Button} />
+
+<br />
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

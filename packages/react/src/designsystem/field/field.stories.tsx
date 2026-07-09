@@ -26,9 +26,7 @@ export const Default: Story = () => {
   return (
     <Field>
       <Label>Ledetekst</Label>
-      <Field.Description>
-        Beskrivelse
-      </Field.Description>
+      <Field.Description>Beskrivelse</Field.Description>
       <Input />
     </Field>
   );
@@ -90,7 +88,10 @@ export const Required: Story = () => (
   <Field>
     <Label>
       Hvor bor du?
-      <Tag data-color="warning" style={{ marginInlineStart: "var(--ds-size-2)" }}>
+      <Tag
+        data-color="warning"
+        style={{ marginInlineStart: "var(--ds-size-2)" }}
+      >
         Påkrevd
       </Tag>
     </Label>
@@ -102,9 +103,7 @@ export const Error: Story = () => {
   return (
     <Field>
       <Label>Ledetekst</Label>
-      <Field.Description>
-        Beskrivelse
-      </Field.Description>
+      <Field.Description>Beskrivelse</Field.Description>
       <Input />
       <ValidationMessage>Feilmelding</ValidationMessage>
     </Field>

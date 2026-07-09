@@ -1,6 +1,9 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
 import { Card, Paragraph} from '../';
 
+
+export const docsUrl = "checkbox";
+
 import * as stories from './checkbox.stories';
 
 <Meta of={stories} />
@@ -12,9 +15,10 @@ import * as stories from './checkbox.stories';
 ## Kode
 <Canvas of={stories.Default} />
 
+<br/>
 <Card asChild>
     <a
-        href="https://designsystemet.no/no/components/docs/checkbox/overview"
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
         target="_blank"
     >
         <Card.Block>

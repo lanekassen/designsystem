@@ -2,12 +2,29 @@ import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blo
 
 import * as stories from './tooltip.stories';
 
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "tooltip";
+
 <Meta of={stories} />
 
 # Tooltip
 >Tooltip viser kort informasjon når brukeren holder musepekeren over eller fokuserer på et element. Den brukes til sekundær informasjon, for eksempel til å forklare hva et symbol betyr.
 
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/tooltip/overview)
+<br />
 
 ## Kode
 <Canvas of={stories.Default} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

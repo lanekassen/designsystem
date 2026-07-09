@@ -1,6 +1,11 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
 import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
 import { Input, Fieldset, Label, Switch, Radio } from '../';
+import { Card, Paragraph } from '../';
+
+
+export const docsUrl = "input";
+
 
 import * as stories from './input.stories';
 
@@ -8,8 +13,7 @@ import * as stories from './input.stories';
 
 # Input
 >Input er et skjemaelement for å samle inn brukerdata. Det tilbyr grunnleggende funksjonalitet og er ideell når du trenger full kontroll over komponentens oppsett og validering, noe som gjør den ideell for bygging av spesialtilpassede elementer.
-
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/input/overview)
+<br/>
 
 ## Kode
 <Canvas of={stories.Default} />
@@ -83,4 +87,16 @@ import * as stories from './input.stories';
 
   </Example.Dont>
 </Example>
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>
 

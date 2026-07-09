@@ -32,11 +32,7 @@ export const InCard: StoryFn<typeof Details> = () => (
       <Details.Summary>Vedlegg</Details.Summary>
       <Details.Content>
         <Heading>
-          <Link
-
-          >
-            Heading with link
-          </Link>
+          <Link>Heading with link</Link>
         </Heading>
         <p>Vedlegg 1, vedlegg 2, vedlegg 3</p>
       </Details.Content>

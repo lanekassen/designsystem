@@ -1,6 +1,8 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
 import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
-import { Link, Paragraph } from '../';
+import { Link, Paragraph, Card } from '../'
+
+export const docsUrl = "label";
 
 import * as stories from './link.stories';
 
@@ -8,8 +10,7 @@ import * as stories from './link.stories';
 
 # Link
 >Link er klikkbar tekst eller grafikk som tar brukeren videre til andre sider eller dokumenter.
-
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/link/overview)
+<br/>
 
 ## Kode
 <Canvas of={stories.Default} />
@@ -29,3 +30,15 @@ import * as stories from './link.stories';
     </Paragraph>
   </Example.Dont>
 </Example>
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

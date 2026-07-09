@@ -1,13 +1,29 @@
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
 
 import * as stories from './divider.stories';
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "divider";
 
 <Meta of={stories} />
 
 # Divider
 >Divider brukes for å skape et visuelt skille mellom innhold. Det er en enkel horisontal linje som strekker seg over tilgjengelig bredde.
 
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/divider/overviews)
+<br/>
 
 ## Kode
 <Canvas of={stories.Default} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>

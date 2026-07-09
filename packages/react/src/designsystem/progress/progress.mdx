@@ -2,12 +2,28 @@ import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blo
 
 import * as stories from './progress.stories';
 
+import { Card, Paragraph} from '../';
+
+
+export const docsUrl = "progress";
+
 <Meta of={stories} />
 
 # Progress
 >Viser tilstand
 
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/popover/overview)
-
+<br />
 ## Kode
 <Canvas of={stories.Default} />
+
+<br/>
+<Card asChild>
+    <a
+        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
+        target="_blank"
+    >
+        <Card.Block>
+          <Paragraph>Fullstendig dokumentasjon</Paragraph>
+        </Card.Block>
+    </a>
+</Card>
