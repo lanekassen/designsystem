@@ -2,11 +2,9 @@
 
 Lånekassen's React components to be used in internal and external React applications.
 
-> [!CAUTION]
-> This package is in it's early stages of development and is not ready to be used yet.
-
-> [!CAUTION]
-> This package cannot be used with the internal `@lanekassen/ui` package. Please migrate your entire app at the same time
+> [!WARNING]
+> This package is in it's early stages of development. While it works
+> and can be used, there are no guarantees made for API stability.
 
 ## Getting Started
 

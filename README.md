@@ -4,9 +4,9 @@ This is [Norwegian State Educational Loan
 Fund](https://lanekassen.no/en-US/)'s design system used for various
 applications internally and externally.
 
-> [!CAUTION]
-> This repository and the code available are in the early stages of
-> development and not ready for use.
+> [!WARNING]
+> This package is in it's early stages of development. While it works
+> and can be used, there are no guarantees made for API stability.
 
 ## License
 
