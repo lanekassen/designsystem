@@ -9,6 +9,7 @@
   align-items: baseline;
   gap: var(--ds-size-1);
   margin-bottom: var(--ds-size-2);
+  font-weight: var(--ds-font-weight-semibold);
 
   &:where(h1, h2) {
     margin-top: var(--ds-size-7);
@@ -54,31 +55,25 @@
   margin-bottom: 0;
 }
 
-/* Custom Docs css */
-.docsblockquoteIngress {
-  font-size: var(--ds-font-size-6);
+.ingress {
+  font-size: 1.333333em;
 }
 
-.docsLink {
+.link {
   color: var(--ds-color-accent-text-default);
-  font-size: var(--ds-font-size-5);
   text-decoration: none;
-  border-bottom: none;
-  &:hover {
-    border-bottom: 2px solid var(--ds-color-accent-base-default);
-  }
-}
 
-/* Using :where to allow overwrites */
-:where(b, h1, h2, h3, h4, h5, h6, label, legend, strong) {
-  font-weight: 600;
+  &:hover {
+    text-decoration: underline 2px solid var(--ds-color-accent-text-default);
+  }
 }
 
 .example {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--ds-size-4);
-  margin: 25px 0px 40px;
+  margin: var(--ds-size-6) 0px var(--ds-size-10);
+
   @media (max-width: 48rem) {
     grid-template-columns: 1fr;
   }

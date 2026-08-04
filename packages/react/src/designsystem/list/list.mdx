@@ -1,39 +1,39 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-
-import * as stories from './list.stories';
-
-import { Card, Paragraph} from '../';
-
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./list.stories";
 
 export const docsUrl = "list";
 
 <Meta of={stories} />
 
 # List
->List brukes for å presentere innhold på en oversiktlig og strukturert måte, for eksempel for å oppsummere hovedpunkter eller vise brukeren hvilke trinn som må følges i en bestemt rekkefølge.
+
+> List brukes for å presentere innhold på en oversiktlig og strukturert måte, for eksempel for å oppsummere hovedpunkter eller vise brukeren hvilke trinn som må følges i en bestemt rekkefølge.
 
 <br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
 ## Usortert liste
+
 <Canvas of={stories.Usortert} />
 
 ## Sortert liste
+
 <Canvas of={stories.Sortert} />
 
 ## Liste med innrykk
+
 <Canvas of={stories.Innrykk} />
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

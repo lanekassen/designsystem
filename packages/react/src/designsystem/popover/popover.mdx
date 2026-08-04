@@ -1,30 +1,27 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-
-import * as stories from './popover.stories';
-
-import { Card, Paragraph} from '../';
-
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./popover.stories";
 
 export const docsUrl = "popover";
 
 <Meta of={stories} />
 
 # Popover
->Popover vises over andre elementer i grensesnittet og er koblet til et spesifikt element. Den brukes til å vise tilleggsinformasjon, interaktive elementer eller korte forklaringer uten å navigere bort fra siden.
+
+> Popover vises over andre elementer i grensesnittet og er koblet til et spesifikt element. Den brukes til å vise tilleggsinformasjon, interaktive elementer eller korte forklaringer uten å navigere bort fra siden.
 
 <br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

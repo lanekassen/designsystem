@@ -1,30 +1,27 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-
-import * as stories from './paragraph.stories';
-
-import { Card, Paragraph} from '../';
-
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./paragraph.stories";
 
 export const docsUrl = "paragraph";
 
 <Meta of={stories} />
 
 # Paragraph
->Paragraph brukes til løpende tekst og benyttes typisk i artikler, komponenter, hjelpetekster og lignende.
+
+> Paragraph brukes til løpende tekst og benyttes typisk i artikler, komponenter, hjelpetekster og lignende.
 
 <br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

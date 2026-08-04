@@ -13,7 +13,7 @@ const meta: Meta<typeof Chip.Radio> = {
 export default meta;
 
 export const Default: StoryFn<typeof Chip.Radio> = (args) => (
-  <div className="docs-example-flex">
+  <div style={{ display: "flex", gap: "var(--ds-size-3)" }}>
     <Chip.Radio {...args} name="my-radio" value="nynorsk" defaultChecked>
       Nynorsk
     </Chip.Radio>

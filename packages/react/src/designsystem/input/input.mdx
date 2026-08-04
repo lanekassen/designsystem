@@ -1,26 +1,35 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
-import { Input, Fieldset, Label, Switch, Radio } from '../';
-import { Card, Paragraph } from '../';
-
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { Input, Fieldset, Label, Switch, Radio } from "../";
+import * as stories from "./input.stories";
 
 export const docsUrl = "input";
-
-
-import * as stories from './input.stories';
 
 <Meta of={stories} />
 
 # Input
->Input er et skjemaelement for å samle inn brukerdata. Det tilbyr grunnleggende funksjonalitet og er ideell når du trenger full kontroll over komponentens oppsett og validering, noe som gjør den ideell for bygging av spesialtilpassede elementer.
-<br/>
+
+> Input er et skjemaelement for å samle inn brukerdata. Det tilbyr grunnleggende funksjonalitet og er ideell når du trenger full kontroll over komponentens oppsett og validering, noe som gjør den ideell for bygging av spesialtilpassede elementer.
+
+<br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
 ## Skikk og bruk
 
 ### Tekstfelt
+
 <Example>
   <Example.Do text="Plasser tekstfelt over hverandre, slik at det er lettere å navigere mellom komponentene og skanne innholdet.">
 
@@ -42,6 +51,7 @@ import * as stories from './input.stories';
 </Example>
 
 ### Switch
+
 <Example>
   <Example.Do text="Bruk tydelig og beskrivende labeltekst. Status vises i selve komponenten.">
 
@@ -53,7 +63,7 @@ import * as stories from './input.stories';
 
   <Example.Dont text="Unngå beskrivelse av status i labelteksten, da dette kan forvirre brukeren.">
 
-    <Fieldset data-color='accent'> 
+    <Fieldset data-color='accent'>
       <Switch label="Slå på e-postvarsling"/>
     </Fieldset>
 
@@ -61,6 +71,7 @@ import * as stories from './input.stories';
 </Example>
 
 ### Radio
+
 <Example>
   <Example.Do text="Det er anbefalt å bruke radio hvis du har færre enn 5-7 alternativer.">
 
@@ -74,7 +85,7 @@ import * as stories from './input.stories';
 
   <Example.Dont text="Bruk av radio med mange alternativer gjør det mer tungvindt for bruker å ta et raskt valg.">
 
-    <Fieldset data-color='accent'> 
+    <Fieldset data-color='accent'>
     <Fieldset.Legend>Hvilket land skal du studere i?</Fieldset.Legend>
       <Radio label="Tyskland" value="1" name="1"/>
       <Radio label="Norge" value="2" name="2"/>
@@ -88,15 +99,6 @@ import * as stories from './input.stories';
   </Example.Dont>
 </Example>
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+<br />
 
+<DigDirComponentDocsLink component={docsUrl} />

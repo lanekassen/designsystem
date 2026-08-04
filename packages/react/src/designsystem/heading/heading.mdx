@@ -1,29 +1,27 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-
-import * as stories from './heading.stories';
-
-import { Card, Paragraph } from '../';
-
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./heading.stories";
 
 export const docsUrl = "heading";
 
 <Meta of={stories} />
 
 # Heading
->Heading brukes til å strukturere innhold og skape hierarki på siden.
-<br/>
+
+> Heading brukes til å strukturere innhold og skape hierarki på siden.
+
+<br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

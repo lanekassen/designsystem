@@ -150,11 +150,14 @@ export default definePreview({
                   blockquote: (props) => (
                     <blockquote
                       {...props}
-                      className={componentStyles.docsblockquoteIngress}
+                      className={componentStyles.ingress}
                     />
                   ),
                   a: (props) => (
-                    <a {...props} className={componentStyles.docsLink} />
+                    <StorybookLink
+                      {...props}
+                      className={componentStyles.link}
+                    />
                   ),
                 }}
               >

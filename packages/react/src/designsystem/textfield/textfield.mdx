@@ -1,30 +1,27 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-
-import * as stories from './textfield.stories';
-
-import { Card, Paragraph} from '../';
-
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./textfield.stories";
 
 export const docsUrl = "textfield";
 
 <Meta of={stories} />
 
 # Textfield
->Textfield gir brukere muligheten til å skrive fritekst eller tall.
+
+> Textfield gir brukere muligheten til å skrive fritekst eller tall.
 
 <br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

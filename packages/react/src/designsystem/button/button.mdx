@@ -1,31 +1,42 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-import { Button } from './button';
-import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
-import * as stories from './button.stories';
-import { Card, Paragraph} from '../';
-
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { Button } from "./button";
+import * as stories from "./button.stories";
 
 export const docsUrl = "button";
 
 <Meta of={stories} />
 
 # Button
->Button lar brukerne utføre handlinger.
-<br/>
+
+> Button lar brukerne utføre handlinger.
+
+<br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
 ## Skikk og bruk
+
 <Example>
   <Example.Do text="Brukerne skal utføre en konkret handling, for eksempel å lagre eller sende inn et skjema.">
-     <Button variant="primary" data-color="accent">
+    <Button variant="primary" data-color="accent">
       Lagre
     </Button>
   </Example.Do>
 
   <Example.Dont text="Lange tekster og flere handlinger på samme knapp bør unngås.">
-     <Button variant="primary" data-color="accent">
+    <Button variant="primary" data-color="accent">
       Lagre og sende inn skjemaet
     </Button>
   </Example.Dont>
@@ -33,13 +44,13 @@ export const docsUrl = "button";
 
 <Example>
   <Example.Do text="Tertiærknapp bør alltid stå sammen med en primærknapp eller sekundærknapp, eller inneholde ikon.">
-  <div className="docs-example-flex">
-     <Button variant="primary" data-color="accent">
-      Lagre
-    </Button>
-    <Button variant="tertiary" data-color="accent">
-      Avbryt
-    </Button>
+    <div style={{ display: "flex", gap: "var(--ds-size-3)" }}>
+      <Button variant="primary" data-color="accent">
+        Lagre
+      </Button>
+      <Button variant="tertiary" data-color="accent">
+        Avbryt
+      </Button>
     </div>
   </Example.Do>
 
@@ -51,16 +62,9 @@ export const docsUrl = "button";
 </Example>
 
 ## Størrelser
+
 <Canvas of={stories.Sizes} />
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

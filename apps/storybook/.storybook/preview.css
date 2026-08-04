@@ -57,17 +57,3 @@ html {
   /* biome-ignore lint/complexity/noImportantStyles: syntax highlighting don't work in dark mode, so we override the text color */
   color: inherit !important;
 }
-
-/* Custom Story CSS, will be removed */
-.docs-example-flex {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-3);
-}
-
-.docs-example-flex-col {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-3);
-}

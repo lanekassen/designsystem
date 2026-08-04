@@ -1,21 +1,33 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
-import { Link, Paragraph, Card } from '../'
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { Link, Paragraph } from "../";
+import * as stories from "./link.stories";
 
-export const docsUrl = "label";
-
-import * as stories from './link.stories';
+export const docsUrl = "link";
 
 <Meta of={stories} />
 
 # Link
->Link er klikkbar tekst eller grafikk som tar brukeren videre til andre sider eller dokumenter.
-<br/>
+
+> Link er klikkbar tekst eller grafikk som tar brukeren videre til andre sider eller dokumenter.
+
+<br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
 ## Skikk og bruk
+
 <Example>
   <Example.Do text="Lenker brukes til å navigere eller laste ned innhold.">
     <Paragraph>
@@ -31,14 +43,6 @@ import * as stories from './link.stories';
   </Example.Dont>
 </Example>
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

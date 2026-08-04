@@ -1,5 +1,10 @@
-import { Heading, type HeadingProps, Link } from "@lanekassen/ds-react";
-import { LinkIcon, ThumbDownIcon, ThumbUpIcon } from "@navikt/aksel-icons";
+import { Card, Heading, type HeadingProps, Link } from "@lanekassen/ds-react";
+import {
+  LinkIcon,
+  OpenBookIcon,
+  ThumbDownIcon,
+  ThumbUpIcon,
+} from "@navikt/aksel-icons";
 import type { AnchorHTMLAttributes } from "react";
 import componentStyles from "./components.module.css";
 
@@ -42,7 +47,7 @@ const handleLinkClick =
 export const HeadingSelfLink = ({ children, ...props }: HeadingProps) => {
   const href = `#${props.id}`;
   return (
-    <Heading {...props} className={componentStyles.heading}>
+    <Heading {...props}>
       <span>{children}</span>
       <Link
         aria-hidden
@@ -131,3 +136,27 @@ Example.Do = (props: ExampleItemProps) => (
 Example.Dont = (props: ExampleItemProps) => (
   <ExampleItem data-color="danger" {...props} />
 );
+
+type DigDirComponentDocsLinkProps = {
+  component: string;
+};
+
+export function DigDirComponentDocsLink({
+  component,
+}: DigDirComponentDocsLinkProps) {
+  return (
+    <Card variant="tinted" data-color="neutral" asChild>
+      <Card.Block>
+        <Heading level={2} data-size="2xs">
+          <Link
+            href={`https://designsystemet.no/no/components/docs/${component}/overview`}
+            target="_blank"
+          >
+            <OpenBookIcon aria-hidden />
+            <span>Se fullstendig dokumentasjon (designsystemet.no)</span>
+          </Link>
+        </Heading>
+      </Card.Block>
+    </Card>
+  );
+}

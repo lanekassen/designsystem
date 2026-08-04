@@ -1,24 +1,34 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-import { EXPERIMENTAL_AvatarStack as AvatarStack } from './avatar-stack';
-import { Avatar } from '../';
-import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
-
-import * as stories from './avatar-stack.stories';
-import { Card, Paragraph} from '../';
-
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { EXPERIMENTAL_AvatarStack as AvatarStack } from "./avatar-stack";
+import { Avatar } from "../";
+import * as stories from "./avatar-stack.stories";
 
 export const docsUrl = "avatar-stack";
 
 <Meta of={stories} />
 
 # Avatar stack
->Avatar stack stabler en samling avatar-elementer.
-<br/>
+
+> Avatar stack stabler en samling avatar-elementer.
+
+<br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
 ## Skikk og bruk
+
 <Example>
   <Example.Do text="Bruk suffix for å vise antall ekstra personer når avatar stacken inneholder mer enn tre avatarer.">
   <AvatarStack data-color="accent" aria-hidden suffix={'+14'}>
@@ -41,14 +51,6 @@ export const docsUrl = "avatar-stack";
   </Example.Dont>
 </Example>
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

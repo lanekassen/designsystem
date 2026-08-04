@@ -1,22 +1,33 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
-import { Chip } from './chip';
-import * as stories from './chip.stories';
-import { Card, Paragraph} from '../';
-
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { Chip } from "./chip";
+import * as stories from "./chip.stories";
 
 export const docsUrl = "chip";
 
 <Meta of={stories} />
 
 # Chip
->Chip er små, interaktive komponenter som lar brukerne styre hvordan de vil se innhold. For eksempel kan de brukes til å filtrere kategorier i et søkeresultat og vise hvilke filter som er aktive.
+
+> Chip er små, interaktive komponenter som lar brukerne styre hvordan de vil se innhold. For eksempel kan de brukes til å filtrere kategorier i et søkeresultat og vise hvilke filter som er aktive.
+
 <br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
 ## Skikk og bruk
+
 <Example>
   <Example.Do text="Bruk korte konsiste ord i Chips.">
     <Chip.Removable data-color="accent">Studielån</Chip.Removable>
@@ -28,22 +39,17 @@ export const docsUrl = "chip";
 </Example>
 
 ## Checkbox
+
 <Canvas of={stories.Checkbox} />
 
 ## Removable
+
 <Canvas of={stories.Removable} />
 
 ## Button
+
 <Canvas of={stories.Button} />
 
 <br />
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+
+<DigDirComponentDocsLink component={docsUrl} />

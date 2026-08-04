@@ -1,24 +1,35 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-import { Badge } from './badge';
-import { Button, Tabs} from '../';
-import { InboxIcon } from '@navikt/aksel-icons';
-import { Example } from '../../../../../apps/storybook/.storybook/docs/components';
-import * as stories from './badge.stories';
-import { Card, Paragraph} from '../';
-
+import { InboxIcon } from "@navikt/aksel-icons";
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { Badge } from "./badge";
+import { Button, Tabs } from "../";
+import * as stories from "./badge.stories";
 
 export const docsUrl = "badge";
 
 <Meta of={stories} />
 
 # Badge
->Badge er en ikke-interaktiv komponent som viser status med eller uten tall. Bruk tag dersom du skal ha tekst i stedet for tall.
-<br/>
+
+> Badge er en ikke-interaktiv komponent som viser status med eller uten tall. Bruk tag dersom du skal ha tekst i stedet for tall.
+
+<br />
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
 ## Skikk og bruk
+
 <Example>
   <Example.Do text="Tall som skal vise antall nye meldinger, varsel eller oppgaver.">
 
@@ -65,17 +76,10 @@ export const docsUrl = "badge";
 </Example>
 
 ## Farger
-- Bruk `data-color` for å endre farge.
-<Canvas of={stories.Variants} />
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+- Bruk `data-color` for å endre farge.
+  <Canvas of={stories.Variants} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

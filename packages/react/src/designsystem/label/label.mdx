@@ -1,29 +1,26 @@
-import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-
-import * as stories from './label.stories';
-import { Card, Paragraph } from '../';
-
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import { Card, Paragraph } from "../";
+import * as stories from "./label.stories";
 
 export const docsUrl = "label";
 
 <Meta of={stories} />
 
 # Label
->Label fungerer som en tydelig og tilgjengelig etikett som forteller brukeren hva et tilhørende skjemaelement omhandler.
 
-[Fullstendig dokumentasjon](https://designsystemet.no/no/components/docs/label/overview)
+> Label fungerer som en tydelig og tilgjengelig etikett som forteller brukeren hva et tilhørende skjemaelement omhandler.
 
 ## Kode
+
 <Canvas of={stories.Default} />
 
-<br/>
-<Card asChild>
-    <a
-        href={`https://designsystemet.no/no/components/docs/${docsUrl}/overview`}
-        target="_blank"
-    >
-        <Card.Block>
-          <Paragraph>Fullstendig dokumentasjon</Paragraph>
-        </Card.Block>
-    </a>
-</Card>
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />
