@@ -7,13 +7,13 @@ import { Button, ErrorSummary, Textfield } from "../";
 type Story = StoryFn<typeof ErrorSummary>;
 
 const meta: Meta<typeof ErrorSummary> = {
-  title: "Komponenter/ErrorSummary",
+  title: "Designsystem/ErrorSummary",
   component: ErrorSummary,
 };
 
 export default meta;
 
-export const Preview: Story = (args) => (
+export const Default: Story = (args) => (
   <ErrorSummary {...args}>
     <ErrorSummary.Heading>
       For å gå videre må du rette opp følgende feil:

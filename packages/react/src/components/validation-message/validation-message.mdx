@@ -1,0 +1,27 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./validation-message.stories";
+
+export const docsUrl = "validation-message";
+
+<Meta of={stories} />
+
+# Validation message
+
+> Validation message brukes til å vise tilbakemeldinger knyttet til validering av brukerinput, for eksempel feilmeldinger eller advarsler i skjema.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

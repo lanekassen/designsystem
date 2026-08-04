@@ -18,7 +18,7 @@ import {
 } from "../";
 
 export default {
-  title: "Komponenter/Suggestion",
+  title: "Designsystem/Suggestion",
   component: Suggestion,
   /* add height by default */
   decorators: [
@@ -82,7 +82,7 @@ const DATA_PEOPLE = [
   { label: "Tove", value: "#110" },
 ];
 
-export const Preview: StoryFn<typeof Suggestion> = (args) => {
+export const Default: StoryFn<typeof Suggestion> = (args) => {
   return (
     <Field>
       <Label>Velg en destinasjon</Label>

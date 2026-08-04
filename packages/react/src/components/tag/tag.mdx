@@ -1,0 +1,27 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./tag.stories";
+
+export const docsUrl = "tag";
+
+<Meta of={stories} />
+
+# Tag
+
+> Tag er en merkelapp som kan brukes til å kategorisere elementer eller kommunisere fremdrift, status eller prosess. Tags kan gi brukeren et raskere overblikk over innholdet.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

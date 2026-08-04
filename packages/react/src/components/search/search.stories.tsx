@@ -3,11 +3,11 @@ import { useState } from "react";
 import { Button, Divider, Field, Label, Paragraph, Search } from "../";
 
 export default {
-  title: "Komponenter/Search",
+  title: "Designsystem/Search",
   component: Search,
 } as Meta;
 
-export const Preview: StoryFn<typeof Search> = (args) => (
+export const Default: StoryFn<typeof Search> = (args) => (
   <Search {...args}>
     <Search.Input aria-label="Søk" />
     <Search.Clear />

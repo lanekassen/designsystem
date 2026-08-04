@@ -1,0 +1,27 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./radio.stories";
+
+export const docsUrl = "radio";
+
+<Meta of={stories} />
+
+# Radio
+
+> Radio er et alternativ brukeren kan velge. Bruk flere radio for å vise en liste med alternativer. Brukerne kan bytte mellom alternativene, men kan kun velge ett.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

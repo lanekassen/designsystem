@@ -1,0 +1,43 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./field.stories";
+
+export const docsUrl = "field";
+
+<Meta of={stories} />
+
+# Field
+
+> Field er et hjelpemiddel for å automatisk koble et felt sammen med label, beskrivelse, validation message og antall tegn.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+## Obligatorisk felt
+
+<Canvas of={stories.Required} />
+
+## Feilmelding
+
+<Canvas of={stories.Error} />
+
+## Prefix/Suffix
+
+<Canvas of={stories.Affix} />
+
+## Counter
+
+<Canvas of={stories.Counter} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

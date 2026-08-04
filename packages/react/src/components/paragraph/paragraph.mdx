@@ -1,0 +1,27 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./paragraph.stories";
+
+export const docsUrl = "paragraph";
+
+<Meta of={stories} />
+
+# Paragraph
+
+> Paragraph brukes til løpende tekst og benyttes typisk i artikler, komponenter, hjelpetekster og lignende.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

@@ -1,0 +1,81 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { Alert } from "./alert";
+import * as stories from "./alert.stories";
+
+export const docsUrl = "alert";
+
+<Meta of={stories} />
+
+# Alert
+
+> Alert gir brukeren informasjon som det er ekstra viktig at de ser og forstår. Komponenten er designet for å fange brukernes oppmerksomhet. Teksten i varselet skal være kort og tydelig.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+
+<Example>
+  <Example.Do text="Skriv kort og konsist i alerts">
+    <Alert>Det er lange køer for å bestille pass om dagen, det kan være lurt å bestille i god tid før du skal reise.</Alert>
+  </Example.Do>
+
+  <Example.Dont text="Unngå lange tekster i alerts">
+    <Alert>For å ivareta en helhetlig oppfølging av innbyggere som mottar flere typer offentlige tjenester,
+        har vi opprettet et eget koordinerende team som inkluderer representanter fra helse, sosial, NAV og teknisk etat.
+        Hensikten er å etablere et samlet kontaktpunkt for brukere med sammensatte behov,
+        slik at de slipper å navigere mellom ulike kontorer og etater på egen hånd.
+        I praksis betyr dette at en brukers sak kan drøftes i fellesmøter der alle relevante fagpersoner er til stede,
+        noe som gir bedre informasjonsflyt og mer tilpassede løsninger.
+        Et typisk eksempel kan være en person med nedsatt funksjonsevne og mangelfull boligtilpasning,
+        som samtidig har behov for sosialhjelp og helsetjenester.
+        Tidligere ville vedkommende måtte oppsøke NAV for økonomisk støtte,
+        eget kontor for ergoterapi og enda en avdeling for kommunale boligtjenester.
+        Resultatet ble ofte ulike vedtak som ikke henger sammen, og tidkrevende oppfølging.</Alert>
+  </Example.Dont>
+</Example>
+
+## Eksempler
+
+`Alert` kan brukes til fire ulike budskap: Informasjon, suksess, advarsel og feilmelding.
+
+### Informasjon
+
+Bruk `info` når du vil gi brukeren nøytral og nyttig informasjon
+
+<Canvas of={stories.VariantInfo} />
+
+### Suksess
+
+Bruk `success` når du vil bekrefte at brukeren har fullført en oppgave, eller vise at en handling var vellykket.
+
+<Canvas of={stories.VariantSuccess} />
+
+### Advarsel
+
+Bruk `warning` når du vil at brukeren skal foreta en bestemt handling eller for å advare dem om noe viktig.
+
+<Canvas of={stories.VariantWarning} />
+
+### Feilmelding
+
+Bruk `danger` for å informere om noe som er kritisk eller som hindrer brukeren i å komme videre.
+
+<Canvas of={stories.VariantDanger} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

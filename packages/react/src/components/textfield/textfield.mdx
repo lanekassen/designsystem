@@ -1,0 +1,27 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./textfield.stories";
+
+export const docsUrl = "textfield";
+
+<Meta of={stories} />
+
+# Textfield
+
+> Textfield gir brukere muligheten til å skrive fritekst eller tall.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

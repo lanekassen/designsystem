@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ValidationMessage } from "../";
 
 const meta: Meta<typeof ValidationMessage> = {
-  title: "Komponenter/Typography/ValidationMessage",
+  title: "Designsystem/Typography/ValidationMessage",
   component: ValidationMessage,
 };
 

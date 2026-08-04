@@ -9,12 +9,13 @@
   align-items: baseline;
   gap: var(--ds-size-1);
   margin-bottom: var(--ds-size-2);
+  font-weight: var(--ds-font-weight-semibold);
 
   &:where(h1, h2) {
-    margin-top: var(--ds-size-5);
+    margin-top: var(--ds-size-7);
   }
   &:where(h3, h4, h5, h6) {
-    margin-top: var(--ds-size-4);
+    margin-top: var(--ds-size-6);
   }
   &:first-child {
     margin-top: 0;
@@ -54,10 +55,24 @@
   margin-bottom: 0;
 }
 
+.ingress {
+  font-size: 1.333333em;
+}
+
+.link {
+  color: var(--ds-color-accent-text-default);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline 2px solid var(--ds-color-accent-text-default);
+  }
+}
+
 .example {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--ds-size-4);
+  margin: var(--ds-size-6) 0px var(--ds-size-10);
 
   @media (max-width: 48rem) {
     grid-template-columns: 1fr;

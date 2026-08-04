@@ -1,0 +1,18 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import * as stories from "./progress.stories";
+
+<Meta of={stories} />
+
+# Progress
+
+> Viser tilstanden til en prosess som pågår, og hvor mye som er fullført.
+
+<br />
+## Kode
+<Canvas of={stories.Default} />

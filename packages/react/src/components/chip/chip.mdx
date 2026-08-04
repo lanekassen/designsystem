@@ -1,0 +1,55 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { Chip } from "./chip";
+import * as stories from "./chip.stories";
+
+export const docsUrl = "chip";
+
+<Meta of={stories} />
+
+# Chip
+
+> Chip er små, interaktive komponenter som lar brukerne styre hvordan de vil se innhold. For eksempel kan de brukes til å filtrere kategorier i et søkeresultat og vise hvilke filter som er aktive.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+
+<Example>
+  <Example.Do text="Bruk korte konsiste ord i Chips.">
+    <Chip.Removable data-color="accent">Studielån</Chip.Removable>
+  </Example.Do>
+
+  <Example.Dont text="Unngå lange tekster i Chips. Prøv å begrense til maks et par ord.">
+    <Chip.Removable  data-color="accent">Studiestøtte som inngår i første semester som kan bli omgjort</Chip.Removable>
+  </Example.Dont>
+</Example>
+
+## Checkbox
+
+<Canvas of={stories.Checkbox} />
+
+## Removable
+
+<Canvas of={stories.Removable} />
+
+## Button
+
+<Canvas of={stories.Button} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

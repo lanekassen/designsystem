@@ -1,0 +1,33 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./breadcrumbs.stories";
+
+export const docsUrl = "breadcrumbs";
+
+<Meta of={stories} />
+
+# Breadcrumbs
+
+> Breadcrumbs hjelper brukerne med å forstå hvor de er i et hierarki, og gir dem mulighet til å navigere tilbake til tidligere nivåer.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+## Tilbakeknapp
+
+Å vise bare en tilbakeknapp kan være nyttig på mobil, eller på sider der navigasjonen blir lang. Det er viktig at løsningen er konsekvent, og bruker enten tilbakeknapp eller breadcrumbs, ikke begge deler.
+
+<Canvas of={stories.BackOnly} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

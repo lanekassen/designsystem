@@ -4,7 +4,7 @@ import { expect, within } from "storybook/test";
 import { Heading } from "../";
 
 const meta: Meta<typeof Heading> = {
-  title: "Komponenter/Typography/Heading",
+  title: "Designsystem/Typography/Heading",
   component: Heading,
 };
 
@@ -12,7 +12,7 @@ export default meta;
 
 type Story = StoryObj<typeof Heading>;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     children: "Tittel tekst",
   },

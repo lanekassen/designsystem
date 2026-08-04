@@ -5,13 +5,13 @@ import { Paragraph, SkipLink } from "../";
 type Story = StoryFn<typeof SkipLink>;
 
 const meta: Meta<typeof SkipLink> = {
-  title: "Komponenter/SkipLink",
+  title: "Designsystem/SkipLink",
   component: SkipLink,
 };
 
 export default meta;
 
-export const Preview: Story = (args) => (
+export const Default: Story = (args) => (
   <>
     <Paragraph>
       For å vise skiplinken, tab til dette eksempelet, eller klikk inni

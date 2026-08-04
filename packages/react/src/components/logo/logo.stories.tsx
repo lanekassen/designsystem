@@ -3,7 +3,7 @@ import { Link } from "../..";
 import { Logo, LogoIcon } from "./logo";
 
 const meta = {
-  title: "Komponenter/Logo",
+  title: "Designsystem/Logo",
   component: Logo,
   parameters: {
     layout: "padded",
@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Preview: Story = {};
+export const Default: Story = {};
 
 export const IconOnly: Story = {
   render: () => <LogoIcon />,

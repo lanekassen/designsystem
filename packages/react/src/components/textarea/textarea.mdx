@@ -1,0 +1,27 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./textarea.stories";
+
+export const docsUrl = "textarea";
+
+<Meta of={stories} />
+
+# Textarea
+
+> Textarea brukes når brukeren skal kunne skrive inn tekst som går over flere linjer.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

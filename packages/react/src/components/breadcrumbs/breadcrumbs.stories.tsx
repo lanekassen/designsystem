@@ -3,11 +3,11 @@ import type { Meta, StoryFn } from "@storybook/react-vite";
 import { Breadcrumbs } from "../";
 
 export default {
-  title: "Komponenter/Breadcrumbs",
+  title: "Designsystem/Breadcrumbs",
   component: Breadcrumbs,
 } as Meta;
 
-export const Preview: StoryFn<typeof Breadcrumbs> = (args) => (
+export const Default: StoryFn<typeof Breadcrumbs> = (args) => (
   <>
     <Breadcrumbs aria-label="Du er her:" {...args}>
       <Breadcrumbs.Link href="#link" aria-label="Tilbake til Nivå 3">

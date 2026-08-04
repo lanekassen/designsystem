@@ -3,11 +3,11 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { Fieldset, Radio, ValidationMessage } from "../";
 
 export default {
-  title: "Komponenter/Radio",
+  title: "Designsystem/Radio",
   component: Radio,
 } as Meta;
 
-export const Preview: StoryObj<typeof Radio> = {
+export const Default: StoryObj<typeof Radio> = {
   args: {
     label: "Radio",
     description: "Description",

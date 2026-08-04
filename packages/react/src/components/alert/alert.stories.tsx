@@ -5,7 +5,7 @@ import { Alert, Button, Heading, Link, Paragraph } from "../";
 type Story = StoryFn<typeof Alert>;
 
 const meta: Meta = {
-  title: "Komponenter/Alert",
+  title: "Designsystem/Alert",
   component: Alert,
   parameters: {
     layout: "padded",
@@ -14,9 +14,9 @@ const meta: Meta = {
 
 export default meta;
 
-export const Preview: Story = (args) => <Alert {...args}></Alert>;
+export const Default: Story = (args) => <Alert {...args}></Alert>;
 
-Preview.args = {
+Default.args = {
   children: "En beskjed det er viktig at brukeren ser",
   "data-color": "info",
 };

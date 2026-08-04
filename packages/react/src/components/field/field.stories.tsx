@@ -1,7 +1,5 @@
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { useState } from "react";
 import {
-  Button,
   Divider,
   Field,
   Input,
@@ -14,7 +12,7 @@ import {
 type Story = StoryFn<typeof Field>;
 
 export default {
-  title: "Komponenter/Field",
+  title: "Designsystem/Field",
   component: Field,
   parameters: {
     customStyles: {
@@ -24,17 +22,12 @@ export default {
   },
 } as Meta;
 
-export const Preview: Story = () => {
+export const Default: Story = () => {
   return (
     <Field>
-      <Label>Etternavn</Label>
-      <Field.Description>
-        Etternavn kan ikke inneholde mellomrom
-      </Field.Description>
-      <Input defaultValue="Nordmann Svenske" />
-      <ValidationMessage>
-        Du kan ikke ha mellomrom i etternavnet ditt
-      </ValidationMessage>
+      <Label>Ledetekst</Label>
+      <Field.Description>Beskrivelse</Field.Description>
+      <Input />
     </Field>
   );
 };
@@ -64,25 +57,6 @@ export const Counter: Story = () => (
   </Field>
 );
 
-export const CounterControlled: Story = () => {
-  const [value, setValue] = useState("Nordmann");
-
-  return (
-    <>
-      <Field>
-        <Label>Legg til en beskrivelse</Label>
-        <Textarea
-          rows={2}
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <Field.Counter limit={10} />
-      </Field>
-      <Button onClick={() => setValue("Hei")}>Set verdi "hei"</Button>
-    </>
-  );
-};
-
 export const Position: Story = () => (
   <>
     <Field position="end">
@@ -110,14 +84,28 @@ Position.decorators = [
   ),
 ];
 
-export const Optional: Story = () => (
+export const Required: Story = () => (
   <Field>
     <Label>
       Hvor bor du?
-      <Tag data-color="info" style={{ marginInlineStart: "var(--ds-size-2)" }}>
-        Valgfritt
+      <Tag
+        data-color="warning"
+        style={{ marginInlineStart: "var(--ds-size-2)" }}
+      >
+        Påkrevd
       </Tag>
     </Label>
     <Input />
   </Field>
 );
+
+export const WithValidationMessage: Story = () => {
+  return (
+    <Field>
+      <Label>Ledetekst</Label>
+      <Field.Description>Beskrivelse</Field.Description>
+      <Input />
+      <ValidationMessage>Feilmelding</ValidationMessage>
+    </Field>
+  );
+};

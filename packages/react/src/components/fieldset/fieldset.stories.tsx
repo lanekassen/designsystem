@@ -5,11 +5,11 @@ import { Checkbox, Fieldset, Radio } from "../";
 type Story = StoryFn<typeof Fieldset>;
 
 export default {
-  title: "Komponenter/Fieldset",
+  title: "Designsystem/Fieldset",
   component: Fieldset,
 } as Meta;
 
-export const Preview: Story = (args) => (
+export const Default: Story = (args) => (
   <Fieldset {...args}>
     <Fieldset.Legend>Hvilken fjordarm bor du ved?</Fieldset.Legend>
     <Fieldset.Description>
@@ -25,13 +25,5 @@ export const WithCheckbox: Story = (args) => (
   <Fieldset {...args}>
     <Fieldset.Legend>Godtar du vilkårene?</Fieldset.Legend>
     <Checkbox label="Ja, jeg godtar" />
-  </Fieldset>
-);
-
-export const LegendAsHeading: Story = (args) => (
-  <Fieldset {...args}>
-    <Fieldset.Legend>
-      <h1>Hvor skal du reise?</h1>
-    </Fieldset.Legend>
   </Fieldset>
 );

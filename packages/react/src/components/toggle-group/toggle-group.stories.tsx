@@ -12,7 +12,7 @@ import { useState } from "react";
 import { Button, Divider, Paragraph, ToggleGroup, Tooltip } from "../";
 
 export default {
-  title: "Komponenter/ToggleGroup",
+  title: "Designsystem/ToggleGroup",
   component: ToggleGroup,
   decorators: [
     (Story) => (
@@ -24,7 +24,7 @@ export default {
   ],
 } as Meta;
 
-export const Preview: StoryFn<typeof ToggleGroup> = (args) => {
+export const Default: StoryFn<typeof ToggleGroup> = (args) => {
   return (
     <ToggleGroup {...args}>
       <ToggleGroup.Item value="innboks">Innboks</ToggleGroup.Item>
@@ -35,7 +35,7 @@ export const Preview: StoryFn<typeof ToggleGroup> = (args) => {
   );
 };
 
-Preview.args = {
+Default.args = {
   "data-toggle-group": "Filtrering", // Set data-toggle-group attribute for accessibility
   defaultValue: "innboks",
   name: "toggle-group-nuts",
@@ -101,7 +101,7 @@ export const Kontrollert: StoryFn<typeof ToggleGroup> = () => {
     </>
   );
 };
-export const Secondary: StoryFn<typeof ToggleGroup> = Preview.bind({});
+export const Secondary: StoryFn<typeof ToggleGroup> = Default.bind({});
 Secondary.args = {
   "data-toggle-group": "Filtrering", // Set data-toggle-group attribute for accessibility
   defaultValue: "innboks",

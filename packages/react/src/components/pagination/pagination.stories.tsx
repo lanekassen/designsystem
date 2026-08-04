@@ -7,11 +7,11 @@ import { useArgs } from "storybook/preview-api";
 import { Pagination } from "../";
 
 export default {
-  title: "Komponenter/Pagination",
+  title: "Designsystem/Pagination",
   component: Pagination,
 } as Meta;
 
-export const Preview: StoryFn<typeof Pagination> = () => {
+export const Default: StoryFn<typeof Pagination> = () => {
   return (
     <Pagination>
       <Pagination.List>

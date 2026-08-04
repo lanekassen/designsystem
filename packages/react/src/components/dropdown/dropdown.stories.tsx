@@ -5,22 +5,9 @@ import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Button, Dialog, Dropdown } from "../";
 
 const meta: Meta<typeof Dropdown> = {
-  title: "Komponenter/Dropdown",
+  title: "Designsystem/Dropdown",
   component: Dropdown,
   parameters: {
-    layout: "fullscreen",
-    customStyles: {
-      display: "grid",
-      alignItems: "start",
-      justifyItems: "center",
-      story: {
-        boxSizing: "border-box",
-        width: "100cqw",
-        height: "100cqh",
-        maxWidth: "800px",
-        maxHeight: "800px",
-      },
-    },
     chromatic: {
       disableSnapshot: false,
     },
@@ -40,7 +27,7 @@ const meta: Meta<typeof Dropdown> = {
 
 export default meta;
 
-export const Preview: StoryFn<typeof Dropdown> = (args) => {
+export const Default: StoryFn<typeof Dropdown> = (args) => {
   return (
     <Dropdown.TriggerContext>
       <Dropdown.Trigger data-color={args["data-color"]}>
@@ -70,7 +57,7 @@ export const Preview: StoryFn<typeof Dropdown> = (args) => {
   );
 };
 
-Preview.args = {
+Default.args = {
   placement: "bottom-end",
 };
 

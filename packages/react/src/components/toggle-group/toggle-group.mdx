@@ -1,0 +1,27 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./toggle-group.stories";
+
+export const docsUrl = "toggle-group";
+
+<Meta of={stories} />
+
+# Toggle group
+
+> Toggle group samler relaterte alternativ. Komponenten består av en gruppe knapper som henger sammen, der bare en knapp er mulig å velge om gangen.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

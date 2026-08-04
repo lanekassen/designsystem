@@ -1,0 +1,56 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { EXPERIMENTAL_AvatarStack as AvatarStack } from "./avatar-stack";
+import { Avatar } from "../";
+import * as stories from "./avatar-stack.stories";
+
+export const docsUrl = "avatar-stack";
+
+<Meta of={stories} />
+
+# Avatar stack
+
+> Avatar stack stabler en samling avatar-elementer.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+
+<Example>
+  <Example.Do text="Bruk suffix for å vise antall ekstra personer når avatar stacken inneholder mer enn tre avatarer.">
+  <AvatarStack data-color="accent" aria-hidden suffix={'+14'}>
+    <Avatar aria-label="Navn" />
+    <Avatar aria-label="Navn" initials="sm" />
+    <Avatar aria-label="Navn" initials="ry"/>
+  </AvatarStack>
+  </Example.Do>
+
+  <Example.Dont text="Ikke vis en lang rekke avatarer uten suffix når antallet blir høyt.">
+    <AvatarStack data-color="accent" aria-hidden>
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+      <Avatar aria-label="Navn" />
+    </AvatarStack>
+  </Example.Dont>
+</Example>
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

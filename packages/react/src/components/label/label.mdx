@@ -1,0 +1,26 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import { Card, Paragraph } from "../";
+import * as stories from "./label.stories";
+
+export const docsUrl = "label";
+
+<Meta of={stories} />
+
+# Label
+
+> Label fungerer som en tydelig og tilgjengelig etikett som forteller brukeren hva et tilhørende skjemaelement omhandler.
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

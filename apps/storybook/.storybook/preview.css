@@ -16,11 +16,14 @@ html {
   }
 }
 
+.sbdocs-content.sbdocs-content {
+  max-width: 50rem; /* 800px */
+  padding-bottom: 200px; /* Space for scroll */
+}
+
 /* Blockquote */
 .sbdocs-content blockquote:not(.ds-alert) {
   margin-inline: 0;
-  border-left: var(--ds-size-1) solid var(--ds-color-border-subtle);
-  padding-inline: var(--ds-size-4);
 }
 
 /* Code */

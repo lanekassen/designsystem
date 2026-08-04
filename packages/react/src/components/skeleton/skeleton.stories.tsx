@@ -4,7 +4,7 @@ import { Button, Heading, Paragraph, Skeleton } from "../";
 type Story = StoryObj<typeof Skeleton>;
 
 export default {
-  title: "Komponenter/Skeleton",
+  title: "Designsystem/Skeleton",
   component: Skeleton,
   parameters: {
     a11y: {
@@ -16,7 +16,7 @@ export default {
   },
 } as Meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     width: 200,
     height: 100,

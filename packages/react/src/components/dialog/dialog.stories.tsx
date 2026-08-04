@@ -13,20 +13,9 @@ import {
 } from "../";
 
 const meta: Meta<typeof Dialog> = {
-  title: "Komponenter/Dialog",
+  title: "Designsystem/Dialog",
   component: Dialog,
   parameters: {
-    layout: "fullscreen",
-    customStyles: {
-      display: "grid",
-      alignItems: "start",
-      justifyItems: "center",
-      story: {
-        boxSizing: "border-box",
-        height: "100cqh",
-        width: "100cqw",
-      },
-    },
     chromatic: {
       disableSnapshot: false,
       modes: {
@@ -54,7 +43,7 @@ const meta: Meta<typeof Dialog> = {
 
 export default meta;
 
-export const Preview: StoryFn<typeof Dialog> = (args) => (
+export const Default: StoryFn<typeof Dialog> = (args) => (
   <Dialog.TriggerContext>
     <Dialog.Trigger
       data-color={args["data-color"]}

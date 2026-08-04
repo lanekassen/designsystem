@@ -5,7 +5,7 @@ import { Button, Divider, Label, Paragraph, Textarea } from "../";
 type Story = StoryObj<typeof Textarea>;
 
 const meta: Meta<typeof Textarea> = {
-  title: "Komponenter/Textarea",
+  title: "Designsystem/Textarea",
   component: Textarea,
   decorators: [
     (Story, { parameters }) => (
@@ -28,7 +28,7 @@ const meta: Meta<typeof Textarea> = {
 
 export default meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     disabled: false,
     readOnly: false,

@@ -7,7 +7,7 @@ import { Button, type ButtonProps } from "../";
 type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
-  title: "Komponenter/Button",
+  title: "Designsystem/Button",
   component: Button,
   parameters: {
     customStyles: {
@@ -23,7 +23,7 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   render: ({ ...args }) => {
     return <Button {...args} />;
   },
@@ -130,4 +130,14 @@ export const Loading: StoryFn<typeof Button> = () => (
       <PencilWritingIcon aria-hidden />
     </Button>
   </>
+);
+
+export const Sizes: StoryFn<typeof Button> = () => (
+  <div
+    style={{ display: "flex", gap: "var(--ds-size-3)", alignItems: "center" }}
+  >
+    <Button data-size="sm">Small</Button>
+    <Button data-size="md">Medium</Button>
+    <Button data-size="lg">Lagre</Button>
+  </div>
 );

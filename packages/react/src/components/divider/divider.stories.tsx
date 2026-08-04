@@ -4,11 +4,11 @@ import { Divider, Paragraph } from "../";
 type Story = StoryFn<typeof Divider>;
 
 export default {
-  title: "Komponenter/Divider",
+  title: "Designsystem/Divider",
   component: Divider,
 } as Meta;
 
-export const Preview: Story = (args) => (
+export const Default: Story = (args) => (
   <>
     <Paragraph>
       Divider er brukt for å dele opp innhold i mindre deler.

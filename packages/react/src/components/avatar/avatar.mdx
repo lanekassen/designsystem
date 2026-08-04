@@ -1,0 +1,44 @@
+import { FilePdfIcon } from "@navikt/aksel-icons";
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { Avatar } from "./avatar";
+import * as stories from "./avatar.stories";
+
+export const docsUrl = "avatar";
+
+<Meta of={stories} />
+
+# Avatar
+
+> Avatar viser et bilde, initialer eller ikon for en person, enhet eller profil.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+
+<Example>
+  <Example.Do text="En person eller enhet skal representeres.">
+    <Avatar data-color='accent'/>
+  </Example.Do>
+
+  <Example.Dont text="Noe annet enn en person eller enhet skal representeres, for eksempel et dokument. Bruk heller ikoner eller andre visuelle symboler.">
+    <Avatar data-color='accent'><FilePdfIcon /></Avatar>
+  </Example.Dont>
+</Example>
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

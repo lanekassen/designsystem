@@ -1,0 +1,23 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./dropdown.stories";
+
+export const docsUrl = "dropdown";
+
+<Meta of={stories} />
+
+# Dropdown
+
+> Dropdown er en generisk nedtrekksliste. Den legger grunnmuren for å bygge menyer og lister.
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+<DigDirComponentDocsLink component={docsUrl} />

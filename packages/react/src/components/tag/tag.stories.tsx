@@ -7,7 +7,7 @@ import { Tag } from "../";
 type Story = StoryObj<typeof Tag>;
 
 const meta: Meta<typeof Tag> = {
-  title: "Komponenter/Tag",
+  title: "Designsystem/Tag",
   component: Tag,
   parameters: {
     customStyles: { justifyContent: "start" },
@@ -18,7 +18,7 @@ export default meta;
 
 const _dataColors = [...themeColors, ...severityColors];
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     children: "New",
     variant: "default",

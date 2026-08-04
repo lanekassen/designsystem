@@ -3,7 +3,7 @@ import type { Meta, StoryFn } from "@storybook/react-vite";
 import { Chip } from "../";
 
 const meta: Meta<typeof Chip.Radio> = {
-  title: "Komponenter/Chip",
+  title: "Designsystem/Chip",
   component: Chip.Radio,
   parameters: {
     customStyles: { display: "flex", gap: "var(--ds-size-2)" },
@@ -12,15 +12,15 @@ const meta: Meta<typeof Chip.Radio> = {
 
 export default meta;
 
-export const Preview: StoryFn<typeof Chip.Radio> = (args) => (
-  <>
+export const Default: StoryFn<typeof Chip.Radio> = (args) => (
+  <div style={{ display: "flex", gap: "var(--ds-size-3)" }}>
     <Chip.Radio {...args} name="my-radio" value="nynorsk" defaultChecked>
       Nynorsk
     </Chip.Radio>
     <Chip.Radio {...args} name="my-radio" value="bokmål">
       Bokmål
     </Chip.Radio>
-  </>
+  </div>
 );
 
 export const Checkbox: StoryFn<typeof Chip.Checkbox> = (args) => (

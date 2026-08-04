@@ -5,11 +5,11 @@ import { Button, Divider, Paragraph, Tag, Textfield } from "../";
 type Story = StoryObj<typeof Textfield>;
 
 export default {
-  title: "Komponenter/Textfield",
+  title: "Designsystem/Textfield",
   component: Textfield,
 } as Meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     label: "Label",
     disabled: false,

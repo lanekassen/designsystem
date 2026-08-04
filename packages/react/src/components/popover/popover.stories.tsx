@@ -5,16 +5,9 @@ import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Button, Paragraph, Popover } from "../";
 
 const meta: Meta<typeof Popover> = {
-  title: "Komponenter/Popover",
+  title: "Designsystem/Popover",
   component: Popover,
   parameters: {
-    layout: "fullscreen",
-    customStyles: {
-      display: "flex",
-      placeItems: "end",
-      placeContent: "center",
-      padding: "1rem 2rem",
-    },
     chromatic: {
       disableSnapshot: false,
     },
@@ -34,7 +27,7 @@ const meta: Meta<typeof Popover> = {
 
 export default meta;
 
-export const Preview: StoryFn<typeof Popover> = (args) => {
+export const Default: StoryFn<typeof Popover> = (args) => {
   return (
     <Popover.TriggerContext>
       <Popover.Trigger>Mine varsler</Popover.Trigger>
@@ -43,10 +36,10 @@ export const Preview: StoryFn<typeof Popover> = (args) => {
   );
 };
 
-Preview.args = {
+Default.args = {
   placement: "top",
 };
-Preview.parameters = {
+Default.parameters = {
   customStyles: {
     paddingTop: "5rem",
   },

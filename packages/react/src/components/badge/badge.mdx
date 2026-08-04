@@ -1,0 +1,85 @@
+import { InboxIcon } from "@navikt/aksel-icons";
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import {
+  Example,
+  DigDirComponentDocsLink,
+} from "../../../../../apps/storybook/.storybook/docs/components";
+import { Badge } from "./badge";
+import { Button, Tabs } from "../";
+import * as stories from "./badge.stories";
+
+export const docsUrl = "badge";
+
+<Meta of={stories} />
+
+# Badge
+
+> Badge er en ikke-interaktiv komponent som viser status med eller uten tall. Bruk tag dersom du skal ha tekst i stedet for tall.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+## Skikk og bruk
+
+<Example>
+  <Example.Do text="Tall som skal vise antall nye meldinger, varsel eller oppgaver.">
+
+    <Badge.Position>
+      <Badge data-color="accent" count={199} />
+      <Button data-color="accent" data-variant="secondary">
+        <InboxIcon title="Innboks" /> E-post
+      </Button>
+    </Badge.Position>
+
+  </Example.Do>
+
+  <Example.Dont text="Det trengs tekst i stedet for tall, bruk heller tag.">
+    <Badge.Position>
+      <Badge data-color="accent" count={"Hundreognittini"} />
+      <Button data-color="accent" data-variant="secondary">
+        <InboxIcon title="Innboks" /> E-post
+      </Button>
+    </Badge.Position>
+  </Example.Dont>
+</Example>
+
+<Example>
+  <Example.Do text="Tall som skal vise antall nye meldinger, varsel eller oppgaver.">
+  <Tabs data-color="accent">
+    <Tabs.List>
+      <Tabs.Tab>
+        <span>Din side</span>
+      </Tabs.Tab>
+      <Tabs.Tab>
+        <span>Innboks</span>
+        <Badge data-color="accent" count={12} />
+      </Tabs.Tab>
+        <Tabs.Tab>
+        <span>Profil</span>
+      </Tabs.Tab>
+    </Tabs.List>
+    </Tabs>
+  </Example.Do>
+
+  <Example.Dont text="Badge skal aldri stå alene.">
+    <Badge data-color="accent" count={"Hundreognittini"} />
+  </Example.Dont>
+</Example>
+
+## Farger
+
+- Bruk `data-color` for å endre farge.
+  <Canvas of={stories.Variants} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />

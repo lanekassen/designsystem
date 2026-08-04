@@ -4,11 +4,11 @@ import { Fieldset, Switch } from "../";
 type Story = StoryObj<typeof Switch>;
 
 export default {
-  title: "Komponenter/Switch",
+  title: "Designsystem/Switch",
   component: Switch,
 } as Meta;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     label: "Switch",
     description: "",
@@ -19,8 +19,8 @@ export const Preview: Story = {
 };
 
 export const Checked: Story = {
-  ...Preview,
-  args: { ...Preview.args, checked: true },
+  ...Default,
+  args: { ...Default.args, checked: true },
 };
 
 export const Group: Story = {

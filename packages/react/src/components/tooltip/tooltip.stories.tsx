@@ -7,7 +7,7 @@ import { Button, Tooltip } from "../";
 type Story = StoryObj<typeof Tooltip>;
 
 const meta: Meta<typeof Tooltip> = {
-  title: "Komponenter/Tooltip",
+  title: "Designsystem/Tooltip",
   component: Tooltip,
   parameters: {
     customStyles: { margin: "2rem", padding: "4rem" },
@@ -32,7 +32,7 @@ const meta: Meta<typeof Tooltip> = {
 
 export default meta;
 
-export const Preview: StoryFn<typeof Tooltip> = (args) => (
+export const Default: StoryFn<typeof Tooltip> = (args) => (
   <Tooltip {...args}>
     <Button icon>
       <FilesIcon aria-hidden />
@@ -40,7 +40,7 @@ export const Preview: StoryFn<typeof Tooltip> = (args) => (
   </Tooltip>
 );
 
-Preview.args = {
+Default.args = {
   content: "Kopier",
   placement: "top",
 };

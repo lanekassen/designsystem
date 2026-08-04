@@ -1,0 +1,27 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import * as stories from "./spinner.stories";
+
+export const docsUrl = "spinner";
+
+<Meta of={stories} />
+
+# Spinner
+
+> Spinner brukes for å indikere at innhold eller en handling er i ferd med å laste, og at brukeren må vente før de kan fortsette.
+
+<br />
+
+## Kode
+
+<Canvas of={stories.Default} />
+
+<br />
+
+<DigDirComponentDocsLink component={docsUrl} />
