@@ -28,6 +28,15 @@ const form = useAppForm({
 });
 ```
 
+Place `form.ErrorSummary` below the fields and before the submit button to render an error summary on validation errors.
+
+```tsx
+<form.AppForm>
+  <form.ErrorSummary heading="Fix the errors before continuing" />
+  <form.SubmitButton>Submit</form.SubmitButton>
+</form.AppForm>
+```
+
 See full examples below.
 
 This package also exposes `withForm` and `withFieldGroup` which can be used to create reusable forms and field groups.

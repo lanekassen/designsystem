@@ -6,6 +6,7 @@ import {
   useRadioGroup,
   ValidationMessage,
 } from "../../";
+import { getFieldId } from "../field-id";
 import { useFieldContext } from "../form-context";
 import { useErrorMessage } from "../hooks/use-error-message";
 
@@ -50,6 +51,7 @@ export default function FormRadioGroup({
 
   return (
     <Fieldset
+      id={getFieldId(field.form.formId, field.name)}
       onBlur={field.handleBlur}
       data-size={size}
       className={className}

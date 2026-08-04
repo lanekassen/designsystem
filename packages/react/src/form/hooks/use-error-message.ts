@@ -1,22 +1,18 @@
 import type { StandardSchemaV1Issue } from "@tanstack/react-form";
-import { useMemo } from "react";
 import { useFieldContext } from "../form-context";
+
+export type FormError = StandardSchemaV1Issue | string;
+
+export function getErrorMessage(error: FormError) {
+  return typeof error === "string" ? error : error.message;
+}
 
 /**
  * @internal
  */
 export function useErrorMessage() {
   const field = useFieldContext();
+  const error = field.state.meta.errors[0] as FormError | undefined;
 
-  const error = useMemo(() => {
-    if (!field.state.meta.errors.length) {
-      return null;
-    }
-
-    return field.state.meta.errors.map((err: StandardSchemaV1Issue | string) =>
-      typeof err === "object" ? err.message : err,
-    )[0];
-  }, [field.state.meta.errors]);
-
-  return error;
+  return error ? getErrorMessage(error) : null;
 }

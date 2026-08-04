@@ -415,6 +415,7 @@ export const FormFull: StoryFn = () => {
       </form.AppField>
 
       <form.AppForm>
+        <form.ErrorSummary heading="Fix the errors before continuing" />
         <form.SubmitButton>Submit</form.SubmitButton>
       </form.AppForm>
     </form>

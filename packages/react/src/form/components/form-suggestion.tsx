@@ -10,6 +10,7 @@ import {
   type SuggestionSingleProps,
   ValidationMessage,
 } from "../../";
+import { getFieldId } from "../field-id";
 import { useFieldContext } from "../form-context";
 import { useErrorMessage } from "../hooks/use-error-message";
 
@@ -69,10 +70,16 @@ export default function FormSuggestion({
   multiple,
   ...rest
 }: FormSuggestionProps) {
+  const field = useFieldContext();
   const error = useErrorMessage();
 
   return (
-    <Field data-size={size} className={className} style={style}>
+    <Field
+      id={getFieldId(field.form.formId, field.name)}
+      data-size={size}
+      className={className}
+      style={style}
+    >
       {!!label && <Label>{label}</Label>}
 
       {!!description && <Field.Description>{description}</Field.Description>}

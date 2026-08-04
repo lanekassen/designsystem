@@ -1,5 +1,6 @@
 import { createFormHook } from "@tanstack/react-form";
 import CheckboxGroup from "./components/form-checkbox-group";
+import ErrorSummary from "./components/form-error-summary";
 import RadioGroup from "./components/form-radio-group";
 import Select from "./components/form-select";
 import SubmitButton from "./components/form-submit-button";
@@ -18,6 +19,7 @@ export const { useAppForm, withForm, withFieldGroup } = createFormHook({
     Textfield,
   },
   formComponents: {
+    ErrorSummary,
     SubmitButton,
   },
 });
