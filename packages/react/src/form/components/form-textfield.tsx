@@ -1,7 +1,7 @@
 import { Textfield, type TextfieldProps } from "../../";
-import { getFieldId } from "../field-id";
 import { useFieldContext } from "../form-context";
 import { useErrorMessage } from "../hooks/use-error-message";
+import { getFieldId } from "../utils/field-id";
 
 // TextfieldProps has a union type, so we need to omit the props from each member of the union.
 type DistributiveOmit<T, K extends keyof T> = T extends unknown

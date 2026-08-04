@@ -10,9 +10,9 @@ import {
   type SuggestionSingleProps,
   ValidationMessage,
 } from "../../";
-import { getFieldId } from "../field-id";
 import { useFieldContext } from "../form-context";
 import { useErrorMessage } from "../hooks/use-error-message";
+import { getFieldId } from "../utils/field-id";
 
 function FormSuggestionSingle(props: SuggestionSingleProps) {
   const field = useFieldContext<string | undefined>();

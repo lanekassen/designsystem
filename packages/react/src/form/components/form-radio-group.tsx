@@ -6,9 +6,9 @@ import {
   useRadioGroup,
   ValidationMessage,
 } from "../../";
-import { getFieldId } from "../field-id";
 import { useFieldContext } from "../form-context";
 import { useErrorMessage } from "../hooks/use-error-message";
+import { getFieldId } from "../utils/field-id";
 
 type FormRadioGroupProps = Pick<
   FieldsetProps,

@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { ErrorSummary } from "../..";
-import { getFieldId } from "../field-id";
 import { useFormContext } from "../form-context";
 import { type FormError, getErrorMessage } from "../hooks/use-error-message";
+import { getFieldId } from "../utils/field-id";
 
 const focusField = (id: string) => {
   const field = document.getElementById(id);
@@ -16,9 +16,7 @@ export default function FormErrorSummary({ heading }: { heading: ReactNode }) {
   const form = useFormContext();
 
   return (
-    <form.Subscribe
-      selector={(state) => [state.submissionAttempts, state.fieldMeta] as const}
-    >
+    <form.Subscribe selector={(state) => [state.submissionAttempts] as const}>
       {([submissionAttempts]) => {
         const fieldErrors = Object.entries<{ errors: FormError[] }>(
           form.getAllErrors().fields,
