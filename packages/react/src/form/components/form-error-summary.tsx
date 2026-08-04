@@ -24,30 +24,33 @@ export default function FormErrorSummary({ heading }: { heading: ReactNode }) {
           form.getAllErrors().fields,
         );
 
-        return submissionAttempts > 0 && fieldErrors.length > 0 ? (
-          <ErrorSummary key={submissionAttempts}>
-            <ErrorSummary.Heading>{heading}</ErrorSummary.Heading>
-            <ErrorSummary.List>
-              {fieldErrors.map(([fieldName, { errors }]) => {
-                const id = getFieldId(form.formId, fieldName);
+        return (
+          submissionAttempts > 0 &&
+          fieldErrors.length > 0 && (
+            <ErrorSummary key={submissionAttempts}>
+              <ErrorSummary.Heading>{heading}</ErrorSummary.Heading>
+              <ErrorSummary.List>
+                {fieldErrors.map(([fieldName, { errors }]) => {
+                  const id = getFieldId(form.formId, fieldName);
 
-                return (
-                  <ErrorSummary.Item key={fieldName}>
-                    <ErrorSummary.Link
-                      href={`#${id}`}
-                      onClick={(event) => {
-                        event.preventDefault();
-                        focusField(id);
-                      }}
-                    >
-                      {getErrorMessage(errors[0])}
-                    </ErrorSummary.Link>
-                  </ErrorSummary.Item>
-                );
-              })}
-            </ErrorSummary.List>
-          </ErrorSummary>
-        ) : null;
+                  return (
+                    <ErrorSummary.Item key={fieldName}>
+                      <ErrorSummary.Link
+                        href={`#${id}`}
+                        onClick={(event) => {
+                          event.preventDefault();
+                          focusField(id);
+                        }}
+                      >
+                        {getErrorMessage(errors[0])}
+                      </ErrorSummary.Link>
+                    </ErrorSummary.Item>
+                  );
+                })}
+              </ErrorSummary.List>
+            </ErrorSummary>
+          )
+        );
       }}
     </form.Subscribe>
   );
