@@ -1,9 +1,7 @@
 import themeConfig from "../../../packages/css/designsystemet.config.json";
 
 export const themeColors = [
-  ...Object.keys(themeConfig.themes.lanekassen.colors.main),
-  ...Object.keys(themeConfig.themes.lanekassen.colors.support),
-  "neutral",
+  ...Object.keys(themeConfig.themes.lanekassen.colors),
 ];
 
 export const severityColors = ["success", "warning", "danger", "info"] as const;

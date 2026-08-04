@@ -13,10 +13,14 @@
     "primitives/modes/color-scheme/dark/lanekassen",
     "primitives/modes/color-scheme/light/lanekassen",
     "themes/lanekassen",
-    "semantic/color",
-    "semantic/modes/main-color/accent",
-    "semantic/modes/support-color/radiant",
-    "semantic/modes/support-color/sand",
+    "semantic/color/accent",
+    "semantic/color/radiant",
+    "semantic/color/sand",
+    "semantic/color/neutral",
+    "semantic/color/info",
+    "semantic/color/success",
+    "semantic/color/warning",
+    "semantic/color/danger",
     "semantic/style"
   ]
 }
