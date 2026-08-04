@@ -1,6 +1,7 @@
 import { Textfield, type TextfieldProps } from "../../";
 import { useFieldContext } from "../form-context";
 import { useErrorMessage } from "../hooks/use-error-message";
+import { getFieldId } from "../utils/field-id";
 
 // TextfieldProps has a union type, so we need to omit the props from each member of the union.
 type DistributiveOmit<T, K extends keyof T> = T extends unknown
@@ -9,7 +10,7 @@ type DistributiveOmit<T, K extends keyof T> = T extends unknown
 
 export type FormTextfieldProps = DistributiveOmit<
   TextfieldProps,
-  "value" | "onChange" | "onBlur" | "error"
+  "value" | "onChange" | "onBlur" | "error" | "id"
 >;
 
 export default function FormTextfield(props: FormTextfieldProps) {
@@ -18,6 +19,7 @@ export default function FormTextfield(props: FormTextfieldProps) {
 
   return (
     <Textfield
+      id={getFieldId(field.form.formId, field.name)}
       value={field.state.value}
       onChange={(
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,

@@ -8,6 +8,7 @@ import {
 } from "../../";
 import { useFieldContext } from "../form-context";
 import { useErrorMessage } from "../hooks/use-error-message";
+import { getFieldId } from "../utils/field-id";
 
 type FormCheckboxGroupProps = Pick<
   FieldsetProps,
@@ -50,6 +51,7 @@ export default function FormCheckboxGroup({
 
   return (
     <Fieldset
+      id={getFieldId(field.form.formId, field.name)}
       onBlur={field.handleBlur}
       data-size={size}
       className={className}

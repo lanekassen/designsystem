@@ -90,6 +90,18 @@ Radio Group provides a render prop to provide the necessary props for the radio 
 
 <Canvas of={FormStories.FormRadioGroup} />
 
+### Error Summary
+
+For forms with several fields, place `form.ErrorSummary` below the fields and before the submit button.
+See [Designsystemet's guidelines for summaries of multiple error messages](https://designsystemet.no/en/patterns/errors#summary-of-multiple-error-messages).
+
+```tsx
+<form.AppForm>
+  <form.ErrorSummary heading="Fix the errors before continuing" />
+  <form.SubmitButton>Submit</form.SubmitButton>
+</form.AppForm>
+```
+
 ### Submit Button
 
 The `SubmitButton` component is used to submit the form. It automatically sets the correct aria-attributes and shows a spinner when the form is submitting.

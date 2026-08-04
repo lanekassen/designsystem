@@ -12,6 +12,7 @@ import {
 } from "../../";
 import { useFieldContext } from "../form-context";
 import { useErrorMessage } from "../hooks/use-error-message";
+import { getFieldId } from "../utils/field-id";
 
 function FormSuggestionSingle(props: SuggestionSingleProps) {
   const field = useFieldContext<string | undefined>();
@@ -69,10 +70,16 @@ export default function FormSuggestion({
   multiple,
   ...rest
 }: FormSuggestionProps) {
+  const field = useFieldContext();
   const error = useErrorMessage();
 
   return (
-    <Field data-size={size} className={className} style={style}>
+    <Field
+      id={getFieldId(field.form.formId, field.name)}
+      data-size={size}
+      className={className}
+      style={style}
+    >
       {!!label && <Label>{label}</Label>}
 
       {!!description && <Field.Description>{description}</Field.Description>}
