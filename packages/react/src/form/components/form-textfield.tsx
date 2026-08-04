@@ -2,7 +2,12 @@ import { Textfield, type TextfieldProps } from "../../";
 import { useFieldContext } from "../form-context";
 import { useErrorMessage } from "../hooks/use-error-message";
 
-export type FormTextfieldProps = Exclude<
+// TextfieldProps has a union type, so we need to omit the props from each member of the union.
+type DistributiveOmit<T, K extends keyof T> = T extends unknown
+  ? Omit<T, K>
+  : never;
+
+export type FormTextfieldProps = DistributiveOmit<
   TextfieldProps,
   "value" | "onChange" | "onBlur" | "error"
 >;

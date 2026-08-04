@@ -1,5 +1,12 @@
 # @lanekassen/ds-react
 
+## 0.3.2
+
+### Patch Changes
+
+- 96d16c3: Form: add pre-bound form components
+- 96d16c3: Hooks: re-export hooks from `@digdir/designsystemet-react`
+
 ## 0.3.1
 
 ### Patch Changes

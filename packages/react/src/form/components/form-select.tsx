@@ -1,3 +1,4 @@
+import type { LabelRequired } from "@digdir/designsystemet-react";
 import {
   Field,
   type FieldProps,
@@ -16,7 +17,7 @@ type FormFieldProps = Pick<FieldProps, "data-size" | "className" | "style"> &
   > & {
     label?: React.ReactNode;
     description?: React.ReactNode;
-  };
+  } & LabelRequired;
 
 export default function FormField({
   "data-size": size,

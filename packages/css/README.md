@@ -3,13 +3,13 @@
 Lånekassen's CSS components to be used in internal and external applications.
 
 > [!WARNING]
-> While this package only contains CSS files, it is primarly developed with React and `@lanekassen/ds-react` in mind. Please consider using React for your application.
+> While this package only contains CSS files, it is primarly developed
+> with React and `@lanekassen/ds-react` in mind. Please consider using
+> React for your application.
 
-> [!CAUTION]
-> This package is in it's early stages of development and is not ready to be used yet.
-
-> [!CAUTION]
-> This package cannot be used with the internal `@lanekassen/ui` package. Please migrate your entire app at the same time
+> [!WARNING]
+> This package is in it's early stages of development. While it works
+> and can be used, there are no guarantees made for API stability.
 
 ## Getting Started
 
@@ -98,3 +98,18 @@ Or HTML
 </style>
 <button class="my-button">Button</button>
 ```
+
+## Using with @lanekassen/ui
+
+While `@lanekassen/ds-css` works with the old internal `@lanekassen/ui`
+package, not all tokens or design align fully.
+
+To make `@lanekassen/ds-css` behave more like `@lanekassen/ui` it is
+recommended to set the following tokens:
+
+```css
+:root {
+    --ds-color-focus-outer: var(--lk-palette-focus-focus-color, #063374);
+}
+```
+
