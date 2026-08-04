@@ -2,7 +2,7 @@ import { BriefcaseIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import { person2Img } from "../../../stories/constants";
 
-import { Avatar, type AvatarProps, Badge, Dropdown } from "../";
+import { Avatar, Badge, Dropdown } from "../";
 
 type Story = StoryFn<typeof Avatar>;
 

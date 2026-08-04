@@ -1,12 +1,10 @@
 import {
-  PersonCircleIcon,
   EnvelopeClosedIcon,
-  HouseIcon
+  HouseIcon,
+  PersonCircleIcon,
 } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { useState } from "react";
-import { expect } from "storybook/test";
-import { Button, Tabs, Tooltip } from "../";
+import { Tabs } from "../";
 
 export default {
   title: "Designsystem/Tabs",
@@ -59,7 +57,6 @@ export const IconsWithText: StoryFn<typeof Tabs> = () => (
     </Tabs.Panel>
   </Tabs>
 );
-
 
 export const DefaultValue: StoryFn<typeof Tabs> = () => (
   <Tabs defaultValue="value2">

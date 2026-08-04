@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from "@storybook/react-vite";
 
-import { Checkbox, Fieldset, Radio, Tag } from "../";
+import { Checkbox, Fieldset, Radio } from "../";
 
 type Story = StoryFn<typeof Fieldset>;
 

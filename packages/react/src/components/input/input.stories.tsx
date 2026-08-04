@@ -1,12 +1,6 @@
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { sizenames, sizes } from "../../../stories/constants";
-import {
-  Field,
-  Heading,
-  Input,
-  Label,
-  ValidationMessage,
-} from "../";
+import { Field, Heading, Input, Label, ValidationMessage } from "../";
 
 type Story = StoryObj<typeof Input>;
 

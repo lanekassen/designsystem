@@ -99,7 +99,7 @@ export const Required: Story = () => (
   </Field>
 );
 
-export const Error: Story = () => {
+export const WithValidationMessage: Story = () => {
   return (
     <Field>
       <Label>Ledetekst</Label>

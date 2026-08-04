@@ -1,6 +1,4 @@
-import {
-  ArrowRightIcon,
-} from "@navikt/aksel-icons";
+import { ArrowRightIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { Link, Paragraph } from "../";
 

@@ -130,7 +130,6 @@ const VariantsMap: {
     "data-color": "accent",
     variant: "tinted",
   },
-
 };
 
 export const Variants: Story = () => (

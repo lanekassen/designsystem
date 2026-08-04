@@ -28,15 +28,9 @@ export const Sortert: StoryFn<typeof List.Ordered> = (args) => (
       For å få pengene utbetalt må du:
     </Heading>
     <List.Ordered {...args}>
-      <List.Item>
-Søke om stipend og lån.
-      </List.Item>
-      <List.Item>
-Signere avtalen.
-      </List.Item>
-      <List.Item>
-Bekrefte utdanningen hvis det er nødvendig.
-      </List.Item>
+      <List.Item>Søke om stipend og lån.</List.Item>
+      <List.Item>Signere avtalen.</List.Item>
+      <List.Item>Bekrefte utdanningen hvis det er nødvendig.</List.Item>
     </List.Ordered>
   </>
 );
@@ -92,7 +86,6 @@ export const Innrykk: Story = (args) => (
           <List.Item>yrkesfag</List.Item>
         </List.Unordered>
       </List.Item>
-   
     </List.Unordered>
   </>
 );
