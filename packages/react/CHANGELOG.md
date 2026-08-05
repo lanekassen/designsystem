@@ -1,5 +1,12 @@
 # @lanekassen/ds-react
 
+## 0.3.3
+
+### Patch Changes
+
+- bf4e398: Update non-major dependencies
+- 9617d72: Form: add `form.ErrorSummary` with links that focus invalid fields
+
 ## 0.3.2
 
 ### Patch Changes
