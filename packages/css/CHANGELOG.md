@@ -1,5 +1,12 @@
 # @lanekassen/ds-css
 
+## 0.3.3
+
+### Patch Changes
+
+- bf4e398: Update non-major dependencies
+- 5b8c9a2: Theme: change value for accent.background-tinted.light
+
 ## 0.3.2
 
 ### Patch Changes
