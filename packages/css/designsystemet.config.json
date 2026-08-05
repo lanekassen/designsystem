@@ -5,13 +5,9 @@
   "themes": {
     "lanekassen": {
       "colors": {
-        "main": {
-          "accent": "#410464"
-        },
-        "support": {
-          "radiant": "#7134DA",
-          "sand": "#BEABA2"
-        },
+        "accent": "#410464",
+        "radiant": "#7134DA",
+        "sand": "#BEABA2",
         "neutral": "#575e66"
       },
       "borderRadius": 8,

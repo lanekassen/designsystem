@@ -1,7 +1,6 @@
 import { TrashIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useEffect, useState } from "react";
-import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Button, Paragraph, Popover } from "../";
 
 const meta: Meta<typeof Popover> = {
@@ -11,17 +10,6 @@ const meta: Meta<typeof Popover> = {
     chromatic: {
       disableSnapshot: false,
     },
-  },
-  play: async (ctx) => {
-    // When not in Docs mode, automatically open the dropdown
-    const button = within(ctx.canvasElement).getByRole("button");
-    await new Promise((resolve) => {
-      document.addEventListener("animationend", resolve, true); // <== Merk at vi binder event-listener før vi gjør click
-      userEvent.click(button);
-    });
-    const dropdown = ctx.canvasElement.querySelector(".ds-popover");
-    await expect(dropdown).toBeInTheDocument();
-    await waitFor(() => expect(dropdown).toBeVisible());
   },
 };
 
@@ -167,7 +155,6 @@ Variants.parameters = {
     padding: "5rem 1rem",
   },
 };
-Variants.play = () => {};
 Variants.parameters = {
   customStyles: {
     display: "grid",

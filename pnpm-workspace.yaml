@@ -10,39 +10,39 @@ minimumReleaseAge: 4320
 catalogMode: strict
 cleanupUnusedCatalogs: true
 catalog:
-  "@biomejs/biome": 2.5.0
-  "@changesets/cli": ^2.31.0
-  "@digdir/designsystemet": ^1.16.1
-  "@digdir/designsystemet-css": ^1.16.1
-  "@digdir/designsystemet-react": ^1.16.1
-  "@digdir/designsystemet-types": ^1.16.1
-  "@digdir/designsystemet-web": ^1.16.1
+  "@biomejs/biome": 2.5.6
+  "@changesets/cli": ^2.31.1
+  "@digdir/designsystemet": ^1.18.0
+  "@digdir/designsystemet-css": ^1.18.0
+  "@digdir/designsystemet-react": ^1.18.0
+  "@digdir/designsystemet-types": ^1.18.0
+  "@digdir/designsystemet-web": ^1.18.0
   "@mdx-js/react": ^3.1.1
-  "@navikt/aksel-icons": ^8.13.0
-  '@storybook/addon-a11y': ^10.4.6
-  "@storybook/addon-docs": ^10.4.6
-  "@storybook/addon-themes": ^10.4.6
-  '@storybook/addon-vitest': ^10.4.6
-  "@storybook/react-vite": ^10.4.6
-  '@tanstack/react-form': ^1.33.0
-  "@tsdown/css": ^0.22.3
-  '@types/node': ^24.13.2
-  "@types/react": ^19.2.17
-  "@types/react-dom": ^19.2.3
+  "@navikt/aksel-icons": ^8.16.1
+  '@storybook/addon-a11y': ^10.5.5
+  "@storybook/addon-docs": ^10.5.5
+  "@storybook/addon-themes": ^10.5.5
+  '@storybook/addon-vitest': ^10.5.5
+  "@storybook/react-vite": ^10.5.5
+  '@tanstack/react-form': ^1.33.3
+  "@tsdown/css": ^0.22.14
+  '@types/node': ^24.13.3
+  "@types/react": ^19.2.18
+  "@types/react-dom": ^19.2.4
   "@u-elements/u-progress": ^1.0.1
-  '@vitest/browser-playwright': ^4.1.9
-  '@vitest/coverage-v8': ^4.1.9
+  '@vitest/browser-playwright': ^4.1.10
+  '@vitest/coverage-v8': ^4.1.10
   clsx: ^2.1.1
-  playwright: ^1.61.0
-  react: ^19.2.7
+  playwright: ^1.62.1
+  react: ^19.2.8
   react-docgen-typescript: ^2.4.0
-  react-dom: ^19.2.7
-  storybook: ^10.4.6
-  tsdown: ^0.22.3
-  typedoc: ^0.28.19
+  react-dom: ^19.2.8
+  storybook: ^10.5.5
+  tsdown: ^0.22.14
+  typedoc: ^0.28.20
   typedoc-plugin-markdown: ^4.12.0
   typescript: ^6.0.3
-  vite: ^8.0.16
-  vitest: ^4.1.9
+  vite: ^8.2.0
+  vitest: ^4.1.10
   vitest-browser-react: ^2.2.0
   zod: ^4.4.3

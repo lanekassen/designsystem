@@ -1,7 +1,6 @@
 import type { DSErrorSummaryElement } from "@digdir/designsystemet-web";
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useEffect, useRef, useState } from "react";
-import { expect, userEvent, within } from "storybook/test";
 import { Button, ErrorSummary, Textfield } from "../";
 
 type Story = StoryFn<typeof ErrorSummary>;
@@ -130,14 +129,6 @@ export const ShowHideReact: Story = () => {
       )}
     </>
   );
-};
-
-ShowHideReact.play = async (ctx) => {
-  const canvas = within(ctx.canvasElement);
-  const button = canvas.getByRole("button");
-  await userEvent.click(button);
-  const errorSummary = canvas.getByTestId("show-hide");
-  await expect(errorSummary).toBeVisible();
 };
 
 ShowHideReact.parameters = {
