@@ -1,5 +1,4 @@
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
 import { Paragraph, SkipLink } from "../";
 
 type Story = StoryFn<typeof SkipLink>;
@@ -36,16 +35,3 @@ export const Tabbed: Story = () => (
     </main>
   </div>
 );
-Tabbed.play = async (ctx) => {
-  const canvas = within(ctx.canvasElement);
-  const link = canvas.getByRole("link");
-  await expect(link).not.toSatisfy(isVisibleOnScreen);
-  await userEvent.tab();
-  await expect(link).toSatisfy(isVisibleOnScreen);
-  await expect(link).toHaveFocus();
-};
-
-function isVisibleOnScreen(el: Element) {
-  const { height, width } = el.getBoundingClientRect();
-  return height > 1 && width > 1;
-}

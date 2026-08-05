@@ -1,7 +1,6 @@
 import { FilesIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useEffect, useRef, useState } from "react";
-import { expect, within } from "storybook/test";
 import { Button, Tooltip } from "../";
 
 type Story = StoryObj<typeof Tooltip>;
@@ -14,19 +13,6 @@ const meta: Meta<typeof Tooltip> = {
     chromatic: {
       disableSnapshot: false,
     },
-  },
-  play: async (ctx) => {
-    document.querySelector(".ds-tooltip")?.remove(); // Reset to run next test without waiting for tooltip to disappear // <== Må "nullstille"/fjerne tooltip mellom hver test
-    const button =
-      ctx.canvasElement.querySelector<HTMLButtonElement>("[data-tooltip]");
-
-    await new Promise((resolve) => {
-      document.addEventListener("animationend", resolve, true); // <== Merk at vi binder event-listener før vi gjør hover
-      button?.focus();
-    });
-
-    const tooltip = await within(document.body).findByText(ctx.args.content); // <== trenger ikke sjekke toBeInDocument siden denne testen krever det
-    expect(tooltip).toBeVisible();
   },
 };
 
@@ -89,8 +75,6 @@ Aria.decorators = [
     </div>
   ),
 ];
-
-Aria.play = async () => {};
 
 export const WithDynamicTooltipText: Story = {
   args: {

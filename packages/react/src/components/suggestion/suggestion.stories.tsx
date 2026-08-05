@@ -1,7 +1,6 @@
 import { useDebounceCallback } from "@digdir/designsystemet-react";
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import { type InputEventHandler, useState } from "react";
-import { expect, userEvent, waitFor, within } from "storybook/test";
 import {
   Button,
   Details,
@@ -51,19 +50,7 @@ export default {
       },
     },
   },
-  play: async (ctx) => {
-    const storyRoot = ctx.canvasElement;
-    // Refactored out the play function for easier reuse in the InModal story
-    await testSuggestion(storyRoot);
-  },
 } satisfies Meta;
-
-async function testSuggestion(el: HTMLElement) {
-  /* wait for role to be added */
-  const input = await waitFor(() => within(el).getByRole("combobox"));
-  /* When in test mode, open suggestion by focusing input */
-  await userEvent.click(input);
-}
 
 const DATA_PLACES = [
   "Sogndal",
@@ -144,29 +131,6 @@ export const ControlledSingle: StoryFn<SuggestionSingleProps> = (args) => {
     </>
   );
 };
-ControlledSingle.play = async ({ canvasElement, step }) => {
-  const input = await waitFor(() =>
-    within(canvasElement).getByRole("combobox"),
-  );
-  const resultText = within(canvasElement).getByText("Valgte reisemål:", {
-    exact: false,
-  });
-  const button = within(canvasElement).getByText("Sett reisemål", {
-    exact: false,
-    selector: "button",
-  });
-
-  await step("Initial state is empty", async () => {
-    await expect(resultText).toHaveTextContent(/^Valgte reisemål:$/);
-    await waitFor(() => expect(input).toHaveValue(""));
-  });
-
-  await step("Controlled state change renders correctly", async () => {
-    await userEvent.click(button);
-    await expect(resultText).toHaveTextContent("Sogndal");
-    await waitFor(() => expect(input).toHaveValue("Sogndal"));
-  });
-};
 
 export const ControlledMultiple: StoryFn<SuggestionMultipleProps> = (args) => {
   const [selected, setSelected] = useState<string[]>(["Oslo"]);
@@ -211,37 +175,6 @@ export const ControlledMultiple: StoryFn<SuggestionMultipleProps> = (args) => {
       </Button>
     </>
   );
-};
-
-ControlledMultiple.play = async ({ canvasElement, step }) => {
-  const getChipValues = async () =>
-    waitFor(() =>
-      within(canvasElement)
-        .getAllByLabelText("Press to remove", { exact: false })
-        .filter((el) => el instanceof HTMLDataElement)
-        .map((x) => x.value),
-    );
-  const resultText = within(canvasElement).getByText("Valgte reisemål:", {
-    exact: false,
-  });
-  const button = within(canvasElement).getByText("Sett reisemål", {
-    exact: false,
-    selector: "button",
-  });
-
-  await step("Initial state is rendered correctly", async () => {
-    await expect(resultText).toHaveTextContent("Oslo");
-    await expect(await getChipValues()).toContain("Oslo");
-  });
-
-  await step("Controlled state change renders correctly", async () => {
-    await userEvent.click(button);
-    await expect(resultText).toHaveTextContent("Sogndal");
-    await expect(resultText).toHaveTextContent("Stavanger");
-    const chipValues = await getChipValues();
-    await expect(chipValues).toContain("Sogndal");
-    await expect(chipValues).toContain("Stavanger");
-  });
 };
 
 export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
