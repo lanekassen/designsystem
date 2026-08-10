@@ -16,6 +16,7 @@ import { definePreview, type ReactRenderer } from "@storybook/react-vite";
 import { useEffect, useRef } from "react";
 import { HeadingSelfLink, StorybookLink } from "./docs/components";
 import componentStyles from "./docs/components.module.css";
+import { customStylesDecorator } from "./docs/decorator";
 import { theme } from "./theme";
 
 const defaultTheme = "light";
@@ -31,6 +32,7 @@ export default definePreview({
       defaultTheme,
       attributeName: "data-color-scheme",
     }),
+    customStylesDecorator,
   ],
   parameters: {
     layout: "centered",
