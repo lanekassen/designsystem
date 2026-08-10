@@ -138,14 +138,7 @@ export const Video: Story = () => (
 );
 
 export const WithLink: Story = (args) => (
-  <div
-    style={{
-      display: "grid",
-      gap: "var(--ds-size-4)",
-      maxWidth: "800px",
-      gridTemplateColumns: "repeat(auto-fit, minmax(280px , 1fr))",
-    }}
-  >
+  <>
     <Card {...args}>
       <Card.Block>{person2Img}</Card.Block>
       <Card.Block>
@@ -186,11 +179,11 @@ export const WithLink: Story = (args) => (
       </Card.Block>
       <Card.Block>{person2Img}</Card.Block>
     </Card>
-  </div>
+  </>
 );
 
 export const AsLink: Story = (args) => (
-  <div style={{ display: "grid", gap: "var(--ds-size-3)", width: "300px" }}>
+  <>
     <Card {...args} asChild>
       <a
         href="https://designsystemet.no"
@@ -215,7 +208,7 @@ export const AsLink: Story = (args) => (
         </Paragraph>
       </a>
     </Card>
-  </div>
+  </>
 );
 
 export const AsButton: Story = (args) => (

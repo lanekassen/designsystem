@@ -10,6 +10,7 @@
     "stories/**/*",
     "src/**/*.stories.tsx",
     "react-types.d.ts",
+    "../../apps/storybook/.storybook/docs/decorator.tsx",
     "../../packages/css/designsystemet.config.json"
   ],
   "references": [{ "path": "tsconfig.lib.json" }]

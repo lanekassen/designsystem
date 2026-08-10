@@ -133,11 +133,9 @@ export const Loading: StoryFn<typeof Button> = () => (
 );
 
 export const Sizes: StoryFn<typeof Button> = () => (
-  <div
-    style={{ display: "flex", gap: "var(--ds-size-3)", alignItems: "center" }}
-  >
+  <>
     <Button data-size="sm">Small</Button>
     <Button data-size="md">Medium</Button>
     <Button data-size="lg">Lagre</Button>
-  </div>
+  </>
 );
