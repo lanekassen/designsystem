@@ -2,6 +2,7 @@ import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useState } from "react";
 import { Alert, Button, Heading, Link, Paragraph } from "../";
 
+
 type Story = StoryFn<typeof Alert>;
 
 const meta: Meta = {
@@ -9,6 +10,13 @@ const meta: Meta = {
   component: Alert,
   parameters: {
     layout: "padded",
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-3)',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   },
 };
 
@@ -20,6 +28,29 @@ Default.args = {
   children: "En beskjed det er viktig at brukeren ser",
   "data-color": "info",
 };
+
+export const Sizes: Story = (args) => (
+  <>
+    <Alert {...args} data-color="info" data-size="sm">
+      <Paragraph>
+        Det er lange køer for å bestille pass om dagen, det kan være lurt å
+        bestille i god tid før du skal reise.
+      </Paragraph>
+    </Alert>
+    <Alert {...args} data-color="info" data-size="md">
+      <Paragraph>
+        Det er lange køer for å bestille pass om dagen, det kan være lurt å
+        bestille i god tid før du skal reise.
+      </Paragraph>
+    </Alert>
+    <Alert {...args} data-color="info" data-size="lg">
+      <Paragraph>
+        Det er lange køer for å bestille pass om dagen, det kan være lurt å
+        bestille i god tid før du skal reise.
+      </Paragraph>
+    </Alert>
+  </>
+);
 
 export const VariantInfo: Story = (args) => (
   <Alert {...args} data-color="info">
@@ -112,7 +143,7 @@ export const MedHeading: Story = (args) => (
   </Alert>
 );
 
-export const MedKunHeading: Story = (args) => (
+export const UtenHeading: Story = (args) => (
   <Alert {...args} data-color="warning">
     <Paragraph> Du har 7 dager igjen på å fullføre søknaden.</Paragraph>
   </Alert>

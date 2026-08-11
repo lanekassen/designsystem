@@ -48,9 +48,12 @@ export const docsUrl = "alert";
   </Example.Dont>
 </Example>
 
-## Eksempler
+### Størrelser
 
-`Alert` kan brukes til fire ulike budskap: Informasjon, suksess, advarsel og feilmelding.
+Bruk `data-size="sm | md | lg"`
+
+<Canvas of={stories.Sizes} />
+
 
 ### Informasjon
 
@@ -75,6 +78,22 @@ Bruk `warning` når du vil at brukeren skal foreta en bestemt handling eller for
 Bruk `danger` for å informere om noe som er kritisk eller som hindrer brukeren i å komme videre.
 
 <Canvas of={stories.VariantDanger} />
+
+### Med eller uten tittel
+
+Hvis meldingen er lenger enn en setning kan det være nyttig å bruke en overskrift til å fremheve det viktigste. Dette kan gjøres ved bruk av `<Heading>`. Husk å velge riktig overskriftsnivå ut fra plassen Alert har i innholdsstrukturen på siden. For eksempel, hvis Alert er plassert i en seksjon som har en overskrift på nivå 2, bør `<Heading>` bruke nivå 3.
+
+Dersom tittel og beskrivelse gjentar det samme er det bedre å bruke en enkel setning uten overskrift.
+
+<Canvas of={stories.UtenHeading} />
+
+### Med lenke
+
+Bruk lenke i `<Alert>` når brukeren må gjøre noe på en annen side for å løse problemet. Lenken kan for eksempel føre til et skjema eller innstillinger.
+
+Bruk maks én lenke, og skriv en lenketekst som tydelig beskriver hva brukeren kan gjøre. Unngå lenker når brukeren kan løse problemet direkte på siden.
+
+<Canvas of={stories.MedLenke} />
 
 <br />
 
