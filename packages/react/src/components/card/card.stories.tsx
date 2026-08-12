@@ -64,12 +64,6 @@ export const Variants: StoryFn<typeof Card> = () => (
   </>
 );
 
-Variants.parameters = {
-  a11y: {
-    test: "todo",
-  },
-};
-
 export const Media: Story = () => (
   <>
     <Card data-color="neutral">

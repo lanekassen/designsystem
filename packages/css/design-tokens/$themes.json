@@ -108,22 +108,6 @@
     "group": "Color"
   },
   {
-    "id": "f73d9485a052e9e946f26c8e2a718dc9d93fdd45",
-    "name": "radiant",
-    "selectedTokenSets": {
-      "semantic/color/radiant": "enabled"
-    },
-    "group": "Color"
-  },
-  {
-    "id": "42625bfecef1fbf9ae6ffb9427f666c98e27559f",
-    "name": "sand",
-    "selectedTokenSets": {
-      "semantic/color/sand": "enabled"
-    },
-    "group": "Color"
-  },
-  {
     "id": "e7fb41a6a0544d8a8aa178232034311f9d725555",
     "name": "neutral",
     "selectedTokenSets": {
