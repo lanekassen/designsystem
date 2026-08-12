@@ -7,7 +7,7 @@ import {
 } from "@storybook/addon-docs/blocks";
 import {
   Example,
-  DigDirComponentDocsLink,
+  DigDirComponentDocsLink, DocsAlert
 } from "../../../../../apps/storybook/.storybook/docs/components";
 import { EXPERIMENTAL_AvatarStack as AvatarStack } from "./avatar-stack";
 import { Avatar } from "../";
@@ -16,6 +16,8 @@ import * as stories from "./avatar-stack.stories";
 export const docsUrl = "avatar-stack";
 
 <Meta of={stories} />
+
+<DocsAlert component={docsUrl} />
 
 # Avatar stack
 

@@ -8,6 +8,7 @@ import {
 import {
   Example,
   DigDirComponentDocsLink,
+  DocsAlert
 } from "../../../../../apps/storybook/.storybook/docs/components";
 import { Input, Fieldset, Label, Switch, Radio } from "../";
 import * as stories from "./input.stories";
@@ -15,6 +16,8 @@ import * as stories from "./input.stories";
 export const docsUrl = "input";
 
 <Meta of={stories} />
+
+<DocsAlert component={docsUrl} />
 
 # Input
 

@@ -1,8 +1,8 @@
-import { PencilWritingIcon } from "@navikt/aksel-icons";
+import { BellIcon, CogIcon, PencilWritingIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { themeColors } from "../../../stories/constants";
 
-import { Button, type ButtonProps } from "../";
+import { Button, Tooltip, type ButtonProps } from "../";
 
 type Story = StoryObj<typeof Button>;
 
@@ -92,12 +92,32 @@ export const Icons: StoryFn<typeof Button> = () => (
   </>
 );
 
+export const IconsOnly: StoryFn<typeof Button> = () => (
+  <>
+    <Tooltip content="Rediger">
+      <Button icon aria-label="Rediger" variant="tertiary">
+        <PencilWritingIcon aria-hidden />
+      </Button>
+    </Tooltip>
+        <Tooltip content="Varslinger">
+      <Button icon aria-label="Varslinger" variant="tertiary">
+        <BellIcon aria-hidden />
+      </Button>
+    </Tooltip>
+        <Tooltip content="Innstillinger">
+      <Button icon aria-label="Innstillinger" variant="tertiary">
+        <CogIcon aria-hidden />
+      </Button>
+    </Tooltip>
+  </>
+);
+
 export const CombinedColors: StoryFn<typeof Button> = () => (
   <>
-    <Button variant="primary" data-color="neutral">
+    <Button variant="primary">
       Publiser
     </Button>
-    <Button variant="secondary" data-color="neutral">
+    <Button variant="secondary">
       Lagre kladd
     </Button>
     <Button variant="tertiary" data-color="danger">

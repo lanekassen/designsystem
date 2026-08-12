@@ -61,9 +61,25 @@ export const docsUrl = "button";
   </Example.Dont>
 </Example>
 
+## Varianter
+`primary` brukes for å fremheve den viktigste handlingen på siden. `secondary` brukes til handlinger som ikke er hovedhandlinger, men som gjerne støtter dem. For eksempel Avbryt ved siden av Lagre. `tertiary` brukes til nedtonede handlinger.
+
 ## Størrelser
 
 <Canvas of={stories.Sizes} />
+
+## Knapp med tekst og ikon
+Når vi bruker ikon sammen med tekst, skal ikonet ha `aria-hidden` slik at teksten ikke blir lest opp av en skjermleser to ganger.
+<Canvas of={stories.Icons} />
+
+## Knapp med kun ikon
+Knapper med kun ikon bruker vi bare for godt kjente ikoner, som Lukk og Slett. Knappen må da ha en tilgjengelig tekst som forklarer hva den gjør, for eksempel med `aria-label` eller i en `Tooltip` som i eksempelet under.
+<Canvas of={stories.IconsOnly} />
+
+## Last inn
+Vi kan vise brukeren at en knapp laster ved å kombinere knappen med en spinner og bruke `loading`.
+
+<Canvas of={stories.Loading} />
 
 <br />
 

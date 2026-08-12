@@ -5,12 +5,14 @@ import {
   Story,
   Canvas,
 } from "@storybook/addon-docs/blocks";
-import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import { DigDirComponentDocsLink, DocsAlert } from "../../../../../apps/storybook/.storybook/docs/components";
 import * as stories from "./toggle-group.stories";
 
 export const docsUrl = "toggle-group";
 
 <Meta of={stories} />
+
+<DocsAlert component={docsUrl} />
 
 # Toggle group
 

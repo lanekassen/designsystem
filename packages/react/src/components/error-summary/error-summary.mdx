@@ -8,6 +8,7 @@ import {
 import {
   Example,
   DigDirComponentDocsLink,
+  DocsAlert
 } from "../../../../../apps/storybook/.storybook/docs/components";
 import { ErrorSummary } from "./error-summary";
 import * as stories from "./error-summary.stories";
@@ -15,6 +16,8 @@ import * as stories from "./error-summary.stories";
 export const docsUrl = "error-summary";
 
 <Meta of={stories} />
+
+<DocsAlert component={docsUrl} />
 
 # Error summary
 

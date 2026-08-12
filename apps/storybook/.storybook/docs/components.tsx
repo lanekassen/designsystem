@@ -5,6 +5,7 @@ import {
   ThumbDownIcon,
   ThumbUpIcon,
 } from "@navikt/aksel-icons";
+import {Alert, Paragraph} from "@lanekassen/ds-react";
 import type { AnchorHTMLAttributes } from "react";
 import componentStyles from "./components.module.css";
 
@@ -160,3 +161,19 @@ export function DigDirComponentDocsLink({
     </Card>
   );
 }
+
+type DocsAlertProps = {
+  component: string;
+};
+
+export function DocsAlert({
+  component,
+}: DocsAlertProps) {
+  return (
+    <Alert data-color="warning">
+      <Paragraph>
+        Denne siden er ufullstendig. Vi jobber med å oppdatere dokumentasjonen til {component}, og vil legge til mer informasjon om skikk og bruk, tilgjengelighet og eksempler på bruk i nær fremtid.
+      </Paragraph>
+    </Alert>
+  );
+} 

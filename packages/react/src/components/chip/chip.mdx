@@ -7,14 +7,16 @@ import {
 } from "@storybook/addon-docs/blocks";
 import {
   Example,
-  DigDirComponentDocsLink,
+  DigDirComponentDocsLink, DocsAlert
 } from "../../../../../apps/storybook/.storybook/docs/components";
-import { Chip } from "./chip";
+import { Chip } from "../";
 import * as stories from "./chip.stories";
 
 export const docsUrl = "chip";
 
 <Meta of={stories} />
+
+<DocsAlert component={docsUrl} />
 
 # Chip
 

@@ -1,6 +1,8 @@
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import {
+  person1Img,
   person2Img,
+  student1Img,
   severityColors,
   themeColors,
 } from "../../../stories/constants";
@@ -8,6 +10,10 @@ import type { CardProps } from "../";
 import { Card, Heading, Link, Paragraph } from "../";
 
 type Story = StoryFn<typeof Card>;
+
+const cardHeading = "Lykkeland Videregående"
+const cardParagraph = "Lykkeland Videregående er en trygg og inkluderende nærskole der lek, læring og nysgjerrighet går hånd i hånd."
+const cardFooter = "Oslo Kommune"
 
 const meta: Meta<typeof Card> = {
   title: "Designsystem/Card",
@@ -29,12 +35,11 @@ export default meta;
 
 export const Default: Story = (args) => (
   <Card {...args} style={{ maxWidth: "320px" }}>
-    <Heading>Lykkeland Videregående</Heading>
+    <Heading>{cardHeading}</Heading>
     <Paragraph>
-      Lykkeland Videregående er en trygg og inkluderende nærskole der lek,
-      læring og nysgjerrighet går hånd i hånd.
+      {cardParagraph}
     </Paragraph>
-    <Paragraph data-size="sm">Oslo Kommune</Paragraph>
+    <Paragraph data-size="sm">{cardFooter}</Paragraph>
   </Card>
 );
 
@@ -73,35 +78,22 @@ Variants.parameters = {
 export const Media: Story = () => (
   <>
     <Card data-color="neutral">
+        <Card.Block>{student1Img}</Card.Block>
       <Card.Block>
-        <iframe
-          data-chromatic="ignore"
-          src="https://player.vimeo.com/video/863563441?app_id=122963&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-          width="320px"
-          height="179px"
-          allow="autoplay; fullscreen; picture-in-picture"
-          title="30 år med digitalt innsyn"
-        ></iframe>
-      </Card.Block>
-      <Card.Block>
-        <Heading>Card Neutral</Heading>
+        <Heading>{cardHeading}</Heading>
         <Paragraph>
-          Most provide as with carried business are much better more the
-          perfected designer. Writing slightly explain desk unable at supposedly
-          about this
+          {cardParagraph}
         </Paragraph>
       </Card.Block>
     </Card>
     <Card data-color="neutral">
       <Card.Block>
-        <Heading>Card Neutral</Heading>
+        <Heading>{cardHeading}</Heading>
         <Paragraph>
-          Most provide as with carried business are much better more the
-          perfected designer. Writing slightly explain desk unable at supposedly
-          about this
+          {cardParagraph}
         </Paragraph>
       </Card.Block>
-      <Card.Block>{person2Img}</Card.Block>
+      <Card.Block>{student1Img}</Card.Block>
     </Card>
   </>
 );
@@ -148,15 +140,13 @@ export const WithLink: Story = (args) => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            Link Card
+           {cardHeading}
           </a>
         </Heading>
         <Paragraph>
-          Most provide as with carried business are much better more the
-          perfected designer. Writing slightly explain desk unable at supposedly
-          about this
+          {cardParagraph}
         </Paragraph>
-        <Paragraph data-size="sm">Footer text</Paragraph>
+        <Paragraph data-size="sm">{cardFooter}</Paragraph>
       </Card.Block>
     </Card>
     <Card {...args} data-color="neutral">
@@ -167,15 +157,13 @@ export const WithLink: Story = (args) => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            Link Card
+        {cardHeading}
           </Link>
         </Heading>
         <Paragraph>
-          Most provide as with carried business are much better more the
-          perfected designer. Writing slightly explain desk unable at supposedly
-          about this
+            {cardParagraph}
         </Paragraph>
-        <Paragraph data-size="sm">Footer text</Paragraph>
+        <Paragraph data-size="sm">{cardFooter}</Paragraph>
       </Card.Block>
       <Card.Block>{person2Img}</Card.Block>
     </Card>
@@ -191,7 +179,7 @@ export const AsLink: Story = (args) => (
         rel="noopener noreferrer"
       >
         <Card.Block>
-          <Paragraph>Link card with asChild</Paragraph>
+          <Paragraph>{cardParagraph}</Paragraph>
         </Card.Block>
       </a>
     </Card>
@@ -201,10 +189,9 @@ export const AsLink: Story = (args) => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Heading>Link Card with asChild</Heading>
+        <Heading>{cardHeading}</Heading>
         <Paragraph>
-          Most provide as with carried business are much better more the
-          perfected designer.
+          {cardParagraph}
         </Paragraph>
       </a>
     </Card>

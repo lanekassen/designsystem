@@ -390,39 +390,7 @@ export const InTableWithPagination: StoryFn<UseCheckboxGroupProps> = (args) => {
   );
 };
 
-export const ContentEx1: StoryFn<typeof Fieldset> = () => (
-  <Fieldset>
-    <Fieldset.Legend>
-      Hvor lenge har du jobbet i det offentlige?
-    </Fieldset.Legend>
-    <Checkbox label="I under ett år" value="0-3" />
-    <Checkbox label="Fra 1-3 år" value="1-3" />
-    <Checkbox label="Mer enn 3 år" value="3+" />
-  </Fieldset>
-);
 
-export const ContentEx2: StoryFn<typeof Fieldset> = () => (
-  <Fieldset>
-    <Fieldset.Legend>Hva liker du best med jobben din?</Fieldset.Legend>
-    <Checkbox
-      label="Jeg liker å jobbe med selvstendige oppgaver"
-      value="selvstendige"
-    />
-    <Checkbox label="Jeg elsker møter" value="moter" />
-    <Checkbox label="Lunsjen er best" value="lunsj" />
-    <Checkbox label="Jeg liker å møte kolleger" value="kolleger" />
-  </Fieldset>
-);
-
-export const ContentEx3: StoryFn<typeof Fieldset> = () => (
-  <Fieldset>
-    <Fieldset.Legend>Hva liker du best med jobben din?</Fieldset.Legend>
-    <Checkbox label="Selvstendige oppgaver" value="selvstendige" />
-    <Checkbox label="Møter" value="moter" />
-    <Checkbox label="Lunsj" value="lunsj" />
-    <Checkbox label="Kolleger" value="kolleger" />
-  </Fieldset>
-);
 export const hiddenLegend: StoryFn<typeof Fieldset> = () => (
   <Fieldset>
     <Fieldset.Legend className="ds-sr-only">

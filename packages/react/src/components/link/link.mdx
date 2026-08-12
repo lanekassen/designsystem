@@ -8,6 +8,7 @@ import {
 import {
   Example,
   DigDirComponentDocsLink,
+  DocsAlert
 } from "../../../../../apps/storybook/.storybook/docs/components";
 import { Link, Paragraph } from "../";
 import * as stories from "./link.stories";
@@ -15,6 +16,8 @@ import * as stories from "./link.stories";
 export const docsUrl = "link";
 
 <Meta of={stories} />
+
+<DocsAlert component={docsUrl} />
 
 # Link
 

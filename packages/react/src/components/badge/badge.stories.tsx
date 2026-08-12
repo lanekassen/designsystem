@@ -18,7 +18,10 @@ const meta: Meta<typeof Badge> = {
   component: Badge,
   parameters: {
     customStyles: {
-      flexWrap: "wrap",
+      display: "flex",
+      flexDirection: "row",
+      gap: "var(--ds-size-3)",
+
     },
   },
 };
@@ -88,26 +91,26 @@ export const InButton: Story = () => (
   <>
     <Button icon variant="tertiary">
       <Badge.Position>
-        <Badge data-color="danger" count={1000} maxCount={99} />
+        <Badge data-color="primary" count={1000} maxCount={99} />
         <InboxIcon title="Innboks" />
       </Badge.Position>
     </Button>
     <Button icon variant="tertiary">
       <Badge.Position>
-        <Badge data-color="danger" count={10} />
+        <Badge data-color="primary" count={10} />
         <ChatIcon title="Meldinger" />
       </Badge.Position>
     </Button>
     <Button icon variant="tertiary">
       <Badge.Position>
-        <Badge data-color="danger"></Badge>
+        <Badge data-color="primary"></Badge>
         <VideoIcon title="Skru på video" />
       </Badge.Position>
     </Button>
     <Badge.Position>
-      <Badge data-color="danger" count={10} />
-      <Button>
-        <InboxIcon title="Innboks" /> Test
+      <Badge data-color="primary" count={10} />
+      <Button variant="secondary">
+        <InboxIcon title="Innboks" />E-post
       </Button>
     </Badge.Position>
   </>
@@ -142,7 +145,7 @@ export const Variants: Story = () => (
 
 Variants.parameters = {
   customStyles: {
-    display: "grid",
+    display: "flex",
     gridTemplateColumns: "repeat(4, 1fr)",
     gap: "var(--ds-size-2)",
     height: "100%",

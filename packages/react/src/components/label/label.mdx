@@ -5,13 +5,15 @@ import {
   Story,
   Canvas,
 } from "@storybook/addon-docs/blocks";
-import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import { DigDirComponentDocsLink, DocsAlert } from "../../../../../apps/storybook/.storybook/docs/components";
 import { Card, Paragraph } from "../";
 import * as stories from "./label.stories";
 
 export const docsUrl = "label";
 
 <Meta of={stories} />
+
+<DocsAlert component={docsUrl} />
 
 # Label
 

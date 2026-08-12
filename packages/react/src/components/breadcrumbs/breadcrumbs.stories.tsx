@@ -126,6 +126,30 @@ export const MobileViewport: StoryFn<typeof Breadcrumbs> = (args) => (
   </Breadcrumbs>
 );
 
+export const Sizes: StoryFn<typeof Breadcrumbs> = (args) => (
+  <>
+    <Breadcrumbs aria-label="Du er her:" {...args} data-size="sm">
+      <Breadcrumbs.Link href="#link" aria-label="Tilbake til Nivå 3">
+        Nivå 3
+      </Breadcrumbs.Link>
+      <Breadcrumbs.List>
+        <Breadcrumbs.Item>
+          <Breadcrumbs.Link href="#link">Nivå 1</Breadcrumbs.Link>
+        </Breadcrumbs.Item>
+        <Breadcrumbs.Item>
+          <Breadcrumbs.Link href="#link">Nivå 2</Breadcrumbs.Link>
+        </Breadcrumbs.Item>
+        <Breadcrumbs.Item>
+          <Breadcrumbs.Link href="#link">Nivå 3</Breadcrumbs.Link>
+        </Breadcrumbs.Item>
+        <Breadcrumbs.Item>
+          <Breadcrumbs.Link href="#link">Nivå 4</Breadcrumbs.Link>
+        </Breadcrumbs.Item>
+      </Breadcrumbs.List>
+    </Breadcrumbs>
+  </>
+);
+
 MobileViewport.parameters = {
   viewport: {
     defaultViewport: "375px", // Large mobile default viewport

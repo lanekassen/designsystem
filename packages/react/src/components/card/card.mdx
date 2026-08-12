@@ -1,17 +1,26 @@
 import { OpenBookIcon } from "@navikt/aksel-icons";
 import { Meta, Primary, Controls, Story, Canvas} from '@storybook/addon-docs/blocks';
-import { DigDirComponentDocsLink } from '../../../../../apps/storybook/.storybook/docs/components';
+import { DigDirComponentDocsLink, DocsAlert } from '../../../../../apps/storybook/.storybook/docs/components';
 import * as stories from './card.stories';
 
 export const docsUrl = "card";
 
 <Meta of={stories} />
 
+<DocsAlert component={docsUrl} />
+
 # Card
 >Card fremhever informasjon eller oppgaver som hører sammen. Komponenten finnes i to varianter og kan inneholde tekst, bilde, tekstfelt, knapper og lenker.
 
 ## Kode
 <Canvas of={stories.Default} />
+
+## Med block
+Bruk flere `Card.Block` hvis du vil dele opp `Card` med skillelinjer eller legge til bilder eller video som går ut i kanten. Merk at når du bruker `Card.Block` må alt innholdet ligge inni `Card.Block`, og ikke plasseres direkte i `Card`.
+<Canvas of={stories.Media} />
+
+## Video
+<Canvas of={stories.Video} />
 
 ## Interaktiv
 <Canvas of={stories.AsLink} />

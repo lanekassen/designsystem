@@ -8,14 +8,17 @@ import {
 } from "@storybook/addon-docs/blocks";
 import {
   Example,
-  DigDirComponentDocsLink,
+  DigDirComponentDocsLink, DocsAlert
 } from "../../../../../apps/storybook/.storybook/docs/components";
 import { Avatar } from "./avatar";
+import { person2Img } from "../../../stories/constants";
 import * as stories from "./avatar.stories";
 
 export const docsUrl = "avatar";
 
 <Meta of={stories} />
+
+<DocsAlert component={docsUrl} />
 
 # Avatar
 
@@ -31,13 +34,33 @@ export const docsUrl = "avatar";
 
 <Example>
   <Example.Do text="En person eller enhet skal representeres.">
+  <div style={{ display: "flex", gap: "var(--ds-size-2)" }}>
+    <Avatar data-color='accent'>ON</Avatar>
+    <Avatar data-color='accent'>{person2Img}</Avatar>
     <Avatar data-color='accent'/>
+    </div>
   </Example.Do>
 
   <Example.Dont text="Noe annet enn en person eller enhet skal representeres, for eksempel et dokument. Bruk heller ikoner eller andre visuelle symboler.">
     <Avatar data-color='accent'><FilePdfIcon /></Avatar>
   </Example.Dont>
 </Example>
+
+## Størrelser
+
+Bruk `data-size="sm | md | lg"`
+
+<Canvas of={stories.Sizes} />
+
+## Med Dropdown
+
+Du kan integrere `Avatar` i andre komponenter, for eksempel i en Dropdown.
+
+<Canvas of={stories.InDropdown} />
+
+## Som lenke
+
+<Canvas of={stories.AsLink} />
 
 <br />
 

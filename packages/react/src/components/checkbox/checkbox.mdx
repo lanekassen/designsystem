@@ -5,12 +5,25 @@ import {
   Story,
   Canvas,
 } from "@storybook/addon-docs/blocks";
-import { DigDirComponentDocsLink } from "../../../../../apps/storybook/.storybook/docs/components";
+import {
+  Button,
+  Checkbox,
+  Chip,
+  Divider,
+  Fieldset,
+  Pagination,
+  Paragraph,
+  Table,
+  ValidationMessage
+} from "../";
+import { Example, DigDirComponentDocsLink, DocsAlert } from "../../../../../apps/storybook/.storybook/docs/components";
 import * as stories from "./checkbox.stories";
 
 export const docsUrl = "checkbox";
 
 <Meta of={stories} />
+
+<DocsAlert component={docsUrl} />
 
 # Checkbox
 
@@ -21,6 +34,53 @@ export const docsUrl = "checkbox";
 ## Kode
 
 <Canvas of={stories.Default} />
+
+## Skikk og bruk
+
+<Example>
+  <Example.Do text="Plasser alternativene vertikalt, slik at listen blir lettere å lese.">
+    <Fieldset>
+      <Fieldset.Legend>
+        Hvordan vil du helst at vi skal kontakte deg?
+      </Fieldset.Legend>
+      <Fieldset.Description>
+          Velg alle alternativene som er relevante for deg.
+      </Fieldset.Description>
+      <Checkbox label="E-post" />
+      <Checkbox label="Telefon" />
+      <Checkbox label="SMS" />
+    </Fieldset>
+  </Example.Do>
+
+  <Example.Dont text="Du bør unngå å plassere alternativene i flere kolonner.">
+    <Fieldset>
+      <Fieldset.Legend>
+        Hvordan vil du helst at vi skal kontakte deg?
+      </Fieldset.Legend>
+      <Fieldset.Description>
+          Velg alle alternativene som er relevante for deg.
+      </Fieldset.Description>
+      <div style={{ display: "flex", gap: "var(--ds-size-2)" }}>
+      <Checkbox label="E-post" />
+      <Checkbox label="Telefon" />
+      <Checkbox label="SMS" />
+      </div>
+    </Fieldset>
+  </Example.Dont>
+</Example>
+
+## Kun ett valg
+En `Checkbox` kan brukes alene når det kun er ett valg, og det er tydelig for brukeren hva det betyr å krysse av eller ikke. For eksempel når brukeren skal samtykke til vilkår.
+
+<Canvas of={stories.OneOption} />
+
+## Gruppering av flere valg
+For å gruppere flere valg, bruk `Fieldset` og `useCheckboxGroup`.
+
+<Canvas of={stories.Group} />
+
+## Vise feilmelding
+Bruk `error` på `Fieldset` for å vise feilmelding. `Fieldset` sørger for at innholdet er tilgjengelig og at riktig stil aktiveres.
 
 <br />
 

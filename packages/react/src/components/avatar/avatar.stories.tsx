@@ -2,7 +2,7 @@ import { BriefcaseIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import { person2Img } from "../../../stories/constants";
 
-import { Avatar, Badge, Dropdown } from "../";
+import { Avatar, Badge, Dropdown, Link } from "../";
 
 type Story = StoryFn<typeof Avatar>;
 
@@ -91,7 +91,16 @@ InDropdown.parameters = {
 };
 
 export const AsLink: Story = () => (
-  <a href="#link">
-    <Avatar aria-label="Ola Nordmann" />
-  </a>
+    <>
+      <style>{`
+.avatar-as-link {
+  display: flex;
+  gap: var(--ds-size-2);
+  align-items: center;
+}`}</style>
+      <Link className="avatar-as-link" href="/">
+        <Avatar aria-label="Ola Nordmann" />
+        <span>Ola Nordmann</span>
+      </Link>
+    </>
 );
