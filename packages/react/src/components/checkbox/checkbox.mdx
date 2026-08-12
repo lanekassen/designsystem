@@ -18,6 +18,7 @@ import {
 } from "../";
 import { Example, DigDirComponentDocsLink, DocsAlert } from "../../../../../apps/storybook/.storybook/docs/components";
 import * as stories from "./checkbox.stories";
+import * as useCheckboxGroupStories from '../../hooks/use-checkbox-group/use-checkbox-group.stories';
 
 export const docsUrl = "checkbox";
 
@@ -81,6 +82,8 @@ For å gruppere flere valg, bruk `Fieldset` og `useCheckboxGroup`.
 
 ## Vise feilmelding
 Bruk `error` på `Fieldset` for å vise feilmelding. `Fieldset` sørger for at innholdet er tilgjengelig og at riktig stil aktiveres.
+
+<Canvas of={useCheckboxGroupStories.WithError} />
 
 <br />
 
