@@ -56,28 +56,17 @@ export const Colors: StoryFn<typeof Button> = () => (
     ))}
   </>
 );
-Colors.parameters = {
-  a11y: {
-    test: "todo",
-  },
-};
 
 export const ColorsHover: StoryFn<typeof Button> = Colors.bind({});
 ColorsHover.parameters = {
   pseudo: { hover: true },
   chromatic: { modes: { mobile: { disable: true } } },
-  a11y: {
-    test: "todo",
-  },
 };
 
 export const ColorsPressed: StoryFn<typeof Button> = Colors.bind({});
 ColorsPressed.parameters = {
   pseudo: { active: true },
   chromatic: { modes: { mobile: { disable: true } } },
-  a11y: {
-    test: "todo",
-  },
 };
 
 export const Icons: StoryFn<typeof Button> = () => (

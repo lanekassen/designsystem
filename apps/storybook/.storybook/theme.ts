@@ -1,9 +1,9 @@
 import { create } from "storybook/theming";
 
-const appBackgroundColor = "#f5f5f6"; // intentionally hard-coded since background-tinted has transparency
+const appBackgroundColor = "var(--ds-color-accent-background-default)";
 const accentColor = "#5b207e"; // doesn't support css vars
 const textColor = "#383d42"; // doesn't support css vars
-const backgroundColor = "var(--ds-color-background-default)";
+const backgroundColor = "var(--ds-color-neutral-background-default)";
 
 export const theme = create({
   base: "light",

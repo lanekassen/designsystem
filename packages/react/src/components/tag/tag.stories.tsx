@@ -67,9 +67,6 @@ Colors.parameters = {
     width: "100%",
     placeItems: "center",
   },
-  a11y: {
-    test: "todo",
-  },
 };
 
 export const Icons: StoryFn<typeof Tag> = ({ ...rest }) => {
@@ -142,8 +139,5 @@ VariantOutline.parameters = {
     height: "100%",
     width: "100%",
     placeItems: "center",
-  },
-  a11y: {
-    test: "todo",
   },
 };
