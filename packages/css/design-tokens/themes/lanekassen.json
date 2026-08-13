@@ -429,6 +429,10 @@
     "regular": {
       "$type": "fontWeights",
       "$value": "{lanekassen.font-weight.regular}"
+    },
+    "bold": {
+      "$type": "fontWeights",
+      "$value": "{lanekassen.font-weight.bold}"
     }
   },
   "border-radius": {
