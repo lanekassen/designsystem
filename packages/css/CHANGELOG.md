@@ -1,5 +1,22 @@
 # @lanekassen/ds-css
 
+## 0.4.0
+
+### Minor Changes
+
+- 266b5d2: **BREAKING CHANGE**: Removed tokens `sand` and `radiant`.
+
+### Patch Changes
+
+- 955de5a: Theme: Add custom font-weight `bold`
+- e2cfb7b: Suggestion: add toggle list button
+- e2cfb7b: FileUpload: new experimental component
+- eed3911: Label: add support for `data-weight="bold"`
+- 29e18dd: Alert: change border color to `--ds-color-border-subtle`
+- e2cfb7b: Update `@digdir/*` to v1.19.0 ([changelog](https://github.com/digdir/designsystemet/releases/tag/v1.19.0))
+- e2cfb7b: Update non-major dependencies
+- 266b5d2: Theme: change values for `accent.background-default.light` and `neutral.background-default.dark`
+
 ## 0.3.3
 
 ### Patch Changes
