@@ -37,6 +37,7 @@ catalog:
   react: ^19.2.8
   react-docgen-typescript: ^2.4.0
   react-dom: ^19.2.8
+  react-dropzone: ^20.1.0
   storybook: ^10.5.7
   tsdown: ^0.22.14
   typedoc: ^0.28.20

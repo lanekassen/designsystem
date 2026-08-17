@@ -63,6 +63,7 @@
     "@types/react-dom": "catalog:",
     "@vitest/browser-playwright": "catalog:",
     "react": "catalog:",
+    "react-dropzone": "catalog:",
     "storybook": "catalog:",
     "tsdown": "catalog:",
     "typedoc": "catalog:",

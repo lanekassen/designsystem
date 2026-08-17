@@ -75,6 +75,7 @@ export const Default: StoryFn<typeof Suggestion> = (args) => {
       <Label>Velg en destinasjon</Label>
       <Suggestion {...args}>
         <Suggestion.Input />
+        <Suggestion.Toggle />
         <Suggestion.Clear />
         <Suggestion.List id="123">
           <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -103,6 +104,7 @@ export const ControlledSingle: StoryFn<SuggestionSingleProps> = (args) => {
           onSelectedChange={(item) => setSelected(item?.value)}
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -148,6 +150,7 @@ export const ControlledMultiple: StoryFn<SuggestionMultipleProps> = (args) => {
           }
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -193,6 +196,7 @@ export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
           filter={false}
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -241,6 +245,7 @@ export const CustomFilterAlt1: StoryFn<typeof Suggestion> = (args) => {
         }
       >
         <Suggestion.Input />
+        <Suggestion.Toggle />
         <Suggestion.Clear />
         <Suggestion.List>
           <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -302,6 +307,7 @@ export const CustomMatching: StoryFn<typeof Suggestion> = (args) => {
       <Label>Matcher fra første bokstav</Label>
       <Suggestion {...args} onBeforeMatch={handleBeforeMatch}>
         <Suggestion.Input />
+        <Suggestion.Toggle />
         <Suggestion.Clear />
         <Suggestion.List>
           <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -327,6 +333,7 @@ export const AlwaysShowAll: StoryFn<SuggestionSingleProps> = (args) => {
         onSelectedChange={(item) => setSelected(item?.value)}
       >
         <Suggestion.Input />
+        <Suggestion.Toggle />
         <Suggestion.Clear />
         <Suggestion.List>
           <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -404,6 +411,7 @@ export const DefaultValue: StoryFn<SuggestionSingleProps> = (args) => {
       <Label>Velg en destinasjon</Label>
       <Suggestion {...args} defaultSelected={"Sogndal"}>
         <Suggestion.Input />
+        <Suggestion.Toggle />
         <Suggestion.Clear />
         <Suggestion.List>
           <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -422,6 +430,7 @@ export const Multiple: StoryFn<typeof Suggestion> = (args) => {
       <Label>Velg en destinasjon</Label>
       <Suggestion {...args}>
         <Suggestion.Input />
+        <Suggestion.Toggle />
         <Suggestion.Clear />
         <Suggestion.List>
           <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -447,6 +456,7 @@ export const InDetails: StoryFn<typeof Suggestion> = (args) => {
           <Label>Velg en destinasjon</Label>
           <Suggestion {...args} autoFocus>
             <Suggestion.Input />
+            <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -468,6 +478,7 @@ export const AutoPlacementOnXAxis: StoryFn<typeof Suggestion> = (args) => {
         <Label>Velg en destinasjon</Label>
         <Suggestion {...args} autoFocus>
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -487,6 +498,7 @@ export const Creatable: StoryFn<typeof Suggestion> = (args) => {
       <Label>Velg eller legg til en destinasjon</Label>
       <Suggestion {...args}>
         <Suggestion.Input />
+        <Suggestion.Toggle />
         <Suggestion.Clear />
         <Suggestion.List>
           <Suggestion.Empty>
@@ -505,28 +517,3 @@ Creatable.args = {
   multiple: true,
   creatable: true,
 };
-/* commented out due to performance, but for testing with many items */
-/* export const BigList: StoryFn<typeof Suggestion> = () => {
-  return (
-    <Field>
-      <Label>Velg en destinasjon</Label>
-      <Suggestion multiple>
-        <Suggestion.Input />
-        <Suggestion.Clear />
-        <Suggestion.List id='long-list'>
-          <Suggestion.Empty>Tomt</Suggestion.Empty>
-          {Array.from({ length: 1000 }).map((_, index) => (
-            <Suggestion.Option
-              key={index}
-              label={`long list ${index}`}
-              value={`long_list_${index}`}
-            >
-              {`long list ${index}`}
-              <div>second line</div>
-            </Suggestion.Option>
-          ))}
-        </Suggestion.List>
-      </Suggestion>
-    </Field>
-  );
-}; */

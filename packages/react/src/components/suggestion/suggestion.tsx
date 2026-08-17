@@ -5,6 +5,7 @@ import {
   EXPERIMENTAL_SuggestionInput,
   EXPERIMENTAL_SuggestionList,
   EXPERIMENTAL_SuggestionOption,
+  EXPERIMENTAL_SuggestionToggle,
   type SuggestionClearProps,
   type SuggestionEmptyProps,
   type SuggestionInputProps,
@@ -14,6 +15,7 @@ import {
   type SuggestionOptionProps,
   type SuggestionProps,
   type SuggestionSingleProps,
+  type SuggestionToggleProps,
 } from "@digdir/designsystemet-react";
 
 export type {
@@ -26,6 +28,7 @@ export type {
   SuggestionOptionProps,
   SuggestionProps,
   SuggestionSingleProps,
+  SuggestionToggleProps,
 };
 export {
   EXPERIMENTAL_Suggestion,
@@ -34,4 +37,5 @@ export {
   EXPERIMENTAL_SuggestionInput,
   EXPERIMENTAL_SuggestionList,
   EXPERIMENTAL_SuggestionOption,
+  EXPERIMENTAL_SuggestionToggle,
 };
