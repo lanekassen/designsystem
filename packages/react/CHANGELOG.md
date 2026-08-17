@@ -1,5 +1,15 @@
 # @lanekassen/ds-react
 
+## 0.4.0
+
+### Patch Changes
+
+- e2cfb7b: Suggestion: add toggle list button
+- e2cfb7b: FileUpload: new experimental component
+- eed3911: Label: add support for `data-weight="bold"`
+- e2cfb7b: Update `@digdir/*` to v1.19.0 ([changelog](https://github.com/digdir/designsystemet/releases/tag/v1.19.0))
+- e2cfb7b: Update non-major dependencies
+
 ## 0.3.3
 
 ### Patch Changes
