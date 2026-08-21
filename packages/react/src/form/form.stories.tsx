@@ -421,8 +421,3 @@ export const FormFull: StoryFn = () => {
     </form>
   );
 };
-FormFull.parameters = {
-  a11y: {
-    test: "todo",
-  },
-};
