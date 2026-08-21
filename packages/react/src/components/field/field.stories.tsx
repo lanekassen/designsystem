@@ -43,12 +43,6 @@ export const Affix: Story = () => (
   </Field>
 );
 
-Affix.parameters = {
-  a11y: {
-    test: "todo",
-  },
-};
-
 export const Counter: Story = () => (
   <Field>
     <Label>Legg til en beskrivelse</Label>

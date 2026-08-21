@@ -104,12 +104,6 @@ export const ReadOnly: Story = () => (
   </Field>
 );
 
-ReadOnly.parameters = {
-  a11y: {
-    test: "todo",
-  },
-};
-
 export const HiddenLabel: Story = () => (
   <Field>
     <Label className="ds-sr-only">Upload file</Label>
