@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<typeof ValidationMessage>;
 
-export const Preview: Story = {
+export const Default: Story = {
   args: {
     children: "Dette er en valideringsmelding.",
   },
