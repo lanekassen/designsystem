@@ -7,11 +7,11 @@ import {
   EnvelopeClosedIcon,
   PaperplaneIcon,
 } from "@navikt/aksel-icons";
-import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useState } from "react";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Button, Divider, Paragraph, ToggleGroup, Tooltip } from "../";
 
-export default {
+const meta = preview.meta({
   title: "Designsystem/ToggleGroup",
   component: ToggleGroup,
   decorators: [
@@ -22,27 +22,34 @@ export default {
       </div>
     ),
   ],
-} as Meta;
+  parameters: {
+    a11y: {
+      config: {
+        // Temporarily disable a11y color-contrast rule for readonly as we need design adjustments on this
+        rules: [{ id: "color-contrast", selector: ":read-only" }],
+      },
+    },
+  },
+});
 
-export const Default: StoryFn<typeof ToggleGroup> = (args) => {
-  return (
+export const Default = meta.story({
+  render: (args) => (
     <ToggleGroup {...args}>
       <ToggleGroup.Item value="innboks">Innboks</ToggleGroup.Item>
       <ToggleGroup.Item value="utkast">Utkast</ToggleGroup.Item>
       <ToggleGroup.Item value="arkiv">Arkiv</ToggleGroup.Item>
       <ToggleGroup.Item value="sendt">Sendt</ToggleGroup.Item>
     </ToggleGroup>
-  );
-};
+  ),
+  args: {
+    "aria-label": "Filtrering", // Set aria-label attribute for accessibility
+    defaultValue: "innboks",
+    name: "toggle-group-nuts",
+  },
+});
 
-Default.args = {
-  "aria-label": "Filtrering", // Set aria-label attribute for accessibility
-  defaultValue: "innboks",
-  name: "toggle-group-nuts",
-};
-
-export const OnlyIcons: StoryFn<typeof ToggleGroup> = (args) => {
-  return (
+export const OnlyIcons = meta.story({
+  render: (args) => (
     <ToggleGroup {...args}>
       <Tooltip content="Venstrestilt">
         <ToggleGroup.Item value="option-1">
@@ -60,15 +67,14 @@ export const OnlyIcons: StoryFn<typeof ToggleGroup> = (args) => {
         </ToggleGroup.Item>
       </Tooltip>
     </ToggleGroup>
-  );
-};
+  ),
+  args: {
+    "aria-label": "Tekstjustering", // Set aria-label attribute for accessibility
+    defaultValue: "option-1",
+  },
+});
 
-OnlyIcons.args = {
-  "aria-label": "Tekstjustering", // Set aria-label for accessibility
-  defaultValue: "option-1",
-};
-
-export const Kontrollert: StoryFn<typeof ToggleGroup> = () => {
+export const Kontrollert = meta.story(() => {
   const [value, setValue] = useState<string>("utkast");
   return (
     <>
@@ -97,23 +103,24 @@ export const Kontrollert: StoryFn<typeof ToggleGroup> = () => {
       </Button>
     </>
   );
-};
-export const Secondary: StoryFn<typeof ToggleGroup> = Default.bind({});
-Secondary.args = {
-  "aria-label": "Filtrering", // Set aria-label attribute for accessibility
-  defaultValue: "innboks",
-  variant: "secondary",
-};
+});
 
-export const SecondaryOnlyIcons: StoryFn<typeof ToggleGroup> = OnlyIcons.bind(
-  {},
-);
-SecondaryOnlyIcons.args = {
-  "aria-label": "Filtrering", // Set aria-label attribute for accessibility
-  variant: "secondary",
-};
+export const Secondary = Default.extend({
+  args: {
+    "aria-label": "Filtrering", // Set aria-label attribute for accessibility
+    defaultValue: "innboks",
+    variant: "secondary",
+  },
+});
 
-export const Disabled: StoryFn<typeof ToggleGroup> = () => {
+export const SecondaryOnlyIcons = OnlyIcons.extend({
+  args: {
+    "aria-label": "Filtrering", // Set aria-label attribute for accessibility
+    variant: "secondary",
+  },
+});
+
+export const Disabled = meta.story(() => {
   return (
     <ToggleGroup aria-label="Filtrering" defaultValue="innboks">
       <ToggleGroup.Item value="innboks">Innboks</ToggleGroup.Item>
@@ -127,8 +134,9 @@ export const Disabled: StoryFn<typeof ToggleGroup> = () => {
       <ToggleGroup.Item value="sendt">Sendt</ToggleGroup.Item>
     </ToggleGroup>
   );
-};
-export const AriaDisabled: StoryFn<typeof ToggleGroup> = () => {
+});
+
+export const AriaDisabled = meta.story(() => {
   return (
     <ToggleGroup aria-label="Filtrering">
       <ToggleGroup.Item value="innboks">Innboks</ToggleGroup.Item>
@@ -142,4 +150,4 @@ export const AriaDisabled: StoryFn<typeof ToggleGroup> = () => {
       <ToggleGroup.Item value="sendt">Sendt</ToggleGroup.Item>
     </ToggleGroup>
   );
-};
+});

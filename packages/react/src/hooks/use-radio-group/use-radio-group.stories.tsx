@@ -1,4 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import { FloppydiskIcon, PencilIcon } from "@navikt/aksel-icons";
+import { useState } from "react";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import {
   Button,
   Divider,
@@ -10,168 +12,164 @@ import {
   ValidationMessage,
 } from "../..";
 
-const meta = {
+const UseRadioGroup = (_props: UseRadioGroupProps) => (
+  <Radio aria-label="label" />
+);
+
+const meta = preview.meta({
   tags: ["!dev"],
+  component: UseRadioGroup,
   parameters: {
     chromatic: {
       disableSnapshot: true,
     },
   },
-} satisfies Meta;
-
-export default meta;
-
-const ageGroups = [
-  { value: "10-20", label: "10-20 år" },
-  { value: "21-45", label: "21-45 år" },
-  { value: "46-80", label: "46-80 år" },
-];
-
-export const Default: StoryObj<UseRadioGroupProps> = {
-  args: {
-    name: "my-group",
-    value: "10-20",
+  argTypes: {
+    name: {
+      table: { type: { summary: "string" } },
+      description:
+        "Name of all radios. If no name is passed, an auto-generated name will be created.",
+    },
+    value: {
+      description: "Value of selected radio",
+      table: { defaultValue: { summary: "" }, type: { summary: "string" } },
+    },
+    onChange: {
+      description: "Callback when selected radio changes",
+      table: {
+        type: {
+          summary:
+            "(nextValue: string, prevValue: string, event: Event) => void;",
+        },
+      },
+    },
+    error: {
+      table: { type: { summary: "string | ReactNode" } },
+      description: "Shared error message for all radios.",
+    },
+    disabled: {
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" },
+      },
+      description: "Set disabled state of all radios",
+    },
+    readOnly: {
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" },
+      },
+      description: "Set read only state of all radios",
+    },
+    required: {
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" },
+      },
+      description: "Set required state of all radios",
+    },
   },
+});
+
+export const Preview = meta.story({
   render: (args) => {
-    const { getRadioProps, validationMessageProps } = useRadioGroup({
+    const { getRadioProps } = useRadioGroup({
       ...args,
     });
 
     return (
       <Fieldset>
-        <Fieldset.Legend>Velg din aldersgruppe</Fieldset.Legend>
-        {ageGroups.map((group) => (
-          <Radio
-            key={group.value}
-            label={group.label}
-            {...getRadioProps(group.value)}
-          />
-        ))}
-        <ValidationMessage {...validationMessageProps} />
+        <Fieldset.Legend>Velg pizza</Fieldset.Legend>
+        <Fieldset.Description>
+          Alle pizzaene er laget på våre egne nybakte bunner og serveres med
+          kokkens egen osteblanding og tomatsaus.
+        </Fieldset.Description>
+        <Radio label="Bare ost" {...getRadioProps("ost")} />
+        <Radio
+          label="Dobbeldekker"
+          description="Chorizo spesial med kokkens luksuskylling"
+          {...getRadioProps("dobbeldekker")}
+        />
+        <Radio label="Flammen" {...getRadioProps("flammen")} />
+        <Radio label="Snadder" {...getRadioProps("snadder")} />
       </Fieldset>
     );
   },
-};
+});
 
-const educationLevels = [
-  { value: "kindergarten", label: "Barnehage" },
-  { value: "primary", label: "Grunnskole" },
-  { value: "secondary", label: "Videregående" },
-  { value: "higher", label: "Høyere utdanning" },
-];
-
-export const Controlled: StoryObj<UseRadioGroupProps> = {
-  parameters: {
-    customStyles: {
-      display: "flex",
-      gap: "var(--ds-size-2)",
-      flexDirection: "column",
-    },
-  },
+export const Controlled = meta.story({
   render: (args) => {
     const { value, setValue, getRadioProps } = useRadioGroup({
       ...args,
     });
+
     return (
       <>
-        <style>
-          {`
-        .radio-group-controlled-button__group {
-          display: flex;
-          gap: var(--ds-size-2);
-        }`}
-        </style>
         <Fieldset>
-          <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
+          <Fieldset.Legend>Velg pizza</Fieldset.Legend>
           <Fieldset.Description>
-            Velg det høyeste utdanningsnivået du har fullført.
+            Alle pizzaene er laget på våre egne nybakte bunner og serveres med
+            kokkens egen osteblanding og tomatsaus.
           </Fieldset.Description>
-          {educationLevels.map((level) => (
-            <Radio
-              key={level.value}
-              label={level.label}
-              {...getRadioProps(level.value)}
-            />
-          ))}
+          <Radio label="Bare ost" {...getRadioProps("ost")} />
+          <Radio
+            label="Dobbeldekker"
+            description="Chorizo spesial med kokkens luksuskylling"
+            {...getRadioProps("dobbeldekker")}
+          />
+          <Radio label="Flammen" {...getRadioProps("flammen")} />
+          <Radio label="Snadder" {...getRadioProps("snadder")} />
         </Fieldset>
-        <Divider />
-        <Paragraph>
-          Du har valgt:{" "}
-          {educationLevels.find((level) => level.value === value)?.label}
+
+        <Divider style={{ marginTop: "var(--ds-size-4)" }} />
+
+        <Paragraph style={{ marginBlock: "var(--ds-size-2)" }}>
+          Du har valgt: {value}
         </Paragraph>
-        <div className="radio-group-controlled-button__group">
-          <Button variant="secondary" onClick={() => setValue("kindergarten")}>
-            Velg Barnehage
-          </Button>
-          <Button variant="secondary" onClick={() => setValue("primary")}>
-            Velg Grunnskole
-          </Button>
+        <div style={{ display: "flex", gap: "1rem" }}>
+          <Button onClick={() => setValue("flammen")}>Velg Flammen</Button>
+          <Button onClick={() => setValue("snadder")}>Velg Snadder</Button>
         </div>
       </>
     );
   },
-};
+});
 
-const GroupBase: StoryObj<UseRadioGroupProps> = {
-  args: {
-    name: "my-group",
-    value: "sjokolade",
-  },
-  render: (args: UseRadioGroupProps) => {
-    const { getRadioProps, validationMessageProps } = useRadioGroup({
+export const Conditional = meta.story({
+  render: (args) => {
+    const { getRadioProps, validationMessageProps, value } = useRadioGroup({
+      name: "kommunikasjonskanal",
       ...args,
     });
+    const [open, setOpen] = useState(false);
 
     return (
-      <Fieldset>
-        <Fieldset.Legend>Velg din aldersgruppe</Fieldset.Legend>
-        <Fieldset.Description>
-          Informasjonen blir brukt til å tilpasse innholdet på siden.
-        </Fieldset.Description>
-        {ageGroups.map((group) => (
-          <Radio
-            key={group.value}
-            label={group.label}
-            {...getRadioProps(group.value)}
-          />
-        ))}
-        <ValidationMessage {...validationMessageProps} />
-      </Fieldset>
+      <>
+        Din kommunikasjonskanal: {value}
+        {open ? (
+          <>
+            <Button onClick={() => setOpen(false)}>
+              <FloppydiskIcon aria-hidden /> Lagre
+            </Button>
+            <Fieldset>
+              <Fieldset.Legend>
+                Hvordan vil du helst at vi skal kontakte deg?
+              </Fieldset.Legend>
+              <Fieldset.Description>
+                Velg alle alternativene som er relevante for deg.
+              </Fieldset.Description>
+              <Radio label="E-post" {...getRadioProps("epost")} />
+              <Radio label="Telefon" {...getRadioProps("telefon")} />
+              <Radio label="SMS" {...getRadioProps("sms")} />
+              <ValidationMessage {...validationMessageProps} />
+            </Fieldset>
+          </>
+        ) : (
+          <Button onClick={() => setOpen(true)} variant="secondary">
+            <PencilIcon aria-hidden /> Rediger
+          </Button>
+        )}
+      </>
     );
   },
-};
-
-export const Group: StoryObj<UseRadioGroupProps> = {
-  ...GroupBase,
-};
-
-export const Outline: StoryObj<UseRadioGroupProps> = {
-  ...Group,
-  args: {
-    ...Group.args,
-    variant: "outline",
-  },
-};
-
-export const WithError: StoryObj<UseRadioGroupProps> = {
-  args: {
-    ...GroupBase.args,
-    error: "Du må velge en aldersgruppe",
-    name: "my-error",
-  },
-  render: GroupBase.render,
-};
-
-export const Disabled: StoryObj<UseRadioGroupProps> = {
-  args: { ...GroupBase.args, disabled: true, name: "my-disabled" },
-  render: GroupBase.render,
-  parameters: {
-    // Disabled inputs don't pass text contrast requirements
-    a11y: { config: { rules: [{ id: "color-contrast", enabled: false }] } },
-  },
-};
-
-export const ReadOnly: StoryObj<UseRadioGroupProps> = {
-  args: { ...GroupBase.args, readOnly: true, name: "my-readonly" },
-  render: GroupBase.render,
-};
+});

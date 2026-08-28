@@ -141,10 +141,9 @@ export default definePreview({
                     />
                   ),
                   p: (props) => (
-                    <Paragraph
-                      {...props}
-                      className={componentStyles.paragraph}
-                    />
+                    <Paragraph asChild>
+                      <p {...props} className={componentStyles.paragraph} />
+                    </Paragraph>
                   ),
                   hr: (props) => (
                     <Divider {...props} className={componentStyles.hr} />

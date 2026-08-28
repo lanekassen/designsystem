@@ -1,9 +1,7 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Button, Heading, Paragraph, Skeleton } from "../";
 
-type Story = StoryObj<typeof Skeleton>;
-
-export default {
+const meta = preview.meta({
   title: "Designsystem/Skeleton",
   component: Skeleton,
   parameters: {
@@ -14,65 +12,69 @@ export default {
       },
     },
   },
-} as Meta;
+});
 
-export const Default: Story = {
+export const Default = meta.story({
   args: {
     width: 200,
     height: 100,
   },
-};
+});
 
-export const Components: StoryFn<typeof Text> = () => {
-  return (
-    <>
-      <Skeleton variant="circle" width="50px" height="50px" />
-      <Skeleton variant="rectangle" width="100px" height="50px" />
-      <Paragraph>
-        <Skeleton variant="text" width="10" />
-      </Paragraph>
-    </>
-  );
-};
-
-Components.parameters = {
-  customStyles: {
-    display: "flex",
-    flexWrap: "wrap",
-    alignItems: "center",
-    gap: "20px",
+export const Components = meta.story({
+  render: () => {
+    return (
+      <>
+        <Skeleton variant="circle" width="50px" height="50px" />
+        <Skeleton variant="rectangle" width="100px" height="50px" />
+        <Paragraph>
+          <Skeleton variant="text" width="10" />
+        </Paragraph>
+      </>
+    );
   },
-};
 
-export const UsageExample: StoryFn<typeof Skeleton> = () => {
-  return (
-    <>
-      <Skeleton height="150px" />
-      <div
-        style={{
-          display: "flex",
-          gap: "10px",
-          alignItems: "center",
-          padding: "5px 0 5px 0",
-        }}
-      >
-        <Skeleton variant="circle" width="30px" height="30px" />
-        <Heading>
-          <Skeleton variant="text">En medium tittel</Skeleton>
-        </Heading>
-      </div>
-      <Skeleton variant="text" width="140" />
-    </>
-  );
-};
-
-UsageExample.parameters = {
-  customStyles: {
-    maxWidth: 400,
+  parameters: {
+    customStyles: {
+      display: "flex",
+      flexWrap: "wrap",
+      alignItems: "center",
+      gap: "20px",
+    },
   },
-};
+});
 
-export const Children: StoryFn<typeof Skeleton> = () => {
+export const UsageExample = meta.story({
+  render: () => {
+    return (
+      <>
+        <Skeleton height="150px" />
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            alignItems: "center",
+            padding: "5px 0 5px 0",
+          }}
+        >
+          <Skeleton variant="circle" width="30px" height="30px" />
+          <Heading>
+            <Skeleton variant="text">En medium tittel</Skeleton>
+          </Heading>
+        </div>
+        <Skeleton variant="text" width="140" />
+      </>
+    );
+  },
+
+  parameters: {
+    customStyles: {
+      maxWidth: 400,
+    },
+  },
+});
+
+export const Children = meta.story(() => {
   return (
     <Skeleton variant="rectangle">
       <Paragraph>
@@ -84,27 +86,29 @@ export const Children: StoryFn<typeof Skeleton> = () => {
       <Button>Knapp</Button>
     </Skeleton>
   );
-};
+});
 
-export const Text: StoryFn<typeof Skeleton> = () => (
-  <>
-    <div style={{ flex: "1 1 200px" }}>
-      <Heading>En tittel</Heading>
-      <Paragraph data-size="sm">
-        Her er en paragraf som går over flere linjer
-      </Paragraph>
-    </div>
-    <div style={{ flex: "1 1 200px" }}>
-      <Heading>
-        <Skeleton variant="text">En tittel</Skeleton>
-      </Heading>
-      <Paragraph data-size="sm">
-        <Skeleton variant="text" width={40} />
-      </Paragraph>
-    </div>
-  </>
-);
+export const Text = meta.story({
+  render: () => (
+    <>
+      <div style={{ flex: "1 1 200px" }}>
+        <Heading>En tittel</Heading>
+        <Paragraph data-size="sm">
+          Her er en paragraf som går over flere linjer
+        </Paragraph>
+      </div>
+      <div style={{ flex: "1 1 200px" }}>
+        <Heading>
+          <Skeleton variant="text">En tittel</Skeleton>
+        </Heading>
+        <Paragraph data-size="sm">
+          <Skeleton variant="text" width={40} />
+        </Paragraph>
+      </div>
+    </>
+  ),
 
-Text.parameters = {
-  customStyles: { display: "flex", gap: "20px", maxWidth: 300 },
-};
+  parameters: {
+    customStyles: { display: "flex", gap: "20px", maxWidth: 300 },
+  },
+});

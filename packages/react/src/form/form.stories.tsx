@@ -1,11 +1,11 @@
-import type { Meta, StoryFn } from "@storybook/react-vite";
 import { revalidateLogic } from "@tanstack/react-form";
 import { useState } from "react";
 import * as z from "zod";
+import preview from "../../../../apps/storybook/.storybook/preview";
 import { Checkbox, EXPERIMENTAL_Suggestion, Radio, Select, Tag } from "../";
 import { useAppForm } from "./";
 
-const meta = {
+const meta = preview.meta({
   title: "Utvikling/React/Form",
   decorators: [
     (Story) => (
@@ -18,11 +18,9 @@ const meta = {
       </div>
     ),
   ],
-} satisfies Meta;
+});
 
-export default meta;
-
-export const FormTextfield: StoryFn = () => {
+export const FormTextfield = meta.story(() => {
   const schema = z.object({
     name: z.string().min(1, "Name is required"),
   });
@@ -53,9 +51,9 @@ export const FormTextfield: StoryFn = () => {
       </form.AppField>
     </form>
   );
-};
+});
 
-export const FormSelect: StoryFn = () => {
+export const FormSelect = meta.story(() => {
   const schema = z.object({
     cities: z.string().min(1, "City is required"),
   });
@@ -95,9 +93,9 @@ export const FormSelect: StoryFn = () => {
       </form.AppField>
     </form>
   );
-};
+});
 
-export const FormSuggestion: StoryFn = () => {
+export const FormSuggestion = meta.story(() => {
   const DATA_COUNTRIES = ["Denmark", "Finland", "Norway", "Sweden"];
 
   const schema = z.object({
@@ -151,9 +149,9 @@ export const FormSuggestion: StoryFn = () => {
       </form.AppField>
     </form>
   );
-};
+});
 
-export const FormCheckboxGroup: StoryFn = () => {
+export const FormCheckboxGroup = meta.story(() => {
   const schema = z.object({
     contacts: z
       .array(z.enum(["email", "phone", "sms"]))
@@ -196,9 +194,9 @@ export const FormCheckboxGroup: StoryFn = () => {
       </form.AppField>
     </form>
   );
-};
+});
 
-export const FormRadioGroup: StoryFn = () => {
+export const FormRadioGroup = meta.story(() => {
   const schema = z.object({
     favourite: z.string().min(1, "You must select one"),
   });
@@ -243,9 +241,9 @@ export const FormRadioGroup: StoryFn = () => {
       </form.AppField>
     </form>
   );
-};
+});
 
-export const FormSubmitButton: StoryFn = () => {
+export const FormSubmitButton = meta.story(() => {
   const [submissionCount, setSubmissionCount] = useState(0);
 
   const form = useAppForm({
@@ -274,9 +272,9 @@ export const FormSubmitButton: StoryFn = () => {
       </form.AppForm>
     </form>
   );
-};
+});
 
-export const FormFull: StoryFn = () => {
+export const FormFull = meta.story(() => {
   const DATA_COUNTRIES = ["Denmark", "Finland", "Norway", "Sweden"];
 
   const schema = z.object({
@@ -420,4 +418,4 @@ export const FormFull: StoryFn = () => {
       </form.AppForm>
     </form>
   );
-};
+});

@@ -1,14 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Fieldset, Switch } from "../";
 
-type Story = StoryObj<typeof Switch>;
-
-export default {
+const meta = preview.meta({
   title: "Designsystem/Switch",
   component: Switch,
-} as Meta;
+});
 
-export const Default: Story = {
+export const Default = meta.story({
   args: {
     label: "Switch",
     description: "",
@@ -16,57 +14,56 @@ export const Default: Story = {
     readOnly: false,
     position: "start",
   },
-};
+});
 
-export const Checked: Story = {
-  ...Default,
-  args: { ...Default.args, checked: true },
-};
+export const Checked = meta.story({
+  ...Default.input,
+  args: { label: "Switch", checked: true },
+});
 
-export const Group: Story = {
-  render: ({ "aria-label": a, "aria-labelledby": b, ...args }) => (
+export const Group = meta.story({
+  render: () => (
     <Fieldset>
       <Fieldset.Legend>Skru av/på lys</Fieldset.Legend>
-      <Switch label="Stue" checked {...args} />
-      <Switch label="Kjøkken" {...args} />
-      <Switch label="Bad" {...args} />
+      <Switch label="Stue" checked />
+      <Switch label="Kjøkken" />
+      <Switch label="Bad" />
       <Switch
         label="Soverom"
         description="Får ikke kontakt med lyspærene"
         readOnly
-        {...args}
       />
     </Fieldset>
   ),
-};
+});
 
-export const RigthAligned: Story = {
-  render: ({ "aria-label": a, "aria-labelledby": b, ...args }) => (
-    <Switch label="Flymodus" position="end" checked {...args} />
-  ),
-};
+export const RightAligned = meta.story({
+  args: {
+    label: "Flymodus",
+    position: "end",
+    checked: true,
+  },
+});
 
-export const Outline: Story = {
-  render: () => (
-    <>
-      <Fieldset>
-        <Fieldset.Legend>Using variant="outline"</Fieldset.Legend>
-        <Switch
-          variant="outline"
-          label="with description"
-          description="description text"
-          value="description"
-        />
-        <Switch variant="outline" label="Checked" value="checked" checked />
-        <Switch variant="outline" disabled label="disabled" value="disabled" />
-        <Switch
-          variant="outline"
-          readOnly
-          label="readonly checked"
-          value="readonly"
-          checked
-        />
-      </Fieldset>
-    </>
-  ),
-};
+export const Outline = meta.story(() => (
+  <>
+    <Fieldset>
+      <Fieldset.Legend>Using variant="outline"</Fieldset.Legend>
+      <Switch
+        variant="outline"
+        label="with description"
+        description="description text"
+        value="description"
+      />
+      <Switch variant="outline" label="Checked" value="checked" checked />
+      <Switch variant="outline" disabled label="disabled" value="disabled" />
+      <Switch
+        variant="outline"
+        readOnly
+        label="readonly checked"
+        value="readonly"
+        checked
+      />
+    </Fieldset>
+  </>
+));

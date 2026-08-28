@@ -3,32 +3,34 @@ import {
   HouseIcon,
   PersonCircleIcon,
 } from "@navikt/aksel-icons";
-import type { Meta, StoryFn } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Tabs } from "../";
 
-export default {
+const meta = preview.meta({
   title: "Designsystem/Tabs",
   component: Tabs,
-} as Meta;
+});
 
-export const Default: StoryFn<typeof Tabs> = (args) => (
-  <Tabs {...args}>
-    <Tabs.List>
-      <Tabs.Tab value="value1">Din side</Tabs.Tab>
-      <Tabs.Tab value="value2">Innboks</Tabs.Tab>
-      <Tabs.Tab value="value3">Profil</Tabs.Tab>
-    </Tabs.List>
-    <Tabs.Panel value="value1">Innhold din side</Tabs.Panel>
-    <Tabs.Panel value="value2">Innhold innboks</Tabs.Panel>
-    <Tabs.Panel value="value3">Innhold profil</Tabs.Panel>
-  </Tabs>
-);
+export const Default = meta.story({
+  render: (args) => (
+    <Tabs {...args}>
+      <Tabs.List>
+        <Tabs.Tab value="value1">Din side</Tabs.Tab>
+        <Tabs.Tab value="value2">Innboks</Tabs.Tab>
+        <Tabs.Tab value="value3">Profil</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel value="value1">Innhold din side</Tabs.Panel>
+      <Tabs.Panel value="value2">Innhold innboks</Tabs.Panel>
+      <Tabs.Panel value="value3">Innhold profil</Tabs.Panel>
+    </Tabs>
+  ),
 
-Default.args = {
-  defaultValue: "value1",
-};
+  args: {
+    defaultValue: "value1",
+  },
+});
 
-export const IconsWithText: StoryFn<typeof Tabs> = () => (
+export const IconsWithText = meta.story(() => (
   <Tabs defaultValue="car">
     <Tabs.List>
       <Tabs.Tab value="forside">
@@ -52,9 +54,9 @@ export const IconsWithText: StoryFn<typeof Tabs> = () => (
       Her finner du informasjon om profilen din
     </Tabs.Panel>
   </Tabs>
-);
+));
 
-export const DefaultValue: StoryFn<typeof Tabs> = () => (
+export const DefaultValue = meta.story(() => (
   <Tabs defaultValue="value2">
     <Tabs.List>
       <Tabs.Tab value="value1">Tab 1</Tabs.Tab>
@@ -65,4 +67,4 @@ export const DefaultValue: StoryFn<typeof Tabs> = () => (
     <Tabs.Panel value="value2">content 2</Tabs.Panel>
     <Tabs.Panel value="value3">content 3</Tabs.Panel>
   </Tabs>
-);
+));

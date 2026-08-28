@@ -1,25 +1,22 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Link } from "../..";
 import { Logo, LogoIcon } from "./logo";
 
-const meta = {
+const meta = preview.meta({
   title: "Designsystem/Logo",
   component: Logo,
   parameters: {
     layout: "padded",
   },
-} satisfies Meta;
+});
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export const Default = meta.story();
 
-export const Default: Story = {};
-
-export const IconOnly: Story = {
+export const IconOnly = meta.story({
   render: () => <LogoIcon />,
-};
+});
 
-export const Responsive: Story = {
+export const Responsive = meta.story({
   render: () => (
     <>
       <style>
@@ -46,12 +43,12 @@ export const Responsive: Story = {
       <LogoIcon className="logo-icon" />
     </>
   ),
-};
+});
 
-export const WithLink: Story = {
+export const WithLink = meta.story({
   render: () => (
     <Link href="https://lanekassen.no/" aria-label="Gå til lanekassen.no">
       <Logo />
     </Link>
   ),
-};
+});

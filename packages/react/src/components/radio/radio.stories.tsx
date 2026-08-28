@@ -1,13 +1,12 @@
-import type { UseRadioGroupProps } from "@digdir/designsystemet-react";
-import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Fieldset, Radio, ValidationMessage } from "../";
 
-export default {
+const meta = preview.meta({
   title: "Designsystem/Radio",
   component: Radio,
-} as Meta;
+});
 
-export const Default: StoryObj<typeof Radio> = {
+export const Default = meta.story({
   args: {
     label: "Radio",
     description: "Description",
@@ -16,16 +15,16 @@ export const Default: StoryObj<typeof Radio> = {
     value: "value",
     name: "name",
   },
-};
+});
 
-export const AriaLabel: StoryObj<typeof Radio> = {
+export const AriaLabel = meta.story({
   args: {
     value: "value",
     "aria-label": "Radio",
   },
-};
+});
 
-export const Group: StoryFn<UseRadioGroupProps> = () => {
+export const Group = meta.story(() => {
   return (
     <Fieldset>
       <Fieldset.Legend>Hvilken iskremsmak er best?</Fieldset.Legend>
@@ -47,9 +46,9 @@ export const Group: StoryFn<UseRadioGroupProps> = () => {
       />
     </Fieldset>
   );
-};
+});
 
-export const WithError: StoryFn<UseRadioGroupProps> = () => {
+export const WithError = meta.story(() => {
   return (
     <Fieldset>
       <Fieldset.Legend>Hvilken bydel bor du i?</Fieldset.Legend>
@@ -75,9 +74,9 @@ export const WithError: StoryFn<UseRadioGroupProps> = () => {
       </ValidationMessage>
     </Fieldset>
   );
-};
+});
 
-export const ReadOnly: StoryFn<UseRadioGroupProps> = () => {
+export const ReadOnly = meta.story(() => {
   return (
     <Fieldset>
       <Fieldset.Legend>Hvilken bydel bor du i?</Fieldset.Legend>
@@ -90,9 +89,9 @@ export const ReadOnly: StoryFn<UseRadioGroupProps> = () => {
       <Radio label="Midtbyen" value="midtbyen" name="city" readOnly />
     </Fieldset>
   );
-};
+});
 
-export const Inline: StoryFn<typeof Fieldset> = () => (
+export const Inline = meta.story(() => (
   <Fieldset>
     <Fieldset.Legend>Kontaktes på e-post?</Fieldset.Legend>
     <Fieldset.Description>
@@ -103,9 +102,9 @@ export const Inline: StoryFn<typeof Fieldset> = () => (
       <Radio name="my-inline" label="Nei" value="nei" />
     </div>
   </Fieldset>
-);
+));
 
-export const Outline: StoryFn<UseRadioGroupProps> = () => (
+export const Outline = meta.story(() => (
   <>
     <Fieldset>
       <Fieldset.Legend>Using variant="outline"</Fieldset.Legend>
@@ -132,4 +131,4 @@ export const Outline: StoryFn<UseRadioGroupProps> = () => (
       />
     </Fieldset>
   </>
-);
+));

@@ -1,18 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 
 import { ValidationMessage } from "../";
 
-const meta: Meta<typeof ValidationMessage> = {
+const meta = preview.meta({
   title: "Designsystem/Typography/ValidationMessage",
   component: ValidationMessage,
-};
+});
 
-export default meta;
-
-type Story = StoryObj<typeof ValidationMessage>;
-
-export const Default: Story = {
+export const Default = meta.story({
   args: {
     children: "Dette er en valideringsmelding.",
   },
-};
+});

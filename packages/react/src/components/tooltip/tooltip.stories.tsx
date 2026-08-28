@@ -1,11 +1,9 @@
 import { FilesIcon } from "@navikt/aksel-icons";
-import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useEffect, useRef, useState } from "react";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Button, Tooltip } from "../";
 
-type Story = StoryObj<typeof Tooltip>;
-
-const meta: Meta<typeof Tooltip> = {
+const meta = preview.meta({
   title: "Designsystem/Tooltip",
   component: Tooltip,
   parameters: {
@@ -14,32 +12,33 @@ const meta: Meta<typeof Tooltip> = {
       disableSnapshot: false,
     },
   },
-};
+});
 
-export default meta;
+export const Default = meta.story({
+  render: (args) => (
+    <Tooltip {...args}>
+      <Button icon>
+        <FilesIcon aria-hidden />
+      </Button>
+    </Tooltip>
+  ),
 
-export const Default: StoryFn<typeof Tooltip> = (args) => (
-  <Tooltip {...args}>
-    <Button icon>
-      <FilesIcon aria-hidden />
-    </Button>
-  </Tooltip>
-);
+  args: {
+    children: "",
+    content: "Kopier",
+    placement: "top",
+  },
+});
 
-Default.args = {
-  content: "Kopier",
-  placement: "top",
-};
-
-export const WithString: Story = {
+export const WithString = meta.story({
   args: {
     content: "Organisasjonsnummer",
     children: "Org.nr.",
     tabIndex: 0,
   },
-};
+});
 
-export const Placement: Story = {
+export const Placement = meta.story({
   args: {
     content: "Kopier",
     placement: "bottom",
@@ -49,34 +48,34 @@ export const Placement: Story = {
       </Button>
     ),
   },
-};
+});
 
-export const Aria: StoryFn<typeof Tooltip> = () => {
-  return (
-    <>
-      <Tooltip content="Eg er aria-description">
-        <Button>Eg er aria-description</Button>
-      </Tooltip>
-      <Tooltip content="Eg er aria-label">
-        <Button icon>
-          <FilesIcon aria-hidden />
-        </Button>
-      </Tooltip>
-    </>
-  );
-};
+export const Aria = meta.story({
+  render: () => {
+    return (
+      <>
+        <Tooltip content="Eg er aria-description">
+          <Button>Eg er aria-description</Button>
+        </Tooltip>
+        <Tooltip content="Eg er aria-label">
+          <Button icon>
+            <FilesIcon aria-hidden />
+          </Button>
+        </Tooltip>
+      </>
+    );
+  },
 
-Aria.decorators = [
-  (Story) => (
-    <div
-      style={{ display: "flex", gap: "var(--ds-size-2)", alignItems: "center" }}
-    >
-      <Story />
-    </div>
-  ),
-];
+  parameters: {
+    customStyles: {
+      display: "flex",
+      gap: "var(--ds-size-2)",
+      alignItems: "center",
+    },
+  },
+});
 
-export const WithDynamicTooltipText: Story = {
+export const WithDynamicTooltipText = meta.story({
   args: {
     content: "Kopier",
   },
@@ -95,9 +94,9 @@ export const WithDynamicTooltipText: Story = {
       </Tooltip>
     );
   },
-};
+});
 
-export const WithCSSTooltipText: Story = {
+export const WithCSSTooltipText = meta.story({
   args: {
     content: "Kopier",
   },
@@ -108,9 +107,9 @@ export const WithCSSTooltipText: Story = {
       </Button>
     </Tooltip>
   ),
-};
+});
 
-export const WithDynamicCSSTooltipText: Story = {
+export const WithDynamicCSSTooltipText = meta.story({
   args: {
     content: "Kopier",
   },
@@ -138,4 +137,4 @@ export const WithDynamicCSSTooltipText: Story = {
       </Tooltip>
     );
   },
-};
+});

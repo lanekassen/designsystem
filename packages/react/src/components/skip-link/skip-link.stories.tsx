@@ -1,31 +1,33 @@
-import type { Meta, StoryFn } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Paragraph, SkipLink } from "../";
 
-type Story = StoryFn<typeof SkipLink>;
-
-const meta: Meta<typeof SkipLink> = {
+const meta = preview.meta({
   title: "Designsystem/SkipLink",
   component: SkipLink,
-};
+  args: {
+    children: "Hopp til hovedinnhold",
+    href: "#main-content",
+  },
+});
 
-export default meta;
+export const Default = meta.story({
+  render: (args) => (
+    <>
+      <Paragraph>
+        For å vise skiplinken, tab til dette eksempelet, eller klikk inni
+        eksempelet og trykk <kbd>Tab</kbd>.
+        <SkipLink {...args} href="#main-content">
+          Hopp til hovedinnhold
+        </SkipLink>
+      </Paragraph>
+      <main id="main-content" tabIndex={-1}>
+        Region som kan motta fokus fra skiplink.
+      </main>
+    </>
+  ),
+});
 
-export const Default: Story = (args) => (
-  <>
-    <Paragraph>
-      For å vise skiplinken, tab til dette eksempelet, eller klikk inni
-      eksempelet og trykk <kbd>Tab</kbd>.
-      <SkipLink {...args} href="#main-content">
-        Hopp til hovedinnhold
-      </SkipLink>
-    </Paragraph>
-    <main id="main-content" tabIndex={-1}>
-      Region som kan motta fokus fra skiplink.
-    </main>
-  </>
-);
-
-export const Tabbed: Story = () => (
+export const Tabbed = meta.story(() => (
   <div>
     For å vise skiplinken, tab til dette eksempelet, eller klikk inni eksempelet
     og trykk <kbd>Tab</kbd>.
@@ -34,4 +36,4 @@ export const Tabbed: Story = () => (
       Region som kan motta fokus fra skiplink.
     </main>
   </div>
-);
+));
