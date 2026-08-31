@@ -13,5 +13,6 @@
 @import "./components/label.css" layer(lkds.base);
 
 @import "./components/alert.css" layer(lkds.components);
+@import "./components/list.css" layer(lkds.components);
 @import "./components/logo.css" layer(lkds.components);
 @import "./components/progress.css" layer(lkds.components);
