@@ -1,5 +1,14 @@
 # @lanekassen/ds-css
 
+## 0.4.1
+
+### Patch Changes
+
+- ba3a860: Theme: update tokens to comply with WCAG AA contrast requirements
+- 0e5621e: Update non-major dependencies
+- 0e5621e: Update `@digdir/*` to v1.20.0 ([changelog](https://github.com/digdir/designsystemet/releases/tag/v1.20.0))
+- a85d802: List: change the color of unordered list markers to `--ds-color-accent-text-default`
+
 ## 0.4.0
 
 ### Minor Changes
