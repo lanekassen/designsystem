@@ -463,7 +463,7 @@
         "$type": "typography",
         "$value": {
           "fontFamily": "{font-family}",
-          "fontWeight": "{font-weight.medium}",
+          "fontWeight": "{font-weight.bold}",
           "lineHeight": "{line-height.sm}",
           "fontSize": "{font-size.10}",
           "letterSpacing": "{letter-spacing.1}"
@@ -473,7 +473,7 @@
         "$type": "typography",
         "$value": {
           "fontFamily": "{font-family}",
-          "fontWeight": "{font-weight.medium}",
+          "fontWeight": "{font-weight.bold}",
           "lineHeight": "{line-height.sm}",
           "fontSize": "{font-size.9}",
           "letterSpacing": "{letter-spacing.1}"
@@ -483,7 +483,7 @@
         "$type": "typography",
         "$value": {
           "fontFamily": "{font-family}",
-          "fontWeight": "{font-weight.medium}",
+          "fontWeight": "{font-weight.bold}",
           "lineHeight": "{line-height.sm}",
           "fontSize": "{font-size.8}",
           "letterSpacing": "{letter-spacing.2}"
@@ -493,7 +493,7 @@
         "$type": "typography",
         "$value": {
           "fontFamily": "{font-family}",
-          "fontWeight": "{font-weight.medium}",
+          "fontWeight": "{font-weight.bold}",
           "lineHeight": "{line-height.sm}",
           "fontSize": "{font-size.7}",
           "letterSpacing": "{letter-spacing.3}"
@@ -503,7 +503,7 @@
         "$type": "typography",
         "$value": {
           "fontFamily": "{font-family}",
-          "fontWeight": "{font-weight.medium}",
+          "fontWeight": "{font-weight.bold}",
           "lineHeight": "{line-height.sm}",
           "fontSize": "{font-size.6}",
           "letterSpacing": "{letter-spacing.5}"
@@ -513,7 +513,7 @@
         "$type": "typography",
         "$value": {
           "fontFamily": "{font-family}",
-          "fontWeight": "{font-weight.medium}",
+          "fontWeight": "{font-weight.bold}",
           "lineHeight": "{line-height.sm}",
           "fontSize": "{font-size.5}",
           "letterSpacing": "{letter-spacing.6}"
@@ -523,7 +523,7 @@
         "$type": "typography",
         "$value": {
           "fontFamily": "{font-family}",
-          "fontWeight": "{font-weight.medium}",
+          "fontWeight": "{font-weight.bold}",
           "lineHeight": "{line-height.sm}",
           "fontSize": "{font-size.4}",
           "letterSpacing": "{letter-spacing.6}"

@@ -11,6 +11,7 @@ const TYPOGRAPHY_PRIMARY_PATH =
   "./design-tokens/primitives/modes/typography/primary/lanekassen.json";
 const TYPOGRAPHY_SECONDARY_PATH =
   "./design-tokens/primitives/modes/typography/secondary/lanekassen.json";
+const SEMANTIC_STYLE_PATH = "./design-tokens/semantic/style.json";
 
 /**
  * Helper to read, update, and write JSON files safely.
@@ -51,6 +52,15 @@ function injectTypographyTokens(filePath) {
   });
 }
 
+function injectHeadingFontWeightTokens(filePath) {
+  updateJsonFile(filePath, (tokens) => {
+    for (const size of Object.keys(tokens.typography.heading)) {
+      tokens.typography.heading[size].$value.fontWeight = "{font-weight.bold}";
+    }
+  });
+}
+
 injectThemeTokens(THEME_PATH);
 injectTypographyTokens(TYPOGRAPHY_PRIMARY_PATH);
 injectTypographyTokens(TYPOGRAPHY_SECONDARY_PATH);
+injectHeadingFontWeightTokens(SEMANTIC_STYLE_PATH);
