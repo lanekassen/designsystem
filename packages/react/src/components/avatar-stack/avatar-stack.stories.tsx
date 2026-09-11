@@ -18,10 +18,16 @@ const meta: Meta<typeof AvatarStack> = {
 export default meta;
 
 export const Default: Story = (args) => (
-  <AvatarStack {...args} aria-hidden>
-    <Avatar aria-label="Navn">{person1Img}</Avatar>
-    <Avatar aria-label="Navn" initials="sm" />
-    <Avatar aria-label="Navn">Ry</Avatar>
+  <AvatarStack {...args}>
+    <li>
+      <Avatar aria-label="Navn">{person1Img}</Avatar>
+    </li>
+    <li>
+      <Avatar aria-label="Navn" initials="sm" />
+    </li>
+    <li>
+      <Avatar aria-label="Navn">Ry</Avatar>
+    </li>
   </AvatarStack>
 );
 
@@ -30,15 +36,21 @@ export const WithTooltip: Story = (args) => (
     style={{ display: "flex", flexDirection: "row", gap: "var(--ds-size-4)" }}
   >
     <AvatarStack {...args}>
-      <Tooltip content="Ola Nordmann">
-        <Avatar aria-label="Navn" initials="ry" />
-      </Tooltip>
-      <Tooltip content="Person 3">
-        <Avatar aria-label="Navn">{person1Img}</Avatar>
-      </Tooltip>
-      <Tooltip content="Person 4">
-        <Avatar aria-label="Navn">{person2Img}</Avatar>
-      </Tooltip>
+      <li>
+        <Tooltip content="Ola Nordmann">
+          <Avatar aria-label="Navn" initials="ry" />
+        </Tooltip>
+      </li>
+      <li>
+        <Tooltip content="Person 3">
+          <Avatar aria-label="Navn">{person1Img}</Avatar>
+        </Tooltip>
+      </li>
+      <li>
+        <Tooltip content="Person 4">
+          <Avatar aria-label="Navn">{person2Img}</Avatar>
+        </Tooltip>
+      </li>
     </AvatarStack>
   </div>
 );
