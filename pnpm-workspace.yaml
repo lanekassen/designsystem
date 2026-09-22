@@ -12,11 +12,11 @@ cleanupUnusedCatalogs: true
 catalog:
   "@biomejs/biome": 2.5.12
   "@changesets/cli": ^2.31.1
-  "@digdir/designsystemet": ^1.21.0
-  "@digdir/designsystemet-css": ^1.21.0
-  "@digdir/designsystemet-react": ^1.21.0
-  "@digdir/designsystemet-types": ^1.21.0
-  "@digdir/designsystemet-web": ^1.21.0
+  "@digdir/designsystemet": ^1.22.0
+  "@digdir/designsystemet-css": ^1.22.0
+  "@digdir/designsystemet-react": ^1.22.0
+  "@digdir/designsystemet-types": ^1.22.0
+  "@digdir/designsystemet-web": ^1.22.0
   "@mdx-js/react": ^3.1.1
   "@navikt/aksel-icons": ^8.16.2
   '@storybook/addon-a11y': ^10.6.0
@@ -26,24 +26,24 @@ catalog:
   "@storybook/react-vite": ^10.6.0
   '@tanstack/react-form': ^1.33.5
   "@tsdown/css": ^0.22.14
-  '@types/node': ^24.13.3
-  "@types/react": ^19.2.18
-  "@types/react-dom": ^19.2.7
+  '@types/node': ^24.13.6
+  "@types/react": ^19.3.0
+  "@types/react-dom": ^19.3.0
   "@u-elements/u-progress": ^1.0.1
   '@vitest/browser-playwright': ^4.1.11
   '@vitest/coverage-v8': ^4.1.11
   clsx: ^2.1.1
   playwright: ^1.63.0
-  react: ^19.2.8
+  react: ^19.3.0
   react-docgen-typescript: ^2.4.0
-  react-dom: ^19.2.8
-  react-dropzone: ^20.1.1
+  react-dom: ^19.3.0
+  react-dropzone: ^20.1.2
   storybook: ^10.6.0
   tsdown: ^0.22.14
   typedoc: ^0.28.20
-  typedoc-plugin-markdown: ^4.13.0
+  typedoc-plugin-markdown: ^4.13.1
   typescript: ^6.0.3
-  vite: ^8.2.2
+  vite: ^8.3.0
   vitest: ^4.1.11
   vitest-browser-react: ^2.3.0
-  zod: ^4.5.4
+  zod: ^4.6.5
