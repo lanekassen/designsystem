@@ -13,7 +13,7 @@ declare global {
       focusgroupstart?: boolean | undefined;
     }
 
-    // Make React support command attributes
+    // Make React support command attributes https://github.com/react/react/issues/32478
     interface ButtonHTMLAttributes<T> extends React.HTMLAttributes<T> {
       command?: string;
       commandfor?: string;
