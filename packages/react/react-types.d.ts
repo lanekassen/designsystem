@@ -8,9 +8,15 @@ declare global {
       "data-color"?: DefaultProps["data-color"];
       "data-color-scheme"?: ColorScheme | (string & {});
 
-      // Make React support focusgroup attribute
+      // Make React support focusgroup attributes
       focusgroup?: string;
       focusgroupstart?: boolean | undefined;
+    }
+
+    // Make React support command attributes
+    interface ButtonHTMLAttributes<T> extends React.HTMLAttributes<T> {
+      command?: string;
+      commandfor?: string;
     }
   }
 }
