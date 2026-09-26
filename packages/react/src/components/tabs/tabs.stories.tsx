@@ -31,29 +31,25 @@ Default.args = {
 export const IconsWithText: StoryFn<typeof Tabs> = () => (
   <Tabs defaultValue="car">
     <Tabs.List>
-      <Tabs.Tab value="car">
+      <Tabs.Tab value="forside">
         <HouseIcon aria-hidden="true" />
-        Din side
+        Dine side
       </Tabs.Tab>
 
-      <Tabs.Tab value="bicycle">
+      <Tabs.Tab value="innboks">
         <EnvelopeClosedIcon aria-hidden="true" />
         Innboks
       </Tabs.Tab>
 
-      <Tabs.Tab value="motorcycle">
+      <Tabs.Tab value="profil">
         <PersonCircleIcon aria-hidden="true" />
         Profil
       </Tabs.Tab>
     </Tabs.List>
-    <Tabs.Panel value="car">
-      Du har ingen av denne typen registrert hos oss
-    </Tabs.Panel>
-    <Tabs.Panel value="bicycle">
-      Du har ingen av denne typen registrert hos oss
-    </Tabs.Panel>
-    <Tabs.Panel value="motorcycle">
-      Du har ingen av denne typen registrert hos oss
+    <Tabs.Panel value="forside">Velkommen til dine sider!</Tabs.Panel>
+    <Tabs.Panel value="innboks">Du har ingen meldinger</Tabs.Panel>
+    <Tabs.Panel value="profil">
+      Her finner du informasjon om profilen din
     </Tabs.Panel>
   </Tabs>
 );
