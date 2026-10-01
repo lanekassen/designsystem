@@ -9,6 +9,7 @@
     "typecheck": "tsc --build",
     "check": "biome check",
     "publish-packages": "pnpm --filter './packages/*' build && changeset publish",
+    "version-packages": "changeset version",
     "test": "pnpm --filter './apps/storybook' test",
     "test:storybook": "pnpm test --project=storybook",
     "test:react:unit": "pnpm test --project=unit",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@biomejs/biome": "catalog:",
     "@changesets/cli": "catalog:",
+    "@changesets/config": "catalog:",
     "typescript": "catalog:"
   }
 }
