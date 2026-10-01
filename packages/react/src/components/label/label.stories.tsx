@@ -24,22 +24,3 @@ export const Default: Story = {
     weight: "semibold",
   },
 };
-
-export const Weights: Story = {
-  render: (args) => (
-    <>
-      <Label {...args} weight="regular">
-        Regular weight
-      </Label>
-      <Label {...args} weight="medium">
-        Medium weight
-      </Label>
-      <Label {...args} weight="semibold">
-        Semibold weight
-      </Label>
-      <Label {...args} weight="bold">
-        Bold weight
-      </Label>
-    </>
-  ),
-};
