@@ -1,0 +1,40 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Utvikling/Contributing" />
+
+# Contributing
+
+## Getting started with development
+
+Start the development environment by running:
+
+```sh
+pnpm i
+pnpm build
+pnpm dev
+```
+
+## Changesets
+
+Lånekassen Designsystem follows [semantic versioning](https://semver.org/). In short, this means we use patch versions
+for bugfixes, minor versions for new features, and major versions for breaking changes.
+
+Add a changeset when your changes require a new package release. Changes that only affect Storybook documentation
+do not need a changeset.
+
+You can add a changeset for your changes by running:
+
+```sh
+pnpm changeset
+```
+
+Select the affected packages and the appropriate version bump, then write a summary of the changes for the changelog.
+You may start the changeset message with a prefix for which area or component the changes apply to, in order to make
+the changelog more specific and readable. Have a look at previous releases for inspiration.
+
+The changeset will be committed automatically by the CLI.
+
+## Submitting your changes
+
+Commit your changes on a separate branch and open a pull request against `main`. Describe what you changed and why,
+and include a changeset when a package release is needed.
