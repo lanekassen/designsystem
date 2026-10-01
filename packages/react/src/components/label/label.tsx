@@ -10,6 +10,9 @@ export type LabelProps = Omit<
   React.ComponentPropsWithRef<typeof DigdirLabel>,
   "weight"
 > & {
+  /**
+   * @deprecated as field now automatically changes font-weight based on input type
+   */
   weight?: "regular" | "medium" | "semibold" | "bold";
 };
 
