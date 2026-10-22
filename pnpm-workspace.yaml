@@ -25,6 +25,7 @@ catalog:
   "@storybook/addon-themes": ^10.6.0
   '@storybook/addon-vitest': ^10.6.0
   "@storybook/react-vite": ^10.6.0
+  "@svgr/cli": ^8.1.0
   '@tanstack/react-form': ^1.33.5
   "@tsdown/css": ^0.22.14
   '@types/node': ^24.19.0

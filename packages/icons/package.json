@@ -9,6 +9,7 @@
   },
   "homepage": "https://github.com/lanekassen/designsystem/blob/main/packages/icons",
   "license": "MIT",
+  "sideEffects": false,
   "keywords": [
     "icons",
     "designsystem",
@@ -32,10 +33,13 @@
     "access": "public"
   },
   "scripts": {
+    "generate": "rm -rf src/generated && svgr assets --out-dir src/generated && biome check --write src/generated",
     "dev": "tsdown --watch",
-    "build": "tsc --build && tsdown"
+    "build": "pnpm generate && tsc --build && tsdown"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@svgr/cli": "catalog:",
     "@types/react": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"

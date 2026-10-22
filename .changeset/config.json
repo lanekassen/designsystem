@@ -2,7 +2,9 @@
   "$schema": "../node_modules/@changesets/config/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": true,
-  "fixed": [["@lanekassen/ds-css", "@lanekassen/ds-react"]],
+  "fixed": [
+    ["@lanekassen/ds-css", "@lanekassen/ds-react", "@lanekassen/ds-icons"]
+  ],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
