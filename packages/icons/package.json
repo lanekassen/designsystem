@@ -1,0 +1,46 @@
+{
+  "name": "@lanekassen/ds-icons",
+  "version": "0.4.3",
+  "type": "module",
+  "author": "Lånekassen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanekassen/designsystem.git"
+  },
+  "homepage": "https://github.com/lanekassen/designsystem/blob/main/packages/icons",
+  "license": "MIT",
+  "keywords": [
+    "icons",
+    "designsystem",
+    "lanekassen"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./assets/*": "./assets/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "assets/",
+    "dist/",
+    "package.json",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsdown --watch",
+    "build": "tsc --build && tsdown"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  }
+}
