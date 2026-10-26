@@ -1,0 +1,53 @@
+{
+  "name": "@lanekassen/ds-icons",
+  "version": "0.4.3",
+  "type": "module",
+  "author": "Lånekassen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanekassen/designsystem.git"
+  },
+  "homepage": "https://github.com/lanekassen/designsystem/blob/main/packages/icons",
+  "license": "MIT",
+  "sideEffects": false,
+  "keywords": [
+    "icons",
+    "designsystem",
+    "lanekassen"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./svg/*": "./svg/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/",
+    "svg/",
+    "package.json",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsdown --watch",
+    "build": "pnpm generate && tsc --build && tsdown",
+    "optimize": "svgo --folder svg",
+    "generate": "pnpm optimize && rm -rf src/generated && svgr svg --out-dir src/generated && biome check --write src/generated"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@svgr/cli": "catalog:",
+    "@svgr/core": "catalog:",
+    "@types/react": "catalog:",
+    "svgo": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  }
+}
