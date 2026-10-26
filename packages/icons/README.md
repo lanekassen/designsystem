@@ -3,7 +3,7 @@
 Lånekassen's icon package for React applications.
 
 The package is set up to publish React icon components from its main entry
-point and SVG assets from the `@lanekassen/ds-icons/assets/` subpath.
+point and SVG files from the `@lanekassen/ds-icons/svg/` subpath.
 
 ```tsx
 import { PostponeIcon, RemoveDebtIcon } from "@lanekassen/ds-icons";
@@ -12,16 +12,20 @@ import { PostponeIcon, RemoveDebtIcon } from "@lanekassen/ds-icons";
 <RemoveDebtIcon aria-label="Remove debt" />;
 ```
 
+```ts
+import postponeUrl from "@lanekassen/ds-icons/svg/Postpone.svg";
+```
+
 Components accept standard SVG props without custom `title` or `titleId` props.
 They default to `1em` dimensions and preserve the source `currentColor` fill,
-so size and color can follow the surrounding text. Raw SVG assets are
-published as optimized in `assets/`.
+so size and color can follow the surrounding text. Raw SVG files are
+published as optimized in `svg/`.
 
 ## Accessibility
 
-Raw SVG assets do not include default titles because accessible names depend
+Raw SVG files do not include default titles because accessible names depend
 on their usage and language. Biome's `noSvgWithoutTitle` rule is disabled for
-SVGs in `assets/` and generated components in `src/generated/`, whose
+SVGs in `svg/` and generated components in `src/generated/`, whose
 accessible names are supplied where they are used. It remains enabled elsewhere.
 
 When using an SVG as an image, provide meaningful `alt` text, or `alt=""` for
@@ -36,7 +40,7 @@ an accessible name.
 
 ## Development
 
-Export icons from Figma as SVG and add them to `assets/` using PascalCase
+Export icons from Figma as SVG and add them to `svg/` using PascalCase
 filenames, for example `Postpone.svg` or `RemoveDebt.svg`. No manual editing
 is needed. Then generate the React components:
 
@@ -44,8 +48,8 @@ is needed. Then generate the React components:
 pnpm --filter @lanekassen/ds-icons generate
 ```
 
-Generation first runs SVGO (configured in `svgo.config.mjs`), which optimizes
-the SVG files in `assets/` in place. It removes editor metadata and replaces
+Generation first runs SVGO (configured in `svgo.config.js`), which optimizes
+the SVG files in `svg/` in place. It removes editor metadata and replaces
 all fill and stroke colors with `currentColor`, keeping `none`. Icons are
 therefore monochrome. Avoid masks in source icons, because colors inside masks
 are also replaced; flatten or outline them in Figma before exporting.
@@ -53,9 +57,9 @@ Optimization can be run separately with `pnpm --filter @lanekassen/ds-icons opti
 
 SVGR then generates TypeScript components and named exports in `src/generated/`.
 For example, `Postpone.svg` becomes `PostponeIcon`. Commit both the optimized
-assets and the generated files, and do not edit generated files manually.
-Generation replaces the output directory so removed or renamed assets do not
-leave stale components. SVGO is disabled inside SVGR because the assets are
+SVG files and the generated files, and do not edit generated files manually.
+Generation replaces the output directory so removed or renamed SVG files do not
+leave stale components. SVGO is disabled inside SVGR because the SVG files are
 already optimized.
 
 The build and dev commands generate components before starting:
@@ -66,4 +70,4 @@ pnpm --filter @lanekassen/ds-icons dev
 ```
 
 Dev watches the generated TypeScript files. Run `generate` again after changing
-SVG assets.
+SVG files.

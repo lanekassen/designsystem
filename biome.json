@@ -43,7 +43,7 @@
   "overrides": [
     {
       "includes": [
-        "packages/icons/assets/**/*.svg",
+        "packages/icons/svg/**/*.svg",
         "packages/icons/src/generated/**/*.tsx"
       ],
       "linter": {

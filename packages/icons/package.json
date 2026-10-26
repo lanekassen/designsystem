@@ -20,12 +20,12 @@
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
     },
-    "./assets/*": "./assets/*",
+    "./svg/*": "./svg/*",
     "./package.json": "./package.json"
   },
   "files": [
-    "assets/",
     "dist/",
+    "svg/",
     "package.json",
     "README.md"
   ],
@@ -33,8 +33,8 @@
     "access": "public"
   },
   "scripts": {
-    "optimize": "svgo --folder assets --quiet",
-    "generate": "pnpm optimize && rm -rf src/generated && svgr assets --out-dir src/generated && biome check --write src/generated",
+    "optimize": "svgo --folder svg --quiet",
+    "generate": "pnpm optimize && rm -rf src/generated && svgr svg --out-dir src/generated && biome check --write src/generated",
     "dev": "tsdown --watch",
     "build": "pnpm generate && tsc --build && tsdown"
   },
