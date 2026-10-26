@@ -57,6 +57,12 @@ on the icon or a parent element.
 </span>;
 ```
 
+> [!TIP]
+> If you're using `@lanekassen/ds-css`, and composing your own components that
+> contains icons, you can apply the `ds-icon` class to the icons to ensure
+> consistent sizing and alignment with Designsystemet components. The size is
+> then controlled by `--ds-icon-size` instead of `font-size`.
+
 ## Accessibility
 
 Icons do not include a default title, because the accessible name depends on
