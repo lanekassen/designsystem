@@ -1,73 +1,77 @@
 # @lanekassen/ds-icons
 
-Lånekassen's icon package for React applications.
+Lånekassen's icons to be used in internal and external applications.
 
-The package is set up to publish React icon components from its main entry
-point and SVG files from the `@lanekassen/ds-icons/svg/` subpath.
+> [!WARNING]
+> This package is in it's early stages of development. While it works
+> and can be used, there are no guarantees made for API stability.
+
+## Getting Started
+
+The package provides React icon components and the same icons as SVG files.
+Prefer using React components in React apps for consistency and ease of use.
+
+### 1. Install the package
+
+```console
+$ pnpm add @lanekassen/ds-icons
+```
+
+### 2. Use React components
+
+Import icon components from `@lanekassen/ds-icons`.
 
 ```tsx
 import { PostponeIcon, RemoveDebtIcon } from "@lanekassen/ds-icons";
 
-<PostponeIcon aria-hidden="true" />;
+<PostponeIcon aria-hidden />;
 <RemoveDebtIcon aria-label="Remove debt" />;
 ```
 
-```ts
-import postponeUrl from "@lanekassen/ds-icons/svg/Postpone.svg";
-```
+Components accept standard SVG props. They are `1em` in size and use
+`currentColor`, so size and color follow the surrounding text.
 
-Components accept standard SVG props without custom `title` or `titleId` props.
-They default to `1em` dimensions and preserve the source `currentColor` fill,
-so size and color can follow the surrounding text. Raw SVG files are
-published as optimized in `svg/`.
+### 3. Or use SVG files
+
+SVG files can be imported from `@lanekassen/ds-icons/svg/`, for example as
+image URLs.
+
+```tsx
+import postponeUrl from "@lanekassen/ds-icons/svg/Postpone.svg";
+
+<img src={postponeUrl} alt="Postpone" />;
+```
 
 ## Accessibility
 
-Raw SVG files do not include default titles because accessible names depend
-on their usage and language. Biome's `noSvgWithoutTitle` rule is disabled for
-SVGs in `svg/` and generated components in `src/generated/`, whose
-accessible names are supplied where they are used. It remains enabled elsewhere.
+Icons do not include a default title, because the accessible name depends on
+how the icon is used and on the language.
 
-When using an SVG as an image, provide meaningful `alt` text, or `alt=""` for
-a decorative image. For inline SVGs, provide an accessible name (for example,
-`role="img"` with `aria-label`) when meaningful, or `aria-hidden="true"` when
-decorative. Icon-only buttons must have an accessible name on the button.
-
-React components default to `role="img"`; this can be overridden through props.
-Provide `aria-label` or `aria-labelledby` for meaningful icons, or
-`aria-hidden="true"` for decorative icons. The default role does not provide
-an accessible name.
+- React components default to `role="img"`, following the same practice as
+  [Aksel icons](https://aksel.nav.no/god-praksis/artikler/tilgjengelig-ikonbruk).
+  Provide `aria-label` or `aria-labelledby` for meaningful icons, or
+  `aria-hidden="true"` for decorative icons.
+- For SVG files used as images, provide meaningful `alt` text, or `alt=""` for
+  decorative images.
+- Icon-only buttons must have an accessible name on the button.
 
 ## Development
 
 Export icons from Figma as SVG and add them to `svg/` using PascalCase
-filenames, for example `Postpone.svg` or `RemoveDebt.svg`. No manual editing
-is needed. Then generate the React components:
+filenames, for example `RemoveDebt.svg`. Then generate the React components:
 
 ```console
-pnpm --filter @lanekassen/ds-icons generate
+$ pnpm --filter @lanekassen/ds-icons generate
 ```
 
-Generation first runs SVGO (configured in `svgo.config.js`), which optimizes
-the SVG files in `svg/` in place. It removes editor metadata and replaces
-all fill and stroke colors with `currentColor`, keeping `none`. Icons are
-therefore monochrome. Avoid masks in source icons, because colors inside masks
-are also replaced; flatten or outline them in Figma before exporting.
-Optimization can be run separately with `pnpm --filter @lanekassen/ds-icons optimize`.
+Commit both the SVG files and the generated files in `src/generated/`. Do not
+edit the generated files manually.
 
-SVGR then generates TypeScript components and named exports in `src/generated/`.
-For example, `Postpone.svg` becomes `PostponeIcon`. Commit both the optimized
-SVG files and the generated files, and do not edit generated files manually.
-Generation replaces the output directory so removed or renamed SVG files do not
-leave stale components. SVGO is disabled inside SVGR because the SVG files are
-already optimized.
+Generation first runs [SVGO](https://svgo.dev/) (configured in
+`svgo.config.js`) to optimize the SVG files in place. It removes editor
+metadata and replaces all fill and stroke colors with `currentColor`, so icons
+are monochrome.
 
-The build and dev commands generate components before starting:
-
-```console
-pnpm --filter @lanekassen/ds-icons build
-pnpm --filter @lanekassen/ds-icons dev
-```
-
-Dev watches the generated TypeScript files. Run `generate` again after changing
-SVG files.
+[SVGR](https://react-svgr.com/) (configured in `svgr.config.js`) then
+replaces `src/generated/` with a component for each SVG file, so removed or
+renamed icons do not leave stale components.

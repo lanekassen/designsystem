@@ -33,10 +33,10 @@
     "access": "public"
   },
   "scripts": {
-    "optimize": "svgo --folder svg --quiet",
-    "generate": "pnpm optimize && rm -rf src/generated && svgr svg --out-dir src/generated && biome check --write src/generated",
     "dev": "tsdown --watch",
-    "build": "pnpm generate && tsc --build && tsdown"
+    "build": "pnpm generate && tsc --build && tsdown",
+    "optimize": "svgo --folder svg",
+    "generate": "pnpm optimize && rm -rf src/generated && svgr svg --out-dir src/generated && biome check --write src/generated"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
