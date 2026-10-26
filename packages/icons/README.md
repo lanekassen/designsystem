@@ -8,8 +8,8 @@ Lånekassen's icons to be used in internal and external applications.
 
 ## Getting Started
 
-The package provides React icon components and the same icons as SVG files.
-Prefer using React components in React apps for consistency and ease of use.
+The package provides icons as React components and SVG files. Prefer using
+React components in React apps for consistency and ease of use.
 
 ### 1. Install the package
 
@@ -28,9 +28,6 @@ import { PostponeIcon, RemoveDebtIcon } from "@lanekassen/ds-icons";
 <RemoveDebtIcon aria-label="Remove debt" />;
 ```
 
-Components accept standard SVG props. They are `1em` in size and use
-`currentColor`, so size and color follow the surrounding text.
-
 ### 3. Or use SVG files
 
 SVG files can be imported from `@lanekassen/ds-icons/svg/` and referenced with
@@ -44,14 +41,21 @@ import postponeIcon from "@lanekassen/ds-icons/svg/Postpone.svg?no-inline";
 </svg>;
 ```
 
-Like the React components, the icons are `1em` in size and use `currentColor`,
-so size and color follow the surrounding text. To use another size, set it on
-the outer `<svg>` and add `width="100%"` and `height="100%"` to `<use>`.
-
 > [!NOTE]
 > `<use>` only loads files from the same origin, and not from `data:` URLs.
 > Make sure your bundler does not inline the file, for example with Vite's
 > `?no-inline` query as shown above.
+
+### 4. Set size and color
+
+Icons are `1em` in size and use `currentColor`, so set `font-size` and `color`
+on the icon or a parent element.
+
+```tsx
+<span style={{ fontSize: "1.5rem", color: "var(--ds-color-accent-text-default)" }}>
+  <PostponeIcon aria-hidden />
+</span>;
+```
 
 ## Accessibility
 

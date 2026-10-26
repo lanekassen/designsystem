@@ -159,6 +159,9 @@ importers:
       '@lanekassen/ds-css':
         specifier: workspace:*
         version: link:../../packages/css
+      '@lanekassen/ds-icons':
+        specifier: workspace:*
+        version: link:../../packages/icons
       '@lanekassen/ds-react':
         specifier: workspace:*
         version: link:../../packages/react
