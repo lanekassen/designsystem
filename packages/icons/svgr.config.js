@@ -9,7 +9,12 @@ export default {
   svgProps: {
     role: "img",
   },
-  svgo: false,
+  // SVG files are already optimized. Only remove the root id used by `<use>`,
+  // so components don't render duplicate ids.
+  svgo: true,
+  svgoConfig: {
+    plugins: [{ name: "removeAttrs", params: { attrs: "svg:id" } }],
+  },
   prettier: false,
   indexTemplate(files) {
     return files

@@ -33,14 +33,25 @@ Components accept standard SVG props. They are `1em` in size and use
 
 ### 3. Or use SVG files
 
-SVG files can be imported from `@lanekassen/ds-icons/svg/`, for example as
-image URLs.
+SVG files can be imported from `@lanekassen/ds-icons/svg/` and referenced with
+`<use>`. Each file has `id="icon"` on its root element.
 
 ```tsx
-import postponeUrl from "@lanekassen/ds-icons/svg/Postpone.svg";
+import postponeIcon from "@lanekassen/ds-icons/svg/Postpone.svg?no-inline";
 
-<img src={postponeUrl} alt="Postpone" />;
+<svg aria-hidden width="1em" height="1em">
+  <use href={`${postponeIcon}#icon`} />
+</svg>;
 ```
+
+Like the React components, the icons are `1em` in size and use `currentColor`,
+so size and color follow the surrounding text. To use another size, set it on
+the outer `<svg>` and add `width="100%"` and `height="100%"` to `<use>`.
+
+> [!NOTE]
+> `<use>` only loads files from the same origin, and not from `data:` URLs.
+> Make sure your bundler does not inline the file, for example with Vite's
+> `?no-inline` query as shown above.
 
 ## Accessibility
 
@@ -51,8 +62,8 @@ how the icon is used and on the language.
   [Aksel icons](https://aksel.nav.no/god-praksis/artikler/tilgjengelig-ikonbruk).
   Provide `aria-label` or `aria-labelledby` for meaningful icons, or
   `aria-hidden="true"` for decorative icons.
-- For SVG files used as images, provide meaningful `alt` text, or `alt=""` for
-  decorative images.
+- For SVG files used with `<use>`, set `aria-hidden` on the outer `<svg>` for
+  decorative icons, or `role="img"` with `aria-label` for meaningful icons.
 - Icon-only buttons must have an accessible name on the button.
 
 ## Development
@@ -69,9 +80,11 @@ edit the generated files manually.
 
 Generation first runs [SVGO](https://svgo.dev/) (configured in
 `svgo.config.js`) to optimize the SVG files in place. It removes editor
-metadata and replaces all fill and stroke colors with `currentColor`, so icons
-are monochrome.
+metadata, replaces all fill and stroke colors with `currentColor`, so icons
+are monochrome, sets `width` and `height` to `1em`, and adds `id="icon"` to
+the root element for `<use>` support.
 
 [SVGR](https://react-svgr.com/) (configured in `svgr.config.js`) then
 replaces `src/generated/` with a component for each SVG file, so removed or
-renamed icons do not leave stale components.
+renamed icons do not leave stale components. SVGR removes the root `id`, so
+components do not render duplicate ids.
