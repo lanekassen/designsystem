@@ -33,14 +33,17 @@
     "access": "public"
   },
   "scripts": {
-    "generate": "rm -rf src/generated && svgr assets --out-dir src/generated && biome check --write src/generated",
+    "optimize": "svgo --folder assets --quiet",
+    "generate": "pnpm optimize && rm -rf src/generated && svgr assets --out-dir src/generated && biome check --write src/generated",
     "dev": "tsdown --watch",
     "build": "pnpm generate && tsc --build && tsdown"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
     "@svgr/cli": "catalog:",
+    "@svgr/core": "catalog:",
     "@types/react": "catalog:",
+    "svgo": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },

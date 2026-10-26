@@ -1,5 +1,7 @@
 import { basename } from "node:path";
 
+// `indexTemplate` is a CLI-only option and is not part of `@svgr/core`'s Config.
+/** @type {import("@svgr/core").Config & { indexTemplate?: (files: { path: string; originalPath: string }[]) => string }} */
 export default {
   typescript: true,
   jsxRuntime: "automatic",

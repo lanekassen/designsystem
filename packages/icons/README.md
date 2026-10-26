@@ -15,7 +15,7 @@ import { PostponeIcon, RemoveDebtIcon } from "@lanekassen/ds-icons";
 Components accept standard SVG props without custom `title` or `titleId` props.
 They default to `1em` dimensions and preserve the source `currentColor` fill,
 so size and color can follow the surrounding text. Raw SVG assets are
-published unchanged.
+published as optimized in `assets/`.
 
 ## Accessibility
 
@@ -36,22 +36,27 @@ an accessible name.
 
 ## Development
 
-Add optimized SVG files to `assets/` using PascalCase filenames, for example
-`Postpone.svg` or `RemoveDebt.svg`. Set fill and stroke colors intended to
-follow text color to `currentColor` directly in the source SVG, keeping `none`
-where appropriate. SVGR does not replace colors during generation.
-
-Then generate the React components:
+Export icons from Figma as SVG and add them to `assets/` using PascalCase
+filenames, for example `Postpone.svg` or `RemoveDebt.svg`. No manual editing
+is needed. Then generate the React components:
 
 ```console
 pnpm --filter @lanekassen/ds-icons generate
 ```
 
-SVGR generates TypeScript components and named exports in `src/generated/`.
-For example, `Postpone.svg` becomes `PostponeIcon`. Commit the generated files;
-do not edit them manually. Generation replaces the output directory so removed
-or renamed assets do not leave stale components. SVGO is disabled during
-generation because source assets are already optimized.
+Generation first runs SVGO (configured in `svgo.config.mjs`), which optimizes
+the SVG files in `assets/` in place. It removes editor metadata and replaces
+all fill and stroke colors with `currentColor`, keeping `none`. Icons are
+therefore monochrome. Avoid masks in source icons, because colors inside masks
+are also replaced; flatten or outline them in Figma before exporting.
+Optimization can be run separately with `pnpm --filter @lanekassen/ds-icons optimize`.
+
+SVGR then generates TypeScript components and named exports in `src/generated/`.
+For example, `Postpone.svg` becomes `PostponeIcon`. Commit both the optimized
+assets and the generated files, and do not edit generated files manually.
+Generation replaces the output directory so removed or renamed assets do not
+leave stale components. SVGO is disabled inside SVGR because the assets are
+already optimized.
 
 The build and dev commands generate components before starting:
 

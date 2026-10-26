@@ -26,6 +26,7 @@ catalog:
   '@storybook/addon-vitest': ^10.6.0
   "@storybook/react-vite": ^10.6.0
   "@svgr/cli": ^8.1.0
+  "@svgr/core": ^8.1.0
   '@tanstack/react-form': ^1.33.5
   "@tsdown/css": ^0.22.14
   '@types/node': ^24.19.0
@@ -41,6 +42,7 @@ catalog:
   react-dom: ^19.3.0
   react-dropzone: ^20.1.2
   storybook: ^10.6.0
+  svgo: ^4.1.0
   tsdown: ^0.22.14
   typedoc: ^0.28.20
   typedoc-plugin-markdown: ^4.13.1
