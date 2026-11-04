@@ -79,7 +79,7 @@ export const Default = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List id="123">
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place} label={place} value={place}>
                 {place}
@@ -110,7 +110,7 @@ export const ControlledSingle = meta.story({
             <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
-              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              <Suggestion.Empty />
               {DATA_PLACES.map((place) => (
                 <Suggestion.Option key={place} label={place} value={place}>
                   {place}
@@ -138,6 +138,54 @@ export const ControlledSingle = meta.story({
   },
 });
 
+export const ControlledCreatable = meta.story({
+  render: (args) => {
+    const [selected, setSelected] = useState<string | undefined>("");
+
+    return (
+      <>
+        <Field>
+          <Label>Velg destinasjon</Label>
+          <Suggestion
+            {...(args as SuggestionSingleProps)}
+            selected={selected}
+            onSelectedChange={(item) => setSelected(item?.value)}
+          >
+            <Suggestion.Input />
+            <Suggestion.Toggle />
+            <Suggestion.Clear />
+            <Suggestion.List>
+              <Suggestion.Empty />
+              {DATA_PLACES.map((place) => (
+                <Suggestion.Option key={place} label={place} value={place}>
+                  {place}
+                  <div>Kommune</div>
+                </Suggestion.Option>
+              ))}
+            </Suggestion.List>
+          </Suggestion>
+        </Field>
+        <Divider style={{ marginTop: "var(--ds-size-4)" }} />
+
+        <Paragraph style={{ margin: "var(--ds-size-2) 0" }}>
+          Valgte reisemål: {selected}
+        </Paragraph>
+
+        <Button
+          onClick={() => {
+            setSelected("Sogndal");
+          }}
+        >
+          Sett reisemål til Sogndal
+        </Button>
+      </>
+    );
+  },
+  args: {
+    creatable: true,
+  },
+});
+
 export const ControlledMultiple = meta.story({
   render: (args) => {
     const [selected, setSelected] = useState<string[]>(["Oslo"]);
@@ -158,7 +206,7 @@ export const ControlledMultiple = meta.story({
             <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
-              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              <Suggestion.Empty />
               {DATA_PLACES.map((place) => (
                 <Suggestion.Option key={place} label={place} value={place}>
                   {place}
@@ -204,7 +252,7 @@ export const ControlledIndependentLabelValue = meta.story({
             <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
-              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              <Suggestion.Empty />
               {DATA_PEOPLE.map(({ label, value }) => (
                 <Suggestion.Option key={value} label={label} value={value}>
                   {label}
@@ -255,7 +303,7 @@ export const CustomFilterAlt1 = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((label) => (
               <Suggestion.Option key={label} value={label.toLowerCase()}>
                 {label}
@@ -287,9 +335,10 @@ export const CustomFilterAlt2 = meta.story({
           <Suggestion.Input
             onInput={({ currentTarget }) => setSelected(currentTarget.value)}
           />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.filter(
               (_, index) => !selected || index === Number(selected) - 1,
             ).map((label) => (
@@ -309,7 +358,7 @@ export const CustomMatching = meta.story({
       const { list, control } = event.currentTarget;
       const value = control?.value.toLowerCase() || "";
 
-      for (const option of list?.options || [])
+      for (const option of Array.from(list?.options || []))
         option.selected = option.value.toLowerCase().startsWith(value); // Setting selected indicates a match
     };
 
@@ -321,7 +370,7 @@ export const CustomMatching = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((label) => (
               <Suggestion.Option key={label}>{label}</Suggestion.Option>
             ))}
@@ -349,7 +398,7 @@ export const AlwaysShowAll = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place}>{place}</Suggestion.Option>
             ))}
@@ -388,10 +437,16 @@ export const FetchExternal = meta.story({
     return (
       <Field lang="en">
         <Label>Search for countries (in english)</Label>
-        <Suggestion {...args} filter={false}>
-          <Suggestion.Input onInput={handleInput} />
+        <Suggestion
+          {...args}
+          filter={false}
+          data-sr-singular="%d country"
+          data-sr-plural="%d countries"
+        >
+          <Suggestion.Input type="search" onInput={handleInput} />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
-          <Suggestion.List singular="%d country" plural="%d countries">
+          <Suggestion.List>
             {value ? (
               <Suggestion.Empty>
                 {options ? (
@@ -436,7 +491,7 @@ export const DefaultValue = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place}>{place}</Suggestion.Option>
             ))}
@@ -457,7 +512,7 @@ export const Multiple = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place}>{place}</Suggestion.Option>
             ))}
@@ -485,7 +540,7 @@ export const InDetails = meta.story({
               <Suggestion.Toggle />
               <Suggestion.Clear />
               <Suggestion.List>
-                <Suggestion.Empty>Tomt</Suggestion.Empty>
+                <Suggestion.Empty />
                 {DATA_PLACES.map((place) => (
                   <Suggestion.Option key={place}>{place}</Suggestion.Option>
                 ))}
@@ -509,7 +564,7 @@ export const AutoPlacementOnXAxis = meta.story({
             <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
-              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              <Suggestion.Empty />
               {DATA_PLACES.map((place) => (
                 <Suggestion.Option key={place}>{place}</Suggestion.Option>
               ))}
@@ -531,9 +586,7 @@ export const Creatable = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>
-              Ingen treff, trykk enter for å legge til
-            </Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place}>{place}</Suggestion.Option>
             ))}

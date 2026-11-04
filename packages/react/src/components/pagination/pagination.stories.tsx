@@ -1,9 +1,6 @@
-import {
-  type UsePaginationProps,
-  usePagination,
-} from "@digdir/designsystemet-react";
 import { useArgs } from "storybook/preview-api";
 import preview from "../../../../../apps/storybook/.storybook/preview";
+import { type UsePaginationProps, usePagination } from "../../";
 import { Pagination } from "../";
 
 const meta = preview.meta({

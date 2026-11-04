@@ -20,7 +20,7 @@ export const Default = meta.story({
         <Avatar aria-label="Navn">{person1Img}</Avatar>
       </li>
       <li>
-        <Avatar aria-label="Navn" initials="sm" />
+        <Avatar aria-label="Navn">sm</Avatar>
       </li>
       <li>
         <Avatar aria-label="Navn">Ry</Avatar>
@@ -37,7 +37,7 @@ export const WithTooltip = meta.story({
       <AvatarStack {...args}>
         <li>
           <Tooltip content="Ola Nordmann">
-            <Avatar aria-label="Navn" initials="ry" />
+            <Avatar aria-label="Navn">ON</Avatar>
           </Tooltip>
         </li>
         <li>

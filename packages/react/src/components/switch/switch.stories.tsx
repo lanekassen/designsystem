@@ -17,7 +17,7 @@ export const Default = meta.story({
 });
 
 export const Checked = meta.story({
-  ...Default.input,
+  render: (args) => <Switch {...args} />,
   args: { label: "Switch", checked: true },
 });
 

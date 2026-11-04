@@ -1,4 +1,4 @@
-import { BriefcaseIcon } from "@navikt/aksel-icons";
+import { BriefcaseIcon, PersonIcon } from "@navikt/aksel-icons";
 import preview from "../../../../../apps/storybook/.storybook/preview";
 import { person2Img } from "../../../stories/constants";
 
@@ -22,8 +22,6 @@ const meta = preview.meta({
 export const Default = meta.story({
   args: {
     "aria-label": "Ola Nordmann",
-    variant: "circle",
-    children: "",
   },
 });
 
@@ -31,13 +29,25 @@ export const NoName = meta.story(() => <Avatar aria-label="Ola" />);
 
 export const Sizes = meta.story(() => (
   <>
-    <Avatar data-size="xs" aria-label="extra small" initials="xs" />
+    <Avatar data-size="xs" aria-label="extra small">
+      xs
+    </Avatar>
     <Avatar data-size="xs" aria-label="extra small" />
-    <Avatar data-size="sm" aria-label="small" initials="sm" />
+    <Avatar data-size="xs" aria-label="extra small" />
+    <Avatar data-size="sm" aria-label="small">
+      sm
+    </Avatar>
     <Avatar data-size="sm" aria-label="small" />
-    <Avatar data-size="md" aria-label="medium" initials="md" />
+    <Avatar data-size="sm" aria-label="small" />
+    <Avatar data-size="md" aria-label="medium">
+      md
+    </Avatar>
     <Avatar data-size="md" aria-label="medium" />
-    <Avatar data-size="lg" aria-label="large" initials="lg" />
+    <Avatar data-size="md" aria-label="medium" />
+    <Avatar data-size="lg" aria-label="large">
+      lg
+    </Avatar>
+    <Avatar data-size="lg" aria-label="large" />
     <Avatar data-size="lg" aria-label="large" />
   </>
 ));
@@ -95,7 +105,17 @@ export const InDropdown = meta.story({
 });
 
 export const AsLink = meta.story(() => (
-  <a href="#link">
-    <Avatar aria-label="Ola Nordmann" />
-  </a>
+  <Avatar aria-label="Ola Nordmann" asChild>
+    <a href="#link">
+      <PersonIcon aria-hidden />
+    </a>
+  </Avatar>
+));
+
+export const AsButton = meta.story(() => (
+  <Avatar aria-label="Ola Nordmann" asChild>
+    <button type="button">
+      <PersonIcon aria-hidden />
+    </button>
+  </Avatar>
 ));

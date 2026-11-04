@@ -77,7 +77,9 @@ export const InTabs = meta.story(() => (
         <Badge count={2} data-color="accent" />
       </Tabs.Tab>
     </Tabs.List>
-    <Tabs.Panel value="value1">Profil</Tabs.Panel>
+    <Tabs.Panel value="value1">content 1</Tabs.Panel>
+    <Tabs.Panel value="value2">content 2</Tabs.Panel>
+    <Tabs.Panel value="value3">content 3</Tabs.Panel>
   </Tabs>
 ));
 
@@ -151,7 +153,6 @@ export const Variants = meta.story({
 
 export const Bullet = meta.story(() => (
   <Paragraph>
-    <Badge data-color="success" />
-    Aktiv
+    <Badge data-color="success" /> Aktiv
   </Paragraph>
 ));

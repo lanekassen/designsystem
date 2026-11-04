@@ -16,9 +16,7 @@ export const Default = meta.story({
       <Paragraph>
         For å vise skiplinken, tab til dette eksempelet, eller klikk inni
         eksempelet og trykk <kbd>Tab</kbd>.
-        <SkipLink {...args} href="#main-content">
-          Hopp til hovedinnhold
-        </SkipLink>
+        <SkipLink {...args} />
       </Paragraph>
       <main id="main-content" tabIndex={-1}>
         Region som kan motta fokus fra skiplink.
@@ -27,13 +25,15 @@ export const Default = meta.story({
   ),
 });
 
-export const Tabbed = meta.story(() => (
-  <div>
-    For å vise skiplinken, tab til dette eksempelet, eller klikk inni eksempelet
-    og trykk <kbd>Tab</kbd>.
-    <SkipLink href="#main-content">Hopp til hovedinnhold</SkipLink>
-    <main id="main-content" tabIndex={-1}>
-      Region som kan motta fokus fra skiplink.
-    </main>
-  </div>
-));
+export const Tabbed = meta.story({
+  render: () => (
+    <div>
+      For å vise skiplinken, tab til dette eksempelet, eller klikk inni
+      eksempelet og trykk <kbd>Tab</kbd>.
+      <SkipLink href="#main-content">Hopp til hovedinnhold</SkipLink>
+      <main id="main-content" tabIndex={-1}>
+        Region som kan motta fokus fra skiplink.
+      </main>
+    </div>
+  ),
+});

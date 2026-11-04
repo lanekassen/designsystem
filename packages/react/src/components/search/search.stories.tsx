@@ -18,7 +18,7 @@ export const Default = meta.story({
 });
 
 export const Controlled = meta.story(() => {
-  const [value, setValue] = useState<string>();
+  const [value, setValue] = useState("");
   return (
     <>
       <Search>

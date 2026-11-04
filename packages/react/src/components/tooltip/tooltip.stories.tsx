@@ -15,7 +15,7 @@ const meta = preview.meta({
 });
 
 export const Default = meta.story({
-  render: (args) => (
+  render: ({ children, ...args }) => (
     <Tooltip {...args}>
       <Button icon>
         <FilesIcon aria-hidden />

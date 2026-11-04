@@ -71,7 +71,7 @@ const meta = preview.meta({
   },
 });
 
-export const Preview = meta.story({
+export const Default = meta.story({
   render: (args) => {
     const { getRadioProps } = useRadioGroup({
       ...args,

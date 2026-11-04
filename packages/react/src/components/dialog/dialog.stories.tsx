@@ -285,21 +285,27 @@ export const DialogWithSuggestion = meta.story({
   },
 });
 
-export const DialogNonModal = meta.story(() => {
-  return (
-    <>
-      <Button command="--show-non-modal" commandfor="my-non-modal">
-        Open Dialog
-      </Button>
-      <Dialog id="my-non-modal">
-        <Heading>Non-modal dialog</Heading>
-        <Paragraph>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-          doloremque obcaecati assumenda odio ducimus sunt et.
-        </Paragraph>
-      </Dialog>
-    </>
-  );
+export const DialogNonModal = meta.story({
+  render: () => {
+    return (
+      <>
+        <Button command="--show-non-modal" commandfor="my-non-modal">
+          Open Dialog
+        </Button>
+        <Dialog id="my-non-modal">
+          <Heading>Non-modal dialog</Heading>
+          <Paragraph>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+            doloremque obcaecati assumenda odio ducimus sunt et.
+          </Paragraph>
+        </Dialog>
+      </>
+    );
+  },
+
+  parameters: {
+    customStyles: { padding: "var(--ds-size-18)" },
+  },
 });
 
 export const DialogNonModalTrigger = meta.story(() => (
@@ -318,27 +324,21 @@ export const DialogNonModalTrigger = meta.story(() => (
   </Dialog.TriggerContext>
 ));
 
-export const DialogNonModalRef = meta.story({
-  render: () => {
-    const dialogRef = useRef<HTMLDialogElement>(null);
+export const DialogNonModalRef = meta.story(() => {
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
-    return (
-      <>
-        <Button onClick={() => dialogRef.current?.show()}>Open Dialog</Button>
-        <Dialog ref={dialogRef} modal={false}>
-          <Heading>Non-modal dialog</Heading>
-          <Paragraph>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-            doloremque obcaecati assumenda odio ducimus sunt et.
-          </Paragraph>
-        </Dialog>
-      </>
-    );
-  },
-
-  parameters: {
-    customStyles: { padding: "var(--ds-size-18)" },
-  },
+  return (
+    <>
+      <Button onClick={() => dialogRef.current?.show()}>Open Dialog</Button>
+      <Dialog ref={dialogRef} modal={false}>
+        <Heading>Non-modal dialog</Heading>
+        <Paragraph>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+          doloremque obcaecati assumenda odio ducimus sunt et.
+        </Paragraph>
+      </Dialog>
+    </>
+  );
 });
 
 export const DialogPlacementTop = meta.story(() => {

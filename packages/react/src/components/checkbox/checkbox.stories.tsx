@@ -1,11 +1,11 @@
+import { FloppydiskIcon, PencilIcon } from "@navikt/aksel-icons";
+import { useMemo, useState } from "react";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import {
   type UseCheckboxGroupProps,
   useCheckboxGroup,
   usePagination,
-} from "@digdir/designsystemet-react";
-import { FloppydiskIcon, PencilIcon } from "@navikt/aksel-icons";
-import { useMemo, useState } from "react";
-import preview from "../../../../../apps/storybook/.storybook/preview";
+} from "../../";
 import {
   Button,
   Checkbox,
@@ -109,7 +109,7 @@ export const WithError = meta.story({
   args: {
     disabled: false,
     name: "my-error",
-    error: "Du må velge minst to kontaktalternativ", // TODO: useCheckbox when hook is ready
+    error: "Du må velge minst to kontaktalternativ",
   },
 });
 type Choices = {
@@ -513,7 +513,12 @@ export const Outline = meta.story(() => (
         description="description text"
         value="description"
       />
-      <Checkbox variant="outline" label="Checked" value="checked" checked />
+      <Checkbox
+        variant="outline"
+        label="Checked"
+        value="checked"
+        defaultChecked
+      />
       <Checkbox
         variant="outline"
         label="with error state"
@@ -531,7 +536,7 @@ export const Outline = meta.story(() => (
         disabled
         label="disabled"
         value="disabled"
-        checked
+        defaultChecked
       />
       <Checkbox
         variant="outline"
@@ -544,7 +549,7 @@ export const Outline = meta.story(() => (
         readOnly
         label="readonly checked"
         value="readonly"
-        checked
+        defaultChecked
       />
     </Fieldset>
   </>

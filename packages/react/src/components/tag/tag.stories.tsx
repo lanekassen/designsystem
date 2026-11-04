@@ -1,8 +1,7 @@
 import { ParagraphIcon, RobotIcon } from "@navikt/aksel-icons";
 import preview from "../../../../../apps/storybook/.storybook/preview";
 import { severityColors, themeColors } from "../../../stories/constants";
-import type { TagProps } from "../";
-import { Tag } from "../";
+import { Tag, type TagProps } from "../";
 
 const meta = preview.meta({
   title: "Designsystem/Tag",

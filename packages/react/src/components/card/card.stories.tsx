@@ -4,8 +4,7 @@ import {
   severityColors,
   themeColors,
 } from "../../../stories/constants";
-import type { CardProps } from "../";
-import { Card, Heading, Link, Paragraph } from "../";
+import { Card, type CardProps, Heading, Link, Paragraph } from "../";
 
 const meta = preview.meta({
   title: "Designsystem/Card",

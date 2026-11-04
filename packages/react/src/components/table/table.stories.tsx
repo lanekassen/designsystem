@@ -1,8 +1,13 @@
-import { useCheckboxGroup } from "@digdir/designsystemet-react";
 import { useState } from "react";
 import preview from "../../../../../apps/storybook/.storybook/preview";
-import type { TableHeaderCellProps } from "../";
-import { Checkbox, Table, Textfield } from "../";
+
+import {
+  Checkbox,
+  Table,
+  type TableHeaderCellProps,
+  Textfield,
+  useCheckboxGroup,
+} from "../../";
 
 const meta = preview.meta({
   title: "Designsystem/Table",
@@ -202,24 +207,26 @@ export const StickyHeader = meta.story({
   render: (args) => {
     const rows = Array.from({ length: 50 }, (_, i) => i + 1);
     return (
-      <Table {...args}>
-        <Table.Head>
-          <Table.Row>
-            <Table.HeaderCell>Header 1</Table.HeaderCell>
-            <Table.HeaderCell>Header 2</Table.HeaderCell>
-            <Table.HeaderCell>Header 3</Table.HeaderCell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          {rows.map((row) => (
-            <Table.Row key={row}>
-              <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-              <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-              <Table.Cell>{`Cell ${row}3`}</Table.Cell>
+      <div style={{ height: 280, overflow: "auto" }}>
+        <Table {...args}>
+          <Table.Head>
+            <Table.Row>
+              <Table.HeaderCell>Header 1</Table.HeaderCell>
+              <Table.HeaderCell>Header 2</Table.HeaderCell>
+              <Table.HeaderCell>Header 3</Table.HeaderCell>
             </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
+          </Table.Head>
+          <Table.Body>
+            {rows.map((row) => (
+              <Table.Row key={row}>
+                <Table.Cell>{`Cell ${row}1`}</Table.Cell>
+                <Table.Cell>{`Cell ${row}2`}</Table.Cell>
+                <Table.Cell>{`Cell ${row}3`}</Table.Cell>
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table>
+      </div>
     );
   },
 

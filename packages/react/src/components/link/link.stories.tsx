@@ -24,7 +24,7 @@ const meta = preview.meta({
 export const Default = meta.story();
 
 export const InText = meta.story({
-  render: (args) => (
+  render: ({ children, ...args }) => (
     <>
       <Paragraph>
         Vi bruker komponenter fra{" "}
