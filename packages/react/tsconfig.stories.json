@@ -3,6 +3,9 @@
   "compilerOptions": {
     "rootDir": "../../",
     "outDir": ".typescript-cache",
+    "paths": {
+      "@lanekassen/ds-react": ["./src/index.ts"]
+    },
 
     "types": ["@lanekassen/ds-css/theme"]
   },
