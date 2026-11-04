@@ -1,49 +1,47 @@
-import type { Meta, StoryFn } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 
-import { Chip } from "../";
+import { Chip, type ChipButtonProps, type ChipRemovableProps } from "../";
 
-const meta: Meta<typeof Chip.Radio> = {
+const meta = preview.meta({
   title: "Designsystem/Chip",
   component: Chip.Radio,
   parameters: {
     customStyles: { display: "flex", gap: "var(--ds-size-2)" },
   },
-};
+});
 
-export default meta;
+export const Default = meta.story({
+  render: (args) => (
+    <>
+      <Chip.Radio {...args} name="my-radio" value="nynorsk" defaultChecked>
+        Nynorsk
+      </Chip.Radio>
+      <Chip.Radio {...args} name="my-radio" value="bokmål">
+        Bokmål
+      </Chip.Radio>
+    </>
+  ),
+});
 
-export const Default: StoryFn<typeof Chip.Radio> = (args) => (
-  <>
-    <Chip.Radio {...args} name="my-radio" value="nynorsk" defaultChecked>
-      Nynorsk
-    </Chip.Radio>
-    <Chip.Radio {...args} name="my-radio" value="bokmål">
-      Bokmål
-    </Chip.Radio>
-  </>
-);
+export const Checkbox = meta.story({
+  render: (args) => <Chip.Checkbox {...args}>Nynorsk</Chip.Checkbox>,
+});
 
-export const Checkbox: StoryFn<typeof Chip.Checkbox> = (args) => (
-  <Chip.Checkbox {...args}>Nynorsk</Chip.Checkbox>
-);
+export const Removable = meta.story({
+  render: (args) => (
+    <Chip.Removable {...(args as ChipRemovableProps)}>Norge</Chip.Removable>
+  ),
+});
 
-export const Removable: StoryFn<typeof Chip.Removable> = (args) => (
-  <Chip.Removable {...args}>Norge</Chip.Removable>
-);
+export const Button = meta.story({
+  render: (args) => (
+    <Chip.Button {...(args as ChipButtonProps)}>Tøm alle filtre</Chip.Button>
+  ),
 
-Removable.args = {
-  "aria-label": "Slett Norge",
-};
-
-export const Button: StoryFn<typeof Chip.Button> = (args) => (
-  <>
-    <Chip.Button {...args}>Tøm alle filtre</Chip.Button>
-  </>
-);
-
-Button.parameters = {
-  customStyles: {
-    flexWrap: "wrap",
-    justifyContent: "center",
+  parameters: {
+    customStyles: {
+      flexWrap: "wrap",
+      justifyContent: "center",
+    },
   },
-};
+});

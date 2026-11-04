@@ -3,6 +3,9 @@
   "compilerOptions": {
     "rootDir": "../../",
     "outDir": ".typescript-cache",
+    "paths": {
+      "@lanekassen/ds-react": ["./src/index.ts"]
+    },
 
     "types": ["@lanekassen/ds-css/theme"]
   },
@@ -10,7 +13,7 @@
     "stories/**/*",
     "src/**/*.stories.tsx",
     "react-types.d.ts",
-    "../../apps/storybook/.storybook/docs/decorator.tsx",
+    "../../apps/storybook/.storybook/**/*",
     "../../packages/css/designsystemet.config.json"
   ],
   "references": [{ "path": "tsconfig.lib.json" }]

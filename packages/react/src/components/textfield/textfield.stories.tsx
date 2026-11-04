@@ -1,15 +1,13 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Button, Divider, Paragraph, Tag, Textfield } from "../";
 
-type Story = StoryObj<typeof Textfield>;
-
-export default {
+const meta = preview.meta({
   title: "Designsystem/Textfield",
   component: Textfield,
-} as Meta;
+});
 
-export const Default: Story = {
+export const Default = meta.story({
   args: {
     label: "Label",
     disabled: false,
@@ -19,32 +17,32 @@ export const Default: Story = {
     error: "",
     counter: 0,
   },
-};
+});
 
-export const Rows: Story = {
+export const Rows = meta.story({
   args: {
     label: "Label",
     multiline: true,
     rows: 4,
   },
-};
+});
 
-export const Affix: Story = {
+export const Affix = meta.story({
   args: {
     prefix: "NOK",
     suffix: "pr. mnd",
     label: "Hvor mange kroner koster det per måned?",
   },
-};
+});
 
-export const Counter: Story = {
+export const Counter = meta.story({
   args: {
     counter: 10,
     label: "Hvor mange kroner koster det per måned?",
   },
-};
+});
 
-export const Controlled: StoryFn<typeof Textfield> = () => {
+export const Controlled = meta.story(() => {
   const [value, setValue] = useState<string>("Ost");
   return (
     <>
@@ -63,9 +61,9 @@ export const Controlled: StoryFn<typeof Textfield> = () => {
       <Button onClick={() => setValue("Kake")}>Jeg vil ha Kake</Button>
     </>
   );
-};
+});
 
-export const DateInputs: StoryFn<typeof Textfield> = () => {
+export const DateInputs = meta.story(() => {
   return (
     <>
       <Textfield label="text" type="text" />
@@ -77,9 +75,9 @@ export const DateInputs: StoryFn<typeof Textfield> = () => {
       <Textfield label="week" type="week" />
     </>
   );
-};
+});
 
-export const Required: Story = {
+export const Required = meta.story({
   args: {
     label: (
       <>
@@ -94,4 +92,4 @@ export const Required: Story = {
     ),
     required: true,
   },
-};
+});

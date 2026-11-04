@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import {
   severityColors,
   sizenames,
@@ -7,15 +7,12 @@ import {
 import { Label } from "../../";
 import { Progress } from "./progress";
 
-const meta = {
+const meta = preview.meta({
   title: "Designsystem/Progress",
   component: Progress,
-} satisfies Meta;
+});
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
+export const Default = meta.story({
   args: {
     value: 33,
     max: 100,
@@ -26,18 +23,18 @@ export const Default: Story = {
       <Progress {...args} />
     </Label>
   ),
-};
+});
 
-export const Indeterminate: Story = {
+export const Indeterminate = meta.story({
   render: ({ ...args }) => (
     <Label>
       Ubestemt
       <Progress {...args} />
     </Label>
   ),
-};
+});
 
-export const Colors: Story = {
+export const Colors = meta.story({
   args: {
     value: 50,
   },
@@ -51,9 +48,9 @@ export const Colors: Story = {
       ))}
     </div>
   ),
-};
+});
 
-export const Sizes: Story = {
+export const Sizes = meta.story({
   args: {
     value: 50,
   },
@@ -69,4 +66,4 @@ export const Sizes: Story = {
       ))}
     </div>
   ),
-};
+});

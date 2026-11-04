@@ -1,19 +1,22 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useArgs } from "storybook/preview-api";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Pagination, type UsePaginationProps, usePagination } from "../..";
 
-const meta = {
+const UsePagination = (_props: UsePaginationProps) => (
+  <Pagination aria-label="label" />
+);
+
+const meta = preview.meta({
   tags: ["!dev"],
   parameters: {
     chromatic: {
       disableSnapshot: true,
     },
   },
-} satisfies Meta;
+  component: UsePagination,
+});
 
-export default meta;
-
-export const Default: StoryObj<UsePaginationProps> = {
+export const Default = meta.story({
   render: (args) => {
     const [, updateArgs] = useArgs();
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
@@ -53,4 +56,4 @@ export const Default: StoryObj<UsePaginationProps> = {
     totalPages: 10,
     showPages: 7,
   },
-};
+});

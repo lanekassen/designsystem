@@ -1,9 +1,9 @@
 import { ChevronDownIcon, ChevronUpIcon, LinkIcon } from "@navikt/aksel-icons";
-import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useState } from "react";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Button, Dialog, Dropdown } from "../";
 
-const meta: Meta<typeof Dropdown> = {
+const meta = preview.meta({
   title: "Designsystem/Dropdown",
   component: Dropdown,
   parameters: {
@@ -11,81 +11,83 @@ const meta: Meta<typeof Dropdown> = {
       disableSnapshot: false,
     },
   },
-};
+});
 
-export default meta;
+export const Default = meta.story({
+  render: (args) => {
+    return (
+      <Dropdown.TriggerContext>
+        <Dropdown.Trigger data-color={args["data-color"]}>
+          Dropdown
+        </Dropdown.Trigger>
+        <Dropdown {...args}>
+          <Dropdown.Heading>First heading</Dropdown.Heading>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button>Button 1.1</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button>Button 1.2</Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+          <Dropdown.Heading>Second heading</Dropdown.Heading>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button>Button 2.1</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button>Button 2.2</Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </Dropdown.TriggerContext>
+    );
+  },
 
-export const Default: StoryFn<typeof Dropdown> = (args) => {
-  return (
-    <Dropdown.TriggerContext>
-      <Dropdown.Trigger data-color={args["data-color"]}>
-        Dropdown
-      </Dropdown.Trigger>
-      <Dropdown {...args}>
-        <Dropdown.Heading>First heading</Dropdown.Heading>
-        <Dropdown.List>
-          <Dropdown.Item>
-            <Dropdown.Button>Button 1.1</Dropdown.Button>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <Dropdown.Button>Button 1.2</Dropdown.Button>
-          </Dropdown.Item>
-        </Dropdown.List>
-        <Dropdown.Heading>Second heading</Dropdown.Heading>
-        <Dropdown.List>
-          <Dropdown.Item>
-            <Dropdown.Button>Button 2.1</Dropdown.Button>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <Dropdown.Button>Button 2.2</Dropdown.Button>
-          </Dropdown.Item>
-        </Dropdown.List>
-      </Dropdown>
-    </Dropdown.TriggerContext>
-  );
-};
+  args: {
+    placement: "bottom-end",
+  },
+});
 
-Default.args = {
-  placement: "bottom-end",
-};
+export const Icons = meta.story({
+  render: (args) => {
+    return (
+      <Dropdown.TriggerContext>
+        <Dropdown.Trigger>Dropdown</Dropdown.Trigger>
+        <Dropdown {...args}>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button asChild>
+                <a
+                  href="https://github.com/digdir/designsystemet"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <LinkIcon aria-hidden />
+                  Github
+                </a>
+              </Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button asChild>
+                <a
+                  href="https://designsystemet.no"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <LinkIcon aria-hidden />
+                  Designsystemet.no
+                </a>
+              </Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </Dropdown.TriggerContext>
+    );
+  },
+});
 
-export const Icons: StoryFn<typeof Dropdown> = (args) => {
-  return (
-    <Dropdown.TriggerContext>
-      <Dropdown.Trigger>Dropdown</Dropdown.Trigger>
-      <Dropdown {...args}>
-        <Dropdown.List>
-          <Dropdown.Item>
-            <Dropdown.Button asChild>
-              <a
-                href="https://github.com/digdir/designsystemet"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LinkIcon aria-hidden />
-                Github
-              </a>
-            </Dropdown.Button>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <Dropdown.Button asChild>
-              <a
-                href="https://designsystemet.no"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LinkIcon aria-hidden />
-                Designsystemet.no
-              </a>
-            </Dropdown.Button>
-          </Dropdown.Item>
-        </Dropdown.List>
-      </Dropdown>
-    </Dropdown.TriggerContext>
-  );
-};
-
-export const Controlled: StoryFn<typeof Dropdown> = () => {
+export const Controlled = meta.story(() => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -114,9 +116,9 @@ export const Controlled: StoryFn<typeof Dropdown> = () => {
       </Dropdown>
     </Dropdown.TriggerContext>
   );
-};
+});
 
-export const ControlledExternalTrigger: StoryFn<typeof Dropdown> = () => {
+export const ControlledExternalTrigger = meta.story(() => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -136,9 +138,9 @@ export const ControlledExternalTrigger: StoryFn<typeof Dropdown> = () => {
       </Dropdown>
     </>
   );
-};
+});
 
-export const WithoutTrigger: StoryFn<typeof Dropdown> = () => {
+export const WithoutTrigger = meta.story(() => {
   return (
     <>
       <Button popovertarget="dropdown">Dropdown</Button>
@@ -151,26 +153,28 @@ export const WithoutTrigger: StoryFn<typeof Dropdown> = () => {
       </Dropdown>
     </>
   );
-};
+});
 
-export const WithNestedDialog: StoryFn<typeof Dropdown> = (args) => {
-  return (
-    <Dropdown.TriggerContext>
-      <Dropdown.Trigger data-color={args["data-color"]}>
-        Dropdown
-      </Dropdown.Trigger>
-      <Dropdown {...args}>
-        <Dropdown.List>
-          <Dropdown.Item>
-            <Dialog.TriggerContext>
-              <Dialog.Trigger asChild>
-                <Dropdown.Button>Dialog</Dropdown.Button>
-              </Dialog.Trigger>
-              <Dialog>Min dialog</Dialog>
-            </Dialog.TriggerContext>
-          </Dropdown.Item>
-        </Dropdown.List>
-      </Dropdown>
-    </Dropdown.TriggerContext>
-  );
-};
+export const WithNestedDialog = meta.story({
+  render: (args) => {
+    return (
+      <Dropdown.TriggerContext>
+        <Dropdown.Trigger data-color={args["data-color"]}>
+          Dropdown
+        </Dropdown.Trigger>
+        <Dropdown {...args}>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dialog.TriggerContext>
+                <Dialog.Trigger asChild>
+                  <Dropdown.Button>Dialog</Dropdown.Button>
+                </Dialog.Trigger>
+                <Dialog>Min dialog</Dialog>
+              </Dialog.TriggerContext>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </Dropdown.TriggerContext>
+    );
+  },
+});

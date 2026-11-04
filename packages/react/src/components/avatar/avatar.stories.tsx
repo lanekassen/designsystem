@@ -1,12 +1,10 @@
-import { BriefcaseIcon } from "@navikt/aksel-icons";
-import type { Meta, StoryFn } from "@storybook/react-vite";
+import { BriefcaseIcon, PersonIcon } from "@navikt/aksel-icons";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { person2Img } from "../../../stories/constants";
 
 import { Avatar, Badge, Dropdown } from "../";
 
-type Story = StoryFn<typeof Avatar>;
-
-const meta: Meta<typeof Avatar> = {
+const meta = preview.meta({
   title: "Designsystem/Avatar",
   component: Avatar,
   parameters: {
@@ -19,79 +17,105 @@ const meta: Meta<typeof Avatar> = {
       flexWrap: "wrap",
     },
   },
-};
+});
 
-export default meta;
+export const Default = meta.story({
+  args: {
+    "aria-label": "Ola Nordmann",
+  },
+});
 
-export const Default: Story = (args) => <Avatar {...args} />;
+export const NoName = meta.story(() => <Avatar aria-label="Ola" />);
 
-Default.args = {
-  "aria-label": "Ola Nordmann",
-  variant: "circle",
-  children: "",
-};
-
-export const NoName: Story = () => <Avatar aria-label="Ola" />;
-
-export const Sizes: Story = () => (
+export const Sizes = meta.story(() => (
   <>
-    <Avatar data-size="xs" aria-label="extra small" initials="xs" />
+    <Avatar data-size="xs" aria-label="extra small">
+      xs
+    </Avatar>
     <Avatar data-size="xs" aria-label="extra small" />
-    <Avatar data-size="sm" aria-label="small" initials="sm" />
+    <Avatar data-size="xs" aria-label="extra small" />
+    <Avatar data-size="sm" aria-label="small">
+      sm
+    </Avatar>
     <Avatar data-size="sm" aria-label="small" />
-    <Avatar data-size="md" aria-label="medium" initials="md" />
+    <Avatar data-size="sm" aria-label="small" />
+    <Avatar data-size="md" aria-label="medium">
+      md
+    </Avatar>
     <Avatar data-size="md" aria-label="medium" />
-    <Avatar data-size="lg" aria-label="large" initials="lg" />
+    <Avatar data-size="md" aria-label="medium" />
+    <Avatar data-size="lg" aria-label="large">
+      lg
+    </Avatar>
+    <Avatar data-size="lg" aria-label="large" />
     <Avatar data-size="lg" aria-label="large" />
   </>
-);
+));
 
-export const WithImage: Story = () => (
+export const WithImage = meta.story(() => (
   <Avatar aria-label="Ola Nordmann">{person2Img}</Avatar>
-);
+));
 
-export const InDropdown: Story = () => (
-  <Dropdown.TriggerContext>
-    <Dropdown.Trigger variant="tertiary">
-      <Avatar aria-label="Ola Nordmann" data-size="sm">
-        ON
-      </Avatar>
-      Velg Profil
-    </Dropdown.Trigger>
-    <Dropdown placement="bottom-end" autoPlacement={false} data-size="md" open>
-      <Dropdown.List>
-        <Dropdown.Item>
-          <Dropdown.Button>
-            <Badge.Position overlap="circle">
-              <Badge data-color="danger" data-size="sm"></Badge>
-              <Avatar aria-hidden={true} data-size="xs">
-                ON
+export const InDropdown = meta.story({
+  render: () => (
+    <Dropdown.TriggerContext>
+      <Dropdown.Trigger variant="tertiary">
+        <Avatar aria-label="Ola Nordmann" data-size="sm">
+          ON
+        </Avatar>
+        Velg Profil
+      </Dropdown.Trigger>
+      <Dropdown
+        placement="bottom-end"
+        autoPlacement={false}
+        data-size="md"
+        open
+      >
+        <Dropdown.List>
+          <Dropdown.Item>
+            <Dropdown.Button>
+              <Badge.Position overlap="circle">
+                <Badge data-color="danger" data-size="sm"></Badge>
+                <Avatar aria-hidden={true} data-size="xs">
+                  ON
+                </Avatar>
+              </Badge.Position>
+              Ola Nordmann
+            </Dropdown.Button>
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <Dropdown.Button>
+              <Avatar aria-hidden data-size="xs">
+                <BriefcaseIcon />
               </Avatar>
-            </Badge.Position>
-            Ola Nordmann
-          </Dropdown.Button>
-        </Dropdown.Item>
-        <Dropdown.Item>
-          <Dropdown.Button>
-            <Avatar aria-hidden data-size="xs">
-              <BriefcaseIcon />
-            </Avatar>
-            Høyskolen Kristiania
-          </Dropdown.Button>
-        </Dropdown.Item>
-      </Dropdown.List>
-    </Dropdown>
-  </Dropdown.TriggerContext>
-);
-InDropdown.parameters = {
-  layout: "fullscreen",
-  customStyles: {
-    height: "320px",
-  },
-};
+              Høyskolen Kristiania
+            </Dropdown.Button>
+          </Dropdown.Item>
+        </Dropdown.List>
+      </Dropdown>
+    </Dropdown.TriggerContext>
+  ),
 
-export const AsLink: Story = () => (
-  <a href="#link">
-    <Avatar aria-label="Ola Nordmann" />
-  </a>
-);
+  parameters: {
+    layout: "fullscreen",
+    customStyles: {
+      height: "320px",
+    },
+  },
+});
+
+export const AsLink = meta.story(() => (
+  <Avatar aria-label="Ola Nordmann" asChild>
+    <a href="#link">
+      <PersonIcon aria-hidden />
+    </a>
+  </Avatar>
+));
+
+export const AsButton = meta.story(() => (
+  <Avatar aria-label="Ola Nordmann" asChild>
+    <button type="button">
+      <PersonIcon aria-hidden />
+    </button>
+  </Avatar>
+));

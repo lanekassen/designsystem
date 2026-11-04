@@ -1,5 +1,5 @@
-import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useRef, useState } from "react";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import {
   Button,
   Dialog,
@@ -11,7 +11,7 @@ import {
   Textfield,
 } from "../";
 
-const meta: Meta<typeof Dialog> = {
+const meta = preview.meta({
   title: "Designsystem/Dialog",
   component: Dialog,
   parameters: {
@@ -27,41 +27,18 @@ const meta: Meta<typeof Dialog> = {
       },
     },
   },
-};
+});
 
-export default meta;
-
-export const Default: StoryFn<typeof Dialog> = (args) => (
-  <Dialog.TriggerContext>
-    <Dialog.Trigger
-      data-color={args["data-color"]}
-      data-size={args["data-size"]}
-    >
-      Open Dialog
-    </Dialog.Trigger>
-    <Dialog {...args} onClose={console.log}>
-      <Heading style={{ marginBottom: "var(--ds-size-2)" }}>
-        Dialog header
-      </Heading>
-      <Paragraph style={{ marginBottom: "var(--ds-size-2)" }}>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-        doloremque obcaecati assumenda odio ducimus sunt et.
-      </Paragraph>
-      <Paragraph data-size="sm">Dialog footer</Paragraph>
-    </Dialog>
-  </Dialog.TriggerContext>
-);
-
-export const WithoutDialogTriggerContext: StoryFn<typeof Dialog> = (args) => {
-  const dialogRef = useRef<HTMLDialogElement>(null);
-
-  return (
-    <>
-      <Button onClick={() => dialogRef.current?.showModal()}>
-        Open Dialog with ref
-      </Button>
-      <Dialog {...args} ref={dialogRef}>
-        <Paragraph data-size="sm">Dialog subtittel</Paragraph>
+export const Default = meta.story({
+  render: (args) => (
+    <Dialog.TriggerContext>
+      <Dialog.Trigger
+        data-color={args["data-color"]}
+        data-size={args["data-size"]}
+      >
+        Open Dialog
+      </Dialog.Trigger>
+      <Dialog {...args} onClose={console.log}>
         <Heading style={{ marginBottom: "var(--ds-size-2)" }}>
           Dialog header
         </Heading>
@@ -69,36 +46,63 @@ export const WithoutDialogTriggerContext: StoryFn<typeof Dialog> = (args) => {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
           doloremque obcaecati assumenda odio ducimus sunt et.
         </Paragraph>
-        Dialog footer
+        <Paragraph data-size="sm">Dialog footer</Paragraph>
       </Dialog>
-    </>
-  );
-};
+    </Dialog.TriggerContext>
+  ),
+});
 
-export const DialogWithOpenProp: StoryFn<typeof Dialog> = (args) => {
-  const [open, setOpen] = useState(false);
+export const WithoutDialogTriggerContext = meta.story({
+  render: (args) => {
+    const dialogRef = useRef<HTMLDialogElement>(null);
 
-  return (
-    <>
-      <Button onClick={() => setOpen((prev) => !prev)}>
-        Open Dialog with prop
-      </Button>
-      <Dialog {...args} open={open} onClose={() => setOpen(false)}>
-        <Paragraph data-size="sm">Dialog subtittel</Paragraph>
-        <Heading style={{ marginBottom: "var(--ds-size-2)" }}>
-          Dialog header
-        </Heading>
-        <Paragraph style={{ marginBottom: "var(--ds-size-2)" }}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-          doloremque obcaecati assumenda odio ducimus sunt et.
-        </Paragraph>
-        Dialog footer
-      </Dialog>
-    </>
-  );
-};
+    return (
+      <>
+        <Button onClick={() => dialogRef.current?.showModal()}>
+          Open Dialog with ref
+        </Button>
+        <Dialog {...args} ref={dialogRef}>
+          <Paragraph data-size="sm">Dialog subtittel</Paragraph>
+          <Heading style={{ marginBottom: "var(--ds-size-2)" }}>
+            Dialog header
+          </Heading>
+          <Paragraph style={{ marginBottom: "var(--ds-size-2)" }}>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+            doloremque obcaecati assumenda odio ducimus sunt et.
+          </Paragraph>
+          Dialog footer
+        </Dialog>
+      </>
+    );
+  },
+});
 
-export const BackdropClosedbyAny: StoryFn<typeof Dialog> = () => {
+export const DialogWithOpenProp = meta.story({
+  render: (args) => {
+    const [open, setOpen] = useState(false);
+
+    return (
+      <>
+        <Button onClick={() => setOpen((prev) => !prev)}>
+          Open Dialog with prop
+        </Button>
+        <Dialog {...args} open={open} onClose={() => setOpen(false)}>
+          <Paragraph data-size="sm">Dialog subtittel</Paragraph>
+          <Heading style={{ marginBottom: "var(--ds-size-2)" }}>
+            Dialog header
+          </Heading>
+          <Paragraph style={{ marginBottom: "var(--ds-size-2)" }}>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+            doloremque obcaecati assumenda odio ducimus sunt et.
+          </Paragraph>
+          Dialog footer
+        </Dialog>
+      </>
+    );
+  },
+});
+
+export const BackdropClosedbyAny = meta.story(() => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   return (
@@ -116,9 +120,9 @@ export const BackdropClosedbyAny: StoryFn<typeof Dialog> = () => {
       </Dialog>
     </Dialog.TriggerContext>
   );
-};
+});
 
-export const WithHeaderAndFooter: StoryFn<typeof Dialog> = () => (
+export const WithHeaderAndFooter = meta.story(() => (
   <Dialog.TriggerContext>
     <Dialog.Trigger>Open Dialog</Dialog.Trigger>
     <Dialog>
@@ -153,9 +157,9 @@ export const WithHeaderAndFooter: StoryFn<typeof Dialog> = () => (
       <Dialog.Block>Og over footer</Dialog.Block>
     </Dialog>
   </Dialog.TriggerContext>
-);
+));
 
-export const DialogWithForm: StoryFn<typeof Dialog> = () => {
+export const DialogWithForm = meta.story(() => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [input, setInput] = useState("");
 
@@ -200,9 +204,9 @@ export const DialogWithForm: StoryFn<typeof Dialog> = () => {
       </Dialog>
     </Dialog.TriggerContext>
   );
-};
+});
 
-export const DialogWithMaxWidth: StoryFn<typeof Dialog> = () => (
+export const DialogWithMaxWidth = meta.story(() => (
   <Dialog.TriggerContext>
     <Dialog.Trigger>Open Dialog</Dialog.Trigger>
     <Dialog style={{ maxWidth: 1200 }}>
@@ -215,7 +219,7 @@ export const DialogWithMaxWidth: StoryFn<typeof Dialog> = () => (
       </Paragraph>
     </Dialog>
   </Dialog.TriggerContext>
-);
+));
 
 const DATA_PLACES = [
   "Sogndal",
@@ -227,75 +231,84 @@ const DATA_PLACES = [
   "Lillestrøm",
 ];
 
-export const DialogWithSuggestion: StoryFn<typeof Dialog> = () => {
-  const dialogRef = useRef<HTMLDialogElement>(null);
+export const DialogWithSuggestion = meta.story({
+  render: () => {
+    const dialogRef = useRef<HTMLDialogElement>(null);
 
-  return (
-    <Dialog.TriggerContext>
-      <Dialog.Trigger>Open Dialog</Dialog.Trigger>
-      <Dialog style={{ overflow: "visible" }} ref={dialogRef} id="my-dialog">
-        <Dialog.Block>
-          <Heading>Dialog med suggestion</Heading>
-        </Dialog.Block>
-        <Dialog.Block>
-          <Field>
-            <Label>Velg en destinasjon</Label>
-            <Suggestion>
-              <Suggestion.Input />
-              <Suggestion.Clear />
-              <Suggestion.List>
-                <Suggestion.Empty>Tomt</Suggestion.Empty>
-                {DATA_PLACES.map((place) => (
-                  <Suggestion.Option key={place} value={place}>
-                    {place}
-                    <div>Kommune</div>
-                  </Suggestion.Option>
-                ))}
-              </Suggestion.List>
-            </Suggestion>
-          </Field>
-        </Dialog.Block>
-        <Dialog.Block>
-          <Button variant="secondary" command="close" commandfor="my-dialog">
-            Avbryt
-          </Button>
-        </Dialog.Block>
-      </Dialog>
-    </Dialog.TriggerContext>
-  );
-};
+    return (
+      <Dialog.TriggerContext>
+        <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+        <Dialog style={{ overflow: "visible" }} ref={dialogRef} id="my-dialog">
+          <Dialog.Block>
+            <Heading>Dialog med suggestion</Heading>
+          </Dialog.Block>
+          <Dialog.Block>
+            <Field>
+              <Label>Velg en destinasjon</Label>
+              <Suggestion>
+                <Suggestion.Input />
+                <Suggestion.Clear />
+                <Suggestion.List>
+                  <Suggestion.Empty>Tomt</Suggestion.Empty>
+                  {DATA_PLACES.map((place) => (
+                    <Suggestion.Option key={place} value={place}>
+                      {place}
+                      <div>Kommune</div>
+                    </Suggestion.Option>
+                  ))}
+                </Suggestion.List>
+              </Suggestion>
+            </Field>
+          </Dialog.Block>
+          <Dialog.Block>
+            <Button variant="secondary" command="close" commandfor="my-dialog">
+              Avbryt
+            </Button>
+          </Dialog.Block>
+        </Dialog>
+      </Dialog.TriggerContext>
+    );
+  },
 
-DialogWithSuggestion.parameters = {
-  a11y: {
-    // TODO: this rule should be enabled after https://github.com/dequelabs/axe-core/issues/4672 have propagated to @storybook/addon-a11y.
-    config: {
-      rules: [
-        {
-          id: "aria-allowed-role",
-          enabled: false,
-        },
-      ],
+  parameters: {
+    a11y: {
+      // TODO: this rule should be enabled after https://github.com/dequelabs/axe-core/issues/4672 have propagated to @storybook/addon-a11y.
+      config: {
+        rules: [
+          {
+            id: "aria-allowed-role",
+            enabled: false,
+          },
+        ],
+      },
     },
   },
-};
+});
 
-export const DialogNonModal: StoryFn<typeof Dialog> = () => {
-  return (
-    <>
-      <Button command="--show-non-modal" commandfor="my-non-modal">
-        Open Dialog
-      </Button>
-      <Dialog id="my-non-modal">
-        <Heading>Non-modal dialog</Heading>
-        <Paragraph>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-          doloremque obcaecati assumenda odio ducimus sunt et.
-        </Paragraph>
-      </Dialog>
-    </>
-  );
-};
-export const DialogNonModalTrigger: StoryFn<typeof Dialog> = () => (
+export const DialogNonModal = meta.story({
+  render: () => {
+    return (
+      <>
+        <Button command="--show-non-modal" commandfor="my-non-modal">
+          Open Dialog
+        </Button>
+        <Dialog id="my-non-modal">
+          <Heading>Non-modal dialog</Heading>
+          <Paragraph>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+            doloremque obcaecati assumenda odio ducimus sunt et.
+          </Paragraph>
+        </Dialog>
+      </>
+    );
+  },
+
+  parameters: {
+    customStyles: { padding: "var(--ds-size-18)" },
+  },
+});
+
+export const DialogNonModalTrigger = meta.story(() => (
   <Dialog.TriggerContext>
     <Dialog.Trigger>Open non-modal dialog</Dialog.Trigger>
     <Dialog modal={false}>
@@ -309,9 +322,9 @@ export const DialogNonModalTrigger: StoryFn<typeof Dialog> = () => (
       <Button variant="primary">Give feedback</Button>
     </Dialog>
   </Dialog.TriggerContext>
-);
+));
 
-export const DialogNonModalRef: StoryFn<typeof Dialog> = () => {
+export const DialogNonModalRef = meta.story(() => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   return (
@@ -326,12 +339,9 @@ export const DialogNonModalRef: StoryFn<typeof Dialog> = () => {
       </Dialog>
     </>
   );
-};
+});
 
-DialogNonModal.parameters = {
-  customStyles: { padding: "var(--ds-size-18)" },
-};
-export const DialogPlacementTop: StoryFn<typeof Dialog> = () => {
+export const DialogPlacementTop = meta.story(() => {
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
@@ -342,8 +352,9 @@ export const DialogPlacementTop: StoryFn<typeof Dialog> = () => {
       </Dialog>
     </Dialog.TriggerContext>
   );
-};
-export const DialogPlacementBottom: StoryFn<typeof Dialog> = () => {
+});
+
+export const DialogPlacementBottom = meta.story(() => {
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
@@ -354,8 +365,9 @@ export const DialogPlacementBottom: StoryFn<typeof Dialog> = () => {
       </Dialog>
     </Dialog.TriggerContext>
   );
-};
-export const DialogPlacementLeft: StoryFn<typeof Dialog> = () => {
+});
+
+export const DialogPlacementLeft = meta.story(() => {
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
@@ -366,8 +378,9 @@ export const DialogPlacementLeft: StoryFn<typeof Dialog> = () => {
       </Dialog>
     </Dialog.TriggerContext>
   );
-};
-export const DialogPlacementRight: StoryFn<typeof Dialog> = () => {
+});
+
+export const DialogPlacementRight = meta.story(() => {
   return (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
@@ -378,4 +391,4 @@ export const DialogPlacementRight: StoryFn<typeof Dialog> = () => {
       </Dialog>
     </Dialog.TriggerContext>
   );
-};
+});

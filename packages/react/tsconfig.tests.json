@@ -1,17 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "../../",
+    "rootDir": ".",
     "outDir": ".typescript-cache",
 
     "types": ["@lanekassen/ds-css/theme", "vitest/globals"]
   },
-  "include": [
-    "stories/**/*",
-    "src/**/*.stories.tsx",
-    "src/**/*.test.tsx",
-    "react-types.d.ts",
-    "../../packages/css/designsystemet.config.json"
-  ],
+  "include": ["src/**/*.test.ts", "src/**/*.test.tsx", "react-types.d.ts"],
   "references": [{ "path": "tsconfig.lib.json" }]
 }

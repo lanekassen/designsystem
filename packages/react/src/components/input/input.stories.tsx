@@ -1,10 +1,8 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { sizenames, sizes } from "../../../stories/constants";
 import { Field, Heading, Input, Label, ValidationMessage } from "../";
 
-type Story = StoryObj<typeof Input>;
-
-export default {
+const meta = preview.meta({
   title: "Designsystem/Input",
   component: Input,
   argTypes: {
@@ -35,9 +33,9 @@ export default {
       },
     },
   },
-} as Meta;
+});
 
-export const Default: Story = {
+export const Default = meta.story({
   args: {
     "aria-invalid": false,
     disabled: false,
@@ -51,253 +49,259 @@ export const Default: Story = {
 
     return <Input {...args} aria-label="input" />;
   },
-};
+});
 
-export const Text: StoryFn<typeof Input> = (args) => {
-  const states = [
-    { label: "Default", props: {} },
-    { label: "Disabled", props: { disabled: true } },
-    { label: "Invalid", props: { "aria-invalid": true } },
-    { label: "Read-only", props: { readOnly: true } },
-  ];
+export const Text = meta.story({
+  render: (args) => {
+    const states = [
+      { label: "Default", props: {} },
+      { label: "Disabled", props: { disabled: true } },
+      { label: "Invalid", props: { "aria-invalid": true } },
+      { label: "Read-only", props: { readOnly: true } },
+    ];
 
-  return (
-    <div>
-      {sizes.map((size) => (
-        <div
-          key={size}
-          data-size={size}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "1rem",
-            maxWidth: "90vw",
-          }}
-        >
-          <Heading data-size="2xs" style={{ gridColumn: "1 / -1" }}>
-            {sizenames[size]}
-          </Heading>
-          {states.map((state) => (
-            <Field key={state.label}>
-              <Label>{state.label}</Label>
-              <Input
-                {...args}
-                name={`${size}-${state.label.toLowerCase()}`}
-                {...state.props}
-                data-size={size}
-              />
-              {state.label === "Invalid" && (
-                <ValidationMessage>Feilmelding</ValidationMessage>
-              )}
-            </Field>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-Text.args = {
-  value: "Value",
-};
-
-export const Radio: StoryFn<typeof Input> = (args) => {
-  const states = [
-    { label: "Default", props: {} },
-    { label: "Checked", props: { defaultChecked: true } },
-    { label: "Disabled", props: { disabled: true } },
-    {
-      label: "Disabled checked",
-      props: { disabled: true, defaultChecked: true },
-    },
-    { label: "Invalid", props: { "aria-invalid": true } },
-    {
-      label: "Invalid checked",
-      props: { "aria-invalid": true, defaultChecked: true },
-    },
-    { label: "Read-only", props: { readOnly: true } },
-    {
-      label: "Read-only checked",
-      props: { readOnly: true, defaultChecked: true },
-    },
-  ];
-
-  return (
-    <div>
-      {sizes.map((size) => (
-        <div
-          key={size}
-          data-size={size}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "1rem",
-            maxWidth: "90vw",
-          }}
-        >
-          <Heading
-            data-size="2xs"
-            style={{ gridColumn: "1 / -1", marginTop: 16 }}
+    return (
+      <div>
+        {sizes.map((size) => (
+          <div
+            key={size}
+            data-size={size}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: "1rem",
+              maxWidth: "90vw",
+            }}
           >
-            {sizenames[size]}
-          </Heading>
-          {states.map((state) => (
-            <Field key={state.label}>
-              <Input
-                {...args}
-                name={`${size}-${state.label.split(" ")[0]}`} // As states are demonstrated in pairs
-                {...state.props}
-              />
-              <Label>{state.label}</Label>
-            </Field>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-Radio.args = {
-  type: "radio",
-};
-
-export const Checkbox: StoryFn<typeof Input> = function Render(args) {
-  const states = [
-    { label: "Default", props: {} },
-    { label: "Checked", props: { defaultChecked: true } },
-    { label: "Indeterminate", props: { "data-indeterminate": true } },
-    { label: "Disabled", props: { disabled: true } },
-    {
-      label: "Disabled checked",
-      props: { disabled: true, defaultChecked: true },
-    },
-    {
-      label: "Disabled indeterminate",
-      props: { disabled: true, "data-indeterminate": true },
-    },
-    { label: "Invalid", props: { "aria-invalid": true } },
-    {
-      label: "Invalid checked",
-      props: { "aria-invalid": true, defaultChecked: true },
-    },
-    {
-      label: "Invalid indeterminate",
-      props: { "aria-invalid": true, "data-indeterminate": true },
-    },
-    { label: "Read-only", props: { readOnly: true } },
-    {
-      label: "Read-only checked",
-      props: { readOnly: true, defaultChecked: true },
-    },
-    {
-      label: "Read-only indeterminate",
-      props: { readOnly: true, "data-indeterminate": true },
-    },
-  ];
-
-  return (
-    <>
-      {sizes.map((size) => (
-        <div
-          key={size}
-          data-size={size}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "1rem",
-          }}
-        >
-          <Heading data-size="2xs" style={{ gridColumn: "1 / -1" }}>
-            {sizenames[size]}
-          </Heading>
-          {states.map((state) => (
-            <Field key={state.label}>
-              <Input
-                {...args}
-                name={`${size}-${state.label.toLowerCase().replace(" ", "-")}`}
-                {...state.props}
-              />
-              <Label>{state.label}</Label>
-            </Field>
-          ))}
-        </div>
-      ))}
-    </>
-  );
-};
-
-Checkbox.args = {
-  type: "checkbox",
-};
-
-Checkbox.parameters = {
-  customStyles: {
-    display: "grid",
-    gap: "2rem",
+            <Heading data-size="2xs" style={{ gridColumn: "1 / -1" }}>
+              {sizenames[size]}
+            </Heading>
+            {states.map((state) => (
+              <Field key={state.label}>
+                <Label>{state.label}</Label>
+                <Input
+                  {...args}
+                  name={`${size}-${state.label.toLowerCase()}`}
+                  {...state.props}
+                  data-size={size}
+                />
+                {state.label === "Invalid" && (
+                  <ValidationMessage>Feilmelding</ValidationMessage>
+                )}
+              </Field>
+            ))}
+          </div>
+        ))}
+      </div>
+    );
   },
-};
 
-export const Switch: StoryFn<typeof Input> = (args) => {
-  const states = [
-    { label: "Default", props: {} },
-    { label: "Checked", props: { defaultChecked: true } },
-    { label: "Disabled", props: { disabled: true } },
-    {
-      label: "Disabled checked",
-      props: { disabled: true, defaultChecked: true },
-    },
-    /* { label: 'Invalid', props: { 'aria-invalid': 'true' } },
-    {
-      label: 'Invalid checked',
-      props: { 'aria-invalid': 'true', defaultChecked: true },
-    }, */
-    { label: "Read-only", props: { readOnly: true } },
-    {
-      label: "Read-only checked",
-      props: { readOnly: true, defaultChecked: true },
-    },
-  ];
-
-  return (
-    <>
-      {sizes.map((size) => (
-        <div
-          key={size}
-          data-size={size}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "1rem",
-            maxWidth: "90vw",
-          }}
-        >
-          <Heading data-size="2xs" style={{ gridColumn: "1 / -1" }}>
-            {sizenames[size]}
-          </Heading>
-          {states.map((state) => (
-            <Field key={state.label}>
-              <Input
-                {...args}
-                name={`${size}-${state.label.toLowerCase().replace(" ", "-")}`}
-                {...state.props}
-              />
-              <Label>{state.label}</Label>
-            </Field>
-          ))}
-        </div>
-      ))}
-    </>
-  );
-};
-
-Switch.args = {
-  type: "checkbox",
-  role: "switch",
-};
-
-Switch.parameters = {
-  customStyles: {
-    display: "grid",
-    gap: "2rem",
+  args: {
+    value: "Value",
   },
-};
+});
+
+export const Radio = meta.story({
+  render: (args) => {
+    const states = [
+      { label: "Default", props: {} },
+      { label: "Checked", props: { defaultChecked: true } },
+      { label: "Disabled", props: { disabled: true } },
+      {
+        label: "Disabled checked",
+        props: { disabled: true, defaultChecked: true },
+      },
+      { label: "Invalid", props: { "aria-invalid": true } },
+      {
+        label: "Invalid checked",
+        props: { "aria-invalid": true, defaultChecked: true },
+      },
+      { label: "Read-only", props: { readOnly: true } },
+      {
+        label: "Read-only checked",
+        props: { readOnly: true, defaultChecked: true },
+      },
+    ];
+
+    return (
+      <div>
+        {sizes.map((size) => (
+          <div
+            key={size}
+            data-size={size}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "1rem",
+              maxWidth: "90vw",
+            }}
+          >
+            <Heading
+              data-size="2xs"
+              style={{ gridColumn: "1 / -1", marginTop: 16 }}
+            >
+              {sizenames[size]}
+            </Heading>
+            {states.map((state) => (
+              <Field key={state.label}>
+                <Input
+                  {...args}
+                  name={`${size}-${state.label.split(" ")[0]}`} // As states are demonstrated in pairs
+                  {...state.props}
+                />
+                <Label>{state.label}</Label>
+              </Field>
+            ))}
+          </div>
+        ))}
+      </div>
+    );
+  },
+
+  args: {
+    type: "radio",
+  },
+});
+
+export const Checkbox = meta.story({
+  args: {
+    type: "checkbox",
+  },
+  parameters: {
+    customStyles: {
+      display: "grid",
+      gap: "2rem",
+    },
+  },
+  render: (args) => {
+    const states = [
+      { label: "Default", props: {} },
+      { label: "Checked", props: { defaultChecked: true } },
+      { label: "Indeterminate", props: { "data-indeterminate": true } },
+      { label: "Disabled", props: { disabled: true } },
+      {
+        label: "Disabled checked",
+        props: { disabled: true, defaultChecked: true },
+      },
+      {
+        label: "Disabled indeterminate",
+        props: { disabled: true, "data-indeterminate": true },
+      },
+      { label: "Invalid", props: { "aria-invalid": true } },
+      {
+        label: "Invalid checked",
+        props: { "aria-invalid": true, defaultChecked: true },
+      },
+      {
+        label: "Invalid indeterminate",
+        props: { "aria-invalid": true, "data-indeterminate": true },
+      },
+      { label: "Read-only", props: { readOnly: true } },
+      {
+        label: "Read-only checked",
+        props: { readOnly: true, defaultChecked: true },
+      },
+      {
+        label: "Read-only indeterminate",
+        props: { readOnly: true, "data-indeterminate": true },
+      },
+    ];
+
+    return (
+      <>
+        {sizes.map((size) => (
+          <div
+            key={size}
+            data-size={size}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "1rem",
+            }}
+          >
+            <Heading data-size="2xs" style={{ gridColumn: "1 / -1" }}>
+              {sizenames[size]}
+            </Heading>
+            {states.map((state) => (
+              <Field key={state.label}>
+                <Input
+                  {...args}
+                  name={`${size}-${state.label.toLowerCase().replace(" ", "-")}`}
+                  {...state.props}
+                />
+                <Label>{state.label}</Label>
+              </Field>
+            ))}
+          </div>
+        ))}
+      </>
+    );
+  },
+});
+
+export const Switch = meta.story({
+  render: (args) => {
+    const states = [
+      { label: "Default", props: {} },
+      { label: "Checked", props: { defaultChecked: true } },
+      { label: "Disabled", props: { disabled: true } },
+      {
+        label: "Disabled checked",
+        props: { disabled: true, defaultChecked: true },
+      },
+      /* { label: 'Invalid', props: { 'aria-invalid': 'true' } },
+      {
+        label: 'Invalid checked',
+        props: { 'aria-invalid': 'true', defaultChecked: true },
+      }, */
+      { label: "Read-only", props: { readOnly: true } },
+      {
+        label: "Read-only checked",
+        props: { readOnly: true, defaultChecked: true },
+      },
+    ];
+
+    return (
+      <>
+        {sizes.map((size) => (
+          <div
+            key={size}
+            data-size={size}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "1rem",
+              maxWidth: "90vw",
+            }}
+          >
+            <Heading data-size="2xs" style={{ gridColumn: "1 / -1" }}>
+              {sizenames[size]}
+            </Heading>
+            {states.map((state) => (
+              <Field key={state.label}>
+                <Input
+                  {...args}
+                  name={`${size}-${state.label.toLowerCase().replace(" ", "-")}`}
+                  {...state.props}
+                />
+                <Label>{state.label}</Label>
+              </Field>
+            ))}
+          </div>
+        ))}
+      </>
+    );
+  },
+
+  args: {
+    type: "checkbox",
+    role: "switch",
+  },
+
+  parameters: {
+    customStyles: {
+      display: "grid",
+      gap: "2rem",
+    },
+  },
+});
