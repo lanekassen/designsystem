@@ -16,43 +16,43 @@
   "font-size": {
     "1": {
       "$type": "fontSizes",
-      "$value": "13"
+      "$value": "12"
     },
     "2": {
       "$type": "fontSizes",
-      "$value": "16"
+      "$value": "15"
     },
     "3": {
       "$type": "fontSizes",
-      "$value": "18"
+      "$value": "16"
     },
     "4": {
       "$type": "fontSizes",
-      "$value": "21"
+      "$value": "18"
     },
     "5": {
       "$type": "fontSizes",
-      "$value": "24"
+      "$value": "20"
     },
     "6": {
       "$type": "fontSizes",
-      "$value": "30"
+      "$value": "24"
     },
     "7": {
       "$type": "fontSizes",
-      "$value": "36"
+      "$value": "27"
     },
     "8": {
       "$type": "fontSizes",
-      "$value": "48"
+      "$value": "34"
     },
     "9": {
       "$type": "fontSizes",
-      "$value": "60"
+      "$value": "41"
     },
     "10": {
       "$type": "fontSizes",
-      "$value": "72"
+      "$value": "54"
     }
   },
   "letter-spacing": {
