@@ -12,6 +12,22 @@ const TYPOGRAPHY_PRIMARY_PATH =
 const TYPOGRAPHY_SECONDARY_PATH =
   "./design-tokens/primitives/modes/typography/secondary/lanekassen.json";
 const SEMANTIC_STYLE_PATH = "./design-tokens/semantic/style.json";
+const SIZE_PATH = "./design-tokens/primitives/modes/size";
+const TYPOGRAPHY_SIZE_PATH = "./design-tokens/primitives/modes/typography/size";
+const SIZE_MODES = {
+  small: {
+    fontSize: "14",
+    fontSizes: ["10", "11", "12", "14", "16", "18", "21", "26", "32", "42"],
+  },
+  medium: {
+    fontSize: "16",
+    fontSizes: ["11", "13", "14", "16", "18", "21", "24", "30", "36", "48"],
+  },
+  large: {
+    fontSize: "18",
+    fontSizes: ["12", "15", "16", "18", "20", "24", "27", "34", "41", "54"],
+  },
+};
 
 /**
  * Helper to read, update, and write JSON files safely.
@@ -60,7 +76,32 @@ function injectHeadingFontWeightTokens(filePath) {
   });
 }
 
+function injectSizeTokens(filePath, fontSize) {
+  updateJsonFile(filePath, (tokens) => {
+    tokens.size["_mode-font-size"].$value = fontSize;
+    tokens.size._base.$value = "16";
+  });
+}
+
+function injectTypographySizeTokens(filePath, fontSizes) {
+  updateJsonFile(filePath, (tokens) => {
+    fontSizes.forEach((fontSize, index) => {
+      tokens["font-size"][index + 1].$value = fontSize;
+    });
+  });
+}
+
 injectThemeTokens(THEME_PATH);
 injectTypographyTokens(TYPOGRAPHY_PRIMARY_PATH);
 injectTypographyTokens(TYPOGRAPHY_SECONDARY_PATH);
 injectHeadingFontWeightTokens(SEMANTIC_STYLE_PATH);
+
+updateJsonFile(`${SIZE_PATH}/global.json`, (tokens) => {
+  tokens._size.unit.$value =
+    "({_size.step} / {_size.base} * {_size.mode-font-size}) / 1.125";
+});
+
+for (const [mode, { fontSize, fontSizes }] of Object.entries(SIZE_MODES)) {
+  injectSizeTokens(`${SIZE_PATH}/${mode}.json`, fontSize);
+  injectTypographySizeTokens(`${TYPOGRAPHY_SIZE_PATH}/${mode}.json`, fontSizes);
+}
