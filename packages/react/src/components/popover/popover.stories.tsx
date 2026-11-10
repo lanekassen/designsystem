@@ -189,6 +189,8 @@ export const Variants = meta.story({
       padding: "5rem 3rem",
     },
   },
+
+  play: () => {},
 });
 
 export const Controlled = meta.story({
