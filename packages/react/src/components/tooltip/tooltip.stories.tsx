@@ -1,7 +1,13 @@
 import { FilesIcon } from "@navikt/aksel-icons";
 import { useEffect, useRef, useState } from "react";
+import { expect, fireEvent, userEvent, waitFor } from "storybook/test";
 import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Button, Tooltip } from "../";
+
+function isInViewport(el: Element) {
+  const { height, width } = el.getBoundingClientRect();
+  return height > 1 && width > 1;
+}
 
 const meta = preview.meta({
   title: "Designsystem/Tooltip",
@@ -11,6 +17,37 @@ const meta = preview.meta({
     chromatic: {
       disableSnapshot: false,
     },
+  },
+  play: async (ctx) => {
+    const tooltips =
+      ctx.canvasElement.querySelectorAll<HTMLElement>("[data-tooltip]");
+    const fakeFocus = (e: HTMLElement) => {
+      fireEvent.focus(e); // shows up in interaction log in Storybook
+      e.focus({ focusVisible: true } as Record<string, unknown>); // necessary to get focusVisible styling, but doesn't show up in interaction log
+    };
+    for (const event of [userEvent.hover, fakeFocus])
+      for (const tooltipTrigger of Array.from(tooltips)) {
+        await event(tooltipTrigger);
+        await new Promise((resolve) => setTimeout(resolve, 300)); // Wait for tooltip to appear
+        await waitFor(async () => {
+          const text = tooltipTrigger.getAttribute("data-tooltip");
+          if (!text) {
+            throw new Error("Tooltip trigger has no data-tooltip attribute");
+          }
+          const tooltipRenderer = document.body.querySelector(".ds-tooltip");
+          await expect(tooltipRenderer).toBeVisible();
+          await expect(tooltipRenderer).toSatisfy(isInViewport); // toBeVisible() doesn't check if the element is in the viewport
+          await expect(tooltipRenderer).toHaveTextContent(text);
+          if (tooltipTrigger.textContent.trim()) {
+            await expect(tooltipTrigger).toHaveAttribute(
+              "aria-description",
+              text,
+            );
+          } else {
+            await expect(tooltipTrigger).toHaveAttribute("aria-label", text);
+          }
+        });
+      }
   },
 });
 
