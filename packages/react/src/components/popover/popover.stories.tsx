@@ -1,5 +1,6 @@
 import { TrashIcon } from "@navikt/aksel-icons";
 import { useEffect, useState } from "react";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Button, Paragraph, Popover } from "../";
 
@@ -17,6 +18,17 @@ const meta = preview.meta({
     chromatic: {
       disableSnapshot: false,
     },
+  },
+  play: async (ctx) => {
+    // When not in Docs mode, automatically open the dropdown
+    const button = within(ctx.canvasElement).getByRole("button");
+    await new Promise((resolve) => {
+      document.addEventListener("animationend", resolve, true); // <== Merk at vi binder event-listener før vi gjør click
+      userEvent.click(button);
+    });
+    const dropdown = ctx.canvasElement.querySelector(".ds-popover");
+    await expect(dropdown).toBeInTheDocument();
+    await waitFor(() => expect(dropdown).toBeVisible());
   },
 });
 
@@ -177,6 +189,8 @@ export const Variants = meta.story({
       padding: "5rem 3rem",
     },
   },
+
+  play: () => {},
 });
 
 export const Controlled = meta.story({

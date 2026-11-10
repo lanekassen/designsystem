@@ -1,3 +1,4 @@
+import { expect, userEvent, within } from "storybook/test";
 import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Paragraph, SkipLink } from "../";
 
@@ -36,4 +37,18 @@ export const Tabbed = meta.story({
       </main>
     </div>
   ),
+
+  play: async (ctx) => {
+    const canvas = within(ctx.canvasElement);
+    const link = canvas.getByRole("link");
+    await expect(link).not.toSatisfy(isVisibleOnScreen);
+    await userEvent.tab();
+    await expect(link).toSatisfy(isVisibleOnScreen);
+    await expect(link).toHaveFocus();
+  },
 });
+
+function isVisibleOnScreen(el: Element) {
+  const { height, width } = el.getBoundingClientRect();
+  return height > 1 && width > 1;
+}

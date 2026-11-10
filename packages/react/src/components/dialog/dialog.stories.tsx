@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { expect, userEvent, within } from "storybook/test";
 import preview from "../../../../../apps/storybook/.storybook/preview";
 import {
   Button,
@@ -26,6 +27,17 @@ const meta = preview.meta({
         },
       },
     },
+  },
+  play: async (ctx) => {
+    // When not in Docs mode, automatically open the dialog
+    const canvas = within(ctx.canvasElement);
+    const button = canvas.getByRole("button");
+    await userEvent.click(button);
+    // Wait for dialog to fade in before running tests
+    const dialog = await canvas.findByRole("dialog");
+
+    await expect(dialog).toBeInTheDocument();
+    await expect(dialog).toHaveAttribute("open");
   },
 });
 
