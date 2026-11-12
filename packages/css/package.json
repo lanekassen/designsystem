@@ -34,9 +34,9 @@
     "build": "pnpm theme:build && tsdown",
     "theme:build": "pnpm theme:tokens:create && pnpm theme:tokens:inject && pnpm theme:tokens:build && pnpm theme:build:tidy",
     "theme:build:tidy": "rm theme/colors.d.ts",
-    "theme:tokens:create": "designsystemet tokens create",
+    "theme:tokens:create": "designsystemet",
     "theme:tokens:inject": "node inject-design-tokens.js",
-    "theme:tokens:build": "designsystemet tokens build --experimental-tailwind --clean --out-dir theme/"
+    "theme:tokens:build": "designsystemet --config designsystemet-build.config.json"
   },
   "files": [
     "dist/",

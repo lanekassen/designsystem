@@ -1,7 +1,12 @@
 {
   "$schema": "node_modules/@digdir/designsystemet/dist/config.schema.json",
-  "outDir": "./design-tokens",
-  "clean": true,
+  "output": [
+    {
+      "type": "design-tokens",
+      "dir": "design-tokens",
+      "cleanDir": true
+    }
+  ],
   "themes": {
     "lanekassen": {
       "colors": {
@@ -22,10 +27,6 @@
             "light": "#410464",
             "dark": "#E0C9ED"
           }
-        },
-        "linkVisited": {
-          "light": "#410464",
-          "dark": "#E0C9ED"
         },
         "severity": {
           "info": "#083b7d",
