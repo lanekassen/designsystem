@@ -1,3 +1,5 @@
+// This exists as a separate configuration in order to first inject design tokens before building CSS and types
+// See https://github.com/digdir/designsystemet/pull/5416
 {
   "$schema": "node_modules/@digdir/designsystemet/dist/config.schema.json",
   "output": [
