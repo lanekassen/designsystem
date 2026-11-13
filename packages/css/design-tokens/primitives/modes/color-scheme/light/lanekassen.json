@@ -399,7 +399,7 @@
     "link": {
       "visited": {
         "$type": "color",
-        "$value": "#410464"
+        "$value": "#663299"
       }
     },
     "focus": {
