@@ -1,5 +1,16 @@
 # @lanekassen/ds-css
 
+## 0.5.0
+
+### Minor Changes
+
+- f44387c: **BREAKING CHANGE**: Tailwind theme now requires Tailwind CSS v4. It uses `@theme inline`, so Tailwind utilities reference the `--ds-*` variables directly, and `data-color`, `data-color-scheme` and `data-size` also apply to them, at any depth in the DOM.
+
+### Patch Changes
+
+- f44387c: Update non-major dependencies
+- f44387c: Update `@digdir/*` to v1.24.0 ([changelog](https://github.com/digdir/designsystemet/releases/tag/v1.24.0))
+
 ## 0.4.4
 
 No changes in this release.
