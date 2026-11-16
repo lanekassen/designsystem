@@ -1,5 +1,12 @@
 # @lanekassen/ds-react
 
+## 0.5.0
+
+### Patch Changes
+
+- f44387c: Update non-major dependencies
+- f44387c: Update `@digdir/*` to v1.24.0 ([changelog](https://github.com/digdir/designsystemet/releases/tag/v1.24.0))
+
 ## 0.4.4
 
 No changes in this release.
