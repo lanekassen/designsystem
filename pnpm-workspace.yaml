@@ -13,18 +13,18 @@ catalog:
   "@biomejs/biome": 2.5.14
   "@changesets/cli": ^3.0.3
   '@changesets/config': ^4.0.1
-  "@digdir/designsystemet": ^1.24.0
-  "@digdir/designsystemet-css": ^1.24.0
-  "@digdir/designsystemet-react": ^1.24.0
-  "@digdir/designsystemet-types": ^1.24.0
-  "@digdir/designsystemet-web": ^1.24.0
+  "@digdir/designsystemet": ^1.24.1
+  "@digdir/designsystemet-css": ^1.24.1
+  "@digdir/designsystemet-react": ^1.24.1
+  "@digdir/designsystemet-types": ^1.24.1
+  "@digdir/designsystemet-web": ^1.24.1
   "@mdx-js/react": ^3.1.1
-  "@navikt/aksel-icons": ^8.22.1
-  '@storybook/addon-a11y': ^10.6.6
-  "@storybook/addon-docs": ^10.6.6
-  "@storybook/addon-themes": ^10.6.6
-  '@storybook/addon-vitest': ^10.6.6
-  "@storybook/react-vite": ^10.6.6
+  "@navikt/aksel-icons": ^8.23.0
+  '@storybook/addon-a11y': ^10.6.8
+  "@storybook/addon-docs": ^10.6.8
+  "@storybook/addon-themes": ^10.6.8
+  '@storybook/addon-vitest': ^10.6.8
+  "@storybook/react-vite": ^10.6.8
   "@svgr/cli": ^8.1.0
   "@svgr/core": ^8.1.0
   '@tanstack/react-form': ^1.33.5
@@ -35,20 +35,20 @@ catalog:
   "@u-elements/u-progress": ^1.1.1
   '@vitest/browser-playwright': ^4.1.12
   '@vitest/coverage-v8': ^4.1.12
-  chromatic: ^18.14.2
+  chromatic: ^18.15.1
   clsx: ^2.1.1
-  playwright: ^1.65.0
+  playwright: ^1.65.1
   react: ^19.3.1
   react-docgen-typescript: ^2.4.0
   react-dom: ^19.3.1
-  react-dropzone: ^20.2.0
-  storybook: ^10.6.6
+  react-dropzone: ^20.2.1
+  storybook: ^10.6.8
   svgo: ^4.1.0
   tsdown: ^0.22.14
   typedoc: ^0.28.20
   typedoc-plugin-markdown: ^4.14.1
   typescript: ^6.0.3
-  vite: ^8.3.7
+  vite: ^8.3.8
   vitest: ^4.1.12
   vitest-browser-react: ^2.3.0
   zod: ^4.6.7
