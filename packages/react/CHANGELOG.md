@@ -1,5 +1,11 @@
 # @lanekassen/ds-react
 
+## 0.5.2
+
+### Patch Changes
+
+- d6f1f49: Utils: add `validateFodselsnummer` for validating Norwegian national identity numbers and D-numbers
+
 ## 0.5.1
 
 ### Patch Changes
