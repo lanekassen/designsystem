@@ -1,5 +1,11 @@
 # @lanekassen/ds-icons
 
+## 0.5.1
+
+### Patch Changes
+
+- 34ce33a: Update non-major dependencies
+
 ## 0.5.0
 
 ### Patch Changes
