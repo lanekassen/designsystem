@@ -12,3 +12,8 @@ export {
   formatKontonummer,
   validateKontonummer,
 } from "./finance/finance";
+
+export {
+  type ValidateFodselsnummerOptions,
+  validateFodselsnummer,
+} from "./person/person";
