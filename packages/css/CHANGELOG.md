@@ -1,5 +1,12 @@
 # @lanekassen/ds-css
 
+## 0.5.1
+
+### Patch Changes
+
+- 34ce33a: Update `@digdir/*` to v1.24.1 ([changelog](https://github.com/digdir/designsystemet/releases/tag/v1.24.1))
+- 34ce33a: Update non-major dependencies
+
 ## 0.5.0
 
 ### Minor Changes
